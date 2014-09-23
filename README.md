@@ -1,5 +1,5 @@
 # netlib
-## Building:
+##### Building:
 <pre><code>
     git clone https://github.com/inbre001/netlib.git
     cd netlib/lib/; 
@@ -18,12 +18,12 @@ Just include the "Net.h" Header
     Connection *c = serversock.accept();    
 </pre></code>
  ... on the Client
-<code>
+<pre><code>
     std::sting serveraddr = "127.0.0.1"; // either IP or Hostname
     int port = 1234; 
     Socket sock(serveraddr,port);
     Connection *c = sock.connect();
-</code>
+</pre></code>
 ### Using TCP Connections
 .. to send data
 <pre><code>
