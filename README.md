@@ -1,5 +1,7 @@
-# netlib
-## Building:
+netlib
+======
+Building:
+--------
 <pre><code>
     cd lib;
     make
