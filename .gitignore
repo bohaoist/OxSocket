@@ -1,1 +1,4 @@
 /lib/*.d
+/lib/*.o
+/lib/*.a
+/lib/*.so

@@ -37,20 +37,20 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: lib0xNet
+all: libNet
 
 # Tool invocations
-lib0xNet: $(OBJS) $(USER_OBJS)
+libNet: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC Archiver'
-	g++ -shared -o "lib0xNet.so" $(OBJS) $(USER_OBJS) $(LIBS)
-	ar -r  "lib0xNet.a" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++ -shared -o "libNet.so" $(OBJS) $(USER_OBJS) $(LIBS)
+	ar -r  "libNet.a" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(OBJS)$(C++_DEPS)$(C_DEPS)$(CC_DEPS)$(ARCHIVES)$(CPP_DEPS)$(CXX_DEPS)$(C_UPPER_DEPS) lib0xNet.a lib0xNet.so
+	-$(RM) $(OBJS)$(C++_DEPS)$(C_DEPS)$(CC_DEPS)$(ARCHIVES)$(CPP_DEPS)$(CXX_DEPS)$(C_UPPER_DEPS) libNet.a libNet.so
 	-@echo ' '
 
 .PHONY: all clean dependents
