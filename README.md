@@ -11,13 +11,13 @@ Just include the "Net.h" Header
 </code></pre>
 Now Let's write some code.
 ### Creating a TCP Connection 
-####  ... on the Server
+ ... on the Server
 <pre><code>
     int port = 1234;
     ServerSocket serversock(port);    
     Connection *con = serversock.accept();    
 </pre></code>
-####  ... on the Client
+ ... on the Client
 <pre><code>
     std::sting serveraddr = "127.0.0.1";
     int port = 1234; 
@@ -25,12 +25,12 @@ Now Let's write some code.
     Connection *con = sock.connect();
 </pre></code>
 ### Using TCP Connections
-#### .. to send data
+.. to send data
 <pre><code>
     std::string msg = "Hello World\n";
     con->send(msg.c_str(),msg.size());
 </pre></code>
-#### .. to recv data
+.. to recv data
 <pre><code>
     int dsize = 255;
     char data[bsize];
