@@ -1,49 +1,30 @@
 # netlib
-
-
 ## Building:
-
 <pre><code>
     cd lib;
     make
 </code></pre>
-
-
 ## Using it 
-
 Just include the "Net.h" Header
-
 <pre><code>
 #include "Net.h"
 </code></pre>
-
 Now Let's write some code.
-
-
 ### Creating a TCP Connection 
-
 ####  ... on the Server
-
 <pre><code>
     int port = 1234;
     ServerSocket serversock(port);    
     Connection *con = serversock.accept();    
 </pre></code>
-
 ####  ... on the Client
-
 <pre><code>
-
     std::sting serveraddr = "127.0.0.1";
     int port = 1234; 
     Socket sock(serveraddr,port);
-    // nothing happend until the connect() function is called
     Connection *con = sock.connect();
-
 </pre></code>
-
 ### Using TCP Connections
-
 #### .. to send data
 <pre><code>
     std::string msg = "Hello World\n";
@@ -55,14 +36,9 @@ Now Let's write some code.
     char data[bsize];
     con->recv(data,dsize);
 </pre></code>
-
-
 ## Examples:
-
 ### Echo Server
-
 <pre><code>
-    
     #include "Net.h"
     #include <iostream>
     #include <string>
@@ -87,13 +63,9 @@ Now Let's write some code.
 
         return 0;
     }
-
 </pre></code>
-    
 ### Echo Client
-
 <pre><code>
-    
     #include "Net.h"
     #include <iostream>
     #include <string>
@@ -115,6 +87,5 @@ Now Let's write some code.
 
         return 0;
     }
-
 </pre></code>
  
