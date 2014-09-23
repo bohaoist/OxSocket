@@ -1,10 +1,9 @@
 # netlib
 ##### Building:
-<pre>
-<code>git clone https://github.com/inbre001/netlib.git
+<code>  git clone https://github.com/inbre001/netlib.git
     cd netlib/lib/; 
-    make;</code>
-</pre>
+    make;
+</code>
 ## Using it 
 Just include the "Net.h" Header
 <pre><code>
