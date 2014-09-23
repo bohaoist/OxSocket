@@ -1,44 +1,42 @@
-netlib
-======
-Building:
---------
+# netlib
+## Building:
 <pre><code>
-    cd lib;
-    make
+    git clone https://github.com/inbre001/netlib.git
+    cd netlib/lib/; 
+    make;
 </code></pre>
 ## Using it 
 Just include the "Net.h" Header
 <pre><code>
 #include "Net.h"
 </code></pre>
-Now Let's write some code.
 ### Creating a TCP Connection 
  ... on the Server
 <pre><code>
     int port = 1234;
     ServerSocket serversock(port);    
-    Connection *con = serversock.accept();    
+    Connection *c = serversock.accept();    
 </pre></code>
  ... on the Client
 <pre><code>
-    std::sting serveraddr = "127.0.0.1";
+    std::sting serveraddr = "127.0.0.1"; // either IP or Hostname
     int port = 1234; 
     Socket sock(serveraddr,port);
-    Connection *con = sock.connect();
+    Connection *c = sock.connect();
 </pre></code>
 ### Using TCP Connections
 .. to send data
 <pre><code>
     std::string msg = "Hello World\n";
-    con->send(msg.c_str(),msg.size());
+    c->send(msg.c_str(),msg.size());
 </pre></code>
 .. to recv data
 <pre><code>
-    int dsize = 255;
-    char data[bsize];
-    con->recv(data,dsize);
+    int bsize = 255;
+    char buf[bsize];
+    c->recv(buf,bsize);
 </pre></code>
-## Examples:
+## Examples
 ### Echo Server
 <pre><code>
     #include "Net.h"
