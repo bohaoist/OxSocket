@@ -10,7 +10,7 @@ extern "C" {
 }
 
 #include "SocketFd.h"
-#include "Exception.h"
+#include <stdexcept>
 /**
  * \brief   General Initialization for a TCP Socket
  * \details General Initialization for a TCP Socket

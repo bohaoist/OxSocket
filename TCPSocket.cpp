@@ -21,7 +21,7 @@ TCPSocket::TCPSocket(const unsigned portno, const char *hostaddr) :
 		if (NULL == record) {
 			//printf("%s is unavailable\n", hostaddr);
 			perror("TCPSocket::gethostbyname() failed");
-			throw Exception(
+			throw std::runtime_error(
 					"Failed to construct TCPSocket :: gethostbyname() failed");
 		}
 		//address = (in_addr *) record->h_addr;

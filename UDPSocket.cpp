@@ -11,7 +11,7 @@ UDPSocket::UDPSocket(const char* _host, const unsigned int _port) {
 void UDPSocket::init(const unsigned int iport, const char *_addr) {
 
 	if (iport > 65535) {
-		throw Exception(
+		throw std::runtime_error(
 				"Failed to construct UDPSocket :: exceted UDP Port Range (0 - 65535)");
 	}
 
@@ -24,7 +24,7 @@ void UDPSocket::init(const unsigned int iport, const char *_addr) {
 	int n = (::sprintf(port, "%d", iport));
 	if (0 > n) {
 		::perror("sprintf");
-		throw Exception("Failed to construct UDPSocket :: sprintf failed");
+		throw std::runtime_error("Failed to construct UDPSocket :: sprintf failed");
 	}
 
 	this->state = 0; // recv state
@@ -42,7 +42,7 @@ void UDPSocket::init(const unsigned int iport, const char *_addr) {
 	int rv = 0;
 	if ((rv = (::getaddrinfo(_addr, port, &hints, &servinfo)) != 0)) {
 		(::perror(::gai_strerror(rv)));
-		throw Exception("Failed to construct UDPSocket :: getaddrinfo failed");
+		throw std::runtime_error("Failed to construct UDPSocket :: getaddrinfo failed");
 	}
 	cli_addrlen = sizeof(cli_addr);
 
@@ -63,7 +63,7 @@ void UDPSocket::init(const unsigned int iport, const char *_addr) {
 	}
 	if (NULL == p) {
 		::perror("UDPSocket::bind failed");
-		throw Exception("Failed to construct UDPSocket :: bind failed");
+		throw std::runtime_error("Failed to construct UDPSocket :: bind failed");
 	}
 
 }
@@ -74,7 +74,7 @@ UDPSocket::~UDPSocket() {
 
 int UDPSocket::send(const char* _buf, const unsigned _size, int) {
 	if (1 != this->state) {
-		throw Exception(
+		throw std::runtime_error(
 				"socket not initalized for sending (missing target hostname)");
 	}
 	return (::sendto(sockfd, _buf, _size, 0, p->ai_addr, p->ai_addrlen));
@@ -82,7 +82,7 @@ int UDPSocket::send(const char* _buf, const unsigned _size, int) {
 
 int UDPSocket::recv(char* _buf, const unsigned _size, int) {
 	if (0 != this->state) {
-		throw Exception(
+		throw std::runtime_error(
 				"socket not initalized for recving (target hostname specified)");
 	}
 	return (::recvfrom(sockfd, (void*) _buf, _size, 0,

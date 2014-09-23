@@ -9,21 +9,21 @@ ServerSocket::ServerSocket(const unsigned portno) :
 	if (0
 			!= ::setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt))) {
 		::perror("ServerSocket::setsocketopt() failed");
-		throw Exception(
+		throw std::runtime_error(
 				"Failed to construct ServerSocket :: setsockopt() failed");
 	}
 
 	if (0
 			!= ::bind(sockfd, (struct sockaddr *) &serv_addr, sizeof(serv_addr))) {
 		::perror("ServerSocket::listen() failed");
-		throw Exception("Failed to construct ServerSocket :: bind() failed");
+		throw std::runtime_error("Failed to construct ServerSocket :: bind() failed");
 	}
 
 	cli_addrlen = sizeof(cli_addr);
 
 	if (0 != ::listen(sockfd, 5)) {
 		::perror("ServerSocket::listen() failed");
-		throw Exception("Failed to construct ServerSocket :: listen() failed");
+		throw std::runtime_error("Failed to construct ServerSocket :: listen() failed");
 	}
 
 }

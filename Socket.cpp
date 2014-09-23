@@ -7,7 +7,7 @@ Socket::Socket(const char* host, const unsigned portno) :
 	server = ::gethostbyname(host);
 	if (NULL == server) {
 		::perror("Socket::gethostbyname() failed");
-		throw Exception("Failed to construct Socket :: gethostbyname() failed");
+		throw std::runtime_error("Failed to construct Socket :: gethostbyname() failed");
 	}
 	::memmove((char *) &serv_addr.sin_addr.s_addr, (char *) server->h_addr,
 			server->h_length);

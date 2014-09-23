@@ -13,7 +13,7 @@ extern "C" {
 
 #include "Transceiver.h"
 #include "Common.h"
-#include "Exception.h"
+#include <stdexcept>
 
 /**
  * \brief   UDPSocket for sending and recving UDP Packages
