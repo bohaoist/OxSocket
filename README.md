@@ -1,6 +1,6 @@
 # netlib
 ##### Building:
-<pre><code>
+<pre><code style="padding:2px;margin:0px;" >
     git clone https://github.com/inbre001/netlib.git
     cd netlib/lib/; 
     make;
