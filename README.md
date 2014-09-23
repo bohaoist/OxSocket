@@ -18,12 +18,12 @@ Just include the "Net.h" Header
     Connection *c = serversock.accept();    
 </pre></code>
  ... on the Client
-<pre><code>
+<code>
     std::sting serveraddr = "127.0.0.1"; // either IP or Hostname
     int port = 1234; 
     Socket sock(serveraddr,port);
     Connection *c = sock.connect();
-</pre></code>
+</code>
 ### Using TCP Connections
 .. to send data
 <pre><code>
@@ -89,3 +89,5 @@ Just include the "Net.h" Header
     }
 </pre></code>
  
+### Creating a UDP Connection 
+
