@@ -20,8 +20,8 @@ Now you can initialize TCP and UDP "Sockets"
 ##### TCP Echo Server
 ```C++   
     #include "Net.h"
-    #include &lt;iostream&gt;
-    #include &lt;string&gt;
+    #include <iostream>
+    #include <string>
 
     int main(int argc, char *argv[]) {
     
@@ -32,7 +32,7 @@ Now you can initialize TCP and UDP "Sockets"
         Connection *c = NULL;
     
         while(true){
-            c = serversock.accept();
+            c = serversock.accept(); // wait for Connections
             int nbytes = c->recv(buf, sizeof(buf));
             if (nbytes >= 0) {
                 std::cout << "Echo Server: recved message '" //
@@ -45,19 +45,23 @@ Now you can initialize TCP and UDP "Sockets"
     }
 ```
 ##### TCP Echo Client
-<pre><code>    #include "Net.h"
-    #include  &lt;iostream&gt;
-    #include  &lt;string&gt;
+```C++   
+    #include "Net.h"
+    #include  <iostream>
+    #include  <string>
 
     int main(int argc, char *argv[]) {
     
         int port = 1234;
         char buf[255];
         std::string msg = "Echo";
+        std::string server = "127.0.0.1";
 
-        ServerSocket sock(port);
-        Connection *c = sock.connect();
+        Socket sock(server,port);
+        Connection *c = sock.connect(); 
+
         c->send(msg,msg.size());
+
         int nbytes = c->recv(buf,sizeof(buf));
         if (nbytes >= 0) {
                 std::cout << "Echo Client: recved message '"  //
@@ -67,33 +71,58 @@ Now you can initialize TCP and UDP "Sockets"
 
         return 0;
     }
-</pre></code>
- 
-##### Creating a UDP Socket 
-.. on the Server
-<pre><code>    int port = 1234;
-    UDPSocket udpsock(port);
-</pre></code>
-.. on the Client
-<pre><code>    std::string serveraddr = "127.0.0.1";
-    int port = 1234;
-    UDPSocket udpsock(serveraddr.c_str(), port);
-</pre></code>
+```
 
-###### Using a UDP Socket 
-... sending
-<pre><code>    std::string msg = "Hello";
-    udpsock.send(msg.c_str(),msg.size());
-</pre></code>
-... recving
-<pre><code>    char buf[255];
-    udpsock.recv(buf,sizeof(buf));
-</pre></code>
+##### UDP Echo Server
+ ```C++   
+    #include "Net.h"
+    #include <iostream>
+    #include <string>
 
-#### UDP Examples
-
-##### Echo Server
+    int main(int argc, char *argv[]) {
     
-##### Echo Client
+        int port = 1234;
+        char buf[255];
+
+        UDPSocket udpsock(port);
     
+        while(true){
+            int nbytes = udpsock->recv(buf, sizeof(buf));
+            if (nbytes >= 0) {
+                std::cout << "Echo Server: recved message '" //
+                << std::string(buf,nbytes) << "'" << std::endl;
+            }
+            c->send(buf,nbytes);
+        }
+        return 0;
+    }
+```
+   
+##### UDP Echo Client
+ ```C++   
+    #include "Net.h"
+    #include  <iostream>
+    #include  <string>
+
+    int main(int argc, char *argv[]) {
+    
+        int port = 1234;
+        char buf[255];
+        std::string msg = "Echo";
+        std::string server = "127.0.0.1";
+
+        UDPSocket udpsock(server,port);
+        c->send(msg,msg.size());
+
+        int nbytes = c->recv(buf,sizeof(buf));
+        if (nbytes >= 0) {
+                std::cout << "Echo Client: recved message '"  //
+                << std::string(buf,nbytes) << "'" << std::endl;
+        }
+        delete c;
+
+        return 0;
+    }
+```
+   
 
