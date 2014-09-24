@@ -1,9 +1,5 @@
-# netlib
-## What is it ?
-A Object abstraction Layer for Networking Communications Calls in C++
-
-## What do i need to build it?
-A C++ Compiler and stdlib and some magic.
+## What is netlib ?
+A object abstraction layer for networking communications calls in C++
 
 ## How do i build it?
 ```Bash

@@ -8,6 +8,8 @@ extern "C" {
 #include <fcntl.h>      /* fcntl */
 #include <stdio.h>      /* perror */
 #include <unistd.h>     /*close */
+#include <errno.h>
+#include <netinet/tcp.h> /* TCP_NODELAY */
 }
 
 #include "Common.h"

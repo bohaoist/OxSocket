@@ -23,7 +23,7 @@ void UDPSocket::init(const unsigned int iport, const char *_addr) {
 	char port[nb_digits + 1]; // add one
 	int n = (::sprintf(port, "%d", iport));
 	if (0 > n) {
-		::perror("sprintf");
+		//::perror("sprintf");
 		throw std::runtime_error("Failed to construct UDPSocket :: sprintf failed");
 	}
 
@@ -41,7 +41,7 @@ void UDPSocket::init(const unsigned int iport, const char *_addr) {
 
 	int rv = 0;
 	if ((rv = (::getaddrinfo(_addr, port, &hints, &servinfo)) != 0)) {
-		(::perror(::gai_strerror(rv)));
+		//(::perror(::gai_strerror(rv)));
 		throw std::runtime_error("Failed to construct UDPSocket :: getaddrinfo failed");
 	}
 	cli_addrlen = sizeof(cli_addr);
@@ -49,12 +49,12 @@ void UDPSocket::init(const unsigned int iport, const char *_addr) {
 	for (p = servinfo; p != NULL; p = p->ai_next) {
 		if ((sockfd = ::socket(p->ai_family, p->ai_socktype, p->ai_protocol))
 				== -1) {
-			::perror("socket");
+			//::perror("socket");
 			continue;
 		}
 		if (NULL == _addr) {
 			if (::bind(sockfd, p->ai_addr, p->ai_addrlen) == -1) {
-				::perror("bind");
+				//::perror("bind");
 				::close(sockfd);
 				continue;
 			}
@@ -62,7 +62,7 @@ void UDPSocket::init(const unsigned int iport, const char *_addr) {
 		break;
 	}
 	if (NULL == p) {
-		::perror("UDPSocket::bind failed");
+		//::perror("UDPSocket::bind failed");
 		throw std::runtime_error("Failed to construct UDPSocket :: bind failed");
 	}
 
@@ -88,3 +88,5 @@ int UDPSocket::recv(char* _buf, const unsigned _size, int) {
 	return (::recvfrom(sockfd, (void*) _buf, _size, 0,
 			(struct sockaddr *) &cli_addr, &cli_addrlen));
 }
+
+

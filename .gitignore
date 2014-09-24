@@ -1,4 +1,4 @@
-/lib/*.d
-/lib/*.o
-/lib/*.a
-/lib/*.so
+/*.o
+/*.a
+/*.so
+/*.exe

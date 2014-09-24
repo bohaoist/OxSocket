@@ -8,9 +8,9 @@ extern "C" {
 #include <netinet/in.h> /* htons , INADDR_ANY*/
 #include <netdb.h>
 }
+#include <stdexcept>
 
 #include "SocketFd.h"
-#include <stdexcept>
 /**
  * \brief   General Initialization for a TCP Socket
  * \details General Initialization for a TCP Socket

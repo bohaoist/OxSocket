@@ -1,8 +1,9 @@
 #include "SocketFd.h"
-#include <errno.h>
 
 SocketFd::SocketFd(const int sfd) {
 	sockfd = sfd;
+    int flag = 1; 
+    ::setsockopt(sockfd, IPPROTO_TCP, TCP_NODELAY, (char *) &flag, sizeof(int));
 }
 
 SocketFd::~SocketFd() {
@@ -19,7 +20,7 @@ int SocketFd::mkNonBlocking() {
 	int flags = 0;
 	flags = ::fcntl(sockfd, F_GETFL, 0);
 	if (0 != ::fcntl(sockfd, F_SETFL, flags | O_NONBLOCK)) {
-		::perror("SocketFd::mkNonBlocking::fcntl() failed");
+		//::perror("SocketFd::mkNonBlocking::fcntl() failed");
 		return (1);
 	}
 	return (0);
@@ -29,7 +30,7 @@ int SocketFd::mkBlocking() {
 	int flags = 0;
 	flags = ::fcntl(sockfd, F_GETFL, 0);
 	if (0 != ::fcntl(sockfd, F_SETFL, flags & ~O_NONBLOCK)) {
-		::perror("SocketFd::mkBlocking::fcntl() failed");
+		//::perror("SocketFd::mkBlocking::fcntl() failed");
 		return (1);
 	}
 	return (0);
@@ -40,11 +41,11 @@ int SocketFd::setTimeout(const unsigned sec, const unsigned usec) {
 	tv.tv_sec = sec;
 	tv.tv_usec = usec;
 	if (::setsockopt(sockfd, SOL_SOCKET, SO_RCVTIMEO, (char *) &tv, sizeof tv)) {
-		::perror("SocketFd::setsockopt() failed to set recv timeout");
+		//::perror("SocketFd::setsockopt() failed to set recv timeout");
 		return (1);
 	}
 	if (::setsockopt(sockfd, SOL_SOCKET, SO_SNDTIMEO, (char *) &tv, sizeof tv)) {
-		::perror("SocketFd::setsockopt() failed to set send timeout");
+		//::perror("SocketFd::setsockopt() failed to set send timeout");
 		return (1);
 	}
 

@@ -5,6 +5,8 @@ extern "C" {
 #include <stdio.h>      /* perror */
 #include <sys/unistd.h> /* read(),write() */
 #include <poll.h>       /* poll */
+#include <errno.h>
+#include <stropts.h>
 }
 
 #include "Transceiver.h"

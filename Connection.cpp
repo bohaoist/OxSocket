@@ -1,5 +1,4 @@
 #include "Connection.h"
-#include <errno.h>
 
 Connection::Connection(const int sfd) :
 		SocketFd(sfd) {

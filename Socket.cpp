@@ -6,7 +6,7 @@ Socket::Socket(const char* host, const unsigned portno) :
 	struct hostent *server;
 	server = ::gethostbyname(host);
 	if (NULL == server) {
-		::perror("Socket::gethostbyname() failed");
+		//::perror("Socket::gethostbyname() failed");
 		throw std::runtime_error("Failed to construct Socket :: gethostbyname() failed");
 	}
 	::memmove((char *) &serv_addr.sin_addr.s_addr, (char *) server->h_addr,
@@ -18,11 +18,11 @@ Socket::~Socket() {
 }
 
 Connection* Socket::connect() {
-	if (0
-			!= ::connect(sockfd, (struct sockaddr*) &serv_addr,
-					sizeof(serv_addr))) {
-		perror("Socket::connect() failed");
-		return NULL;
+	if (0 != ::connect(sockfd, (struct sockaddr*) &serv_addr, sizeof(serv_addr))) {
+		//perror("Socket::connect() failed");
+		return (NULL);
 	}
 	return (new Connection(sockfd));
 }
+
+

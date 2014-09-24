@@ -10,10 +10,10 @@ extern "C" {
 }
 
 #include <cmath>  // log10
+#include <stdexcept>
 
 #include "Transceiver.h"
 #include "Common.h"
-#include <stdexcept>
 
 /**
  * \brief   UDPSocket for sending and recving UDP Packages
