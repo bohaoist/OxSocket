@@ -13,34 +13,29 @@ Just include the "Net.h" Header
 </code></pre>
 ###### Create a TCP Connection 
  ... on the Server
-<pre><code>
-    int port = 1234;
+<pre><code>    int port = 1234;
     ServerSocket serversock(port);    
     Connection *c = serversock.accept();    
 </pre></code>
  ... on the Client
-<pre><code>
-    std::sting serveraddr = "127.0.0.1"; // either IP or Hostname
+<pre><code>    std::sting serveraddr = "127.0.0.1"; // either IP or Hostname
     int port = 1234; 
     Socket sock(serveraddr,port);
     Connection *c = sock.connect();
 </pre></code>
 ##### Using TCP Connections
 .. to send data
-<pre><code>
-    std::string msg = "Hello World\n";
+<pre><code>    std::string msg = "Hello World\n";
     c->send(msg.c_str(),msg.size());
 </pre></code>
 .. to recv data
-<pre><code>
-    int bsize = 255;
+<pre><code>    int bsize = 255;
     char buf[bsize];
     c->recv(buf,bsize);
 </pre></code>
 #### Examples
-##### Echo Server
-<pre><code>
-    #include "Net.h"
+##### TCP Echo Server
+<pre><code>    #include "Net.h"
     #include <iostream>
     #include <string>
 
@@ -66,9 +61,8 @@ Just include the "Net.h" Header
         return 0;
     }
 </pre></code>
-##### Echo Client
-<pre><code>
-    #include "Net.h"
+##### TCP Echo Client
+<pre><code>    #include "Net.h"
     #include <iostream>
     #include <string>
 
@@ -104,14 +98,15 @@ Just include the "Net.h" Header
 </pre></code>
 
 ###### Using a UDP Socket 
-.. sending
+... sending
 <pre><code>    std::string msg = "Hello";
     udpsock.send(msg.c_str(),msg.size());
 </pre></code>
-..recving
+... recving
 <pre><code>   char buf[255];
     udpsock.recv(buf,sizeof(buf));
 </pre></code>
 
 #####
+
 
