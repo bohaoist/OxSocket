@@ -2,43 +2,24 @@
 ##### What is it ?
 A Object abstraction Layer for Networking Communications Calls in C++
 
-#Quick Start:
-Have a look at the Example Section below.
+##### What do i need to build it?
+A C++ Compiler and stdlib and some magic.
 
-##### Build:
+##### How do i build it?
 <pre><code>    git clone https://github.com/inbre001/netlib.git
     cd netlib/lib/
     make
 </code></pre>
-##### How to use? 
+##### How do i use it? 
 Just include the "Net.h" Header
 <pre><code>    #include "Net.h"
 </code></pre>
-###### Create a TCP Connection 
- ... on the Server
-<pre><code>    int port = 1234;
-    ServerSocket serversock(port);    
-    Connection *c = serversock.accept();    
-</pre></code>
- ... on the Client
-<pre><code>    std::sting serveraddr = "127.0.0.1"; // either IP or Hostname
-    int port = 1234; 
-    Socket sock(serveraddr,port);
-    Connection *c = sock.connect();
-</pre></code>
-##### Using TCP Connections
-.. to send data
-<pre><code>    std::string msg = "Hello World\n";
-    c->send(msg.c_str(),msg.size());
-</pre></code>
-.. to recv data
-<pre><code>    int bsize = 255;
-    char buf[bsize];
-    c->recv(buf,bsize);
-</pre></code>
+Now you can initialize TCP and UDP "Sockets"
+
 #### Examples
 ##### TCP Echo Server
-<pre><code>    #include "Net.h"
+```C++   
+    #include "Net.h"
     #include &lt;iostream&gt;
     #include &lt;string&gt;
 
@@ -62,7 +43,7 @@ Just include the "Net.h" Header
         }
         return 0;
     }
-</pre></code>
+```
 ##### TCP Echo Client
 <pre><code>    #include "Net.h"
     #include  &lt;iostream&gt;
@@ -109,6 +90,10 @@ Just include the "Net.h" Header
     udpsock.recv(buf,sizeof(buf));
 </pre></code>
 
-#####
+#### UDP Examples
 
+##### Echo Server
+    
+##### Echo Client
+    
 
