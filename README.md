@@ -1,13 +1,16 @@
 # netlib
 ##### What is it ?
-
 A Object abstraction Layer for Networking Communications Calls in C++
+
+#Quick Start:
+Have a look at the Example Section below.
+
 ##### Build:
 <pre><code>    git clone https://github.com/inbre001/netlib.git
     cd netlib/lib/
     make
 </code></pre>
-##### Use: 
+##### How to use? 
 Just include the "Net.h" Header
 <pre><code>    #include "Net.h"
 </code></pre>
@@ -57,7 +60,6 @@ Just include the "Net.h" Header
             c->send(buf,nbytes);
             delete c;
         }
-
         return 0;
     }
 </pre></code>
@@ -103,7 +105,7 @@ Just include the "Net.h" Header
     udpsock.send(msg.c_str(),msg.size());
 </pre></code>
 ... recving
-<pre><code>   char buf[255];
+<pre><code>    char buf[255];
     udpsock.recv(buf,sizeof(buf));
 </pre></code>
 
