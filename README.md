@@ -3,12 +3,11 @@
 
 A Object abstraction Layer for Networking Communications Calls in C++
 ##### Build:
-<pre>  
-    git clone https://github.com/inbre001/netlib.git
+<pre><code>    git clone https://github.com/inbre001/netlib.git
     cd netlib/lib/
     make
-</pre>
-#### Use: 
+</code></pre>
+##### Use: 
 Just include the "Net.h" Header
 <pre><code>
 #include "Net.h"
