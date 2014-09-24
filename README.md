@@ -9,10 +9,9 @@ A Object abstraction Layer for Networking Communications Calls in C++
 </code></pre>
 ##### Use: 
 Just include the "Net.h" Header
-<pre><code>
-#include "Net.h"
+<pre><code>    #include "Net.h"
 </code></pre>
-###### Creating a TCP Connection 
+###### Create a TCP Connection 
  ... on the Server
 <pre><code>
     int port = 1234;
@@ -57,7 +56,8 @@ Just include the "Net.h" Header
             c = serversock.accept();
             int nbytes = c->recv(buf, sizeof(buf));
             if (nbytes >= 0) {
-                std::cout << "Echo Server: recved message '" << std::string(buf,nbytes) << "'" << std::endl;
+                std::cout << "Echo Server: recved message '" //
+                << std::string(buf,nbytes) << "'" << std::endl;
             }
             c->send(buf,nbytes);
             delete c;
@@ -83,7 +83,8 @@ Just include the "Net.h" Header
         c->send(msg,msg.size());
         int nbytes = c->recv(buf,sizeof(buf));
         if (nbytes >= 0) {
-                std::cout << "Echo Client: recved message '" << std::string(buf,nbytes) << "'" << std::endl;
+                std::cout << "Echo Client: recved message '"  //
+                << std::string(buf,nbytes) << "'" << std::endl;
         }
         delete c;
 
@@ -91,5 +92,26 @@ Just include the "Net.h" Header
     }
 </pre></code>
  
-##### Creating a UDP Connection 
+##### Creating a UDP Socket 
+.. on the Server
+<pre><code>    int port = 1234;
+    UDPSocket udpsock(port);
+</pre></code>
+.. on the Client
+<pre><code>    std::string serveraddr = "127.0.0.1";
+    int port = 1234;
+    UDPSocket udpsock(serveraddr.c_str(), port);
+</pre></code>
+
+###### Using a UDP Socket 
+.. sending
+<pre><code>    std::string msg = "Hello";
+    udpsock.send(msg.c_str(),msg.size());
+</pre></code>
+..recving
+<pre><code>   char buf[255];
+    udpsock.recv(buf,sizeof(buf));
+</pre></code>
+
+#####
 
