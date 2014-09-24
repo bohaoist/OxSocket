@@ -8,12 +8,12 @@ A Object abstraction Layer for Networking Communications Calls in C++
     cd netlib/lib/
     make
 </pre>
-## Use: 
+#### Use: 
 Just include the "Net.h" Header
 <pre><code>
 #include "Net.h"
 </code></pre>
-### Creating a TCP Connection 
+###### Creating a TCP Connection 
  ... on the Server
 <pre><code>
     int port = 1234;
@@ -27,7 +27,7 @@ Just include the "Net.h" Header
     Socket sock(serveraddr,port);
     Connection *c = sock.connect();
 </pre></code>
-### Using TCP Connections
+##### Using TCP Connections
 .. to send data
 <pre><code>
     std::string msg = "Hello World\n";
@@ -39,8 +39,8 @@ Just include the "Net.h" Header
     char buf[bsize];
     c->recv(buf,bsize);
 </pre></code>
-## Examples
-### Echo Server
+#### Examples
+##### Echo Server
 <pre><code>
     #include "Net.h"
     #include <iostream>
@@ -67,7 +67,7 @@ Just include the "Net.h" Header
         return 0;
     }
 </pre></code>
-### Echo Client
+##### Echo Client
 <pre><code>
     #include "Net.h"
     #include <iostream>
@@ -92,5 +92,5 @@ Just include the "Net.h" Header
     }
 </pre></code>
  
-### Creating a UDP Connection 
+##### Creating a UDP Connection 
 
