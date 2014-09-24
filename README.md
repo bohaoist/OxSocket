@@ -6,14 +6,16 @@ A Object abstraction Layer for Networking Communications Calls in C++
 A C++ Compiler and stdlib and some magic.
 
 ##### How do i build it?
-<pre><code>    git clone https://github.com/inbre001/netlib.git
+```Bash   
+    git clone https://github.com/inbre001/netlib.git
     cd netlib/lib/
     make
-</code></pre>
+```
 ##### How do i use it? 
 Just include the "Net.h" Header
-<pre><code>    #include "Net.h"
-</code></pre>
+```C++   
+#include "Net.h"
+```
 Now you can initialize TCP and UDP "Sockets"
 
 #### Examples
