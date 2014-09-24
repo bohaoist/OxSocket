@@ -1,24 +1,27 @@
 # netlib
-##### What is it ?
+## What is it ?
 A Object abstraction Layer for Networking Communications Calls in C++
 
-##### What do i need to build it?
+## What do i need to build it?
 A C++ Compiler and stdlib and some magic.
 
-##### How do i build it?
-```Bash   
-    git clone https://github.com/inbre001/netlib.git
-    cd netlib/lib/
-    make
+## How do i build it?
+```Bash
+    git clone https://github.com/inbre001/netlib.git;
+    cd netlib/lib/;
+    make;
 ```
 ##### How do i use it? 
-Just include the "Net.h" Header
+Just include the "Net.h" Header in your Code.
 ```C++   
 #include "Net.h"
 ```
 Now you can initialize TCP and UDP "Sockets"
 
 #### Examples
+
+Here are some simple Examples 
+
 ##### TCP Echo Server
 ```C++   
     #include "Net.h"
@@ -127,4 +130,10 @@ Now you can initialize TCP and UDP "Sockets"
     }
 ```
    
+## Advanced Stuff
+
+### Socket Timeouts
+   TODO  write Example
+### Async. Communication (Blocking an Non-Blocking)
+   TODO  write Example
 
