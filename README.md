@@ -36,8 +36,8 @@ Just include the "Net.h" Header
 #### Examples
 ##### TCP Echo Server
 <pre><code>    #include "Net.h"
-    #include <iostream>
-    #include <string>
+    #include &lt;iostream&gt;
+    #include &lt;string&gt;
 
     int main(int argc, char *argv[]) {
     
@@ -63,8 +63,8 @@ Just include the "Net.h" Header
 </pre></code>
 ##### TCP Echo Client
 <pre><code>    #include "Net.h"
-    #include <iostream>
-    #include <string>
+    #include  &lt;iostream&gt;
+    #include  &lt;string&gt;
 
     int main(int argc, char *argv[]) {
     
