@@ -6,7 +6,7 @@ int main(int argc, char *argv[]) {
 
     int port = 1234;
     char buf[255];
-    std::string msg = "Echo";
+    std::string msg = "Echo das ist eine Testnachricht ... da dif fucking das";
     std::string server = "127.0.0.1";
 
     Socket sock(server.c_str(),port);

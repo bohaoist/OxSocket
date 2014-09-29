@@ -1,10 +1,9 @@
-#ifndef SOCKET_H_
-#define SOCKET_H_
+#ifndef TCPCLIENTSOCKET_H_
+#define TCPCLIENTSOCKET_H_
 
 #include "Connection.h"
 #include "TCPSocket.h"
-
-#include <stdexcept>
+//#include "Exception.h"
 
 extern "C" {
 #include <stdio.h>      /* perror         */
@@ -16,13 +15,13 @@ extern "C" {
 /**
  * \brief   TCP Connect Socket
  * \details TCP Connect Socket
- * \author  Ingo Breuer (ingo.breuer@hhu.de)
+ * \author  Ingo Breuer (Ingo_Breuer@t-online.de)
  */
-class Socket: public TCPSocket {
+class TCPClientSocket: public TCPSocket {
 public:
 
-	Socket(const char*, const unsigned);
-	virtual ~Socket();
+	TCPClientSocket(const char*, const unsigned);
+	virtual ~TCPClientSocket();
 
 	/**
 	 * \brief   Connect to a ServerSocket

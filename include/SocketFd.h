@@ -7,30 +7,23 @@ extern "C" {
 #include <sys/socket.h> /* setsockopt */
 #include <fcntl.h>      /* fcntl */
 #include <stdio.h>      /* perror */
-#include <unistd.h>     /*close */
-#include <errno.h>
-#include <netinet/tcp.h> /* TCP_NODELAY */
+#include <unistd.h>     /* close */
 }
-
-#include "Common.h"
+#include <stdexcept>
 /**
  * \brief    Socket File Descriptor
  * \details  Socket File Descriptor
- * \author   Ingo Breuer (ingo.breuer@hhu.de)
+ * \author   Ingo Breuer (Ingo_Breuer@t-online.de)
  */
-class SocketFd: public Common {
+class SocketFd {
 protected:
-	struct sockaddr_in serv_addr;
-	socklen_t serv_addrlen;
-
+	int sockfd; // Socket FileDescriptor
 	SocketFd(const int);
-
 public:
 	virtual ~SocketFd();
 	int mkNonBlocking();
 	int mkBlocking();
 	int setTimeout(const unsigned, const unsigned = 0);
-	char *getServerAddr();
 
 };
 #endif

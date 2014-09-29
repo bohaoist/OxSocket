@@ -2,6 +2,7 @@
 
 Connection::Connection(const int sfd) :
 		SocketFd(sfd) {
+	sum = n = 0;
 	ufds.fd = sfd;
 	ufds.events = POLLIN | POLLOUT | POLLPRI;
 }
@@ -25,7 +26,7 @@ do { \
 return (sum); \
 
 
-int Connection::send(const char *buf, const unsigned size, const int msec) {
+int Connection::send(const char *buf, const unsigned size, const int) {
 	WEADMACRO(write)
 }
 

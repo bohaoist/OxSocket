@@ -8,19 +8,27 @@ extern "C" {
 #include <netinet/in.h> /* htons , INADDR_ANY*/
 #include <netdb.h>
 }
-#include <stdexcept>
 
 #include "SocketFd.h"
+#include <stdexcept>
+//#include "Exception.h"
+#include "Common_tcp_udp_unix.h"
+#include "Common_tcp_udp.h"
 /**
  * \brief   General Initialization for a TCP Socket
  * \details General Initialization for a TCP Socket
- * \author  Ingo Breuer (ingo.breuer@hhu.de)
+ * \author  Ingo Breuer (Ingo_Breuer@t-online.de)
  */
-class TCPSocket: public SocketFd {
+class TCPSocket: public SocketFd,
+		public Common_tcp_udp_unix,
+		public Common_tcp_udp {
 protected:
+	struct sockaddr_in serv_addr;
+	socklen_t serv_addrlen;
 	//bool isValidIpAddress(const char *);
 	TCPSocket(const unsigned, const char* = NULL);
 public:
+	char *getServerAddr();
 	virtual ~TCPSocket();
 };
 #endif

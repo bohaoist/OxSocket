@@ -15,7 +15,7 @@ int main(int argc, char *argv[]) {
         c = serversock.accept(); // wait for Connections
         c->setTimeout(0, 0);
         std::cout << "got connection" << std::endl;
-        int nbytes = c->recv(buf, 4);
+        int nbytes = c->recv(buf, sizeof(buf));
         std::cout << "recved " << nbytes << " Bytes" << std::endl;
         if (nbytes >= 0) {
             std::cout << "Echo Server: recved message '" //
