@@ -8,14 +8,10 @@ A object abstraction layer for networking communications calls in C++
     make;
 ```
 ##### How do i use it? 
-Just include 
-```C++   
-#include "Socket.h"
-```
-and you can initialize TCP, UDP or UNIX Sockets.
+Just #include "Socket.h" and you can initialize TCP, UDP or UNIX Sockets.
 
-## Simple Examples
+## Examples
 
-* [TCP Echo Server](examples/TCPEchoServer.cpp) and [Client](examples/TCPEchoClient.cpp)
-* [UDP Echo Server](examples/UDPEchoServer.cpp) and [Client](examples/UDPEchoClient.cpp)
-* [UNIX Echo Server](examples/UNIXEchoServer.cpp) and [Client](examples/UNIXEchoClient.cpp)
+*  TCP [Server](examples/TCPEchoServer.cpp) and [Client](examples/TCPEchoClient.cpp)
+*  UDP [Server](examples/UDPEchoServer.cpp) and [Client](examples/UDPEchoClient.cpp)
+* UNIX [Server](examples/UNIXEchoServer.cpp) and [Client](examples/UNIXEchoClient.cpp)
