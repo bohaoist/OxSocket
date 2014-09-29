@@ -7,10 +7,11 @@ extern "C" {
 #include <poll.h>       /* poll */
 }
 
+#include <SocketFd.h>
 #include <Transceiver.h>
 #include <SocketFd.h>
 
-class Connection: public SocketFd, public Transceiver {
+class Connection:  public Transceiver, public SocketFd {
 private:
 	int n;
 	unsigned int sum;

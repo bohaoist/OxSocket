@@ -1,8 +1,8 @@
 #include <Connection.h>
 
-Connection::Connection(const int _fd) {
+Connection::Connection(const int fd) {
 	sum = n = 0;
-	ufds.fd = _fd;
+	ufds.fd = sfd = fd;
 	ufds.events = POLLIN | POLLOUT | POLLPRI;
 }
 

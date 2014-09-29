@@ -1,7 +1,7 @@
 #include <SocketFd.h>
 
 SocketFd::SocketFd() {
-	sfd = -1;
+	this->sfd = -1;
 }
 
 SocketFd::~SocketFd() {
