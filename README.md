@@ -14,12 +14,8 @@ Just include
 ```
 and you can initialize TCP, UDP or UNIX Sockets.
 
-#### Simple Examples
+## Simple Examples
 
-* [TCP Echo Server](examples/TCPEchoServer.cpp)
-* [TCP Echo Client](examples/TCPEchoClient.cpp)
-* [UDP Echo Server](examples/UDPEchoServer.cpp)
-* [UDP Echo Client](examples/UDPEchoClient.cpp)
-* [UNIX Echo Server](examples/UNIXEchoServer.cpp)
-* [UNIX Echo Client](examples/UNIXEchoClient.cpp)
-
+* [TCP Echo Server](examples/TCPEchoServer.cpp) and [Client](examples/TCPEchoClient.cpp)
+* [UDP Echo Server](examples/UDPEchoServer.cpp) and [Client](examples/UDPEchoClient.cpp)
+* [UNIX Echo Server](examples/UNIXEchoServer.cpp) and [Client](examples/UNIXEchoClient.cpp)
