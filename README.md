@@ -6,16 +6,15 @@ A object abstraction layer for networking communications calls in C++
     git clone https://github.com/inbre001/Socket.git;
     cd Socket/bin;
     make;
-
 ```
 ##### How do i use it? 
-Just include the "Socket.h" Header in your Code.
+Just include 
 ```C++   
 #include "Socket.h"
 ```
-Now you can initialize TCP, UDP or UNIX Sockets
+and you can initialize TCP, UDP or UNIX Sockets.
 
-#### Examples
+#### Simple Examples
 
 * [TCP Echo Server](examples/TCPEchoServer.cpp)
 * [TCP Echo Client](examples/TCPEchoClient.cpp)
@@ -23,11 +22,4 @@ Now you can initialize TCP, UDP or UNIX Sockets
 * [UDP Echo Client](examples/UDPEchoClient.cpp)
 * [UNIX Echo Server](examples/UNIXEchoServer.cpp)
 * [UNIX Echo Client](examples/UNIXEchoClient.cpp)
-
-### Advanced Stuff
-
-#### Socket Timeouts
-   TODO  write Example
-#### Async. Communication (Blocking an Non-Blocking)
-   TODO  write Example
 
