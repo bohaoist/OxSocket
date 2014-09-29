@@ -38,7 +38,7 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: libSocket.so
+all: libSocket.so examples
 
 # Tool invocations
 libSocket.so: $(OBJS) $(USER_OBJS)
@@ -48,9 +48,21 @@ libSocket.so: $(OBJS) $(USER_OBJS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
+
+examples: 
+	@echo 'Building target: $@'
+	@echo 'Invoking: GCC C++ Linker'
+	g++ -I ../include/ -lSocket -L. ../examples/TCPEchoServer.cpp  -o TCPEchoServer.exe
+	g++ -I ../include/ -lSocket -L. ../examples/TCPEchoClient.cpp  -o TCPEchoClient.exe
+	g++ -I ../include/ -lSocket -L. ../examples/UDPEchoServer.cpp  -o UDPEchoServer.exe
+	g++ -I ../include/ -lSocket -L. ../examples/UDPEchoClient.cpp  -o UDPEchoClient.exe
+	@echo 'Finished building target: $@'
+	@echo ' '
+
+
 # Other Targets
 clean:
-	-$(RM) $(LIBRARIES)$(CC_DEPS)$(C++_DEPS)$(C_UPPER_DEPS)$(CXX_DEPS)$(OBJS)$(CPP_DEPS)$(C_DEPS) libSocket.so
+	-$(RM) $(LIBRARIES)$(CC_DEPS)$(C++_DEPS)$(C_UPPER_DEPS)$(CXX_DEPS)$(OBJS)$(CPP_DEPS)$(C_DEPS) libSocket.so *.exe
 	-@echo ' '
 
 .PHONY: all clean dependents

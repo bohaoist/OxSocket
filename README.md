@@ -1,11 +1,12 @@
-## What is netlib ?
+## What is libSocket ?
 A object abstraction layer for networking communications calls in C++
 
 ## How do i build it?
 ```Bash
     git clone https://github.com/inbre001/Socket.git;
-    cd Socket;
-    ./build.sh;
+    cd Socket/bin;
+    make;
+
 ```
 ##### How do i use it? 
 Just include the "Socket.h" Header in your Code.
@@ -23,11 +24,10 @@ Now you can initialize TCP, UDP or UNIX Sockets
 * [UNIX Echo Server](examples/UNIXEchoServer.cpp)
 * [UNIX Echo Client](examples/UNIXEchoClient.cpp)
 
+### Advanced Stuff
 
-## Advanced Stuff
-
-### Socket Timeouts
+#### Socket Timeouts
    TODO  write Example
-### Async. Communication (Blocking an Non-Blocking)
+#### Async. Communication (Blocking an Non-Blocking)
    TODO  write Example
 
