@@ -1,9 +1,8 @@
-#include "Connection.h"
+#include <Connection.h>
 
-Connection::Connection(const int sfd) :
-		SocketFd(sfd) {
+Connection::Connection(const int _fd) {
 	sum = n = 0;
-	ufds.fd = sfd;
+	ufds.fd = _fd;
 	ufds.events = POLLIN | POLLOUT | POLLPRI;
 }
 
@@ -13,7 +12,7 @@ Connection::~Connection() {
 #define WEADMACRO(function) \
 n = sum = 0; \
 do { \
-	n = ::function(sockfd, buf + sum, size - sum); \
+	n = ::function(ufds.fd, buf + sum, size - sum); \
 	if (n == 0) { \
 		return (sum); /* End of File/Stream */\
 	} else if (n < 0) { \

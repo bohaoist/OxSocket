@@ -1,12 +1,12 @@
-#include "UNIXSocket.h"
+#include <UNIXSocket.h>
 
 UNIXSocket::UNIXSocket(const char* _sock_path) :
-		SocketFd(socket(AF_UNIX, SOCK_STREAM, 0)) {
+		Common_tcp_unix(sfd, AF_UNIX) {
 
-	local.sun_family = AF_UNIX;
-	strcpy(local.sun_path, _sock_path);
+	sock.sun_family = AF_UNIX;
+	strcpy(sock.sun_path, _sock_path);
 
-	this->cli_addrlen = strlen(local.sun_path) + sizeof(local.sun_family);
+	this->addrlen = strlen(sock.sun_path) + sizeof(sock.sun_family);
 }
 
 UNIXSocket::~UNIXSocket() {

@@ -10,19 +10,15 @@ extern "C" {
 #include <unistd.h>     /* close */
 }
 #include <stdexcept>
-/**
- * \brief    Socket File Descriptor
- * \details  Socket File Descriptor
- * \author   Ingo Breuer (Ingo_Breuer@t-online.de)
- */
+
 class SocketFd {
 protected:
-	int sockfd; // Socket FileDescriptor
-	SocketFd(const int);
+	int sfd;
+	SocketFd();
 public:
 	virtual ~SocketFd();
-	int mkNonBlocking();
-	int mkBlocking();
+	int setNonBlocking();
+	int setBlocking();
 	int setTimeout(const unsigned, const unsigned = 0);
 
 };

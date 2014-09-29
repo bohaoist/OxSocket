@@ -3,12 +3,12 @@
 
 extern "C" {
 #include <netinet/in.h> /* sockaddr_in */
-#include <arpa/inet.h>
+#include <arpa/inet.h>  /* inet_ntoa */
 }
 
 class Common_tcp_udp {
 protected:
-	struct sockaddr_in cli_addr;
+	sockaddr_in caddr;
 	Common_tcp_udp();
 public:
 	virtual ~Common_tcp_udp();

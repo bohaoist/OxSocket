@@ -6,6 +6,5 @@
 #include "UNIXServerSocket.h"
 #include "UNIXClientSocket.h"
 #include "UDPSocket.h"
-#include "Connection.h"
 
 #endif

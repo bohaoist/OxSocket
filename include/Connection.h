@@ -2,19 +2,19 @@
 #define CONNECTION_H_
 
 extern "C" {
-//#include <stdio.h>      /* perror */
-//#include <sys/unistd.h> /* read(),write() */
+#include <stdio.h>      /* perror */
+#include <sys/unistd.h> /* read(),write() */
 #include <poll.h>       /* poll */
 }
 
-#include "Transceiver.h"
-#include "SocketFd.h"
+#include <Transceiver.h>
+#include <SocketFd.h>
 
 class Connection: public SocketFd, public Transceiver {
 private:
 	int n;
-	unsigned sum;
-	struct pollfd ufds;
+	unsigned int sum;
+	pollfd ufds;
 	int _poll(const int = -1);
 
 public:

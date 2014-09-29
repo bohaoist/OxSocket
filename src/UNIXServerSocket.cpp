@@ -1,27 +1,19 @@
-/*
- * UNIXServerSocket.cpp
- *
- *  Created on: Sep 29, 2014
- *      Author: inbre001
- */
-
-#include "UNIXServerSocket.h"
+#include <UNIXServerSocket.h>
 
 UNIXServerSocket::UNIXServerSocket(const char* path) :
 		UNIXSocket(path) {
 
-	unlink(local.sun_path);
+	unlink(sock.sun_path);
 
-	if (::bind(sockfd, (struct sockaddr *) &local, this->cli_addrlen) == -1) {
-		perror("bind");
-//		exit(1);
+	if (::bind(sfd, (sockaddr *) &sock, this->addrlen) == -1) {
+		throw std::runtime_error("UNIXServerSocket::bind() failed");
 	}
 
-	cli_addrlen = sizeof(local);
+	addrlen = sizeof(sock);
 
-	if (::listen(sockfd, 5) == -1) {
+	if (::listen(sfd, 5) == -1) {
 		perror("listen");
-//		exit(1);
+		throw std::runtime_error("UNIXServerSocket::listen() failed");
 	}
 
 }
@@ -30,11 +22,9 @@ UNIXServerSocket::~UNIXServerSocket() {
 }
 
 Connection* UNIXServerSocket::accept() {
-	const int newsfd = ::accept(sockfd, (struct sockaddr *) &local,
-			&cli_addrlen);
+	const int newsfd = ::accept(sfd, (sockaddr *) &sock, &addrlen);
 
 	if (0 > newsfd) {
-//		::perror("ServerSocket::accept() failed");
 		return (NULL);
 	}
 

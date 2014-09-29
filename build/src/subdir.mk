@@ -4,9 +4,12 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../src/ClientSocket.cpp \
 ../src/Common_tcp_udp.cpp \
 ../src/Common_tcp_udp_unix.cpp \
+../src/Common_tcp_unix.cpp \
 ../src/Connection.cpp \
+../src/ServerSocket.cpp \
 ../src/SocketFd.cpp \
 ../src/TCPClientSocket.cpp \
 ../src/TCPServerSocket.cpp \
@@ -18,9 +21,12 @@ CPP_SRCS += \
 ../src/UNIXSocket.cpp 
 
 OBJS += \
+./src/ClientSocket.o \
 ./src/Common_tcp_udp.o \
 ./src/Common_tcp_udp_unix.o \
+./src/Common_tcp_unix.o \
 ./src/Connection.o \
+./src/ServerSocket.o \
 ./src/SocketFd.o \
 ./src/TCPClientSocket.o \
 ./src/TCPServerSocket.o \
@@ -32,9 +38,12 @@ OBJS += \
 ./src/UNIXSocket.o 
 
 CPP_DEPS += \
+./src/ClientSocket.d \
 ./src/Common_tcp_udp.d \
 ./src/Common_tcp_udp_unix.d \
+./src/Common_tcp_unix.d \
 ./src/Connection.d \
+./src/ServerSocket.d \
 ./src/SocketFd.d \
 ./src/TCPClientSocket.d \
 ./src/TCPServerSocket.d \

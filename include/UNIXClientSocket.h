@@ -1,21 +1,20 @@
-/*
- * UNIXClientSocket.h
- *
- *  Created on: Sep 29, 2014
- *      Author: inbre001
- */
-
 #ifndef UNIXCLIENTSOCKET_H_
 #define UNIXCLIENTSOCKET_H_
 
+extern "C" {
+#include <string.h> /* perror */
+#include <sys/socket.h> /* connect */
+}
+
 #include <UNIXSocket.h>
 #include <Connection.h>
+#include <ClientSocket.h>
 
-class UNIXClientSocket: public UNIXSocket {
+class UNIXClientSocket: public UNIXSocket, public ClientSocket {
 public:
-	UNIXClientSocket(const char* path);
+	UNIXClientSocket(const char*);
 	virtual ~UNIXClientSocket();
 	Connection* connect();
 };
 
-#endif /* UNIXCLIENTSOCKET_H_ */
+#endif

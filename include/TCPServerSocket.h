@@ -1,30 +1,21 @@
-#ifndef SERVERSOCKET_H_
-#define SERVERSOCKET_H_
+#ifndef TCPSERVERSOCKET_H_
+#define TCPSERVERSOCKET_H_
 
 extern "C" {
-//#include <stdio.h> /*perror */
-//#include <sys/socket.h> /* accept , listen, setsockopt, bind */
+#include <stdio.h>      /*perror */
+#include <sys/socket.h> /* accept , listen, setsockopt, bind */
 }
-#include "Connection.h"
-#include "TCPSocket.h"
-//#include "Exception.h"
 
-/**
- * \brief   ServerSocket for accpeting TCP Connections
- * \details ServerSocket for accpeting TCP Connections
- */
-class TCPServerSocket: public TCPSocket {
+#include <stdexcept>
+
+#include <Connection.h>
+#include <TCPSocket.h>
+#include <ServerSocket.h>
+
+class TCPServerSocket: public ServerSocket, public TCPSocket {
 public:
-
 	TCPServerSocket(const unsigned);
 	virtual ~TCPServerSocket();
-
-	/**
-	 * \brief   Accepts connections on the ServerSocket
-	 * \details Accepts connections on the ServerSocket
-	 * \return  A Pointer to a Connection Instanze to send/recv data
-	 *          from the connected Client
-	 */
 	Connection* accept();
 };
 

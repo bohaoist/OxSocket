@@ -1,4 +1,4 @@
-#include "TCPSocket.h"
+#include <TCPSocket.h>
 
 TCPSocket::~TCPSocket() {
 }
@@ -8,29 +8,34 @@ char* TCPSocket::getServerAddr() {
 }
 
 //bool TCPSocket::isValidIpAddress(const char *ipAddress) {
-//	struct sockaddr_in sa;
+//	sockaddr_in sa;
 //	int result = inet_pton(AF_INET, ipAddress, &(sa.sin_addr));
 //	return result != 0;
 //}
 
-TCPSocket::TCPSocket(const unsigned portno, const char *hostaddr) :
-		SocketFd(::socket(AF_INET, SOCK_STREAM, 0)) {
+TCPSocket::TCPSocket(const unsigned portno, const char *addr):
+		Common_tcp_unix(sfd,AF_INET)
+		{
+//	sfd = ::socket(AF_INET, SOCK_STREAM, 0);
+//	if (sfd == -1) {
+//		throw std::runtime_error("TCPSocket::socket() failed");
+//	}
 
-	this->serv_addrlen = 0;
+	this->saddrlen = 0;
 
-	hostent * record = NULL;
-	if (NULL != hostaddr) {
-		record = gethostbyname(hostaddr);
-		if (NULL == record) {
-			throw std::runtime_error(
-					"Failed to construct TCPSocket :: gethostbyname() failed");
+	hostent * rec = NULL;
+	if (NULL != addr) {
+		rec = gethostbyname(addr);
+		if (NULL == rec) {
+			throw std::runtime_error("TCPSocket::gethostbyname() failed");
 		}
 	}
 
 	::memset((char *) &(serv_addr), '\0', sizeof(serv_addr));
 	serv_addr.sin_family = AF_INET;
-	serv_addr.sin_port = htons(portno);
-	serv_addr.sin_addr.s_addr = (
-			(NULL == hostaddr) ? INADDR_ANY : *(in_addr_t*) record->h_addr);
+	serv_addr.sin_port = (::htons(portno));
+	serv_addr.sin_addr.s_addr = //
+			((NULL == addr) ? INADDR_ANY : *(in_addr_t*) rec->h_addr);
+
 		}
 

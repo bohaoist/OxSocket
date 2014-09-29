@@ -4,7 +4,7 @@ A object abstraction layer for networking communications calls in C++
 ## How do i build it?
 ```Bash
     git clone https://github.com/inbre001/Socket.git;
-    cd Socket/bin;
+    cd Socket/build;
     make;
 ```
 ##### How do i use it? 

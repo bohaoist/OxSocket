@@ -1,11 +1,6 @@
 #ifndef TRANSCEIVER_H_
 #define TRANSCEIVER_H_
 
-/**
- * \brief    Parent for UDP and TCP ...
- * \details  Parent for UDP and TCP ...  not allways usefull, but sometimes it might be.
- * \author   Ingo Breuer (ingo_breuer@t-online.de)
- */
 class Transceiver {
 protected:
 	Transceiver();

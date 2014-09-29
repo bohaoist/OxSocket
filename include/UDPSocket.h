@@ -9,28 +9,22 @@ extern "C" {
 #include <unistd.h>     /* close */
 }
 
-#include "Transceiver.h"
-#include "Common_tcp_udp.h"
-#include "Common_tcp_udp_unix.h"
-//#include "Exception.h"
-#include "SocketFd.h"
 #include <cmath>
 #include <stdexcept>
-/**
- * \brief   UDPSocket for sending and recving UDP Packages
- * \details UDPSocket for sending and recving UDP Packages
- * \author  Ingo Breuer (Ingo_Breuer@t-online.de)
- */
+
+#include <Transceiver.h>
+#include <Common_tcp_udp.h>
+#include <Common_tcp_udp_unix.h>
+#include <SocketFd.h>
+
 class UDPSocket: public SocketFd,
 		public Common_tcp_udp_unix,
 		public Common_tcp_udp,
 		public Transceiver {
 
 private:
-	struct addrinfo *p;
-
+	addrinfo *p;
 public:
-
 	UDPSocket(const unsigned int, const char* = NULL);
 	virtual ~UDPSocket();
 

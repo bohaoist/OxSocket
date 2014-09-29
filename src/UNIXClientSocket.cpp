@@ -1,14 +1,7 @@
-/*
- * UNIXClientSocket.cpp
- *
- *  Created on: Sep 29, 2014
- *      Author: inbre001
- */
+#include <UNIXClientSocket.h>
 
-#include "UNIXClientSocket.h"
-
-UNIXClientSocket::UNIXClientSocket(const char* path) :
-		UNIXSocket(path) {
+UNIXClientSocket::UNIXClientSocket(const char* _path) :
+		UNIXSocket(_path) {
 
 }
 
@@ -17,9 +10,9 @@ UNIXClientSocket::~UNIXClientSocket() {
 
 Connection* UNIXClientSocket::connect() {
 
-	if (0 != ::connect(sockfd, (struct sockaddr *) &local, this->cli_addrlen)) {
+	if (0 != ::connect(sfd, (sockaddr *) &sock, this->addrlen)) {
 		perror("Socket::connect() failed");
-		return NULL;
+		return (NULL);
 	}
-	return (new Connection(sockfd));
+	return (new Connection(this->sfd));
 }
