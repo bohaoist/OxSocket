@@ -4,26 +4,21 @@
 
 int main(int argc, char *argv[]) {
 
-    int port = 1234;
-    char buf[255];
+    int port = 1234;                  //
+    char buf[255];                    // 
 
-    TCPServerSocket serversock(port);
-    Connection *c = NULL;
+    TCPServerSocket serversock(port); // 
+
+    Connection *c = NULL;             //
 
     while(true){
-        std::cout << "waiting for connections on port: " << port << std::endl;
-        c = serversock.accept(); // wait for Connections
-        c->setTimeout(0, 0);
-        std::cout << "got connection" << std::endl;
-        int nbytes = c->recv(buf, 4);
-        std::cout << "recved " << nbytes << " Bytes" << std::endl;
-        if (nbytes >= 0) {
+        c = serversock.accept();      // wait for Connections
+        int nbytes = c->recv(buf, 4); // recv 4 Bytes
+        if (nbytes >= 0) {            // 
             std::cout << "Echo Server: recved message '" //
                 << std::string(buf,nbytes) << "'" << std::endl;
         }
-
-        std::cout << "resending messages to client " << std::endl;
-        c->send(buf,nbytes);
+        c->send(buf,nbytes);          // send Message back
         delete c;
     }
     return 0;
