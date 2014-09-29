@@ -1,12 +1,12 @@
 #!/bin/bash
 cd bin
 rm -f *.exe
-make clean
-make 
+#make clean
+#make 
 cd ..
 # Build Examples
 
-for x in TCPEchoServer TCPEchoClient
+for x in TCPEchoServer TCPEchoClient UDPEchoServer UDPEchoClient
 do
     g++ -I include/ -lSocket -L ./bin examples/${x}.cpp  -o bin/${x}.exe
 done
