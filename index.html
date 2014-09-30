@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Socket : ">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Socket</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/inbre001/Socket">View on GitHub</a>
+
+          <h1 id="project_title">Socket</h1>
+          <h2 id="project_tagline"></h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/inbre001/Socket/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/inbre001/Socket/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="what-is-libsocket-" class="anchor" href="#what-is-libsocket-"><span class="octicon octicon-link"></span></a>What is libSocket ?</h1>
+
+<p>A object abstraction layer for networking communications calls in C++</p>
+
+<h1>
+<a name="how-do-i-build-it" class="anchor" href="#how-do-i-build-it"><span class="octicon octicon-link"></span></a>How do i build it?</h1>
+
+<div class="highlight highlight-Bash"><pre>    git clone https://github.com/inbre001/Socket.git<span class="p">;</span>
+    <span class="nb">cd </span>Socket/build<span class="p">;</span>
+    make<span class="p">;</span>
+</pre></div>
+
+<h1>
+<a name="how-do-i-use-it" class="anchor" href="#how-do-i-use-it"><span class="octicon octicon-link"></span></a>How do i use it?</h1>
+
+<p>Include  in your Code</p>
+
+<div class="highlight highlight-C++"><pre><span class="cp">#include &lt;Socket.h&gt; </span>
+</pre></div>
+
+<p>now you can initialize TCP, UDP or UNIX Sockets. Like this:</p>
+
+<div class="highlight highlight-C++"><pre><span class="n">TCPServerSocket</span> <span class="nf">tcp_server</span><span class="p">(</span><span class="kt">int</span> <span class="n">port</span><span class="p">)</span>
+<span class="n">TCPClientSocket</span> <span class="n">tcp_client</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">server_addr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">port</span><span class="p">);</span>
+
+<span class="n">UDPSocket</span> <span class="nf">udp_server</span><span class="p">(</span><span class="kt">int</span> <span class="n">port</span><span class="p">);</span>
+<span class="n">UDPSocket</span> <span class="nf">udp_client</span><span class="p">(</span><span class="kt">int</span> <span class="n">port</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">server_addr</span><span class="p">);</span>
+
+<span class="n">UNIXServerSocket</span> <span class="nf">unix_ss</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">path_to_sockfile</span><span class="p">);</span>
+<span class="n">UNIXClientSocket</span> <span class="nf">unix_cs</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">path_to_sockfile</span><span class="p">);</span>
+</pre></div>
+
+<p>ServerSockets provide the accept() function to listen for incoming Connections
+ClientSockets provide the corresponding connect() function</p>
+
+<p>Have a look at the Short Examples to get started quickly.</p>
+
+<h1>
+<a name="short-examples" class="anchor" href="#short-examples"><span class="octicon octicon-link"></span></a>Short Examples</h1>
+
+<ul>
+<li> TCP <a href="examples/TCPEchoServer.cpp">Server</a> and <a href="examples/TCPEchoClient.cpp">Client</a>
+</li>
+<li> UDP <a href="examples/UDPEchoServer.cpp">Server</a> and <a href="examples/UDPEchoClient.cpp">Client</a>
+</li>
+<li>UNIX <a href="examples/UNIXEchoServer.cpp">Server</a> and <a href="examples/UNIXEchoClient.cpp">Client</a>
+</li>
+</ul><h1>
+<a name="more-advanced-stuff" class="anchor" href="#more-advanced-stuff"><span class="octicon octicon-link"></span></a>More advanced stuff:</h1>
+
+<p>TODO: write examples for async. communication and timeouts</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Socket maintained by <a href="https://github.com/inbre001">inbre001</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
