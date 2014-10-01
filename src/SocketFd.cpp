@@ -5,7 +5,9 @@ SocketFd::SocketFd() {
 }
 
 SocketFd::~SocketFd() {
-
+	if (ufds.fd > 0) {
+		close(ufds.fd);
+	}
 }
 
 int SocketFd::setNonBlocking() {

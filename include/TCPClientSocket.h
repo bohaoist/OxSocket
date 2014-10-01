@@ -2,20 +2,24 @@
 #define TCPCLIENTSOCKET_H_
 
 extern "C" {
-#include <netdb.h>      /* gethostbyname  */
-#include <string.h>     /* memmove        */
-#include <sys/socket.h> /* connect        */
+#include <sys/socket.h>  /* connect, socket        */
+#include <netdb.h>       /* addrinfo, getaddrinfo */
+#include <bits/socket.h> /* sockaddr_storage */
+#include <sys/unistd.h>  /* close */
 }
 
-#include "Connection.h"
-#include "TCPSocket.h"
-#include <ClientSocket.h>
+#include <cstring>	     /* memset */
+#include <cmath>         /* log10   */
+#include <cstdio>        /* sprintf, fprintf, perror */
+#include <stdexcept>     /* runtime_error */
 
-class TCPClientSocket: public TCPSocket, public ClientSocket {
+#include <Connection.h>
+#include <TCPSocket.h>
+
+class TCPClientSocket: public Connection, public TCPSocket {
 public:
 	TCPClientSocket(const char*, const unsigned);
 	virtual ~TCPClientSocket();
-	Connection* connect();
 };
 
 #endif

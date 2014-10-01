@@ -2,7 +2,70 @@
 #include <Socket.h> /* TCP/UNIXClientSocket, Connection */
 #include <string>   /* string */
 
+void stream_server(ServerSocket&);
+
 const static char EOM = '\n';
+
+#define DEFAULTPORT 1234
+#define DEFAULTMSG  "Hello World"
+#define DEFAULTUNIX "echo_socket"
+#define DEFAULTSERVERADDR "127.0.0.1"
+#define NOTINTERACTIV
+
+void tcp_server() {
+	unsigned int port = DEFAULTPORT;
+#ifndef NOTINTERACTIV
+	do {
+		std::cout << "Enter Server Port (1024 - 9999) : ";
+		std::cin >> port;
+		if (port > 1024 and port < 9999) {
+			break;
+		}
+		std::cout << "invalid port" << std::endl;
+	}while (true);
+#endif
+	TCPServerSocket sock(port);
+
+	stream_server(sock);
+}
+
+void unix_server() {
+	std::string file = DEFAULTUNIX;
+#ifndef NOTINTERACTIV
+	std::cout << "Enter UNIX Socket Filename: ";
+	std::cin >> file;
+#endif
+	UNIXServerSocket sock(file.c_str());
+
+	stream_server(sock);
+}
+void udp_server() {
+	unsigned int port = DEFAULTPORT;
+#ifndef NOTINTERACTIV
+	do {
+		std::cout << "Enter Server Port (1024 - 9999) : ";
+		std::cin >> port;
+		if (port > 1024 and port < 9999) {
+			break;
+		}
+		std::cout << "invalid port" << std::endl;
+	}while (true);
+#endif
+	char buf[255];
+	std::string msg = "";
+
+	UDPServerSocket udpsock(port);
+
+	int n = udpsock.recv(buf, sizeof(buf));
+
+	std::cout << " got #Bytes: " << n << std::endl;
+	if (n > 0) {
+		msg = std::string(buf, n);
+		std::cout << "Got Message: '" << msg << "'" << std::endl;
+	}
+	udpsock.send(buf, n);
+
+}
 
 void stream_server(ServerSocket &sock) {
 
@@ -12,7 +75,7 @@ void stream_server(ServerSocket &sock) {
 		char buf = '-';
 		int n = 0, sum = 0;
 		std::string msg = "";
-		con->setTimeout(5, 0); // we will wait 3 seconds untill we timeout ...
+		con->setTimeout(3, 0); // we will wait 3 seconds untill we timeout ...
 		// if no timeout is set the connection will close when the client disconnects
 		bool okdokie = false;
 		while (0 < (n = con->recv(&buf, sizeof(buf)))) {
@@ -25,55 +88,30 @@ void stream_server(ServerSocket &sock) {
 		}
 
 		if (n > 0 && okdokie) {
-			std::cout << "Got Message from Client: " << msg << std::endl;
+			std::cout << "Got Message: '" << msg << "'" << std::endl;
 
-			if (0 > (n = con->send(msg.data(), msg.size()))) {
-				std::cerr << "send failed " << std::endl;
+			n = con->send(msg.data(), msg.size());
+			if (n < 0) {
+				std::cout << "send failed" << std::endl;
 			}
 		} else {
-			std::cerr << "error on recv" << std::endl;
+			std::cout << "error on recv" << std::endl;
 		}
 		delete con;
 	} else {
-		std::cerr << "invalid Connection on accept" << std::endl;
+		std::cout << "invalid Connection on accept" << std::endl;
 	}
 }
 
-void tcp_server() {
-	unsigned int port = 0;
-	do {
-		std::cout << "Enter Server Port (1024 - 9999) : ";
-		std::cin >> port;
-		if (port > 1024 and port < 9999) {
-			break;
-		}
-		std::cerr << "invalid port" << std::endl;
-	} while (true);
+void stream_client(Connection *con) {
 
-	TCPServerSocket sock(port);
+	std::string msg = DEFAULTMSG;
 
-	stream_server(sock);
-}
-
-void unix_server() {
-	std::string file = "tmp_socket";
-
-	std::cout << "Enter UNIX Socket Filename: ";
-	std::cin >> file;
-
-	UNIXServerSocket sock(file.c_str());
-
-	stream_server(sock);
-}
-
-
-void stream_client(ClientSocket &sock) {
-
-	std::string msg = "";
+#ifndef NOTINTERACTIV
 	std::cout << "Enter Message: ";
 	std::cin >> msg;
+#endif
 
-	Connection *con = sock.connect();
 	if (NULL != con) {
 		int nbytes = 0;
 
@@ -97,125 +135,121 @@ void stream_client(ClientSocket &sock) {
 					<< std::endl;
 
 		} else {
-			std::cerr << "send failed " << std::endl;
+			std::cout << "send failed " << std::endl;
 		}
-		// remove Connection
-		delete con;
 	} else {
-		std::cerr << "invalid Connection on connect" << std::endl;
+		std::cout << "invalid Connection on connect" << std::endl;
 	}
 
 }
 
 void unix_client() {
-	std::string file = "tmp_socket";
-
+	std::string file = DEFAULTUNIX;
+#ifndef NOTINTERACTIV
 	std::cout << "Enter UNIX Socket Filename: ";
 	std::cin >> file;
-
+#endif
 	UNIXClientSocket sock(file.c_str());
 
-	stream_client(sock);
+	stream_client(&sock);
 }
 
 void tcp_client() {
-	unsigned int port = 0;
-	std::string serveraddr = "";
-
+	unsigned int port = DEFAULTPORT;
+	std::string serveraddr = DEFAULTSERVERADDR;
+#ifndef NOTINTERACTIV
 	do {
 		std::cout << "Enter Server Port (1024 - 9999) : ";
 		std::cin >> port;
 		if (port > 1024 and port < 9999) {
 			break;
 		}
-		std::cerr << "invalid port" << std::endl;
-	} while (true);
+		std::cout << "invalid port" << std::endl;
+	}while (true);
 
 	std::cout << "Enter Server IP/Addr (127.0.0.1): ";
 	std::cin >> serveraddr;
+#endif
 
 	TCPClientSocket sock(serveraddr.c_str(), port);
 
-	stream_client(sock);
-}
-
-void udp_server() {
-	unsigned int port = 1234;
-	do {
-		std::cout << "Enter Server Port (1024 - 9999) : ";
-		std::cin >> port;
-		if (port > 1024 and port < 9999) {
-			break;
-		}
-		std::cerr << "invalid port" << std::endl;
-	} while (true);
-
-	char buf[255];
-	std::string msg = "";
-
-	UDPSocket udpsock(port);
-
-	int n = udpsock.recv(buf, sizeof(buf));
-	msg = std::string(buf, n);
-	std::cout << "Got Message from Client: " << msg << " (" << n << ")"
-			<< std::endl;
-
-	udpsock.send(buf, n);
-
+	stream_client(&sock);
 }
 
 void udp_client() {
 
-	unsigned int port = 1234;
-	std::string serveraddr = "127.0.0.1";
-	std::string msg = "hello";
+	unsigned int port = DEFAULTPORT;
+	std::string serveraddr = DEFAULTSERVERADDR;
+	std::string msg = DEFAULTMSG;
+
+#ifndef NOTINTERACTIV
 	do {
 		std::cout << "Enter Server Port (1024 - 9999) : ";
 		std::cin >> port;
 		if (port > 1024 and port < 9999) {
 			break;
 		}
-		std::cerr << "invalid port" << std::endl;
-	} while (true);
+		std::cout << "invalid port" << std::endl;
+	}while (true);
 
 	std::cout << "Enter Server IP/Addr (127.0.0.1): ";
 	std::cin >> serveraddr;
 
 	std::cout << "Enter Message: ";
 	std::cin >> msg;
-	UDPSocket udpsock(port, serveraddr.c_str());
+#endif
 
+	UDPClientSocket udpsock(port, serveraddr.c_str());
 	char buf[255];
 	udpsock.send(msg.c_str(), msg.size());
 
 	int n = udpsock.recv(buf, sizeof(buf));
 	msg = std::string(buf, n);
-	std::cout << "Got Message from Server: '" << msg << "'" << std::endl;
+	std::cout << "Got Message: '" << msg << "'" << std::endl;
 
 }
 
-int main(int, char*[]) {
+int main(int argc, char* argv[]) {
 
 	char re1 = '\0';
+	char re2 = '\0';
+#ifndef NOTINTERACTIV
+
 	do {
 		std::cout << "Start (s)erver or (c)lient (s/c): " << std::endl;
 		std::cin >> re1;
 		if (std::string::npos != std::string("sc").find(re1)) {
 			break;
 		}
-		std::cerr << "invalid choice" << std::endl;
-	} while (true);
+		std::cout << "invalid choice" << std::endl;
+	}while (true);
 
-	char re2 = '\0';
 	do {
 		std::cout << "which type? (t)cp, (u)dp, uni(x)? (t/u/x)" << std::endl;
 		std::cin >> re2;
 		if (std::string::npos != std::string("tux").find(re2)) {
 			break;
 		}
-		std::cerr << "invalid choice" << std::endl;
-	} while (true);
-
+		std::cout << "invalid choice" << std::endl;
+	}while (true);
+#else
+	if (argc != 3) {
+		std::cout << "usage: " << argv[0] << " [sc] [tux]" << std::endl;
+		std::cout << "All Examples:" << std::endl;
+		std::cout << "	 TCP Server " << argv[0] << " s t" << std::endl;
+		std::cout << "	 TCP Client " << argv[0] << " c t" << std::endl;
+		std::cout << "	 UDP Server " << argv[0] << " s u" << std::endl;
+		std::cout << "	 UDP Client " << argv[0] << " c u" << std::endl;
+		std::cout << "	UNIX Server " << argv[0] << " s x" << std::endl;
+		std::cout << "	UNIX Client " << argv[0] << " c x" << std::endl;
+		std::cout << std::endl;
+		return 1;
+	}
+	re1 = argv[1][0];
+	re2 = argv[2][0];
+	std::cout << "re1: " << re1 << std::endl;
+	std::cout << "re2: " << re2 << std::endl;
+#endif
 	///
 
 	if (re1 == 's') {

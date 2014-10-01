@@ -2,30 +2,19 @@
 #define TCPSOCKET_H_
 
 extern "C" {
-#include <stdio.h> /* perror */
-#include <sys/socket.h> /* socket, AF_INET,  */
-#include <string.h> /* memset */
-#include <netinet/in.h> /* sockaddr_in, htons , INADDR_ANY*/
-#include <netdb.h> /* gethostbyname */
-#include <sys/unistd.h> /* socklen_t */
+#include <netdb.h>        /* addrinfo */
+#include <bits/socket.h>  /* socklen_t */
+#include <sys/socket.h>   /* sockaddr_storage */
 }
 
-#include <stdexcept>
-
-#include <Common_tcp_udp.h>
-#include <Common_tcp_udp_unix.h>
-#include <SocketFd.h>
-#include <Common_tcp_unix.h>
-
-class TCPSocket: public SocketFd,
-		public Common_tcp_udp_unix,
-		public Common_tcp_udp,
-		public Common_tcp_unix {
+class TCPSocket {
 protected:
-	TCPSocket(const unsigned, const char* = NULL);
+	int rv;
+	socklen_t slen;
+	addrinfo hints, *servinfo, *p;
+	sockaddr_storage their_addr;
+	TCPSocket();
 public:
-	char *getLocalAddr();
-	char *getRemotAddr();
 	virtual ~TCPSocket();
 };
 #endif

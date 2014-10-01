@@ -4,10 +4,6 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../src/ClientSocket.cpp \
-../src/Common_tcp_udp.cpp \
-../src/Common_tcp_udp_unix.cpp \
-../src/Common_tcp_unix.cpp \
 ../src/Connection.cpp \
 ../src/ServerSocket.cpp \
 ../src/SocketFd.cpp \
@@ -19,14 +15,9 @@ CPP_SRCS += \
 ../src/UDPServerSocket.cpp \
 ../src/UDPSocket.cpp \
 ../src/UNIXClientSocket.cpp \
-../src/UNIXServerSocket.cpp \
-../src/UNIXSocket.cpp 
+../src/UNIXServerSocket.cpp 
 
 OBJS += \
-./src/ClientSocket.o \
-./src/Common_tcp_udp.o \
-./src/Common_tcp_udp_unix.o \
-./src/Common_tcp_unix.o \
 ./src/Connection.o \
 ./src/ServerSocket.o \
 ./src/SocketFd.o \
@@ -38,14 +29,9 @@ OBJS += \
 ./src/UDPServerSocket.o \
 ./src/UDPSocket.o \
 ./src/UNIXClientSocket.o \
-./src/UNIXServerSocket.o \
-./src/UNIXSocket.o 
+./src/UNIXServerSocket.o 
 
 CPP_DEPS += \
-./src/ClientSocket.d \
-./src/Common_tcp_udp.d \
-./src/Common_tcp_udp_unix.d \
-./src/Common_tcp_unix.d \
 ./src/Connection.d \
 ./src/ServerSocket.d \
 ./src/SocketFd.d \
@@ -57,8 +43,7 @@ CPP_DEPS += \
 ./src/UDPServerSocket.d \
 ./src/UDPSocket.d \
 ./src/UNIXClientSocket.d \
-./src/UNIXServerSocket.d \
-./src/UNIXSocket.d 
+./src/UNIXServerSocket.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

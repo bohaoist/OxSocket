@@ -2,32 +2,25 @@
 #define UDPSOCKET_H_
 
 extern "C" {
-#include <string.h>     /* memset */
-#include <stdio.h>      /* perror */
-#include <netdb.h>      /* addrinfo, AI_PASSIVE, getaddrinfo,gai_strerror,freeaddrinfo	*/
-#include <sys/socket.h> /* AF_UNSPEC,SOCK_DGRAM, socket , bind,sendto,recvfrom  */
-#include <unistd.h>     /* close */
+#include <unistd.h>      /* close */
+#include <netdb.h>       /* addrinfo, freeaddrinfo */
+#include <sys/socket.h>  /* sockaddr_storage, sendto, recvfrom, */
+
 }
 
-#include <cmath>
-#include <stdexcept>
-
-#include <Common_tcp_udp_unix.h>
-#include <Common_tcp_udp.h>
 #include <Transceiver.h>
 #include <SocketFd.h>
-#include <iostream>
-class UDPSocket: public SocketFd,
-		public Common_tcp_udp,
-		public Transceiver,
-		public Common_tcp_udp_unix {
 
+class UDPSocket: public SocketFd, public Transceiver {
+protected:
+	int rv;
+	struct addrinfo hints, *servinfo, *p;
+	struct sockaddr_storage their_addr;
+	UDPSocket();
 public:
-	UDPSocket(const unsigned int, const char* = NULL);
+	int send(const char* buf, const unsigned size, int = 0);
+	int recv(char* buf, const unsigned size, int = 0);
 	virtual ~UDPSocket();
-
-	int send(const char*, const unsigned, int = 0);
-	int recv(char*, const unsigned, int = 0);
 };
 
 #endif

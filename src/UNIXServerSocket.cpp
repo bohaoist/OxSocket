@@ -1,39 +1,47 @@
 #include <UNIXServerSocket.h>
 
-UNIXServerSocket::UNIXServerSocket(const char* path) :
-		UNIXSocket(path) {
+UNIXServerSocket::UNIXServerSocket(const char* path) {
 
-	unlink(sock.sun_path);
+	last_new_sock = -1;
 
-	if (::bind(ufds.fd, (sockaddr *) &sock, this->slen) == -1) {
-		throw std::runtime_error("UNIXServerSocket::bind() failed");
+	if ((ufds.fd = socket(AF_UNIX, SOCK_STREAM, 0)) == -1) {
+		const char *msg = "UNIXServerSocket::socket() failed";
+		perror(msg);
+		throw std::runtime_error(msg);
 	}
 
-	slen = sizeof(sock);
+	local.sun_family = AF_UNIX;
+	strcpy(local.sun_path, path);
+	unlink(local.sun_path);
 
-	if (::listen(ufds.fd, 5) == -1) {
-		perror("listen");
-		throw std::runtime_error("UNIXServerSocket::listen() failed");
+	int len = strlen(local.sun_path) + sizeof(local.sun_family);
+
+	if (::bind(ufds.fd, (struct sockaddr *) &local, len) == -1) {
+		const char *msg = "UNIXServerSocket::bind() failed";
+		perror(msg);
+		throw std::runtime_error(msg);
 	}
 
+	if (listen(ufds.fd, 5) == -1) {
+		const char *msg = "UNIXServerSocket::listen() failed";
+		perror(msg);
+		throw std::runtime_error(msg);
+	}
 }
 
 UNIXServerSocket::~UNIXServerSocket() {
-	if (ufds.fd < 0) {
-		return;
-	}
-	if (-1 == ::close(ufds.fd)) {
-		::perror("UNIXServerSocket::~UNIXServerSocket::close() failed");
-	}
-	unlink(sock.sun_path);
+	unlink(local.sun_path);
 }
 
 Connection* UNIXServerSocket::accept() {
-	const int tmp = ::accept(ufds.fd, (sockaddr *) &sock, &slen);
+	unsigned int t = sizeof(remote);
+	last_new_sock = ::accept(ufds.fd, (sockaddr *) &remote, &t);
 
-	if (0 > tmp) {
+	if (0 > last_new_sock) {
+		perror("UNIXServerSocket::accept() failed");
 		return (NULL);
 	}
 
-	return (new Connection(tmp));
+	return (new Connection(last_new_sock));
 }
+

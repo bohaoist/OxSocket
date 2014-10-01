@@ -3,14 +3,12 @@
 
 extern "C" {
 #include <netinet/in.h> /* sockaddr_in */
-#include <arpa/inet.h>  /* inet_ntoa */
 #include <sys/socket.h> /* setsockopt */
 #include <fcntl.h>      /* fcntl */
 #include <stdio.h>      /* perror */
 #include <unistd.h>     /* close */
 #include <poll.h>       /* poll */
 }
-#include <stdexcept>
 
 class SocketFd {
 protected:

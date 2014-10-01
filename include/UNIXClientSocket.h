@@ -2,19 +2,22 @@
 #define UNIXCLIENTSOCKET_H_
 
 extern "C" {
-#include <string.h> /* perror */
-#include <sys/socket.h> /* connect */
+#include <sys/socket.h> /* socket, connect */
+#include <sys/un.h>     /* sockaddr_un */
 }
 
-#include <UNIXSocket.h>
-#include <Connection.h>
-#include <ClientSocket.h>
+#include <cstdio>      /* perror */
+#include <cstring>     /* strcpy, strlen */
+#include <stdexcept>   /* runtime_error */
 
-class UNIXClientSocket: public UNIXSocket, public ClientSocket {
+#include <Connection.h>
+
+class UNIXClientSocket: public Connection {
+private:
+	struct sockaddr_un remote;
 public:
 	UNIXClientSocket(const char*);
 	virtual ~UNIXClientSocket();
-	Connection* connect();
 };
 
 #endif

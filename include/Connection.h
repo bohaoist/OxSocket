@@ -4,14 +4,9 @@
 extern "C" {
 #include <stdio.h>      /* perror */
 #include <sys/unistd.h> /* read(),write() */
-#include <poll.h>       /* poll */
-
-#include <netinet/tcp.h>
-
+#include <poll.h>       /* poll, POLLIN, POLLOUT, POLLPRI */
 }
-#include <iostream>
 
-#include <SocketFd.h>
 #include <Transceiver.h>
 #include <SocketFd.h>
 
@@ -22,7 +17,7 @@ private:
 	int _poll(const int = -1);
 
 public:
-	Connection(const int);
+	Connection(const int = 0);
 	virtual ~Connection();
 
 	int recv(char*, const unsigned, const int = -1);

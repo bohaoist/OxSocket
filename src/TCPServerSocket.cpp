@@ -1,38 +1,74 @@
 #include <TCPServerSocket.h>
 
-TCPServerSocket::TCPServerSocket(const unsigned _port) :
-		TCPSocket(_port) {
+TCPServerSocket::TCPServerSocket(const unsigned iport) {
 
-	static const int opt = 1; // to lose the pesky "address already in use" error message
-	if (-1
-			== ::setsockopt(ufds.fd, SOL_SOCKET, SO_REUSEADDR, &opt,
-					sizeof(opt))) {
-		throw std::runtime_error("TCPServerSocket::setsockopt() failed");
+	memset(&hints, 0, sizeof hints);
+	hints.ai_family = AF_UNSPEC;
+	hints.ai_socktype = SOCK_STREAM;
+	hints.ai_flags = AI_PASSIVE; // use my IP
+
+	const unsigned int nb_digits = (
+			0 < iport ? (int) log10((double) iport) + 1 : 1);
+	char port[nb_digits + 1]; // add one
+	int n = (::sprintf(port, "%d", iport));
+	if (0 > n) {
+		const char* msg = "TCPServerSocket::sprintf() failed";
+		::perror(msg);
+		throw std::runtime_error(msg);
 	}
 
-	if (-1 == ::bind(ufds.fd, (sockaddr *) &si_me, sizeof(si_me))) {
+	if ((rv = ::getaddrinfo(NULL, port, &hints, &servinfo)) != 0) {
+		fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(rv));
+		throw std::runtime_error("TCPServerSocket::getaddrinfo() failed");
+	}
+
+	// loop through all the results and bind to the first we can
+	for (p = servinfo; p != NULL; p = p->ai_next) {
+		if ((ufds.fd = socket(p->ai_family, p->ai_socktype, p->ai_protocol))
+				== -1) {
+			perror("TCPServerSocket::socket() failed");
+			continue;
+		}
+
+		int yes = 1; // Addr allready in use message
+		if (setsockopt(ufds.fd, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(int))
+				== -1) {
+			const char* msg = "TCPServerSocket::setsockopt() failed";
+			perror(msg);
+			throw std::runtime_error(msg);
+		}
+
+		if (bind(ufds.fd, p->ai_addr, p->ai_addrlen) == -1) {
+			close(ufds.fd);
+			perror("TCPServerSocket::bind() failed");
+			continue;
+		}
+
+		break;
+	}
+
+	if (p == NULL) {
 		throw std::runtime_error("TCPServerSocket::bind() failed");
 	}
 
-	slen = sizeof(si_other);
+	freeaddrinfo(servinfo); // all done with this structure
 
-	if (-1 == ::listen(ufds.fd, 5)) {
-		throw std::runtime_error("TCPServerSocket::listen() failed");
+	if (::listen(ufds.fd, 10) == -1) {
+		const char *msg = "TCPServerSocket::listen() failed";
+		perror(msg);
+		throw std::runtime_error(msg);
 	}
 
 }
 
 TCPServerSocket::~TCPServerSocket() {
-	if (ufds.fd < 0) {
-		return;
-	}
-	if (-1 == ::close(ufds.fd)) {
-		::perror("TCPServerSocket::~TCPServerSocket::close() failed");
-	}
 }
 
 Connection* TCPServerSocket::accept() {
-	const int tmp = ::accept(ufds.fd, (sockaddr*) &si_other, &slen);
+
+	slen = sizeof their_addr;
+
+	const int tmp = ::accept(ufds.fd, (sockaddr*) &their_addr, &slen);
 
 	if (-1 == tmp) {
 		::perror("TCPServerSocket::accept() failed");
