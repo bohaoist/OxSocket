@@ -79,8 +79,8 @@ int main(int argc, char* argv[]) {
                           /**
                            * UNIX Server
                            **/
-                           UNIXServerSocket sock(DEFAULTUNIX);
-                           stream_server(sock);
+                          UNIXServerSocket sock(DEFAULTUNIX);
+                          stream_server(sock);
                           ///--------------------------------------------------
                       }
                       break;
@@ -151,69 +151,69 @@ int main(int argc, char* argv[]) {
  * */
 void stream_server(ServerSocket &sock) {
 
-while(true){
-    cout << endl;
-    cout << "Waiting for incoming Connections" << endl;
-    Connection *con = sock.accept();
+    while(true){
+        cout << endl;
+        cout << "Waiting for incoming Connections" << endl;
+        Connection *con = sock.accept();
 
-    if (NULL != con) {
-        char buf = '-';
-        int n = 0;
-        string msg = "";
+        if (NULL != con) {
+            char buf = '-';
+            int n = 0;
+            string msg = "";
 
-        /*
-         * Tells the Socket Timeout after 3 seconds 
-         * just so we wont wait forever for a recv or send 
-         * */
-        con->setTimeout(3, 0); 
-        bool ok = false;
+            /*
+             * Tells the Socket Timeout after 3 seconds 
+             * just so we wont wait forever for a recv or send 
+             * */
+            con->setTimeout(3, 0); 
+            bool ok = false;
 
-        /**
-         *  We recv one Byte at a time 
-         *  till we get the End of Message (EOM) Character
-         *  or recv detects an error and return a value less then Zero
-         *
-         *  If you want to recv larger amounts of data make sure 
-         *  not to miscalculate. Otherwise recv will block indefinetly
-         *  for the remaining Bytes ... so design your protocol whisely.
-         *
-         **/
-        while (0 < (n = con->recv(&buf, sizeof(buf)))) {
-            if (buf == EOM) {
-                ok = true; // Everything ok 
-                break; 
+            /**
+             *  We recv one Byte at a time 
+             *  till we get the End of Message (EOM) Character
+             *  or recv detects an error and return a value less then Zero
+             *
+             *  If you want to recv larger amounts of data make sure 
+             *  not to miscalculate. Otherwise recv will block indefinetly
+             *  for the remaining Bytes ... so design your protocol whisely.
+             *
+             **/
+            while (0 < (n = con->recv(&buf, sizeof(buf)))) {
+                if (buf == EOM) {
+                    ok = true; // Everything ok 
+                    break; 
+                }
+                msg += buf;
             }
-            msg += buf;
-        }
 
-        if ( n > 0  and ok ) { // iv we got a well terminated message from the Client
-            cout << "Got Message: '" << msg << "'" << endl;
+            if ( n > 0  and ok ) { // iv we got a well terminated message from the Client
+                cout << "Got Message: '" << msg << "'" << endl;
 
-            // For the Sake of Echo send it back to the Client
-            //
-            msg = DEFAULTMSGS;
+                // For the Sake of Echo send it back to the Client
+                //
+                msg = DEFAULTMSGS;
 
-            // dont forget the append the EOM Sign ... 
-            cout << "Sending: '" << msg << "'" << endl;
-            msg += EOM;
-            n = con->send(msg.data(), msg.size());
+                // dont forget the append the EOM Sign ... 
+                cout << "Sending: '" << msg << "'" << endl;
+                msg += EOM;
+                n = con->send(msg.data(), msg.size());
 
-            // Some Error Checking 
-            if (n < 0) {
-                cout << "send() failed" << endl;
+                // Some Error Checking 
+                if (n < 0) {
+                    cout << "send() failed" << endl;
+                }
+            } 
+            else {
+                cout << "recv() failed" << endl;
             }
-        } 
-        else {
-            cout << "recv() failed" << endl;
+
+            // Make shure to DELETE the Connection when you are finished 
+            delete con;
+
+        } else {
+            cout << "accept() failed" << endl;
         }
-
-        // Make shure to DELETE the Connection when you are finished 
-        delete con;
-
-    } else {
-        cout << "accept() failed" << endl;
     }
-}
 
 }
 
