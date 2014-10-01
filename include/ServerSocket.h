@@ -5,9 +5,8 @@
 
 class ServerSocket {
 protected:
-
-public:
 	ServerSocket();
+public:
 	virtual ~ServerSocket();
 	virtual Connection* accept() = 0;
 };

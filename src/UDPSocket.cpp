@@ -1,59 +1,53 @@
 #include <UDPSocket.h>
 
 UDPSocket::UDPSocket(const unsigned int _port, const char *_addr) {
-	this->sfd = _port;
 
-	const unsigned int nb_digits = (
-			0 < _port ? (int) log10((double) _port) + 1 : 1);
-	char port[nb_digits + 1]; // add one
+	slen = sizeof(si_other);
 
-	int rv = (::sprintf(port, "%d", _port));
-	if (0 > rv) {
-		throw std::runtime_error("UDPSocket::sprintf() failed");
+	//create a UDP socket
+	if ((ufds.fd = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) == -1) {
+		throw std::runtime_error("UDPSocket::socket() failed");
 	}
-	addrinfo hints, *servinfo;
 
-	::memset(&hints, 0, sizeof hints);
-	hints.ai_family = AF_UNSPEC; // set to AF_INET to force IPv4
-	hints.ai_socktype = SOCK_DGRAM;
-	hints.ai_flags = AI_PASSIVE; // use my IP
+	if (NULL == _addr) { // server
 
-	if ((rv = ::getaddrinfo(_addr, port, &hints, &servinfo)) != 0) {
-		::perror(::gai_strerror(rv));
-		throw std::runtime_error("UDPSocket::getaddrinfo() failed");
-	}
-	addrlen = sizeof(caddr);
+		// zero out the structure
+		::memset((char *) &si_me, 0, sizeof(si_me));
 
-	for (p = servinfo; p != NULL; p = p->ai_next) {
-		if ((sfd = ::socket(p->ai_family, p->ai_socktype, p->ai_protocol))
-				== -1) {
-			::perror("UDPSocket::socket() failed");
-			continue;
+		si_me.sin_family = AF_INET;
+		si_me.sin_port = htons(_port);
+		si_me.sin_addr.s_addr = htonl(INADDR_ANY);
+
+		//bind socket to port
+		if (bind(ufds.fd, (struct sockaddr*) &si_me, sizeof(si_me)) == -1) {
+			throw std::runtime_error("UDPSocket::bind() failed");
 		}
-		if (NULL == _addr) {
-			if (::bind(sfd, p->ai_addr, p->ai_addrlen) == -1) {
-				::perror("UDPSocket::bind() failed");
-				::close(sfd);
-				continue;
-			}
-		}
-		break;
-	}
-	::freeaddrinfo(servinfo);
-	if (NULL == p) {
-		throw std::runtime_error("UDPSocket::bind() failed");
-	}
 
+	} else { // client
+
+		memset((char *) &si_other, 0, sizeof(si_other));
+		si_other.sin_family = AF_INET;
+		si_other.sin_port = htons(_port);
+
+		if (inet_aton(_addr, &si_other.sin_addr) == 0) {
+			throw std::runtime_error("UDPSocket::inet_aton() failed");
+		}
+	}
 }
 
 UDPSocket::~UDPSocket() {
 
+	if (-1 == ::close(ufds.fd)) {
+		::perror("UDPSocket::~UDPSocket::close() failed");
+	}
 }
 
 int UDPSocket::send(const char* buf, const unsigned size, int) {
-	return (::sendto(sfd, buf, size, 0, p->ai_addr, p->ai_addrlen));
+	return (::sendto(ufds.fd, (void*) buf, size, 0, (sockaddr *) &si_other,
+			slen));
 }
 
 int UDPSocket::recv(char* buf, const unsigned size, int) {
-	return (::recvfrom(sfd, (void*) buf, size, 0, (sockaddr *) &caddr, &addrlen));
+	return (::recvfrom(ufds.fd, (void*) buf, size, 0, (sockaddr *) &si_other,
+			&slen));
 }

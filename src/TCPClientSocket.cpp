@@ -3,22 +3,28 @@
 TCPClientSocket::TCPClientSocket(const char* host, const unsigned portno) :
 		TCPSocket(portno, host) {
 
-	hostent *server;
+	hostent *server = NULL;
 	server = ::gethostbyname(host);
 	if (NULL == server) {
 		throw std::runtime_error("TCPClientSocket::gethostbyname()");
 	}
-	::memmove((char *) &serv_addr.sin_addr.s_addr, (char *) server->h_addr,
+	::memmove((char *) &si_me.sin_addr.s_addr, (char *) server->h_addr,
 	server->h_length);
 
 }
 
 TCPClientSocket::~TCPClientSocket() {
+	if (ufds.fd < 0) {
+		return;
+	}
+	if (-1 == ::close(ufds.fd)) {
+		::perror("TCPClientSocket::~TCPClientSocket::close() failed");
+	}
 }
 
 Connection* TCPClientSocket::connect() {
-	if (0 != ::connect(sfd, (sockaddr*) &serv_addr, sizeof(serv_addr))) {
+	if (0 != ::connect(ufds.fd, (sockaddr*) &si_me, sizeof(si_me))) {
 		return (NULL);
 	}
-	return (new Connection(sfd));
+	return (new Connection(ufds.fd));
 }

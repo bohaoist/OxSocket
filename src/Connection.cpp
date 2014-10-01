@@ -2,11 +2,12 @@
 
 Connection::Connection(const int fd) {
 	sum = n = 0;
-	ufds.fd = sfd = fd;
+	ufds.fd = fd;
 	ufds.events = POLLIN | POLLOUT | POLLPRI;
 }
 
 Connection::~Connection() {
+
 }
 
 #define WEADMACRO(function) \
@@ -16,7 +17,7 @@ do { \
 	if (n == 0) { \
 		return (sum); /* End of File/Stream */\
 	} else if (n < 0) { \
-		::perror(""); \
+		::perror(#function); \
 		return (-1); /* Error */\
 	} else { \
 		sum += n; \
@@ -25,7 +26,8 @@ do { \
 return (sum); \
 
 
-int Connection::send(const char *buf, const unsigned size, const int) {
+int Connection::send(const char *buf, const unsigned size, const int msec) {
+	_poll(msec);
 	WEADMACRO(write)
 }
 
@@ -45,3 +47,4 @@ int Connection::_poll(const int msec) {
 	} //else 0 < rv
 	return (rv);
 }
+

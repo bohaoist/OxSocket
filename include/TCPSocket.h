@@ -12,22 +12,20 @@ extern "C" {
 
 #include <stdexcept>
 
-#include <SocketFd.h>
-#include <Common_tcp_udp_unix.h>
 #include <Common_tcp_udp.h>
+#include <Common_tcp_udp_unix.h>
+#include <SocketFd.h>
 #include <Common_tcp_unix.h>
 
 class TCPSocket: public SocketFd,
-		public Common_tcp_unix,
 		public Common_tcp_udp_unix,
-		public Common_tcp_udp {
+		public Common_tcp_udp,
+		public Common_tcp_unix {
 protected:
-	sockaddr_in serv_addr;
-	socklen_t saddrlen;
-	//bool isValidIpAddress(const char *);
 	TCPSocket(const unsigned, const char* = NULL);
 public:
-	char *getServerAddr();
+	char *getLocalAddr();
+	char *getRemotAddr();
 	virtual ~TCPSocket();
 };
 #endif

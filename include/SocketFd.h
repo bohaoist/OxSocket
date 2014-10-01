@@ -8,18 +8,18 @@ extern "C" {
 #include <fcntl.h>      /* fcntl */
 #include <stdio.h>      /* perror */
 #include <unistd.h>     /* close */
+#include <poll.h>       /* poll */
 }
 #include <stdexcept>
 
 class SocketFd {
 protected:
-	int sfd;
+	pollfd ufds;
 	SocketFd();
 public:
 	virtual ~SocketFd();
 	int setNonBlocking();
 	int setBlocking();
 	int setTimeout(const unsigned, const unsigned = 0);
-
 };
 #endif

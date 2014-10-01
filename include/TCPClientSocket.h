@@ -13,9 +13,9 @@ extern "C" {
 
 class TCPClientSocket: public TCPSocket, public ClientSocket {
 public:
-TCPClientSocket(const char*, const unsigned);
-virtual ~TCPClientSocket();
-Connection* connect();
+	TCPClientSocket(const char*, const unsigned);
+	virtual ~TCPClientSocket();
+	Connection* connect();
 };
 
 #endif

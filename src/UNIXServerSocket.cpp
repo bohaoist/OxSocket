@@ -5,13 +5,13 @@ UNIXServerSocket::UNIXServerSocket(const char* path) :
 
 	unlink(sock.sun_path);
 
-	if (::bind(sfd, (sockaddr *) &sock, this->addrlen) == -1) {
+	if (::bind(ufds.fd, (sockaddr *) &sock, this->slen) == -1) {
 		throw std::runtime_error("UNIXServerSocket::bind() failed");
 	}
 
-	addrlen = sizeof(sock);
+	slen = sizeof(sock);
 
-	if (::listen(sfd, 5) == -1) {
+	if (::listen(ufds.fd, 5) == -1) {
 		perror("listen");
 		throw std::runtime_error("UNIXServerSocket::listen() failed");
 	}
@@ -19,14 +19,21 @@ UNIXServerSocket::UNIXServerSocket(const char* path) :
 }
 
 UNIXServerSocket::~UNIXServerSocket() {
+	if (ufds.fd < 0) {
+		return;
+	}
+	if (-1 == ::close(ufds.fd)) {
+		::perror("UNIXServerSocket::~UNIXServerSocket::close() failed");
+	}
+	unlink(sock.sun_path);
 }
 
 Connection* UNIXServerSocket::accept() {
-	const int newsfd = ::accept(sfd, (sockaddr *) &sock, &addrlen);
+	const int tmp = ::accept(ufds.fd, (sockaddr *) &sock, &slen);
 
-	if (0 > newsfd) {
+	if (0 > tmp) {
 		return (NULL);
 	}
 
-	return (new Connection(newsfd));
+	return (new Connection(tmp));
 }

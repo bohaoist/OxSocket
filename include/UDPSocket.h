@@ -12,18 +12,16 @@ extern "C" {
 #include <cmath>
 #include <stdexcept>
 
-#include <Transceiver.h>
-#include <Common_tcp_udp.h>
 #include <Common_tcp_udp_unix.h>
+#include <Common_tcp_udp.h>
+#include <Transceiver.h>
 #include <SocketFd.h>
-
+#include <iostream>
 class UDPSocket: public SocketFd,
-		public Common_tcp_udp_unix,
 		public Common_tcp_udp,
-		public Transceiver {
+		public Transceiver,
+		public Common_tcp_udp_unix {
 
-private:
-	addrinfo *p;
 public:
 	UDPSocket(const unsigned int, const char* = NULL);
 	virtual ~UDPSocket();
