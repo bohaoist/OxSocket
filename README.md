@@ -2,13 +2,13 @@
 A object abstraction layer for networking communications calls in C++
 
 It makes sending a UDP Package as Easy as this:
-*```C++
+```C++
 UDPClientSocket mysock(  "www.example.org" , 1234 );
 std::string msg = "Hello World";
 mysock.send(msg.data(),msg.size());
 ```
 and at the recv side simply do
-*```C++
+```C++
 UDPServerSocket mysock( 1234 );
 char buf[255];
 int bsize = mysock.recv(buf,sizeof(buf));
