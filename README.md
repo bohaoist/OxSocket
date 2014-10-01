@@ -25,7 +25,7 @@ Thats it.
     make;
 ```
 ## How do i use it? 
-* Add <Socket.h> to your sourcefile (*.cpp)
+* Add \<Socket.h\> to your sourcefile
 * Add the include path -I/path/to/0xSocket/include to your compiler options (cflags)
 * Add lastly add the linker flag -l0xSocket (ldflags)
 
