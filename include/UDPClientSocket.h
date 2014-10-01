@@ -15,7 +15,7 @@ extern "C" {
 
 class UDPClientSocket: public UDPSocket {
 public:
-	UDPClientSocket(const unsigned int, const char*);
+	UDPClientSocket(const char*, const unsigned int);
 	virtual ~UDPClientSocket();
 };
 
