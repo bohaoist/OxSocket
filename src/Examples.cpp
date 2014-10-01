@@ -70,9 +70,7 @@ int main(int argc, char* argv[]) {
                            *  TCP Server 
                            **/
                           TCPServerSocket sock(DEFAULTPORT);
-                          while(true){
-                              stream_server(sock);
-                          }
+                          stream_server(sock);
                           ///--------------------------------------------------
                       }
                       break;
@@ -81,10 +79,8 @@ int main(int argc, char* argv[]) {
                           /**
                            * UNIX Server
                            **/
-                          UNIXServerSocket sock(DEFAULTUNIX);
-                          while(true){
-                              stream_server(sock);
-                          }
+                           UNIXServerSocket sock(DEFAULTUNIX);
+                           stream_server(sock);
                           ///--------------------------------------------------
                       }
                       break;
@@ -155,6 +151,7 @@ int main(int argc, char* argv[]) {
  * */
 void stream_server(ServerSocket &sock) {
 
+while(true){
     cout << endl;
     cout << "Waiting for incoming Connections" << endl;
     Connection *con = sock.accept();
@@ -216,6 +213,7 @@ void stream_server(ServerSocket &sock) {
     } else {
         cout << "accept() failed" << endl;
     }
+}
 
 }
 
