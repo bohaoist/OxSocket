@@ -1,0 +1,66 @@
+.TH "TCPServerSocket" 3 "Thu Oct 2 2014" "Version 0.2" "0xSocket" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TCPServerSocket \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <TCPServerSocket\&.h>\fP
+.PP
+Inherits \fBSocketFd\fP, \fBServerSocket\fP, and \fBTCPSocket\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTCPServerSocket\fP (const unsigned)"
+.br
+.RI "\fIconstruct a listening Socket \fP"
+.ti -1c
+.RI "virtual \fB~TCPServerSocket\fP ()"
+.br
+.RI "\fIdoes nothing \fP"
+.ti -1c
+.RI "\fBConnection\fP * \fBaccept\fP ()"
+.br
+.RI "\fIaccept incoming tcp connections \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+A \fBTCPServerSocket\fP provides a means for TCP Clients to be Accepted with the \fBaccept()\fP methode it provides if the construction failes and the Listen Port can not be accessed the constructor will throw a runtime_error 
+.PP
+Definition at line 26 of file TCPServerSocket\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "TCPServerSocket::TCPServerSocket (const unsignediport)"
+
+.PP
+construct a listening Socket constructs a listening Socket will throw runtime_error if something goes wrong 
+.PP
+Definition at line 3 of file TCPServerSocket\&.cpp\&.
+.PP
+References TCPSocket::hints, TCPSocket::p, TCPSocket::rv, TCPSocket::servinfo, and SocketFd::ufds\&.
+.SS "TCPServerSocket::~TCPServerSocket ()\fC [virtual]\fP"
+
+.PP
+does nothing does nothing 
+.PP
+Definition at line 64 of file TCPServerSocket\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBConnection\fP * TCPServerSocket::accept ()\fC [virtual]\fP"
+
+.PP
+accept incoming tcp connections accept incoming tcp connections 
+.PP
+Implements \fBServerSocket\fP\&.
+.PP
+Definition at line 67 of file TCPServerSocket\&.cpp\&.
+.PP
+References SocketFd::get_in_addr(), TCPSocket::slen, TCPSocket::their_addr, and SocketFd::ufds\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 0xSocket from the source code\&.

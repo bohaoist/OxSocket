@@ -1,0 +1,502 @@
+\hypertarget{Example_8cpp}{\section{src/\+Example.cpp File Reference}
+\label{Example_8cpp}\index{src/\+Example.\+cpp@{src/\+Example.\+cpp}}
+}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$Socket.\+h$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+Include dependency graph for Example.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Example_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{Example_8cpp_a3db4dba8d56385b62759b89c98cae447}{D\+E\+F\+A\+U\+L\+T\+P\+O\+R\+T}~1234
+\item 
+\#define \hyperlink{Example_8cpp_a2ebdb9c4431e687bca05e90494a8460b}{D\+E\+F\+A\+U\+L\+T\+M\+S\+G\+C}~\char`\"{}Hello here Client\char`\"{}
+\item 
+\#define \hyperlink{Example_8cpp_a633fc7423e7d6c4d439c873fec3537ed}{D\+E\+F\+A\+U\+L\+T\+M\+S\+G\+S}~\char`\"{}Hello here Server\char`\"{}
+\item 
+\#define \hyperlink{Example_8cpp_a36983429d17cdac7405dcd532e65bbc0}{D\+E\+F\+A\+U\+L\+T\+U\+N\+I\+X}~\char`\"{}echo\+\_\+socket\char`\"{}
+\item 
+\#define \hyperlink{Example_8cpp_aba523120730c0e69e2879d6d60d5377e}{D\+E\+F\+A\+U\+L\+T\+S\+E\+R\+V}~\char`\"{}127.\+0.\+0.\+1\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{Example_8cpp_ae0f14589015e103d1db9167bb89e4f4e}{stream\+\_\+server} (\hyperlink{classServerSocket}{Server\+Socket} \&)
+\item 
+void \hyperlink{Example_8cpp_ac5de2785666f2fc48e9f23fc7da9e895}{stream\+\_\+client} (\hyperlink{classConnection}{Connection} \&)
+\item 
+string \hyperlink{Example_8cpp_a3894a70718f272b0b2dc91f3b1a3080b}{ltrim} (const string str)
+\begin{DoxyCompactList}\small\item\em Removes leading Spaces and Tabs. \end{DoxyCompactList}\item 
+string \hyperlink{Example_8cpp_a46d443837f44dcac80a4f1954ca18af8}{rtrim} (const string str)
+\begin{DoxyCompactList}\small\item\em Removes trailing Spaces and Tabs. \end{DoxyCompactList}\item 
+string \hyperlink{Example_8cpp_a96815f680b2b4c13e5702d35bb956a2e}{trim} (const string str)
+\begin{DoxyCompactList}\small\item\em Removes leading and trailing Spaces and Tabs. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\T \hyperlink{Example_8cpp_a0730396a463e99f15b97d645e826bd76}{str2} (const string str)
+\begin{DoxyCompactList}\small\item\em Convert a String to a T Object. \end{DoxyCompactList}\item 
+void \hyperlink{Example_8cpp_a52cfa7921b503785d36d8fc027f0f9c3}{printusage} (char $\ast$name)
+\begin{DoxyCompactList}\small\item\em prints usage info \end{DoxyCompactList}\item 
+int \hyperlink{Example_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const char \hyperlink{Example_8cpp_ac609d746ffb14c438b9af8060e00a129}{E\+N\+D\+\_\+\+O\+F\+\_\+\+M\+E\+S\+S\+A\+G\+E} = '\textbackslash{}n'
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{Example_8cpp_a2ebdb9c4431e687bca05e90494a8460b}{\index{Example.\+cpp@{Example.\+cpp}!D\+E\+F\+A\+U\+L\+T\+M\+S\+G\+C@{D\+E\+F\+A\+U\+L\+T\+M\+S\+G\+C}}
+\index{D\+E\+F\+A\+U\+L\+T\+M\+S\+G\+C@{D\+E\+F\+A\+U\+L\+T\+M\+S\+G\+C}!Example.\+cpp@{Example.\+cpp}}
+\subsubsection[{D\+E\+F\+A\+U\+L\+T\+M\+S\+G\+C}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+F\+A\+U\+L\+T\+M\+S\+G\+C~\char`\"{}Hello here Client\char`\"{}}}\label{Example_8cpp_a2ebdb9c4431e687bca05e90494a8460b}
+
+
+Definition at line 21 of file Example.\+cpp.
+
+
+
+Referenced by main(), and stream\+\_\+client().
+
+\hypertarget{Example_8cpp_a633fc7423e7d6c4d439c873fec3537ed}{\index{Example.\+cpp@{Example.\+cpp}!D\+E\+F\+A\+U\+L\+T\+M\+S\+G\+S@{D\+E\+F\+A\+U\+L\+T\+M\+S\+G\+S}}
+\index{D\+E\+F\+A\+U\+L\+T\+M\+S\+G\+S@{D\+E\+F\+A\+U\+L\+T\+M\+S\+G\+S}!Example.\+cpp@{Example.\+cpp}}
+\subsubsection[{D\+E\+F\+A\+U\+L\+T\+M\+S\+G\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+F\+A\+U\+L\+T\+M\+S\+G\+S~\char`\"{}Hello here Server\char`\"{}}}\label{Example_8cpp_a633fc7423e7d6c4d439c873fec3537ed}
+
+
+Definition at line 22 of file Example.\+cpp.
+
+
+
+Referenced by main(), and stream\+\_\+server().
+
+\hypertarget{Example_8cpp_a3db4dba8d56385b62759b89c98cae447}{\index{Example.\+cpp@{Example.\+cpp}!D\+E\+F\+A\+U\+L\+T\+P\+O\+R\+T@{D\+E\+F\+A\+U\+L\+T\+P\+O\+R\+T}}
+\index{D\+E\+F\+A\+U\+L\+T\+P\+O\+R\+T@{D\+E\+F\+A\+U\+L\+T\+P\+O\+R\+T}!Example.\+cpp@{Example.\+cpp}}
+\subsubsection[{D\+E\+F\+A\+U\+L\+T\+P\+O\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+F\+A\+U\+L\+T\+P\+O\+R\+T~1234}}\label{Example_8cpp_a3db4dba8d56385b62759b89c98cae447}
+
+
+Definition at line 20 of file Example.\+cpp.
+
+
+
+Referenced by main().
+
+\hypertarget{Example_8cpp_aba523120730c0e69e2879d6d60d5377e}{\index{Example.\+cpp@{Example.\+cpp}!D\+E\+F\+A\+U\+L\+T\+S\+E\+R\+V@{D\+E\+F\+A\+U\+L\+T\+S\+E\+R\+V}}
+\index{D\+E\+F\+A\+U\+L\+T\+S\+E\+R\+V@{D\+E\+F\+A\+U\+L\+T\+S\+E\+R\+V}!Example.\+cpp@{Example.\+cpp}}
+\subsubsection[{D\+E\+F\+A\+U\+L\+T\+S\+E\+R\+V}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+F\+A\+U\+L\+T\+S\+E\+R\+V~\char`\"{}127.\+0.\+0.\+1\char`\"{}}}\label{Example_8cpp_aba523120730c0e69e2879d6d60d5377e}
+
+
+Definition at line 24 of file Example.\+cpp.
+
+
+
+Referenced by main().
+
+\hypertarget{Example_8cpp_a36983429d17cdac7405dcd532e65bbc0}{\index{Example.\+cpp@{Example.\+cpp}!D\+E\+F\+A\+U\+L\+T\+U\+N\+I\+X@{D\+E\+F\+A\+U\+L\+T\+U\+N\+I\+X}}
+\index{D\+E\+F\+A\+U\+L\+T\+U\+N\+I\+X@{D\+E\+F\+A\+U\+L\+T\+U\+N\+I\+X}!Example.\+cpp@{Example.\+cpp}}
+\subsubsection[{D\+E\+F\+A\+U\+L\+T\+U\+N\+I\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+F\+A\+U\+L\+T\+U\+N\+I\+X~\char`\"{}echo\+\_\+socket\char`\"{}}}\label{Example_8cpp_a36983429d17cdac7405dcd532e65bbc0}
+
+
+Definition at line 23 of file Example.\+cpp.
+
+
+
+Referenced by main().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{Example_8cpp_a3894a70718f272b0b2dc91f3b1a3080b}{\index{Example.\+cpp@{Example.\+cpp}!ltrim@{ltrim}}
+\index{ltrim@{ltrim}!Example.\+cpp@{Example.\+cpp}}
+\subsubsection[{ltrim}]{\setlength{\rightskip}{0pt plus 5cm}string ltrim (
+\begin{DoxyParamCaption}
+\item[{const string}]{str}
+\end{DoxyParamCaption}
+)}}\label{Example_8cpp_a3894a70718f272b0b2dc91f3b1a3080b}
+
+
+Removes leading Spaces and Tabs. 
+
+Removes leading Spaces and Tabs 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em str} & String to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+trimmed String 
+\end{DoxyReturn}
+
+
+Definition at line 382 of file Example.\+cpp.
+
+
+
+Referenced by trim().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{Example_8cpp_a3894a70718f272b0b2dc91f3b1a3080b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{Example_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{\index{Example.\+cpp@{Example.\+cpp}!main@{main}}
+\index{main@{main}!Example.\+cpp@{Example.\+cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{Example_8cpp_a0ddf1224851353fc92bfbff6f499fa97}
+This is the End ... no wait ... the opposite H\+T\+T\+P Client
+
+
+
+
+
+
+
+
+
+
+
+
+
+U\+D\+P Server
+
+
+
+
+
+
+
+
+
+T\+C\+P Server
+
+
+
+
+
+
+
+
+
+U\+N\+I\+X Server
+
+
+
+
+
+
+
+
+
+U\+D\+P Client
+
+
+
+
+
+
+
+
+
+T\+C\+P Client
+
+
+
+
+
+
+
+
+
+U\+N\+I\+X Client
+
+
+
+
+
+Definition at line 49 of file Example.\+cpp.
+
+
+
+References D\+E\+F\+A\+U\+L\+T\+M\+S\+G\+C, D\+E\+F\+A\+U\+L\+T\+M\+S\+G\+S, D\+E\+F\+A\+U\+L\+T\+P\+O\+R\+T, D\+E\+F\+A\+U\+L\+T\+S\+E\+R\+V, D\+E\+F\+A\+U\+L\+T\+U\+N\+I\+X, printusage(), U\+D\+P\+Socket\+::recv(), Connection\+::send(), U\+D\+P\+Socket\+::send(), stream\+\_\+client(), stream\+\_\+server(), and trim().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Example_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{Example_8cpp_a52cfa7921b503785d36d8fc027f0f9c3}{\index{Example.\+cpp@{Example.\+cpp}!printusage@{printusage}}
+\index{printusage@{printusage}!Example.\+cpp@{Example.\+cpp}}
+\subsubsection[{printusage}]{\setlength{\rightskip}{0pt plus 5cm}void printusage (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}\label{Example_8cpp_a52cfa7921b503785d36d8fc027f0f9c3}
+
+
+prints usage info 
+
+prints usage info 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & of the executable \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 31 of file Example.\+cpp.
+
+
+
+Referenced by main().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{Example_8cpp_a52cfa7921b503785d36d8fc027f0f9c3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{Example_8cpp_a46d443837f44dcac80a4f1954ca18af8}{\index{Example.\+cpp@{Example.\+cpp}!rtrim@{rtrim}}
+\index{rtrim@{rtrim}!Example.\+cpp@{Example.\+cpp}}
+\subsubsection[{rtrim}]{\setlength{\rightskip}{0pt plus 5cm}string rtrim (
+\begin{DoxyParamCaption}
+\item[{const string}]{str}
+\end{DoxyParamCaption}
+)}}\label{Example_8cpp_a46d443837f44dcac80a4f1954ca18af8}
+
+
+Removes trailing Spaces and Tabs. 
+
+Removes trailing Spaces and Tabs 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em str} & String to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+trimmed String 
+\end{DoxyReturn}
+
+
+Definition at line 368 of file Example.\+cpp.
+
+
+
+Referenced by trim().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{Example_8cpp_a46d443837f44dcac80a4f1954ca18af8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{Example_8cpp_a0730396a463e99f15b97d645e826bd76}{\index{Example.\+cpp@{Example.\+cpp}!str2@{str2}}
+\index{str2@{str2}!Example.\+cpp@{Example.\+cpp}}
+\subsubsection[{str2}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T str2 (
+\begin{DoxyParamCaption}
+\item[{const string}]{str}
+\end{DoxyParamCaption}
+)}}\label{Example_8cpp_a0730396a463e99f15b97d645e826bd76}
+
+
+Convert a String to a T Object. 
+
+This Function tries to convert any string into any Type the Template Function was called with. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em } & return \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 356 of file Example.\+cpp.
+
+\hypertarget{Example_8cpp_ac5de2785666f2fc48e9f23fc7da9e895}{\index{Example.\+cpp@{Example.\+cpp}!stream\+\_\+client@{stream\+\_\+client}}
+\index{stream\+\_\+client@{stream\+\_\+client}!Example.\+cpp@{Example.\+cpp}}
+\subsubsection[{stream\+\_\+client}]{\setlength{\rightskip}{0pt plus 5cm}void stream\+\_\+client (
+\begin{DoxyParamCaption}
+\item[{{\bf Connection} \&}]{con}
+\end{DoxyParamCaption}
+)}}\label{Example_8cpp_ac5de2785666f2fc48e9f23fc7da9e895}
+sends ans recv some data over a \hyperlink{classConnection}{Connection} We recv one Byte at a time till we get the End of Message (E\+O\+M) Character or recv detects an error and return a value less then Zero
+
+If you want to recv larger amounts of Data make sure not to expect to much otherwise recv will block indefinetly for the remaining Bytes ... so design your Protocol whisely.
+
+Definition at line 301 of file Example.\+cpp.
+
+
+
+References D\+E\+F\+A\+U\+L\+T\+M\+S\+G\+C, E\+N\+D\+\_\+\+O\+F\+\_\+\+M\+E\+S\+S\+A\+G\+E, Connection\+::recv(), and Connection\+::send().
+
+
+
+Referenced by main().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Example_8cpp_ac5de2785666f2fc48e9f23fc7da9e895_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{Example_8cpp_ac5de2785666f2fc48e9f23fc7da9e895_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{Example_8cpp_ae0f14589015e103d1db9167bb89e4f4e}{\index{Example.\+cpp@{Example.\+cpp}!stream\+\_\+server@{stream\+\_\+server}}
+\index{stream\+\_\+server@{stream\+\_\+server}!Example.\+cpp@{Example.\+cpp}}
+\subsubsection[{stream\+\_\+server}]{\setlength{\rightskip}{0pt plus 5cm}void stream\+\_\+server (
+\begin{DoxyParamCaption}
+\item[{{\bf Server\+Socket} \&}]{sock}
+\end{DoxyParamCaption}
+)}}\label{Example_8cpp_ae0f14589015e103d1db9167bb89e4f4e}
+Accept Connections on Server\+Sockets and sends ans recv some data We recv one Byte at a time till we get the End of Message (E\+O\+M) Character or recv detects an error and return a value less then Zero
+
+If you want to recv larger amounts of data make sure not to miscalculate. Otherwise recv will block indefinetly for the remaining Bytes ... so design your protocol whisely.
+
+Definition at line 231 of file Example.\+cpp.
+
+
+
+References Server\+Socket\+::accept(), D\+E\+F\+A\+U\+L\+T\+M\+S\+G\+S, E\+N\+D\+\_\+\+O\+F\+\_\+\+M\+E\+S\+S\+A\+G\+E, Connection\+::recv(), Connection\+::send(), and Socket\+Fd\+::set\+Timeout().
+
+
+
+Referenced by main().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Example_8cpp_ae0f14589015e103d1db9167bb89e4f4e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{Example_8cpp_ae0f14589015e103d1db9167bb89e4f4e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{Example_8cpp_a96815f680b2b4c13e5702d35bb956a2e}{\index{Example.\+cpp@{Example.\+cpp}!trim@{trim}}
+\index{trim@{trim}!Example.\+cpp@{Example.\+cpp}}
+\subsubsection[{trim}]{\setlength{\rightskip}{0pt plus 5cm}string trim (
+\begin{DoxyParamCaption}
+\item[{const string}]{str}
+\end{DoxyParamCaption}
+)}}\label{Example_8cpp_a96815f680b2b4c13e5702d35bb956a2e}
+
+
+Removes leading and trailing Spaces and Tabs. 
+
+Removes leading and trailing Spaces and Tabs 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em str} & String to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+trimmed String 
+\end{DoxyReturn}
+
+
+Definition at line 396 of file Example.\+cpp.
+
+
+
+References ltrim(), and rtrim().
+
+
+
+Referenced by main().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{Example_8cpp_a96815f680b2b4c13e5702d35bb956a2e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{Example_8cpp_a96815f680b2b4c13e5702d35bb956a2e_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{Example_8cpp_ac609d746ffb14c438b9af8060e00a129}{\index{Example.\+cpp@{Example.\+cpp}!E\+N\+D\+\_\+\+O\+F\+\_\+\+M\+E\+S\+S\+A\+G\+E@{E\+N\+D\+\_\+\+O\+F\+\_\+\+M\+E\+S\+S\+A\+G\+E}}
+\index{E\+N\+D\+\_\+\+O\+F\+\_\+\+M\+E\+S\+S\+A\+G\+E@{E\+N\+D\+\_\+\+O\+F\+\_\+\+M\+E\+S\+S\+A\+G\+E}!Example.\+cpp@{Example.\+cpp}}
+\subsubsection[{E\+N\+D\+\_\+\+O\+F\+\_\+\+M\+E\+S\+S\+A\+G\+E}]{\setlength{\rightskip}{0pt plus 5cm}const char E\+N\+D\+\_\+\+O\+F\+\_\+\+M\+E\+S\+S\+A\+G\+E = '\textbackslash{}n'\hspace{0.3cm}{\ttfamily [static]}}}\label{Example_8cpp_ac609d746ffb14c438b9af8060e00a129}
+
+
+Definition at line 18 of file Example.\+cpp.
+
+
+
+Referenced by stream\+\_\+client(), and stream\+\_\+server().
+

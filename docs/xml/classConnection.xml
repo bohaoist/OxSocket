@@ -1,0 +1,270 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="classConnection" kind="class" prot="public">
+    <compoundname>Connection</compoundname>
+    <basecompoundref refid="classTransceiver" prot="public" virt="non-virtual">Transceiver</basecompoundref>
+    <basecompoundref refid="classSocketFd" prot="public" virt="non-virtual">SocketFd</basecompoundref>
+    <derivedcompoundref refid="classTCPClientSocket" prot="public" virt="non-virtual">TCPClientSocket</derivedcompoundref>
+    <derivedcompoundref refid="classUNIXClientSocket" prot="public" virt="non-virtual">UNIXClientSocket</derivedcompoundref>
+    <includes refid="Connection_8h" local="no">Connection.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classConnection_1af54be737cc02308299c2e80a893a3e46" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Connection::n</definition>
+        <argsstring></argsstring>
+        <name>n</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/Connection.h" line="17" column="1" bodyfile="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/Connection.h" bodystart="17" bodyend="-1"/>
+        <referencedby refid="classConnection_1a3bc70a7fdfcabe58f6ca003f450e7b34" compoundref="Connection_8cpp" startline="3" endline="8">Connection</referencedby>
+        <referencedby refid="classTCPClientSocket_1a3cdffa36ad33265b280c136ad597f9fd" compoundref="TCPClientSocket_8cpp" startline="3" endline="54">TCPClientSocket::TCPClientSocket</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classConnection_1aca989af92a96ac113222d7b8640df507" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int Connection::sum</definition>
+        <argsstring></argsstring>
+        <name>sum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/Connection.h" line="18" column="1" bodyfile="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/Connection.h" bodystart="18" bodyend="-1"/>
+        <referencedby refid="classConnection_1a3bc70a7fdfcabe58f6ca003f450e7b34" compoundref="Connection_8cpp" startline="3" endline="8">Connection</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classConnection_1a04bb846a50a9357bab86238956940d65" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Connection::targetaddr</definition>
+        <argsstring></argsstring>
+        <name>targetaddr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/Connection.h" line="22" column="1" bodyfile="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/Connection.h" bodystart="22" bodyend="-1"/>
+        <referencedby refid="classConnection_1a3bc70a7fdfcabe58f6ca003f450e7b34" compoundref="Connection_8cpp" startline="3" endline="8">Connection</referencedby>
+        <referencedby refid="classTCPClientSocket_1a3cdffa36ad33265b280c136ad597f9fd" compoundref="TCPClientSocket_8cpp" startline="3" endline="54">TCPClientSocket::TCPClientSocket</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classConnection_1a4e186a7e69d56c0bb84ef56032b89427" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Connection::_poll</definition>
+        <argsstring>(const int=-1)</argsstring>
+        <name>_poll</name>
+        <param>
+          <type>const int</type>
+          <defname>msec</defname>
+          <defval>-1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/Connection.h" line="19" column="1" bodyfile="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/src/Connection.cpp" bodystart="42" bodyend="50"/>
+        <references refid="classSocketFd_1a0636825d276c3525e0d8af969ce2d3b6" compoundref="SocketFd_8h" startline="26">SocketFd::ufds</references>
+        <referencedby refid="classConnection_1ab16b8a780c69303beec9b1f67fb596f3" compoundref="Connection_8cpp" startline="35" endline="38">recv</referencedby>
+        <referencedby refid="classConnection_1a5466a66e569e81d891559686f2c7594b" compoundref="Connection_8cpp" startline="30" endline="33">send</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classConnection_1a3bc70a7fdfcabe58f6ca003f450e7b34" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Connection::Connection</definition>
+        <argsstring>(const int=0, const std::string taddr=&quot;&quot;)</argsstring>
+        <name>Connection</name>
+        <param>
+          <type>const int</type>
+          <defname>fd</defname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>const std::string</type>
+          <declname>taddr</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/Connection.h" line="24" column="1" bodyfile="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/src/Connection.cpp" bodystart="3" bodyend="8"/>
+        <references refid="classConnection_1af54be737cc02308299c2e80a893a3e46" compoundref="Connection_8h" startline="17">n</references>
+        <references refid="classConnection_1aca989af92a96ac113222d7b8640df507" compoundref="Connection_8h" startline="18">sum</references>
+        <references refid="classConnection_1a04bb846a50a9357bab86238956940d65" compoundref="Connection_8h" startline="22">targetaddr</references>
+        <references refid="classSocketFd_1a0636825d276c3525e0d8af969ce2d3b6" compoundref="SocketFd_8h" startline="26">SocketFd::ufds</references>
+      </memberdef>
+      <memberdef kind="function" id="classConnection_1a2e4352edf667bea83001569e9da8a24d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>Connection::~Connection</definition>
+        <argsstring>()</argsstring>
+        <name>~Connection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/Connection.h" line="25" column="1" bodyfile="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/src/Connection.cpp" bodystart="10" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classConnection_1ab16b8a780c69303beec9b1f67fb596f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>int Connection::recv</definition>
+        <argsstring>(char *, const unsigned, const int=-1)</argsstring>
+        <name>recv</name>
+        <reimplements refid="classTransceiver_1aef7153a423766522f4f82c1300157048">recv</reimplements>
+        <param>
+          <type>char *</type>
+          <defname>buf</defname>
+        </param>
+        <param>
+          <type>const unsigned</type>
+          <defname>size</defname>
+        </param>
+        <param>
+          <type>const int</type>
+          <defname>msec</defname>
+          <defval>-1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/Connection.h" line="27" column="1" bodyfile="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/src/Connection.cpp" bodystart="35" bodyend="38"/>
+        <references refid="classConnection_1a4e186a7e69d56c0bb84ef56032b89427" compoundref="Connection_8cpp" startline="42" endline="50">_poll</references>
+        <references refid="Connection_8cpp_1a591f79219998eb65aeacbd25e4459fee" compoundref="Connection_8cpp" startline="14">WEADMACRO</references>
+        <referencedby refid="Example_8cpp_1ac5de2785666f2fc48e9f23fc7da9e895" compoundref="Example_8cpp" startline="301" endline="347">stream_client</referencedby>
+        <referencedby refid="Example_8cpp_1ae0f14589015e103d1db9167bb89e4f4e" compoundref="Example_8cpp" startline="231" endline="296">stream_server</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classConnection_1a5466a66e569e81d891559686f2c7594b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>int Connection::send</definition>
+        <argsstring>(const char *, const unsigned, const int=-1)</argsstring>
+        <name>send</name>
+        <reimplements refid="classTransceiver_1aa54935e0032d9ab6c531024e001ae19d">send</reimplements>
+        <param>
+          <type>const char *</type>
+          <defname>buf</defname>
+        </param>
+        <param>
+          <type>const unsigned</type>
+          <defname>size</defname>
+        </param>
+        <param>
+          <type>const int</type>
+          <defname>msec</defname>
+          <defval>-1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/Connection.h" line="28" column="1" bodyfile="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/src/Connection.cpp" bodystart="30" bodyend="33"/>
+        <references refid="classConnection_1a4e186a7e69d56c0bb84ef56032b89427" compoundref="Connection_8cpp" startline="42" endline="50">_poll</references>
+        <references refid="Connection_8cpp_1a591f79219998eb65aeacbd25e4459fee" compoundref="Connection_8cpp" startline="14">WEADMACRO</references>
+        <referencedby refid="Example_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="Example_8cpp" startline="49" endline="225">main</referencedby>
+        <referencedby refid="Example_8cpp_1ac5de2785666f2fc48e9f23fc7da9e895" compoundref="Example_8cpp" startline="301" endline="347">stream_client</referencedby>
+        <referencedby refid="Example_8cpp_1ae0f14589015e103d1db9167bb89e4f4e" compoundref="Example_8cpp" startline="231" endline="296">stream_server</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="98">
+        <label>SocketFd</label>
+        <link refid="classSocketFd"/>
+      </node>
+      <node id="100">
+        <label>UNIXClientSocket</label>
+        <link refid="classUNIXClientSocket"/>
+        <childnode refid="96" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="97">
+        <label>Transceiver</label>
+        <link refid="classTransceiver"/>
+      </node>
+      <node id="99">
+        <label>TCPClientSocket</label>
+        <link refid="classTCPClientSocket"/>
+        <childnode refid="96" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="96">
+        <label>Connection</label>
+        <link refid="classConnection"/>
+        <childnode refid="97" relation="public-inheritance">
+        </childnode>
+        <childnode refid="98" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="103">
+        <label>SocketFd</label>
+        <link refid="classSocketFd"/>
+      </node>
+      <node id="102">
+        <label>Transceiver</label>
+        <link refid="classTransceiver"/>
+      </node>
+      <node id="105">
+        <label>std::basic_string&lt; char &gt;</label>
+      </node>
+      <node id="101">
+        <label>Connection</label>
+        <link refid="classConnection"/>
+        <childnode refid="102" relation="public-inheritance">
+        </childnode>
+        <childnode refid="103" relation="public-inheritance">
+        </childnode>
+        <childnode refid="104" relation="usage">
+          <edgelabel>targetaddr</edgelabel>
+        </childnode>
+      </node>
+      <node id="104">
+        <label>std::string</label>
+        <childnode refid="105" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/Connection.h" line="13" column="1" bodyfile="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/Connection.h" bodystart="13" bodyend="30"/>
+    <listofallmembers>
+      <member refid="classConnection_1a4e186a7e69d56c0bb84ef56032b89427" prot="private" virt="non-virtual"><scope>Connection</scope><name>_poll</name></member>
+      <member refid="classConnection_1a3bc70a7fdfcabe58f6ca003f450e7b34" prot="public" virt="non-virtual"><scope>Connection</scope><name>Connection</name></member>
+      <member refid="classSocketFd_1af0d8323eedd465a6a499df1129e19f7d" prot="protected" virt="non-virtual"><scope>Connection</scope><name>get_in_addr</name></member>
+      <member refid="classConnection_1af54be737cc02308299c2e80a893a3e46" prot="private" virt="non-virtual"><scope>Connection</scope><name>n</name></member>
+      <member refid="classConnection_1ab16b8a780c69303beec9b1f67fb596f3" prot="public" virt="virtual"><scope>Connection</scope><name>recv</name></member>
+      <member refid="classConnection_1a5466a66e569e81d891559686f2c7594b" prot="public" virt="virtual"><scope>Connection</scope><name>send</name></member>
+      <member refid="classSocketFd_1a0ebb54cefc45ab8e06472fb14e92c9e0" prot="public" virt="non-virtual"><scope>Connection</scope><name>setBlocking</name></member>
+      <member refid="classSocketFd_1a38ae432100f8df6e99e0145a793d4693" prot="public" virt="non-virtual"><scope>Connection</scope><name>setNonBlocking</name></member>
+      <member refid="classSocketFd_1a9b3ed5d1b4e34195fd53ae8a627187aa" prot="public" virt="non-virtual"><scope>Connection</scope><name>setTimeout</name></member>
+      <member refid="classSocketFd_1a77eecdf99e10283d7bb3e0a7a0466a11" prot="protected" virt="non-virtual"><scope>Connection</scope><name>SocketFd</name></member>
+      <member refid="classConnection_1aca989af92a96ac113222d7b8640df507" prot="private" virt="non-virtual"><scope>Connection</scope><name>sum</name></member>
+      <member refid="classConnection_1a04bb846a50a9357bab86238956940d65" prot="public" virt="non-virtual"><scope>Connection</scope><name>targetaddr</name></member>
+      <member refid="classTransceiver_1a8a846d40a2108ebe79003e231d9968e3" prot="protected" virt="non-virtual"><scope>Connection</scope><name>Transceiver</name></member>
+      <member refid="classSocketFd_1a0636825d276c3525e0d8af969ce2d3b6" prot="protected" virt="non-virtual"><scope>Connection</scope><name>ufds</name></member>
+      <member refid="classConnection_1a2e4352edf667bea83001569e9da8a24d" prot="public" virt="virtual"><scope>Connection</scope><name>~Connection</name></member>
+      <member refid="classSocketFd_1add3bcd5016a045da6ecccdfd4c97ee3f" prot="public" virt="virtual"><scope>Connection</scope><name>~SocketFd</name></member>
+      <member refid="classTransceiver_1a09118fef519a75434a3f42ab7d506c74" prot="public" virt="virtual"><scope>Connection</scope><name>~Transceiver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.8">
+  <compound refid="classConnection" kind="class"><name>Connection</name>
+    <member refid="classConnection_1af54be737cc02308299c2e80a893a3e46" kind="variable"><name>n</name></member>
+    <member refid="classConnection_1aca989af92a96ac113222d7b8640df507" kind="variable"><name>sum</name></member>
+    <member refid="classConnection_1a04bb846a50a9357bab86238956940d65" kind="variable"><name>targetaddr</name></member>
+    <member refid="classConnection_1a4e186a7e69d56c0bb84ef56032b89427" kind="function"><name>_poll</name></member>
+    <member refid="classConnection_1a3bc70a7fdfcabe58f6ca003f450e7b34" kind="function"><name>Connection</name></member>
+    <member refid="classConnection_1a2e4352edf667bea83001569e9da8a24d" kind="function"><name>~Connection</name></member>
+    <member refid="classConnection_1ab16b8a780c69303beec9b1f67fb596f3" kind="function"><name>recv</name></member>
+    <member refid="classConnection_1a5466a66e569e81d891559686f2c7594b" kind="function"><name>send</name></member>
+  </compound>
+  <compound refid="classServerSocket" kind="class"><name>ServerSocket</name>
+    <member refid="classServerSocket_1a2b3098589541243241ca25495155186c" kind="function"><name>ServerSocket</name></member>
+    <member refid="classServerSocket_1a510674d924c2544e6b0069e39c36516b" kind="function"><name>~ServerSocket</name></member>
+    <member refid="classServerSocket_1a1d7054bc388f2d789d2124dd96939d90" kind="function"><name>accept</name></member>
+  </compound>
+  <compound refid="classSocketFd" kind="class"><name>SocketFd</name>
+    <member refid="classSocketFd_1a0636825d276c3525e0d8af969ce2d3b6" kind="variable"><name>ufds</name></member>
+    <member refid="classSocketFd_1a77eecdf99e10283d7bb3e0a7a0466a11" kind="function"><name>SocketFd</name></member>
+    <member refid="classSocketFd_1af0d8323eedd465a6a499df1129e19f7d" kind="function"><name>get_in_addr</name></member>
+    <member refid="classSocketFd_1add3bcd5016a045da6ecccdfd4c97ee3f" kind="function"><name>~SocketFd</name></member>
+    <member refid="classSocketFd_1a38ae432100f8df6e99e0145a793d4693" kind="function"><name>setNonBlocking</name></member>
+    <member refid="classSocketFd_1a0ebb54cefc45ab8e06472fb14e92c9e0" kind="function"><name>setBlocking</name></member>
+    <member refid="classSocketFd_1a9b3ed5d1b4e34195fd53ae8a627187aa" kind="function"><name>setTimeout</name></member>
+  </compound>
+  <compound refid="classTCPClientSocket" kind="class"><name>TCPClientSocket</name>
+    <member refid="classTCPClientSocket_1a3cdffa36ad33265b280c136ad597f9fd" kind="function"><name>TCPClientSocket</name></member>
+    <member refid="classTCPClientSocket_1a9607474fe452def202cd23a6d7fecaae" kind="function"><name>~TCPClientSocket</name></member>
+  </compound>
+  <compound refid="classTCPServerSocket" kind="class"><name>TCPServerSocket</name>
+    <member refid="classTCPServerSocket_1a2a54360b0df69bbbbd088bb60ba1c93a" kind="function"><name>TCPServerSocket</name></member>
+    <member refid="classTCPServerSocket_1ac585f0ee1919733ec028dadf9c204ddf" kind="function"><name>~TCPServerSocket</name></member>
+    <member refid="classTCPServerSocket_1a0c169a85290095c3c58b9fae38a1a1d0" kind="function"><name>accept</name></member>
+  </compound>
+  <compound refid="classTCPSocket" kind="class"><name>TCPSocket</name>
+    <member refid="classTCPSocket_1a2f6471b799685ee580a9cfa5d94ac3a7" kind="variable"><name>rv</name></member>
+    <member refid="classTCPSocket_1a9613e3899f39278d0de6fab677bb1edc" kind="variable"><name>slen</name></member>
+    <member refid="classTCPSocket_1a76a561d3c5594dd8bc7f57a10add34b8" kind="variable"><name>hints</name></member>
+    <member refid="classTCPSocket_1a79ce3d1a12b7371a6838dad34d0e8cf3" kind="variable"><name>servinfo</name></member>
+    <member refid="classTCPSocket_1a772833fd0273c3e0bcb1888084d38799" kind="variable"><name>p</name></member>
+    <member refid="classTCPSocket_1a54b0073827ac57bbb4ee6c371791db0f" kind="variable"><name>their_addr</name></member>
+    <member refid="classTCPSocket_1a7a50427a401d1a6f3209d51818bad901" kind="function"><name>TCPSocket</name></member>
+    <member refid="classTCPSocket_1af357e6923a0f8adbbb8e46fab4523991" kind="function"><name>~TCPSocket</name></member>
+  </compound>
+  <compound refid="classTransceiver" kind="class"><name>Transceiver</name>
+    <member refid="classTransceiver_1a8a846d40a2108ebe79003e231d9968e3" kind="function"><name>Transceiver</name></member>
+    <member refid="classTransceiver_1a09118fef519a75434a3f42ab7d506c74" kind="function"><name>~Transceiver</name></member>
+    <member refid="classTransceiver_1aa54935e0032d9ab6c531024e001ae19d" kind="function"><name>send</name></member>
+    <member refid="classTransceiver_1aef7153a423766522f4f82c1300157048" kind="function"><name>recv</name></member>
+  </compound>
+  <compound refid="classUDPClientSocket" kind="class"><name>UDPClientSocket</name>
+    <member refid="classUDPClientSocket_1a948d4d68b8cfb63efbed66556b934101" kind="function"><name>UDPClientSocket</name></member>
+    <member refid="classUDPClientSocket_1a055f430e2111d669cef3af07cec07b56" kind="function"><name>~UDPClientSocket</name></member>
+  </compound>
+  <compound refid="classUDPServerSocket" kind="class"><name>UDPServerSocket</name>
+    <member refid="classUDPServerSocket_1adb12550f85fb5d61aad8dd4e87a5e9d7" kind="function"><name>UDPServerSocket</name></member>
+    <member refid="classUDPServerSocket_1a3725e9f63fd753989c66f2ece4cf0370" kind="function"><name>~UDPServerSocket</name></member>
+  </compound>
+  <compound refid="classUDPSocket" kind="class"><name>UDPSocket</name>
+    <member refid="classUDPSocket_1a8b28284b39fbfbd8bca4c1289f7dda32" kind="variable"><name>rv</name></member>
+    <member refid="classUDPSocket_1ab0ca283a6135c7073b7a1168014ae088" kind="variable"><name>hints</name></member>
+    <member refid="classUDPSocket_1ae0c699a5dbc10580cd2844f282e61f4d" kind="variable"><name>servinfo</name></member>
+    <member refid="classUDPSocket_1a9889d73171c2d143797dce81506d24eb" kind="variable"><name>p</name></member>
+    <member refid="classUDPSocket_1aee1dffc42ebe31dd0400b78d782978de" kind="variable"><name>their_addr</name></member>
+    <member refid="classUDPSocket_1a4f86f3023f5a08f6355802599a10e100" kind="function"><name>UDPSocket</name></member>
+    <member refid="classUDPSocket_1a1c6cf2ad03b21ad00029d5f51fde43f5" kind="function"><name>send</name></member>
+    <member refid="classUDPSocket_1a712f913657579110edb1f6befbc4a279" kind="function"><name>recv</name></member>
+    <member refid="classUDPSocket_1adb1a5254938e5acf5d44ff7a347e9f0a" kind="function"><name>~UDPSocket</name></member>
+  </compound>
+  <compound refid="classUNIXClientSocket" kind="class"><name>UNIXClientSocket</name>
+    <member refid="classUNIXClientSocket_1a78c19c12f8befc559e916b41262d5f6e" kind="variable"><name>remote</name></member>
+    <member refid="classUNIXClientSocket_1a1c1fd48cd60ea3ee5478ae6b238ab376" kind="function"><name>UNIXClientSocket</name></member>
+    <member refid="classUNIXClientSocket_1ade64c842f5dba7948419ebdcbec291d6" kind="function"><name>~UNIXClientSocket</name></member>
+  </compound>
+  <compound refid="classUNIXServerSocket" kind="class"><name>UNIXServerSocket</name>
+    <member refid="classUNIXServerSocket_1ab5864738b5d930ec0cf0017e0a6b4c84" kind="variable"><name>last_new_sock</name></member>
+    <member refid="classUNIXServerSocket_1a8e6873260b9bb0e49ed09a4d03694044" kind="variable"><name>local</name></member>
+    <member refid="classUNIXServerSocket_1a19d9cd6705ffa42363e04f989b0c4904" kind="variable"><name>remote</name></member>
+    <member refid="classUNIXServerSocket_1a529968cfbf9c158cf5420654b503d4b1" kind="function"><name>UNIXServerSocket</name></member>
+    <member refid="classUNIXServerSocket_1a53d5ee91751f59e2ee719fe074dc468f" kind="function"><name>~UNIXServerSocket</name></member>
+    <member refid="classUNIXServerSocket_1a1bd19b56a910dc3811d4d54c30fbf3f5" kind="function"><name>accept</name></member>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="Connection_8h" kind="file"><name>Connection.h</name>
+  </compound>
+  <compound refid="ServerSocket_8h" kind="file"><name>ServerSocket.h</name>
+  </compound>
+  <compound refid="Socket_8h" kind="file"><name>Socket.h</name>
+  </compound>
+  <compound refid="SocketFd_8h" kind="file"><name>SocketFd.h</name>
+  </compound>
+  <compound refid="TCPClientSocket_8h" kind="file"><name>TCPClientSocket.h</name>
+  </compound>
+  <compound refid="TCPServerSocket_8h" kind="file"><name>TCPServerSocket.h</name>
+  </compound>
+  <compound refid="TCPSocket_8h" kind="file"><name>TCPSocket.h</name>
+  </compound>
+  <compound refid="Transceiver_8h" kind="file"><name>Transceiver.h</name>
+  </compound>
+  <compound refid="UDPClientSocket_8h" kind="file"><name>UDPClientSocket.h</name>
+  </compound>
+  <compound refid="UDPServerSocket_8h" kind="file"><name>UDPServerSocket.h</name>
+  </compound>
+  <compound refid="UDPSocket_8h" kind="file"><name>UDPSocket.h</name>
+  </compound>
+  <compound refid="UNIXClientSocket_8h" kind="file"><name>UNIXClientSocket.h</name>
+  </compound>
+  <compound refid="UNIXServerSocket_8h" kind="file"><name>UNIXServerSocket.h</name>
+  </compound>
+  <compound refid="Connection_8cpp" kind="file"><name>Connection.cpp</name>
+    <member refid="Connection_8cpp_1a591f79219998eb65aeacbd25e4459fee" kind="define"><name>WEADMACRO</name></member>
+  </compound>
+  <compound refid="Example_8cpp" kind="file"><name>Example.cpp</name>
+    <member refid="Example_8cpp_1a3db4dba8d56385b62759b89c98cae447" kind="define"><name>DEFAULTPORT</name></member>
+    <member refid="Example_8cpp_1a2ebdb9c4431e687bca05e90494a8460b" kind="define"><name>DEFAULTMSGC</name></member>
+    <member refid="Example_8cpp_1a633fc7423e7d6c4d439c873fec3537ed" kind="define"><name>DEFAULTMSGS</name></member>
+    <member refid="Example_8cpp_1a36983429d17cdac7405dcd532e65bbc0" kind="define"><name>DEFAULTUNIX</name></member>
+    <member refid="Example_8cpp_1aba523120730c0e69e2879d6d60d5377e" kind="define"><name>DEFAULTSERV</name></member>
+    <member refid="Example_8cpp_1ac609d746ffb14c438b9af8060e00a129" kind="variable"><name>END_OF_MESSAGE</name></member>
+    <member refid="Example_8cpp_1ae0f14589015e103d1db9167bb89e4f4e" kind="function"><name>stream_server</name></member>
+    <member refid="Example_8cpp_1ac5de2785666f2fc48e9f23fc7da9e895" kind="function"><name>stream_client</name></member>
+    <member refid="Example_8cpp_1a3894a70718f272b0b2dc91f3b1a3080b" kind="function"><name>ltrim</name></member>
+    <member refid="Example_8cpp_1a46d443837f44dcac80a4f1954ca18af8" kind="function"><name>rtrim</name></member>
+    <member refid="Example_8cpp_1a96815f680b2b4c13e5702d35bb956a2e" kind="function"><name>trim</name></member>
+    <member refid="Example_8cpp_1a0730396a463e99f15b97d645e826bd76" kind="function"><name>str2</name></member>
+    <member refid="Example_8cpp_1a52cfa7921b503785d36d8fc027f0f9c3" kind="function"><name>printusage</name></member>
+    <member refid="Example_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="ServerSocket_8cpp" kind="file"><name>ServerSocket.cpp</name>
+  </compound>
+  <compound refid="SocketFd_8cpp" kind="file"><name>SocketFd.cpp</name>
+  </compound>
+  <compound refid="TCPClientSocket_8cpp" kind="file"><name>TCPClientSocket.cpp</name>
+  </compound>
+  <compound refid="TCPServerSocket_8cpp" kind="file"><name>TCPServerSocket.cpp</name>
+  </compound>
+  <compound refid="TCPSocket_8cpp" kind="file"><name>TCPSocket.cpp</name>
+  </compound>
+  <compound refid="Transceiver_8cpp" kind="file"><name>Transceiver.cpp</name>
+  </compound>
+  <compound refid="UDPClientSocket_8cpp" kind="file"><name>UDPClientSocket.cpp</name>
+  </compound>
+  <compound refid="UDPServerSocket_8cpp" kind="file"><name>UDPServerSocket.cpp</name>
+  </compound>
+  <compound refid="UDPSocket_8cpp" kind="file"><name>UDPSocket.cpp</name>
+  </compound>
+  <compound refid="UNIXClientSocket_8cpp" kind="file"><name>UNIXClientSocket.cpp</name>
+  </compound>
+  <compound refid="UNIXServerSocket_8cpp" kind="file"><name>UNIXServerSocket.cpp</name>
+  </compound>
+  <compound refid="dir_d44c64559bbebec7f509842c48db8b23" kind="dir"><name>include</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
+  </compound>
+</doxygenindex>

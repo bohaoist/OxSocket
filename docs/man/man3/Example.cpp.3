@@ -1,0 +1,278 @@
+.TH "src/Example.cpp" 3 "Thu Oct 2 2014" "Version 0.2" "0xSocket" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/Example.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <iostream>\fP
+.br
+\fC#include <Socket\&.h>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <sstream>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBDEFAULTPORT\fP   1234"
+.br
+.ti -1c
+.RI "#define \fBDEFAULTMSGC\fP   'Hello here Client'"
+.br
+.ti -1c
+.RI "#define \fBDEFAULTMSGS\fP   'Hello here Server'"
+.br
+.ti -1c
+.RI "#define \fBDEFAULTUNIX\fP   'echo_socket'"
+.br
+.ti -1c
+.RI "#define \fBDEFAULTSERV\fP   '127\&.0\&.0\&.1'"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBstream_server\fP (\fBServerSocket\fP &)"
+.br
+.ti -1c
+.RI "void \fBstream_client\fP (\fBConnection\fP &)"
+.br
+.ti -1c
+.RI "string \fBltrim\fP (const string str)"
+.br
+.RI "\fIRemoves leading Spaces and Tabs\&. \fP"
+.ti -1c
+.RI "string \fBrtrim\fP (const string str)"
+.br
+.RI "\fIRemoves trailing Spaces and Tabs\&. \fP"
+.ti -1c
+.RI "string \fBtrim\fP (const string str)"
+.br
+.RI "\fIRemoves leading and trailing Spaces and Tabs\&. \fP"
+.ti -1c
+.RI "template<class T > T \fBstr2\fP (const string str)"
+.br
+.RI "\fIConvert a String to a T Object\&. \fP"
+.ti -1c
+.RI "void \fBprintusage\fP (char *name)"
+.br
+.RI "\fIprints usage info \fP"
+.ti -1c
+.RI "int \fBmain\fP (int argc, char *argv[])"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "static const char \fBEND_OF_MESSAGE\fP = '\\n'"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define DEFAULTMSGC   'Hello here Client'"
+
+.PP
+Definition at line 21 of file Example\&.cpp\&.
+.PP
+Referenced by main(), and stream_client()\&.
+.SS "#define DEFAULTMSGS   'Hello here Server'"
+
+.PP
+Definition at line 22 of file Example\&.cpp\&.
+.PP
+Referenced by main(), and stream_server()\&.
+.SS "#define DEFAULTPORT   1234"
+
+.PP
+Definition at line 20 of file Example\&.cpp\&.
+.PP
+Referenced by main()\&.
+.SS "#define DEFAULTSERV   '127\&.0\&.0\&.1'"
+
+.PP
+Definition at line 24 of file Example\&.cpp\&.
+.PP
+Referenced by main()\&.
+.SS "#define DEFAULTUNIX   'echo_socket'"
+
+.PP
+Definition at line 23 of file Example\&.cpp\&.
+.PP
+Referenced by main()\&.
+.SH "Function Documentation"
+.PP 
+.SS "string ltrim (const stringstr)"
+
+.PP
+Removes leading Spaces and Tabs\&. Removes leading Spaces and Tabs 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP String to 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+trimmed String 
+.RE
+.PP
+
+.PP
+Definition at line 382 of file Example\&.cpp\&.
+.PP
+Referenced by trim()\&.
+.SS "int main (intargc, char *argv[])"
+This is the End \&.\&.\&. no wait \&.\&.\&. the opposite HTTP Client
+.PP
+.PP
+.PP
+.PP
+.PP
+.PP
+.PP
+UDP Server
+.PP
+.PP
+.PP
+.PP
+.PP
+TCP Server
+.PP
+.PP
+.PP
+.PP
+.PP
+UNIX Server
+.PP
+.PP
+.PP
+.PP
+.PP
+UDP Client
+.PP
+.PP
+.PP
+.PP
+.PP
+TCP Client
+.PP
+.PP
+.PP
+.PP
+.PP
+UNIX Client
+.PP
+.PP
+
+.PP
+Definition at line 49 of file Example\&.cpp\&.
+.PP
+References DEFAULTMSGC, DEFAULTMSGS, DEFAULTPORT, DEFAULTSERV, DEFAULTUNIX, printusage(), UDPSocket::recv(), Connection::send(), UDPSocket::send(), stream_client(), stream_server(), and trim()\&.
+.SS "void printusage (char *name)"
+
+.PP
+prints usage info prints usage info 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP of the executable 
+.RE
+.PP
+
+.PP
+Definition at line 31 of file Example\&.cpp\&.
+.PP
+Referenced by main()\&.
+.SS "string rtrim (const stringstr)"
+
+.PP
+Removes trailing Spaces and Tabs\&. Removes trailing Spaces and Tabs 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP String to 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+trimmed String 
+.RE
+.PP
+
+.PP
+Definition at line 368 of file Example\&.cpp\&.
+.PP
+Referenced by trim()\&.
+.SS "template<class T > T str2 (const stringstr)"
+
+.PP
+Convert a String to a T Object\&. This Function tries to convert any string into any Type the Template Function was called with\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI\fP return 
+.RE
+.PP
+
+.PP
+Definition at line 356 of file Example\&.cpp\&.
+.SS "void stream_client (\fBConnection\fP &con)"
+sends ans recv some data over a \fBConnection\fP We recv one Byte at a time till we get the End of Message (EOM) Character or recv detects an error and return a value less then Zero
+.PP
+If you want to recv larger amounts of Data make sure not to expect to much otherwise recv will block indefinetly for the remaining Bytes \&.\&.\&. so design your Protocol whisely\&.
+.PP
+Definition at line 301 of file Example\&.cpp\&.
+.PP
+References DEFAULTMSGC, END_OF_MESSAGE, Connection::recv(), and Connection::send()\&.
+.PP
+Referenced by main()\&.
+.SS "void stream_server (\fBServerSocket\fP &sock)"
+Accept Connections on ServerSockets and sends ans recv some data We recv one Byte at a time till we get the End of Message (EOM) Character or recv detects an error and return a value less then Zero
+.PP
+If you want to recv larger amounts of data make sure not to miscalculate\&. Otherwise recv will block indefinetly for the remaining Bytes \&.\&.\&. so design your protocol whisely\&.
+.PP
+Definition at line 231 of file Example\&.cpp\&.
+.PP
+References ServerSocket::accept(), DEFAULTMSGS, END_OF_MESSAGE, Connection::recv(), Connection::send(), and SocketFd::setTimeout()\&.
+.PP
+Referenced by main()\&.
+.SS "string trim (const stringstr)"
+
+.PP
+Removes leading and trailing Spaces and Tabs\&. Removes leading and trailing Spaces and Tabs 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP String to 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+trimmed String 
+.RE
+.PP
+
+.PP
+Definition at line 396 of file Example\&.cpp\&.
+.PP
+References ltrim(), and rtrim()\&.
+.PP
+Referenced by main()\&.
+.SH "Variable Documentation"
+.PP 
+.SS "const char END_OF_MESSAGE = '\\n'\fC [static]\fP"
+
+.PP
+Definition at line 18 of file Example\&.cpp\&.
+.PP
+Referenced by stream_client(), and stream_server()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 0xSocket from the source code\&.

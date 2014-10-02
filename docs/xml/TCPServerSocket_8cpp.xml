@@ -1,0 +1,226 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="TCPServerSocket_8cpp" kind="file">
+    <compoundname>TCPServerSocket.cpp</compoundname>
+    <includes refid="TCPServerSocket_8h" local="no">TCPServerSocket.h</includes>
+    <incdepgraph>
+      <node id="907">
+        <label>netinet/in.h</label>
+      </node>
+      <node id="895">
+        <label>arpa/inet.h</label>
+      </node>
+      <node id="912">
+        <label>ServerSocket.h</label>
+        <link refid="ServerSocket_8h"/>
+        <childnode refid="900" relation="include">
+        </childnode>
+      </node>
+      <node id="898">
+        <label>cmath</label>
+      </node>
+      <node id="899">
+        <label>stdexcept</label>
+      </node>
+      <node id="903">
+        <label>poll.h</label>
+      </node>
+      <node id="908">
+        <label>fcntl.h</label>
+      </node>
+      <node id="904">
+        <label>string</label>
+      </node>
+      <node id="902">
+        <label>sys/unistd.h</label>
+      </node>
+      <node id="894">
+        <label>netdb.h</label>
+      </node>
+      <node id="906">
+        <label>SocketFd.h</label>
+        <link refid="SocketFd_8h"/>
+        <childnode refid="907" relation="include">
+        </childnode>
+        <childnode refid="893" relation="include">
+        </childnode>
+        <childnode refid="908" relation="include">
+        </childnode>
+        <childnode refid="901" relation="include">
+        </childnode>
+        <childnode refid="909" relation="include">
+        </childnode>
+        <childnode refid="903" relation="include">
+        </childnode>
+      </node>
+      <node id="900">
+        <label>Connection.h</label>
+        <link refid="Connection_8h"/>
+        <childnode refid="901" relation="include">
+        </childnode>
+        <childnode refid="902" relation="include">
+        </childnode>
+        <childnode refid="903" relation="include">
+        </childnode>
+        <childnode refid="904" relation="include">
+        </childnode>
+        <childnode refid="905" relation="include">
+        </childnode>
+        <childnode refid="906" relation="include">
+        </childnode>
+      </node>
+      <node id="896">
+        <label>cstdio</label>
+      </node>
+      <node id="909">
+        <label>unistd.h</label>
+      </node>
+      <node id="910">
+        <label>TCPSocket.h</label>
+        <link refid="TCPSocket_8h"/>
+        <childnode refid="894" relation="include">
+        </childnode>
+        <childnode refid="911" relation="include">
+        </childnode>
+        <childnode refid="893" relation="include">
+        </childnode>
+      </node>
+      <node id="905">
+        <label>Transceiver.h</label>
+        <link refid="Transceiver_8h"/>
+      </node>
+      <node id="911">
+        <label>bits/socket.h</label>
+      </node>
+      <node id="892">
+        <label>TCPServerSocket.h</label>
+        <link refid="TCPServerSocket_8h"/>
+        <childnode refid="893" relation="include">
+        </childnode>
+        <childnode refid="894" relation="include">
+        </childnode>
+        <childnode refid="895" relation="include">
+        </childnode>
+        <childnode refid="896" relation="include">
+        </childnode>
+        <childnode refid="897" relation="include">
+        </childnode>
+        <childnode refid="898" relation="include">
+        </childnode>
+        <childnode refid="899" relation="include">
+        </childnode>
+        <childnode refid="900" relation="include">
+        </childnode>
+        <childnode refid="910" relation="include">
+        </childnode>
+        <childnode refid="912" relation="include">
+        </childnode>
+      </node>
+      <node id="891">
+        <label>src/TCPServerSocket.cpp</label>
+        <link refid="TCPServerSocket.cpp"/>
+        <childnode refid="892" relation="include">
+        </childnode>
+      </node>
+      <node id="893">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="901">
+        <label>stdio.h</label>
+      </node>
+      <node id="897">
+        <label>cstring</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;<ref refid="TCPServerSocket_8h" kindref="compound">TCPServerSocket.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="classTCPServerSocket_1a2a54360b0df69bbbbd088bb60ba1c93a" refkind="member"><highlight class="normal"><ref refid="classTCPServerSocket_1a2a54360b0df69bbbbd088bb60ba1c93a" kindref="member">TCPServerSocket::TCPServerSocket</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>iport)<sp/>{</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memset(&amp;<ref refid="classTCPSocket_1a76a561d3c5594dd8bc7f57a10add34b8" kindref="member">hints</ref>,<sp/>0,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/><ref refid="classTCPSocket_1a76a561d3c5594dd8bc7f57a10add34b8" kindref="member">hints</ref>);</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classTCPSocket_1a76a561d3c5594dd8bc7f57a10add34b8" kindref="member">hints</ref>.ai_family<sp/>=<sp/>AF_UNSPEC;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classTCPSocket_1a76a561d3c5594dd8bc7f57a10add34b8" kindref="member">hints</ref>.ai_socktype<sp/>=<sp/>SOCK_STREAM;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classTCPSocket_1a76a561d3c5594dd8bc7f57a10add34b8" kindref="member">hints</ref>.ai_flags<sp/>=<sp/>AI_PASSIVE;<sp/></highlight><highlight class="comment">//<sp/>use<sp/>my<sp/>IP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nb_digits<sp/>=<sp/>(</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/>&lt;<sp/>iport<sp/>?<sp/>(int)<sp/>log10((</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)<sp/>iport)<sp/>+<sp/>1<sp/>:<sp/>1);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>port[nb_digits<sp/>+<sp/>1];<sp/></highlight><highlight class="comment">//<sp/>add<sp/>one</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n<sp/>=<sp/>(::sprintf(port,<sp/></highlight><highlight class="stringliteral">&quot;%d&quot;</highlight><highlight class="normal">,<sp/>iport));</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(0<sp/>&gt;<sp/>n)<sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>msg<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;TCPServerSocket::sprintf()<sp/>failed&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::perror(msg);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error(msg);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((<ref refid="classTCPSocket_1a2f6471b799685ee580a9cfa5d94ac3a7" kindref="member">rv</ref><sp/>=<sp/>::getaddrinfo(NULL,<sp/>port,<sp/>&amp;<ref refid="classTCPSocket_1a76a561d3c5594dd8bc7f57a10add34b8" kindref="member">hints</ref>,<sp/>&amp;<ref refid="classTCPSocket_1a79ce3d1a12b7371a6838dad34d0e8cf3" kindref="member">servinfo</ref>))<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(stderr,<sp/></highlight><highlight class="stringliteral">&quot;getaddrinfo:<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>gai_strerror(<ref refid="classTCPSocket_1a2f6471b799685ee580a9cfa5d94ac3a7" kindref="member">rv</ref>));</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error(</highlight><highlight class="stringliteral">&quot;TCPServerSocket::getaddrinfo()<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>loop<sp/>through<sp/>all<sp/>the<sp/>results<sp/>and<sp/>bind<sp/>to<sp/>the<sp/>first<sp/>we<sp/>can</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="classTCPSocket_1a772833fd0273c3e0bcb1888084d38799" kindref="member">p</ref><sp/>=<sp/><ref refid="classTCPSocket_1a79ce3d1a12b7371a6838dad34d0e8cf3" kindref="member">servinfo</ref>;<sp/><ref refid="classTCPSocket_1a772833fd0273c3e0bcb1888084d38799" kindref="member">p</ref><sp/>!=<sp/>NULL;<sp/><ref refid="classTCPSocket_1a772833fd0273c3e0bcb1888084d38799" kindref="member">p</ref><sp/>=<sp/><ref refid="classTCPSocket_1a772833fd0273c3e0bcb1888084d38799" kindref="member">p</ref>-&gt;ai_next)<sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((<ref refid="classSocketFd_1a0636825d276c3525e0d8af969ce2d3b6" kindref="member">ufds</ref>.fd<sp/>=<sp/>socket(<ref refid="classTCPSocket_1a772833fd0273c3e0bcb1888084d38799" kindref="member">p</ref>-&gt;ai_family,<sp/><ref refid="classTCPSocket_1a772833fd0273c3e0bcb1888084d38799" kindref="member">p</ref>-&gt;ai_socktype,<sp/><ref refid="classTCPSocket_1a772833fd0273c3e0bcb1888084d38799" kindref="member">p</ref>-&gt;ai_protocol))</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>==<sp/>-1)<sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>perror(</highlight><highlight class="stringliteral">&quot;TCPServerSocket::socket()<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>yes<sp/>=<sp/>1;<sp/></highlight><highlight class="comment">//<sp/>Addr<sp/>allready<sp/>in<sp/>use<sp/>message</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(setsockopt(<ref refid="classSocketFd_1a0636825d276c3525e0d8af969ce2d3b6" kindref="member">ufds</ref>.fd,<sp/>SOL_SOCKET,<sp/>SO_REUSEADDR,<sp/>&amp;yes,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>==<sp/>-1)<sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>msg<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;TCPServerSocket::setsockopt()<sp/>failed&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>perror(msg);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error(msg);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bind(<ref refid="classSocketFd_1a0636825d276c3525e0d8af969ce2d3b6" kindref="member">ufds</ref>.fd,<sp/><ref refid="classTCPSocket_1a772833fd0273c3e0bcb1888084d38799" kindref="member">p</ref>-&gt;ai_addr,<sp/><ref refid="classTCPSocket_1a772833fd0273c3e0bcb1888084d38799" kindref="member">p</ref>-&gt;ai_addrlen)<sp/>==<sp/>-1)<sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>close(<ref refid="classSocketFd_1a0636825d276c3525e0d8af969ce2d3b6" kindref="member">ufds</ref>.fd);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>perror(</highlight><highlight class="stringliteral">&quot;TCPServerSocket::bind()<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classTCPSocket_1a772833fd0273c3e0bcb1888084d38799" kindref="member">p</ref><sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error(</highlight><highlight class="stringliteral">&quot;TCPServerSocket::bind()<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>freeaddrinfo(<ref refid="classTCPSocket_1a79ce3d1a12b7371a6838dad34d0e8cf3" kindref="member">servinfo</ref>);<sp/></highlight><highlight class="comment">//<sp/>all<sp/>done<sp/>with<sp/>this<sp/>structure</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(::listen(<ref refid="classSocketFd_1a0636825d276c3525e0d8af969ce2d3b6" kindref="member">ufds</ref>.fd,<sp/>10)<sp/>==<sp/>-1)<sp/>{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*msg<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;TCPServerSocket::listen()<sp/>failed&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>perror(msg);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error(msg);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="classTCPServerSocket_1ac585f0ee1919733ec028dadf9c204ddf" refkind="member"><highlight class="normal"><ref refid="classTCPServerSocket_1ac585f0ee1919733ec028dadf9c204ddf" kindref="member">TCPServerSocket::~TCPServerSocket</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="classTCPServerSocket_1a0c169a85290095c3c58b9fae38a1a1d0" refkind="member"><highlight class="normal"><ref refid="classConnection" kindref="compound">Connection</ref>*<sp/><ref refid="classTCPServerSocket_1a0c169a85290095c3c58b9fae38a1a1d0" kindref="member">TCPServerSocket::accept</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classTCPSocket_1a9613e3899f39278d0de6fab677bb1edc" kindref="member">slen</ref><sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/><ref refid="classTCPSocket_1a54b0073827ac57bbb4ee6c371791db0f" kindref="member">their_addr</ref>;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tmp<sp/>=<sp/><ref refid="classTCPServerSocket_1a0c169a85290095c3c58b9fae38a1a1d0" kindref="member">::accept</ref>(<ref refid="classSocketFd_1a0636825d276c3525e0d8af969ce2d3b6" kindref="member">ufds</ref>.fd,<sp/>(sockaddr*)<sp/>&amp;<ref refid="classTCPSocket_1a54b0073827ac57bbb4ee6c371791db0f" kindref="member">their_addr</ref>,<sp/>&amp;<ref refid="classTCPSocket_1a9613e3899f39278d0de6fab677bb1edc" kindref="member">slen</ref>);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(-1<sp/>==<sp/>tmp)<sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::perror(</highlight><highlight class="stringliteral">&quot;TCPServerSocket::accept()<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(NULL);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>s[INET6_ADDRSTRLEN];</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>inet_ntop(<ref refid="classTCPSocket_1a54b0073827ac57bbb4ee6c371791db0f" kindref="member">their_addr</ref>.ss_family,<sp/><ref refid="classSocketFd_1af0d8323eedd465a6a499df1129e19f7d" kindref="member">get_in_addr</ref>((sockaddr<sp/>*)<sp/>&amp;<ref refid="classTCPSocket_1a54b0073827ac57bbb4ee6c371791db0f" kindref="member">their_addr</ref>),<sp/>s,</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(s));</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classConnection" kindref="compound">Connection</ref>(tmp,<sp/>s));</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/src/TCPServerSocket.cpp"/>
+  </compounddef>
+</doxygen>

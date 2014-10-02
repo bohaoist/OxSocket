@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="ServerSocket_8h" kind="file">
+    <compoundname>ServerSocket.h</compoundname>
+    <includes refid="Connection_8h" local="no">Connection.h</includes>
+    <includedby refid="TCPServerSocket_8h" local="no">include/TCPServerSocket.h</includedby>
+    <includedby refid="UNIXServerSocket_8h" local="no">include/UNIXServerSocket.h</includedby>
+    <includedby refid="ServerSocket_8cpp" local="no">src/ServerSocket.cpp</includedby>
+    <incdepgraph>
+      <node id="537">
+        <label>netinet/in.h</label>
+      </node>
+      <node id="529">
+        <label>include/ServerSocket.h</label>
+        <link refid="ServerSocket.h"/>
+        <childnode refid="530" relation="include">
+        </childnode>
+      </node>
+      <node id="533">
+        <label>poll.h</label>
+      </node>
+      <node id="539">
+        <label>fcntl.h</label>
+      </node>
+      <node id="534">
+        <label>string</label>
+      </node>
+      <node id="532">
+        <label>sys/unistd.h</label>
+      </node>
+      <node id="536">
+        <label>SocketFd.h</label>
+        <link refid="SocketFd_8h"/>
+        <childnode refid="537" relation="include">
+        </childnode>
+        <childnode refid="538" relation="include">
+        </childnode>
+        <childnode refid="539" relation="include">
+        </childnode>
+        <childnode refid="531" relation="include">
+        </childnode>
+        <childnode refid="540" relation="include">
+        </childnode>
+        <childnode refid="533" relation="include">
+        </childnode>
+      </node>
+      <node id="530">
+        <label>Connection.h</label>
+        <link refid="Connection_8h"/>
+        <childnode refid="531" relation="include">
+        </childnode>
+        <childnode refid="532" relation="include">
+        </childnode>
+        <childnode refid="533" relation="include">
+        </childnode>
+        <childnode refid="534" relation="include">
+        </childnode>
+        <childnode refid="535" relation="include">
+        </childnode>
+        <childnode refid="536" relation="include">
+        </childnode>
+      </node>
+      <node id="540">
+        <label>unistd.h</label>
+      </node>
+      <node id="535">
+        <label>Transceiver.h</label>
+        <link refid="Transceiver_8h"/>
+      </node>
+      <node id="538">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="531">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="541">
+        <label>include/ServerSocket.h</label>
+        <link refid="ServerSocket.h"/>
+        <childnode refid="542" relation="include">
+        </childnode>
+        <childnode refid="546" relation="include">
+        </childnode>
+        <childnode refid="548" relation="include">
+        </childnode>
+      </node>
+      <node id="547">
+        <label>src/UNIXServerSocket.cpp</label>
+        <link refid="UNIXServerSocket_8cpp"/>
+      </node>
+      <node id="544">
+        <label>src/Example.cpp</label>
+        <link refid="Example_8cpp"/>
+      </node>
+      <node id="548">
+        <label>src/ServerSocket.cpp</label>
+        <link refid="ServerSocket_8cpp"/>
+      </node>
+      <node id="546">
+        <label>include/UNIXServerSocket.h</label>
+        <link refid="UNIXServerSocket_8h"/>
+        <childnode refid="543" relation="include">
+        </childnode>
+        <childnode refid="547" relation="include">
+        </childnode>
+      </node>
+      <node id="542">
+        <label>include/TCPServerSocket.h</label>
+        <link refid="TCPServerSocket_8h"/>
+        <childnode refid="543" relation="include">
+        </childnode>
+        <childnode refid="545" relation="include">
+        </childnode>
+      </node>
+      <node id="543">
+        <label>include/Socket.h</label>
+        <link refid="Socket_8h"/>
+        <childnode refid="544" relation="include">
+        </childnode>
+      </node>
+      <node id="545">
+        <label>src/TCPServerSocket.cpp</label>
+        <link refid="TCPServerSocket_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classServerSocket" prot="public">ServerSocket</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>SERVERSOCKET_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SERVERSOCKET_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="Connection_8h" kindref="compound">Connection.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="classServerSocket" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classServerSocket" kindref="compound">ServerSocket</ref><sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classServerSocket_1a2b3098589541243241ca25495155186c" kindref="member">ServerSocket</ref>();</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classServerSocket_1a510674d924c2544e6b0069e39c36516b" kindref="member">~ServerSocket</ref>();</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classConnection" kindref="compound">Connection</ref>*<sp/><ref refid="classServerSocket_1a1d7054bc388f2d789d2124dd96939d90" kindref="member">accept</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/ServerSocket.h"/>
+  </compounddef>
+</doxygen>

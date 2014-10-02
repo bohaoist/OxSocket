@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="classTCPServerSocket" kind="class" prot="public">
+    <compoundname>TCPServerSocket</compoundname>
+    <basecompoundref refid="classSocketFd" prot="public" virt="non-virtual">SocketFd</basecompoundref>
+    <basecompoundref refid="classServerSocket" prot="public" virt="non-virtual">ServerSocket</basecompoundref>
+    <basecompoundref refid="classTCPSocket" prot="public" virt="non-virtual">TCPSocket</basecompoundref>
+    <includes refid="TCPServerSocket_8h" local="no">TCPServerSocket.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classTCPServerSocket_1a2a54360b0df69bbbbd088bb60ba1c93a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TCPServerSocket::TCPServerSocket</definition>
+        <argsstring>(const unsigned)</argsstring>
+        <name>TCPServerSocket</name>
+        <param>
+          <type>const unsigned</type>
+          <defname>iport</defname>
+        </param>
+        <briefdescription>
+<para>construct a listening Socket </para>        </briefdescription>
+        <detaileddescription>
+<para>constructs a listening Socket will throw runtime_error if something goes wrong </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/TCPServerSocket.h" line="35" column="1" bodyfile="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/src/TCPServerSocket.cpp" bodystart="3" bodyend="62"/>
+        <references refid="classTCPSocket_1a76a561d3c5594dd8bc7f57a10add34b8" compoundref="TCPSocket_8h" startline="19">TCPSocket::hints</references>
+        <references refid="classTCPSocket_1a772833fd0273c3e0bcb1888084d38799" compoundref="TCPSocket_8h" startline="19">TCPSocket::p</references>
+        <references refid="classTCPSocket_1a2f6471b799685ee580a9cfa5d94ac3a7" compoundref="TCPSocket_8h" startline="17">TCPSocket::rv</references>
+        <references refid="classTCPSocket_1a79ce3d1a12b7371a6838dad34d0e8cf3" compoundref="TCPSocket_8h" startline="19">TCPSocket::servinfo</references>
+        <references refid="classSocketFd_1a0636825d276c3525e0d8af969ce2d3b6" compoundref="SocketFd_8h" startline="26">SocketFd::ufds</references>
+      </memberdef>
+      <memberdef kind="function" id="classTCPServerSocket_1ac585f0ee1919733ec028dadf9c204ddf" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>TCPServerSocket::~TCPServerSocket</definition>
+        <argsstring>()</argsstring>
+        <name>~TCPServerSocket</name>
+        <briefdescription>
+<para>does nothing </para>        </briefdescription>
+        <detaileddescription>
+<para>does nothing </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/TCPServerSocket.h" line="41" column="1" bodyfile="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/src/TCPServerSocket.cpp" bodystart="64" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="classTCPServerSocket_1a0c169a85290095c3c58b9fae38a1a1d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classConnection" kindref="compound">Connection</ref> *</type>
+        <definition>Connection * TCPServerSocket::accept</definition>
+        <argsstring>()</argsstring>
+        <name>accept</name>
+        <reimplements refid="classServerSocket_1a1d7054bc388f2d789d2124dd96939d90">accept</reimplements>
+        <briefdescription>
+<para>accept incoming tcp connections </para>        </briefdescription>
+        <detaileddescription>
+<para>accept incoming tcp connections </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/TCPServerSocket.h" line="47" column="1" bodyfile="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/src/TCPServerSocket.cpp" bodystart="67" bodyend="83"/>
+        <references refid="classSocketFd_1af0d8323eedd465a6a499df1129e19f7d" compoundref="SocketFd_8cpp" startline="26" endline="32">SocketFd::get_in_addr</references>
+        <references refid="classTCPSocket_1a9613e3899f39278d0de6fab677bb1edc" compoundref="TCPSocket_8h" startline="18">TCPSocket::slen</references>
+        <references refid="classTCPSocket_1a54b0073827ac57bbb4ee6c371791db0f" compoundref="TCPSocket_8h" startline="20">TCPSocket::their_addr</references>
+        <references refid="classSocketFd_1a0636825d276c3525e0d8af969ce2d3b6" compoundref="SocketFd_8h" startline="26">SocketFd::ufds</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>A <ref refid="classTCPServerSocket" kindref="compound">TCPServerSocket</ref> provides a means for TCP Clients to be Accepted with the <ref refid="classTCPServerSocket_1a0c169a85290095c3c58b9fae38a1a1d0" kindref="member">accept()</ref> methode it provides if the construction failes and the Listen Port can not be accessed the constructor will throw a runtime_error </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="133">
+        <label>SocketFd</label>
+        <link refid="classSocketFd"/>
+      </node>
+      <node id="134">
+        <label>ServerSocket</label>
+        <link refid="classServerSocket"/>
+      </node>
+      <node id="132">
+        <label>TCPServerSocket</label>
+        <link refid="classTCPServerSocket"/>
+        <childnode refid="133" relation="public-inheritance">
+        </childnode>
+        <childnode refid="134" relation="public-inheritance">
+        </childnode>
+        <childnode refid="135" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="135">
+        <label>TCPSocket</label>
+        <link refid="classTCPSocket"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="137">
+        <label>SocketFd</label>
+        <link refid="classSocketFd"/>
+      </node>
+      <node id="138">
+        <label>ServerSocket</label>
+        <link refid="classServerSocket"/>
+      </node>
+      <node id="136">
+        <label>TCPServerSocket</label>
+        <link refid="classTCPServerSocket"/>
+        <childnode refid="137" relation="public-inheritance">
+        </childnode>
+        <childnode refid="138" relation="public-inheritance">
+        </childnode>
+        <childnode refid="139" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="139">
+        <label>TCPSocket</label>
+        <link refid="classTCPSocket"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/TCPServerSocket.h" line="26" column="1" bodyfile="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/TCPServerSocket.h" bodystart="26" bodyend="48"/>
+    <listofallmembers>
+      <member refid="classTCPServerSocket_1a0c169a85290095c3c58b9fae38a1a1d0" prot="public" virt="virtual"><scope>TCPServerSocket</scope><name>accept</name></member>
+      <member refid="classSocketFd_1af0d8323eedd465a6a499df1129e19f7d" prot="protected" virt="non-virtual"><scope>TCPServerSocket</scope><name>get_in_addr</name></member>
+      <member refid="classTCPSocket_1a76a561d3c5594dd8bc7f57a10add34b8" prot="protected" virt="non-virtual"><scope>TCPServerSocket</scope><name>hints</name></member>
+      <member refid="classTCPSocket_1a772833fd0273c3e0bcb1888084d38799" prot="protected" virt="non-virtual"><scope>TCPServerSocket</scope><name>p</name></member>
+      <member refid="classTCPSocket_1a2f6471b799685ee580a9cfa5d94ac3a7" prot="protected" virt="non-virtual"><scope>TCPServerSocket</scope><name>rv</name></member>
+      <member refid="classServerSocket_1a2b3098589541243241ca25495155186c" prot="protected" virt="non-virtual"><scope>TCPServerSocket</scope><name>ServerSocket</name></member>
+      <member refid="classTCPSocket_1a79ce3d1a12b7371a6838dad34d0e8cf3" prot="protected" virt="non-virtual"><scope>TCPServerSocket</scope><name>servinfo</name></member>
+      <member refid="classSocketFd_1a0ebb54cefc45ab8e06472fb14e92c9e0" prot="public" virt="non-virtual"><scope>TCPServerSocket</scope><name>setBlocking</name></member>
+      <member refid="classSocketFd_1a38ae432100f8df6e99e0145a793d4693" prot="public" virt="non-virtual"><scope>TCPServerSocket</scope><name>setNonBlocking</name></member>
+      <member refid="classSocketFd_1a9b3ed5d1b4e34195fd53ae8a627187aa" prot="public" virt="non-virtual"><scope>TCPServerSocket</scope><name>setTimeout</name></member>
+      <member refid="classTCPSocket_1a9613e3899f39278d0de6fab677bb1edc" prot="protected" virt="non-virtual"><scope>TCPServerSocket</scope><name>slen</name></member>
+      <member refid="classSocketFd_1a77eecdf99e10283d7bb3e0a7a0466a11" prot="protected" virt="non-virtual"><scope>TCPServerSocket</scope><name>SocketFd</name></member>
+      <member refid="classTCPServerSocket_1a2a54360b0df69bbbbd088bb60ba1c93a" prot="public" virt="non-virtual"><scope>TCPServerSocket</scope><name>TCPServerSocket</name></member>
+      <member refid="classTCPSocket_1a7a50427a401d1a6f3209d51818bad901" prot="protected" virt="non-virtual"><scope>TCPServerSocket</scope><name>TCPSocket</name></member>
+      <member refid="classTCPSocket_1a54b0073827ac57bbb4ee6c371791db0f" prot="protected" virt="non-virtual"><scope>TCPServerSocket</scope><name>their_addr</name></member>
+      <member refid="classSocketFd_1a0636825d276c3525e0d8af969ce2d3b6" prot="protected" virt="non-virtual"><scope>TCPServerSocket</scope><name>ufds</name></member>
+      <member refid="classServerSocket_1a510674d924c2544e6b0069e39c36516b" prot="public" virt="virtual"><scope>TCPServerSocket</scope><name>~ServerSocket</name></member>
+      <member refid="classSocketFd_1add3bcd5016a045da6ecccdfd4c97ee3f" prot="public" virt="virtual"><scope>TCPServerSocket</scope><name>~SocketFd</name></member>
+      <member refid="classTCPServerSocket_1ac585f0ee1919733ec028dadf9c204ddf" prot="public" virt="virtual"><scope>TCPServerSocket</scope><name>~TCPServerSocket</name></member>
+      <member refid="classTCPSocket_1af357e6923a0f8adbbb8e46fab4523991" prot="public" virt="virtual"><scope>TCPServerSocket</scope><name>~TCPSocket</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

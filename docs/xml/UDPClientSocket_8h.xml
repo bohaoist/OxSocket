@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="UDPClientSocket_8h" kind="file">
+    <compoundname>UDPClientSocket.h</compoundname>
+    <includes local="no">netdb.h</includes>
+    <includes local="no">sys/socket.h</includes>
+    <includes local="no">cmath</includes>
+    <includes local="no">cstring</includes>
+    <includes local="no">cstdio</includes>
+    <includes local="no">stdexcept</includes>
+    <includes refid="UDPSocket_8h" local="no">UDPSocket.h</includes>
+    <includedby refid="Socket_8h" local="no">include/Socket.h</includedby>
+    <includedby refid="UDPClientSocket_8cpp" local="no">src/UDPClientSocket.cpp</includedby>
+    <incdepgraph>
+      <node id="708">
+        <label>netinet/in.h</label>
+      </node>
+      <node id="700">
+        <label>cmath</label>
+      </node>
+      <node id="703">
+        <label>stdexcept</label>
+      </node>
+      <node id="711">
+        <label>poll.h</label>
+      </node>
+      <node id="709">
+        <label>fcntl.h</label>
+      </node>
+      <node id="698">
+        <label>netdb.h</label>
+      </node>
+      <node id="697">
+        <label>include/UDPClientSocket.h</label>
+        <link refid="UDPClientSocket.h"/>
+        <childnode refid="698" relation="include">
+        </childnode>
+        <childnode refid="699" relation="include">
+        </childnode>
+        <childnode refid="700" relation="include">
+        </childnode>
+        <childnode refid="701" relation="include">
+        </childnode>
+        <childnode refid="702" relation="include">
+        </childnode>
+        <childnode refid="703" relation="include">
+        </childnode>
+        <childnode refid="704" relation="include">
+        </childnode>
+      </node>
+      <node id="707">
+        <label>SocketFd.h</label>
+        <link refid="SocketFd_8h"/>
+        <childnode refid="708" relation="include">
+        </childnode>
+        <childnode refid="699" relation="include">
+        </childnode>
+        <childnode refid="709" relation="include">
+        </childnode>
+        <childnode refid="710" relation="include">
+        </childnode>
+        <childnode refid="705" relation="include">
+        </childnode>
+        <childnode refid="711" relation="include">
+        </childnode>
+      </node>
+      <node id="702">
+        <label>cstdio</label>
+      </node>
+      <node id="705">
+        <label>unistd.h</label>
+      </node>
+      <node id="704">
+        <label>UDPSocket.h</label>
+        <link refid="UDPSocket_8h"/>
+        <childnode refid="705" relation="include">
+        </childnode>
+        <childnode refid="698" relation="include">
+        </childnode>
+        <childnode refid="699" relation="include">
+        </childnode>
+        <childnode refid="706" relation="include">
+        </childnode>
+        <childnode refid="707" relation="include">
+        </childnode>
+      </node>
+      <node id="706">
+        <label>Transceiver.h</label>
+        <link refid="Transceiver_8h"/>
+      </node>
+      <node id="699">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="710">
+        <label>stdio.h</label>
+      </node>
+      <node id="701">
+        <label>cstring</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="714">
+        <label>src/Example.cpp</label>
+        <link refid="Example_8cpp"/>
+      </node>
+      <node id="712">
+        <label>include/UDPClientSocket.h</label>
+        <link refid="UDPClientSocket.h"/>
+        <childnode refid="713" relation="include">
+        </childnode>
+        <childnode refid="715" relation="include">
+        </childnode>
+      </node>
+      <node id="715">
+        <label>src/UDPClientSocket.cpp</label>
+        <link refid="UDPClientSocket_8cpp"/>
+      </node>
+      <node id="713">
+        <label>include/Socket.h</label>
+        <link refid="Socket_8h"/>
+        <childnode refid="714" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classUDPClientSocket" prot="public">UDPClientSocket</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>UDPCLIENTSOCKET_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>UDPCLIENTSOCKET_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;netdb.h&gt;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>getaddrinfo,<sp/>gai_strerror,<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/socket.h&gt;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">/*<sp/>socket<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cmath&gt;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>log10<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstring&gt;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>memset<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdio&gt;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>perror,<sp/>sprintf,fprintf<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdexcept&gt;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>runtime_error<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="UDPSocket_8h" kindref="compound">UDPSocket.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="classUDPClientSocket" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classUDPClientSocket" kindref="compound">UDPClientSocket</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classUDPSocket" kindref="compound">UDPSocket</ref><sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classUDPClientSocket_1a948d4d68b8cfb63efbed66556b934101" kindref="member">UDPClientSocket</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>addr,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>port);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classUDPClientSocket_1a055f430e2111d669cef3af07cec07b56" kindref="member">~UDPClientSocket</ref>();</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/UDPClientSocket.h"/>
+  </compounddef>
+</doxygen>

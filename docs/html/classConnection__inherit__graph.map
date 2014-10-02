@@ -1,0 +1,6 @@
+<map id="Connection" name="Connection">
+<area shape="rect" id="node4" href="$classTCPClientSocket.html" title="TCPClientSocket" alt="" coords="5,155,131,181"/>
+<area shape="rect" id="node5" href="$classUNIXClientSocket.html" title="UNIXClientSocket" alt="" coords="155,155,287,181"/>
+<area shape="rect" id="node2" href="$classTransceiver.html" title="Transceiver" alt="" coords="41,5,135,32"/>
+<area shape="rect" id="node3" href="$classSocketFd.html" title="Not initalizable BaseClass for SocketFileDescriptor. " alt="" coords="159,5,241,32"/>
+</map>

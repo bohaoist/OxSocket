@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="classTCPClientSocket" kind="class" prot="public">
+    <compoundname>TCPClientSocket</compoundname>
+    <basecompoundref refid="classConnection" prot="public" virt="non-virtual">Connection</basecompoundref>
+    <basecompoundref refid="classTCPSocket" prot="public" virt="non-virtual">TCPSocket</basecompoundref>
+    <includes refid="TCPClientSocket_8h" local="no">TCPClientSocket.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classTCPClientSocket_1a3cdffa36ad33265b280c136ad597f9fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TCPClientSocket::TCPClientSocket</definition>
+        <argsstring>(const char *, const unsigned)</argsstring>
+        <name>TCPClientSocket</name>
+        <param>
+          <type>const char *</type>
+          <defname>host</defname>
+        </param>
+        <param>
+          <type>const unsigned</type>
+          <defname>iport</defname>
+        </param>
+        <briefdescription>
+<para>Construct a TCP connection. </para>        </briefdescription>
+        <detaileddescription>
+<para>Construct a TCP connection on error throws std::runtime_error </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/TCPClientSocket.h" line="33" column="1" bodyfile="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/src/TCPClientSocket.cpp" bodystart="3" bodyend="54"/>
+        <references refid="classSocketFd_1af0d8323eedd465a6a499df1129e19f7d" compoundref="SocketFd_8cpp" startline="26" endline="32">SocketFd::get_in_addr</references>
+        <references refid="classTCPSocket_1a76a561d3c5594dd8bc7f57a10add34b8" compoundref="TCPSocket_8h" startline="19">TCPSocket::hints</references>
+        <references refid="classConnection_1af54be737cc02308299c2e80a893a3e46" compoundref="Connection_8h" startline="17">Connection::n</references>
+        <references refid="classTCPSocket_1a772833fd0273c3e0bcb1888084d38799" compoundref="TCPSocket_8h" startline="19">TCPSocket::p</references>
+        <references refid="classTCPSocket_1a2f6471b799685ee580a9cfa5d94ac3a7" compoundref="TCPSocket_8h" startline="17">TCPSocket::rv</references>
+        <references refid="classTCPSocket_1a79ce3d1a12b7371a6838dad34d0e8cf3" compoundref="TCPSocket_8h" startline="19">TCPSocket::servinfo</references>
+        <references refid="classConnection_1a04bb846a50a9357bab86238956940d65" compoundref="Connection_8h" startline="22">Connection::targetaddr</references>
+        <references refid="classSocketFd_1a0636825d276c3525e0d8af969ce2d3b6" compoundref="SocketFd_8h" startline="26">SocketFd::ufds</references>
+      </memberdef>
+      <memberdef kind="function" id="classTCPClientSocket_1a9607474fe452def202cd23a6d7fecaae" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>TCPClientSocket::~TCPClientSocket</definition>
+        <argsstring>()</argsstring>
+        <name>~TCPClientSocket</name>
+        <briefdescription>
+<para>does nothing </para>        </briefdescription>
+        <detaileddescription>
+<para>does nothing </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/TCPClientSocket.h" line="39" column="1" bodyfile="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/src/TCPClientSocket.cpp" bodystart="56" bodyend="58"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>A <ref refid="classTCPClientSocket" kindref="compound">TCPClientSocket</ref> establishes a connection on init Afterwards it can be used like a <ref refid="classConnection" kindref="compound">Connection</ref> Object. It directly provides <ref refid="classConnection_1a5466a66e569e81d891559686f2c7594b" kindref="member">send()</ref> and <ref refid="classConnection_1ab16b8a780c69303beec9b1f67fb596f3" kindref="member">recv()</ref> functions on init/connection error the Constructor throws a std::runtime_error </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="123">
+        <label>SocketFd</label>
+        <link refid="classSocketFd"/>
+      </node>
+      <node id="122">
+        <label>Transceiver</label>
+        <link refid="classTransceiver"/>
+      </node>
+      <node id="120">
+        <label>TCPClientSocket</label>
+        <link refid="classTCPClientSocket"/>
+        <childnode refid="121" relation="public-inheritance">
+        </childnode>
+        <childnode refid="124" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="121">
+        <label>Connection</label>
+        <link refid="classConnection"/>
+        <childnode refid="122" relation="public-inheritance">
+        </childnode>
+        <childnode refid="123" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="124">
+        <label>TCPSocket</label>
+        <link refid="classTCPSocket"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="128">
+        <label>SocketFd</label>
+        <link refid="classSocketFd"/>
+      </node>
+      <node id="127">
+        <label>Transceiver</label>
+        <link refid="classTransceiver"/>
+      </node>
+      <node id="125">
+        <label>TCPClientSocket</label>
+        <link refid="classTCPClientSocket"/>
+        <childnode refid="126" relation="public-inheritance">
+        </childnode>
+        <childnode refid="131" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="130">
+        <label>std::basic_string&lt; char &gt;</label>
+      </node>
+      <node id="126">
+        <label>Connection</label>
+        <link refid="classConnection"/>
+        <childnode refid="127" relation="public-inheritance">
+        </childnode>
+        <childnode refid="128" relation="public-inheritance">
+        </childnode>
+        <childnode refid="129" relation="usage">
+          <edgelabel>targetaddr</edgelabel>
+        </childnode>
+      </node>
+      <node id="131">
+        <label>TCPSocket</label>
+        <link refid="classTCPSocket"/>
+      </node>
+      <node id="129">
+        <label>std::string</label>
+        <childnode refid="130" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/TCPClientSocket.h" line="26" column="1" bodyfile="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/TCPClientSocket.h" bodystart="26" bodyend="40"/>
+    <listofallmembers>
+      <member refid="classConnection_1a3bc70a7fdfcabe58f6ca003f450e7b34" prot="public" virt="non-virtual"><scope>TCPClientSocket</scope><name>Connection</name></member>
+      <member refid="classSocketFd_1af0d8323eedd465a6a499df1129e19f7d" prot="protected" virt="non-virtual"><scope>TCPClientSocket</scope><name>get_in_addr</name></member>
+      <member refid="classTCPSocket_1a76a561d3c5594dd8bc7f57a10add34b8" prot="protected" virt="non-virtual"><scope>TCPClientSocket</scope><name>hints</name></member>
+      <member refid="classTCPSocket_1a772833fd0273c3e0bcb1888084d38799" prot="protected" virt="non-virtual"><scope>TCPClientSocket</scope><name>p</name></member>
+      <member refid="classConnection_1ab16b8a780c69303beec9b1f67fb596f3" prot="public" virt="virtual"><scope>TCPClientSocket</scope><name>recv</name></member>
+      <member refid="classTCPSocket_1a2f6471b799685ee580a9cfa5d94ac3a7" prot="protected" virt="non-virtual"><scope>TCPClientSocket</scope><name>rv</name></member>
+      <member refid="classConnection_1a5466a66e569e81d891559686f2c7594b" prot="public" virt="virtual"><scope>TCPClientSocket</scope><name>send</name></member>
+      <member refid="classTCPSocket_1a79ce3d1a12b7371a6838dad34d0e8cf3" prot="protected" virt="non-virtual"><scope>TCPClientSocket</scope><name>servinfo</name></member>
+      <member refid="classSocketFd_1a0ebb54cefc45ab8e06472fb14e92c9e0" prot="public" virt="non-virtual"><scope>TCPClientSocket</scope><name>setBlocking</name></member>
+      <member refid="classSocketFd_1a38ae432100f8df6e99e0145a793d4693" prot="public" virt="non-virtual"><scope>TCPClientSocket</scope><name>setNonBlocking</name></member>
+      <member refid="classSocketFd_1a9b3ed5d1b4e34195fd53ae8a627187aa" prot="public" virt="non-virtual"><scope>TCPClientSocket</scope><name>setTimeout</name></member>
+      <member refid="classTCPSocket_1a9613e3899f39278d0de6fab677bb1edc" prot="protected" virt="non-virtual"><scope>TCPClientSocket</scope><name>slen</name></member>
+      <member refid="classSocketFd_1a77eecdf99e10283d7bb3e0a7a0466a11" prot="protected" virt="non-virtual"><scope>TCPClientSocket</scope><name>SocketFd</name></member>
+      <member refid="classConnection_1a04bb846a50a9357bab86238956940d65" prot="public" virt="non-virtual"><scope>TCPClientSocket</scope><name>targetaddr</name></member>
+      <member refid="classTCPClientSocket_1a3cdffa36ad33265b280c136ad597f9fd" prot="public" virt="non-virtual"><scope>TCPClientSocket</scope><name>TCPClientSocket</name></member>
+      <member refid="classTCPSocket_1a7a50427a401d1a6f3209d51818bad901" prot="protected" virt="non-virtual"><scope>TCPClientSocket</scope><name>TCPSocket</name></member>
+      <member refid="classTCPSocket_1a54b0073827ac57bbb4ee6c371791db0f" prot="protected" virt="non-virtual"><scope>TCPClientSocket</scope><name>their_addr</name></member>
+      <member refid="classTransceiver_1a8a846d40a2108ebe79003e231d9968e3" prot="protected" virt="non-virtual"><scope>TCPClientSocket</scope><name>Transceiver</name></member>
+      <member refid="classSocketFd_1a0636825d276c3525e0d8af969ce2d3b6" prot="protected" virt="non-virtual"><scope>TCPClientSocket</scope><name>ufds</name></member>
+      <member refid="classConnection_1a2e4352edf667bea83001569e9da8a24d" prot="public" virt="virtual"><scope>TCPClientSocket</scope><name>~Connection</name></member>
+      <member refid="classSocketFd_1add3bcd5016a045da6ecccdfd4c97ee3f" prot="public" virt="virtual"><scope>TCPClientSocket</scope><name>~SocketFd</name></member>
+      <member refid="classTCPClientSocket_1a9607474fe452def202cd23a6d7fecaae" prot="public" virt="virtual"><scope>TCPClientSocket</scope><name>~TCPClientSocket</name></member>
+      <member refid="classTCPSocket_1af357e6923a0f8adbbb8e46fab4523991" prot="public" virt="virtual"><scope>TCPClientSocket</scope><name>~TCPSocket</name></member>
+      <member refid="classTransceiver_1a09118fef519a75434a3f42ab7d506c74" prot="public" virt="virtual"><scope>TCPClientSocket</scope><name>~Transceiver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

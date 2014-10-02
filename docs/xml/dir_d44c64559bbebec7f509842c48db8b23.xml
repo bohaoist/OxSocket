@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="dir_d44c64559bbebec7f509842c48db8b23" kind="dir">
+    <compoundname>include</compoundname>
+    <innerfile refid="Connection_8h">Connection.h</innerfile>
+    <innerfile refid="ServerSocket_8h">ServerSocket.h</innerfile>
+    <innerfile refid="Socket_8h">Socket.h</innerfile>
+    <innerfile refid="SocketFd_8h">SocketFd.h</innerfile>
+    <innerfile refid="TCPClientSocket_8h">TCPClientSocket.h</innerfile>
+    <innerfile refid="TCPServerSocket_8h">TCPServerSocket.h</innerfile>
+    <innerfile refid="TCPSocket_8h">TCPSocket.h</innerfile>
+    <innerfile refid="Transceiver_8h">Transceiver.h</innerfile>
+    <innerfile refid="UDPClientSocket_8h">UDPClientSocket.h</innerfile>
+    <innerfile refid="UDPServerSocket_8h">UDPServerSocket.h</innerfile>
+    <innerfile refid="UDPSocket_8h">UDPSocket.h</innerfile>
+    <innerfile refid="UNIXClientSocket_8h">UNIXClientSocket.h</innerfile>
+    <innerfile refid="UNIXServerSocket_8h">UNIXServerSocket.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/"/>
+  </compounddef>
+</doxygen>

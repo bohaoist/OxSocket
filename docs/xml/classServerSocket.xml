@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="classServerSocket" kind="class" prot="public" abstract="yes">
+    <compoundname>ServerSocket</compoundname>
+    <derivedcompoundref refid="classTCPServerSocket" prot="public" virt="non-virtual">TCPServerSocket</derivedcompoundref>
+    <derivedcompoundref refid="classUNIXServerSocket" prot="public" virt="non-virtual">UNIXServerSocket</derivedcompoundref>
+    <includes refid="ServerSocket_8h" local="no">ServerSocket.h</includes>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classServerSocket_1a2b3098589541243241ca25495155186c" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ServerSocket::ServerSocket</definition>
+        <argsstring>()</argsstring>
+        <name>ServerSocket</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/ServerSocket.h" line="13" column="1" bodyfile="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/src/ServerSocket.cpp" bodystart="3" bodyend="4"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classServerSocket_1a510674d924c2544e6b0069e39c36516b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>ServerSocket::~ServerSocket</definition>
+        <argsstring>()</argsstring>
+        <name>~ServerSocket</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/ServerSocket.h" line="15" column="1" bodyfile="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/src/ServerSocket.cpp" bodystart="6" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="classServerSocket_1a1d7054bc388f2d789d2124dd96939d90" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classConnection" kindref="compound">Connection</ref> *</type>
+        <definition>virtual Connection* ServerSocket::accept</definition>
+        <argsstring>()=0</argsstring>
+        <name>accept</name>
+        <reimplementedby refid="classUNIXServerSocket_1a1bd19b56a910dc3811d4d54c30fbf3f5">accept</reimplementedby>
+        <reimplementedby refid="classTCPServerSocket_1a0c169a85290095c3c58b9fae38a1a1d0">accept</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/ServerSocket.h" line="16" column="1"/>
+        <referencedby refid="Example_8cpp_1ae0f14589015e103d1db9167bb89e4f4e" compoundref="Example_8cpp" startline="231" endline="296">stream_server</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Not instanziable BaseClass for all <ref refid="classServerSocket" kindref="compound">ServerSocket</ref> Classes. </para>    </briefdescription>
+    <detaileddescription>
+<para>Not instanziable BaseClass for all <ref refid="classServerSocket" kindref="compound">ServerSocket</ref> Classes. Must provides an <ref refid="classServerSocket_1a1d7054bc388f2d789d2124dd96939d90" kindref="member">accept()</ref> function that will return a <ref refid="classConnection" kindref="compound">Connection</ref> Object </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="108">
+        <label>UNIXServerSocket</label>
+        <link refid="classUNIXServerSocket"/>
+        <childnode refid="106" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="106">
+        <label>ServerSocket</label>
+        <link refid="classServerSocket"/>
+      </node>
+      <node id="107">
+        <label>TCPServerSocket</label>
+        <link refid="classTCPServerSocket"/>
+        <childnode refid="106" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/ServerSocket.h" line="11" column="1" bodyfile="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/ServerSocket.h" bodystart="11" bodyend="17"/>
+    <listofallmembers>
+      <member refid="classServerSocket_1a1d7054bc388f2d789d2124dd96939d90" prot="public" virt="pure-virtual"><scope>ServerSocket</scope><name>accept</name></member>
+      <member refid="classServerSocket_1a2b3098589541243241ca25495155186c" prot="protected" virt="non-virtual"><scope>ServerSocket</scope><name>ServerSocket</name></member>
+      <member refid="classServerSocket_1a510674d924c2544e6b0069e39c36516b" prot="public" virt="virtual"><scope>ServerSocket</scope><name>~ServerSocket</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

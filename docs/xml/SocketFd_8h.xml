@@ -1,0 +1,239 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="SocketFd_8h" kind="file">
+    <compoundname>SocketFd.h</compoundname>
+    <includes local="no">netinet/in.h</includes>
+    <includes local="no">sys/socket.h</includes>
+    <includes local="no">fcntl.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">unistd.h</includes>
+    <includes local="no">poll.h</includes>
+    <includedby refid="Connection_8h" local="no">include/Connection.h</includedby>
+    <includedby refid="UDPSocket_8h" local="no">include/UDPSocket.h</includedby>
+    <includedby refid="UNIXServerSocket_8h" local="no">include/UNIXServerSocket.h</includedby>
+    <includedby refid="SocketFd_8cpp" local="no">src/SocketFd.cpp</includedby>
+    <incdepgraph>
+      <node id="585">
+        <label>netinet/in.h</label>
+      </node>
+      <node id="590">
+        <label>poll.h</label>
+      </node>
+      <node id="587">
+        <label>fcntl.h</label>
+      </node>
+      <node id="584">
+        <label>include/SocketFd.h</label>
+        <link refid="SocketFd.h"/>
+        <childnode refid="585" relation="include">
+        </childnode>
+        <childnode refid="586" relation="include">
+        </childnode>
+        <childnode refid="587" relation="include">
+        </childnode>
+        <childnode refid="588" relation="include">
+        </childnode>
+        <childnode refid="589" relation="include">
+        </childnode>
+        <childnode refid="590" relation="include">
+        </childnode>
+      </node>
+      <node id="589">
+        <label>unistd.h</label>
+      </node>
+      <node id="586">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="588">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="610">
+        <label>src/UDPServerSocket.cpp</label>
+        <link refid="UDPServerSocket_8cpp"/>
+      </node>
+      <node id="593">
+        <label>include/ServerSocket.h</label>
+        <link refid="ServerSocket_8h"/>
+        <childnode refid="594" relation="include">
+        </childnode>
+        <childnode refid="598" relation="include">
+        </childnode>
+        <childnode refid="600" relation="include">
+        </childnode>
+      </node>
+      <node id="602">
+        <label>src/TCPClientSocket.cpp</label>
+        <link refid="TCPClientSocket_8cpp"/>
+      </node>
+      <node id="599">
+        <label>src/UNIXServerSocket.cpp</label>
+        <link refid="UNIXServerSocket_8cpp"/>
+      </node>
+      <node id="601">
+        <label>include/TCPClientSocket.h</label>
+        <link refid="TCPClientSocket_8h"/>
+        <childnode refid="595" relation="include">
+        </childnode>
+        <childnode refid="602" relation="include">
+        </childnode>
+      </node>
+      <node id="604">
+        <label>src/UNIXClientSocket.cpp</label>
+        <link refid="UNIXClientSocket_8cpp"/>
+      </node>
+      <node id="611">
+        <label>src/UDPSocket.cpp</label>
+        <link refid="UDPSocket_8cpp"/>
+      </node>
+      <node id="596">
+        <label>src/Example.cpp</label>
+        <link refid="Example_8cpp"/>
+      </node>
+      <node id="607">
+        <label>include/UDPClientSocket.h</label>
+        <link refid="UDPClientSocket_8h"/>
+        <childnode refid="595" relation="include">
+        </childnode>
+        <childnode refid="608" relation="include">
+        </childnode>
+      </node>
+      <node id="603">
+        <label>include/UNIXClientSocket.h</label>
+        <link refid="UNIXClientSocket_8h"/>
+        <childnode refid="595" relation="include">
+        </childnode>
+        <childnode refid="604" relation="include">
+        </childnode>
+      </node>
+      <node id="612">
+        <label>src/SocketFd.cpp</label>
+        <link refid="SocketFd_8cpp"/>
+      </node>
+      <node id="591">
+        <label>include/SocketFd.h</label>
+        <link refid="SocketFd.h"/>
+        <childnode refid="592" relation="include">
+        </childnode>
+        <childnode refid="606" relation="include">
+        </childnode>
+        <childnode refid="598" relation="include">
+        </childnode>
+        <childnode refid="612" relation="include">
+        </childnode>
+      </node>
+      <node id="592">
+        <label>include/Connection.h</label>
+        <link refid="Connection_8h"/>
+        <childnode refid="593" relation="include">
+        </childnode>
+        <childnode refid="601" relation="include">
+        </childnode>
+        <childnode refid="594" relation="include">
+        </childnode>
+        <childnode refid="603" relation="include">
+        </childnode>
+        <childnode refid="598" relation="include">
+        </childnode>
+        <childnode refid="605" relation="include">
+        </childnode>
+      </node>
+      <node id="606">
+        <label>include/UDPSocket.h</label>
+        <link refid="UDPSocket_8h"/>
+        <childnode refid="607" relation="include">
+        </childnode>
+        <childnode refid="609" relation="include">
+        </childnode>
+        <childnode refid="611" relation="include">
+        </childnode>
+      </node>
+      <node id="600">
+        <label>src/ServerSocket.cpp</label>
+        <link refid="ServerSocket_8cpp"/>
+      </node>
+      <node id="598">
+        <label>include/UNIXServerSocket.h</label>
+        <link refid="UNIXServerSocket_8h"/>
+        <childnode refid="595" relation="include">
+        </childnode>
+        <childnode refid="599" relation="include">
+        </childnode>
+      </node>
+      <node id="608">
+        <label>src/UDPClientSocket.cpp</label>
+        <link refid="UDPClientSocket_8cpp"/>
+      </node>
+      <node id="609">
+        <label>include/UDPServerSocket.h</label>
+        <link refid="UDPServerSocket_8h"/>
+        <childnode refid="595" relation="include">
+        </childnode>
+        <childnode refid="610" relation="include">
+        </childnode>
+      </node>
+      <node id="594">
+        <label>include/TCPServerSocket.h</label>
+        <link refid="TCPServerSocket_8h"/>
+        <childnode refid="595" relation="include">
+        </childnode>
+        <childnode refid="597" relation="include">
+        </childnode>
+      </node>
+      <node id="595">
+        <label>include/Socket.h</label>
+        <link refid="Socket_8h"/>
+        <childnode refid="596" relation="include">
+        </childnode>
+      </node>
+      <node id="605">
+        <label>src/Connection.cpp</label>
+        <link refid="Connection_8cpp"/>
+      </node>
+      <node id="597">
+        <label>src/TCPServerSocket.cpp</label>
+        <link refid="TCPServerSocket_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classSocketFd" prot="public">SocketFd</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>SOCKFD_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SOCKFD_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;netinet/in.h&gt;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">/*<sp/>sockaddr_in<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/socket.h&gt;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">/*<sp/>setsockopt<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fcntl.h&gt;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>fcntl<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>perror<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>close<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;poll.h&gt;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>poll<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="classSocketFd" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classSocketFd" kindref="compound">SocketFd</ref><sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="classSocketFd_1a0636825d276c3525e0d8af969ce2d3b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pollfd<sp/><ref refid="classSocketFd_1a0636825d276c3525e0d8af969ce2d3b6" kindref="member">ufds</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classSocketFd_1a77eecdf99e10283d7bb3e0a7a0466a11" kindref="member">SocketFd</ref>();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="classSocketFd_1af0d8323eedd465a6a499df1129e19f7d" kindref="member">get_in_addr</ref>(sockaddr*);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classSocketFd_1add3bcd5016a045da6ecccdfd4c97ee3f" kindref="member">~SocketFd</ref>();</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classSocketFd_1a38ae432100f8df6e99e0145a793d4693" kindref="member">setNonBlocking</ref>();</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classSocketFd_1a0ebb54cefc45ab8e06472fb14e92c9e0" kindref="member">setBlocking</ref>();</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classSocketFd_1a9b3ed5d1b4e34195fd53ae8a627187aa" kindref="member">setTimeout</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>sec,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>msec<sp/>=<sp/>0);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/SocketFd.h"/>
+  </compounddef>
+</doxygen>

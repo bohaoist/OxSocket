@@ -1,0 +1,133 @@
+.TH "SocketFd" 3 "Thu Oct 2 2014" "Version 0.2" "0xSocket" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SocketFd \- 
+.PP
+Not initalizable BaseClass for SocketFileDescriptor\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SocketFd\&.h>\fP
+.PP
+Inherited by \fBConnection\fP, \fBTCPServerSocket\fP, \fBUDPSocket\fP, and \fBUNIXServerSocket\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~SocketFd\fP ()"
+.br
+.RI "\fIdoes nothing \fP"
+.ti -1c
+.RI "int \fBsetNonBlocking\fP ()"
+.br
+.RI "\fImake SockFd nonblocking \fP"
+.ti -1c
+.RI "int \fBsetBlocking\fP ()"
+.br
+.RI "\fImake SockFd blocking \fP"
+.ti -1c
+.RI "int \fBsetTimeout\fP (const unsigned sec, const unsigned msec=0)"
+.br
+.RI "\fIset Tiemout on SocketFileDescriptor \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSocketFd\fP ()"
+.br
+.RI "\fIset SockFd to -1 \fP"
+.ti -1c
+.RI "void * \fBget_in_addr\fP (sockaddr *)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "pollfd \fBufds\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Not initalizable BaseClass for SocketFileDescriptor\&. 
+
+Not initalizable BaseClass for SocketFileDescriptor\&. Provides means to setting timeout, non/blocking and getting addr of remote connection 
+.PP
+Definition at line 19 of file SocketFd\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SocketFd::SocketFd ()\fC [protected]\fP"
+
+.PP
+set SockFd to -1 set SockFd to -1 
+.PP
+Definition at line 3 of file SocketFd\&.cpp\&.
+.PP
+References ufds\&.
+.SS "SocketFd::~SocketFd ()\fC [virtual]\fP"
+
+.PP
+does nothing does nothing 
+.PP
+Definition at line 7 of file SocketFd\&.cpp\&.
+.PP
+References ufds\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void * SocketFd::get_in_addr (sockaddr *sa)\fC [protected]\fP"
+TODO Add description 
+.PP
+Definition at line 26 of file SocketFd\&.cpp\&.
+.PP
+Referenced by TCPServerSocket::accept(), and TCPClientSocket::TCPClientSocket()\&.
+.SS "int SocketFd::setBlocking ()"
+
+.PP
+make SockFd blocking make SockFd blocking 
+.PP
+Definition at line 34 of file SocketFd\&.cpp\&.
+.PP
+References ufds\&.
+.SS "int SocketFd::setNonBlocking ()"
+
+.PP
+make SockFd nonblocking make SockFd nonblocking 
+.PP
+Definition at line 13 of file SocketFd\&.cpp\&.
+.PP
+References ufds\&.
+.SS "int SocketFd::setTimeout (const unsignedsec, const unsignedmsec = \fC0\fP)"
+
+.PP
+set Tiemout on SocketFileDescriptor set Tiemout on SocketFileDescriptor 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsec\fP Seconds to timeout 
+.br
+\fImsec\fP Milliseconds to timeout 
+.RE
+.PP
+
+.PP
+Definition at line 47 of file SocketFd\&.cpp\&.
+.PP
+References ufds\&.
+.PP
+Referenced by stream_server()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "pollfd SocketFd::ufds\fC [protected]\fP"
+The Socket File Descriptor as a poll struct for Event Management 
+.PP
+Definition at line 26 of file SocketFd\&.h\&.
+.PP
+Referenced by Connection::_poll(), UNIXServerSocket::accept(), TCPServerSocket::accept(), Connection::Connection(), UDPSocket::recv(), UDPSocket::send(), setBlocking(), setNonBlocking(), setTimeout(), SocketFd(), TCPClientSocket::TCPClientSocket(), TCPServerSocket::TCPServerSocket(), UDPClientSocket::UDPClientSocket(), UDPServerSocket::UDPServerSocket(), UNIXClientSocket::UNIXClientSocket(), UNIXServerSocket::UNIXServerSocket(), ~SocketFd(), and UDPSocket::~UDPSocket()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 0xSocket from the source code\&.

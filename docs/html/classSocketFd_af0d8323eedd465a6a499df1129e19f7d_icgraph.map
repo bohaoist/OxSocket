@@ -1,0 +1,4 @@
+<map id="SocketFd::get_in_addr" name="SocketFd::get_in_addr">
+<area shape="rect" id="node2" href="$classTCPServerSocket.html#a0c169a85290095c3c58b9fae38a1a1d0" title="accept incoming tcp connections " alt="" coords="222,5,405,32"/>
+<area shape="rect" id="node3" href="$classTCPClientSocket.html#a3cdffa36ad33265b280c136ad597f9fd" title="Construct a TCP connection. " alt="" coords="217,57,409,98"/>
+</map>

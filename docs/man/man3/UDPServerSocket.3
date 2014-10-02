@@ -1,0 +1,50 @@
+.TH "UDPServerSocket" 3 "Thu Oct 2 2014" "Version 0.2" "0xSocket" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+UDPServerSocket \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <UDPServerSocket\&.h>\fP
+.PP
+Inherits \fBUDPSocket\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBUDPServerSocket\fP (const unsigned)"
+.br
+.RI "\fIcreates UDP listening Socket \fP"
+.ti -1c
+.RI "virtual \fB~UDPServerSocket\fP ()"
+.br
+.RI "\fIdoes nothing \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+A \fBUDPServerSocket\fP is a UDP listening Socket provides \fBsend()\fP and \fBrecv()\fP methods after construction BaseClass is a \fBConnection\fP Object throws runtime_error on construction failure 
+.PP
+Definition at line 23 of file UDPServerSocket\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "UDPServerSocket::UDPServerSocket (const unsignedport)"
+
+.PP
+creates UDP listening Socket creates UDP listening Socke throws runtime_error on failure 
+.PP
+Definition at line 3 of file UDPServerSocket\&.cpp\&.
+.PP
+References UDPSocket::hints, UDPSocket::p, UDPSocket::rv, UDPSocket::servinfo, and SocketFd::ufds\&.
+.SS "UDPServerSocket::~UDPServerSocket ()\fC [virtual]\fP"
+
+.PP
+does nothing does nothing 
+.PP
+Definition at line 47 of file UDPServerSocket\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 0xSocket from the source code\&.

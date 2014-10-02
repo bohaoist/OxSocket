@@ -1,0 +1,98 @@
+\hypertarget{classTCPClientSocket}{\section{T\+C\+P\+Client\+Socket Class Reference}
+\label{classTCPClientSocket}\index{T\+C\+P\+Client\+Socket@{T\+C\+P\+Client\+Socket}}
+}
+
+
+{\ttfamily \#include $<$T\+C\+P\+Client\+Socket.\+h$>$}
+
+
+
+Inheritance diagram for T\+C\+P\+Client\+Socket\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{classTCPClientSocket__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for T\+C\+P\+Client\+Socket\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{classTCPClientSocket__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTCPClientSocket_a3cdffa36ad33265b280c136ad597f9fd}{T\+C\+P\+Client\+Socket} (const char $\ast$, const unsigned)
+\begin{DoxyCompactList}\small\item\em Construct a T\+C\+P connection. \end{DoxyCompactList}\item 
+virtual \hyperlink{classTCPClientSocket_a9607474fe452def202cd23a6d7fecaae}{$\sim$\+T\+C\+P\+Client\+Socket} ()
+\begin{DoxyCompactList}\small\item\em does nothing \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A \hyperlink{classTCPClientSocket}{T\+C\+P\+Client\+Socket} establishes a connection on init Afterwards it can be used like a \hyperlink{classConnection}{Connection} Object. It directly provides \hyperlink{classConnection_a5466a66e569e81d891559686f2c7594b}{send()} and \hyperlink{classConnection_ab16b8a780c69303beec9b1f67fb596f3}{recv()} functions on init/connection error the Constructor throws a std\+::runtime\+\_\+error 
+
+Definition at line 26 of file T\+C\+P\+Client\+Socket.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classTCPClientSocket_a3cdffa36ad33265b280c136ad597f9fd}{\index{T\+C\+P\+Client\+Socket@{T\+C\+P\+Client\+Socket}!T\+C\+P\+Client\+Socket@{T\+C\+P\+Client\+Socket}}
+\index{T\+C\+P\+Client\+Socket@{T\+C\+P\+Client\+Socket}!T\+C\+P\+Client\+Socket@{T\+C\+P\+Client\+Socket}}
+\subsubsection[{T\+C\+P\+Client\+Socket}]{\setlength{\rightskip}{0pt plus 5cm}T\+C\+P\+Client\+Socket\+::\+T\+C\+P\+Client\+Socket (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{host, }
+\item[{const unsigned}]{iport}
+\end{DoxyParamCaption}
+)}}\label{classTCPClientSocket_a3cdffa36ad33265b280c136ad597f9fd}
+
+
+Construct a T\+C\+P connection. 
+
+Construct a T\+C\+P connection on error throws std\+::runtime\+\_\+error 
+
+Definition at line 3 of file T\+C\+P\+Client\+Socket.\+cpp.
+
+
+
+References Socket\+Fd\+::get\+\_\+in\+\_\+addr(), T\+C\+P\+Socket\+::hints, Connection\+::n, T\+C\+P\+Socket\+::p, T\+C\+P\+Socket\+::rv, T\+C\+P\+Socket\+::servinfo, Connection\+::targetaddr, and Socket\+Fd\+::ufds.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTCPClientSocket_a3cdffa36ad33265b280c136ad597f9fd_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classTCPClientSocket_a9607474fe452def202cd23a6d7fecaae}{\index{T\+C\+P\+Client\+Socket@{T\+C\+P\+Client\+Socket}!````~T\+C\+P\+Client\+Socket@{$\sim$\+T\+C\+P\+Client\+Socket}}
+\index{````~T\+C\+P\+Client\+Socket@{$\sim$\+T\+C\+P\+Client\+Socket}!T\+C\+P\+Client\+Socket@{T\+C\+P\+Client\+Socket}}
+\subsubsection[{$\sim$\+T\+C\+P\+Client\+Socket}]{\setlength{\rightskip}{0pt plus 5cm}T\+C\+P\+Client\+Socket\+::$\sim$\+T\+C\+P\+Client\+Socket (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classTCPClientSocket_a9607474fe452def202cd23a6d7fecaae}
+
+
+does nothing 
+
+does nothing 
+
+Definition at line 56 of file T\+C\+P\+Client\+Socket.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{TCPClientSocket_8h}{T\+C\+P\+Client\+Socket.\+h}\item 
+src/\hyperlink{TCPClientSocket_8cpp}{T\+C\+P\+Client\+Socket.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="TCPSocket_8h" kind="file">
+    <compoundname>TCPSocket.h</compoundname>
+    <includes local="no">netdb.h</includes>
+    <includes local="no">bits/socket.h</includes>
+    <includes local="no">sys/socket.h</includes>
+    <includedby refid="TCPClientSocket_8h" local="no">include/TCPClientSocket.h</includedby>
+    <includedby refid="TCPServerSocket_8h" local="no">include/TCPServerSocket.h</includedby>
+    <includedby refid="TCPSocket_8cpp" local="no">src/TCPSocket.cpp</includedby>
+    <incdepgraph>
+      <node id="663">
+        <label>netdb.h</label>
+      </node>
+      <node id="662">
+        <label>include/TCPSocket.h</label>
+        <link refid="TCPSocket.h"/>
+        <childnode refid="663" relation="include">
+        </childnode>
+        <childnode refid="664" relation="include">
+        </childnode>
+        <childnode refid="665" relation="include">
+        </childnode>
+      </node>
+      <node id="664">
+        <label>bits/socket.h</label>
+      </node>
+      <node id="665">
+        <label>sys/socket.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="673">
+        <label>src/TCPSocket.cpp</label>
+        <link refid="TCPSocket_8cpp"/>
+      </node>
+      <node id="670">
+        <label>src/TCPClientSocket.cpp</label>
+        <link refid="TCPClientSocket_8cpp"/>
+      </node>
+      <node id="667">
+        <label>include/TCPClientSocket.h</label>
+        <link refid="TCPClientSocket_8h"/>
+        <childnode refid="668" relation="include">
+        </childnode>
+        <childnode refid="670" relation="include">
+        </childnode>
+      </node>
+      <node id="669">
+        <label>src/Example.cpp</label>
+        <link refid="Example_8cpp"/>
+      </node>
+      <node id="666">
+        <label>include/TCPSocket.h</label>
+        <link refid="TCPSocket.h"/>
+        <childnode refid="667" relation="include">
+        </childnode>
+        <childnode refid="671" relation="include">
+        </childnode>
+        <childnode refid="673" relation="include">
+        </childnode>
+      </node>
+      <node id="671">
+        <label>include/TCPServerSocket.h</label>
+        <link refid="TCPServerSocket_8h"/>
+        <childnode refid="668" relation="include">
+        </childnode>
+        <childnode refid="672" relation="include">
+        </childnode>
+      </node>
+      <node id="668">
+        <label>include/Socket.h</label>
+        <link refid="Socket_8h"/>
+        <childnode refid="669" relation="include">
+        </childnode>
+      </node>
+      <node id="672">
+        <label>src/TCPServerSocket.cpp</label>
+        <link refid="TCPServerSocket_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classTCPSocket" prot="public">TCPSocket</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>TCPSOCKET_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TCPSOCKET_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;netdb.h&gt;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>addrinfo<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;bits/socket.h&gt;</highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>socklen_t<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/socket.h&gt;</highlight><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>sockaddr_storage<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="classTCPSocket" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classTCPSocket" kindref="compound">TCPSocket</ref><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="17" refid="classTCPSocket_1a2f6471b799685ee580a9cfa5d94ac3a7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classTCPSocket_1a2f6471b799685ee580a9cfa5d94ac3a7" kindref="member">rv</ref>;<sp/></highlight><highlight class="comment">//<sp/>return<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="classTCPSocket_1a9613e3899f39278d0de6fab677bb1edc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>socklen_t<sp/><ref refid="classTCPSocket_1a9613e3899f39278d0de6fab677bb1edc" kindref="member">slen</ref>;</highlight></codeline>
+<codeline lineno="19" refid="classTCPSocket_1a79ce3d1a12b7371a6838dad34d0e8cf3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>addrinfo<sp/><ref refid="classTCPSocket_1a76a561d3c5594dd8bc7f57a10add34b8" kindref="member">hints</ref>,<sp/>*<ref refid="classTCPSocket_1a79ce3d1a12b7371a6838dad34d0e8cf3" kindref="member">servinfo</ref>,<sp/>*<ref refid="classTCPSocket_1a772833fd0273c3e0bcb1888084d38799" kindref="member">p</ref>;</highlight></codeline>
+<codeline lineno="20" refid="classTCPSocket_1a54b0073827ac57bbb4ee6c371791db0f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sockaddr_storage<sp/><ref refid="classTCPSocket_1a54b0073827ac57bbb4ee6c371791db0f" kindref="member">their_addr</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classTCPSocket_1a7a50427a401d1a6f3209d51818bad901" kindref="member">TCPSocket</ref>();</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classTCPSocket_1af357e6923a0f8adbbb8e46fab4523991" kindref="member">~TCPSocket</ref>();</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/TCPSocket.h"/>
+  </compounddef>
+</doxygen>

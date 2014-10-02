@@ -1,0 +1,45 @@
+.TH "src/Connection.cpp" 3 "Thu Oct 2 2014" "Version 0.2" "0xSocket" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/Connection.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <Connection\&.h>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBWEADMACRO\fP(function)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define WEADMACRO(function)"
+\fBValue:\fP
+.PP
+.nf
+n = sum = 0; \
+do { \
+        n = ::function(ufds\&.fd, buf + sum, size - sum); \
+        if (n == 0) { \
+                return (sum); /* End of File/Stream */\
+        } else if (n < 0) { \
+                ::perror(#function); \
+                return (-1); /* Error */\
+        } else { \
+                sum += n; \
+        } \
+} while (sum < size); \
+return (sum); \
+.fi
+.PP
+Definition at line 14 of file Connection\&.cpp\&.
+.PP
+Referenced by Connection::recv(), and Connection::send()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 0xSocket from the source code\&.

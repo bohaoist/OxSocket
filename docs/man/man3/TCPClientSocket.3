@@ -1,0 +1,50 @@
+.TH "TCPClientSocket" 3 "Thu Oct 2 2014" "Version 0.2" "0xSocket" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TCPClientSocket \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <TCPClientSocket\&.h>\fP
+.PP
+Inherits \fBConnection\fP, and \fBTCPSocket\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTCPClientSocket\fP (const char *, const unsigned)"
+.br
+.RI "\fIConstruct a TCP connection\&. \fP"
+.ti -1c
+.RI "virtual \fB~TCPClientSocket\fP ()"
+.br
+.RI "\fIdoes nothing \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+A \fBTCPClientSocket\fP establishes a connection on init Afterwards it can be used like a \fBConnection\fP Object\&. It directly provides \fBsend()\fP and \fBrecv()\fP functions on init/connection error the Constructor throws a std::runtime_error 
+.PP
+Definition at line 26 of file TCPClientSocket\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "TCPClientSocket::TCPClientSocket (const char *host, const unsignediport)"
+
+.PP
+Construct a TCP connection\&. Construct a TCP connection on error throws std::runtime_error 
+.PP
+Definition at line 3 of file TCPClientSocket\&.cpp\&.
+.PP
+References SocketFd::get_in_addr(), TCPSocket::hints, Connection::n, TCPSocket::p, TCPSocket::rv, TCPSocket::servinfo, Connection::targetaddr, and SocketFd::ufds\&.
+.SS "TCPClientSocket::~TCPClientSocket ()\fC [virtual]\fP"
+
+.PP
+does nothing does nothing 
+.PP
+Definition at line 56 of file TCPClientSocket\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for 0xSocket from the source code\&.

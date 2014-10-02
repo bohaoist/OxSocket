@@ -1,0 +1,9 @@
+<map id="include/ServerSocket.h" name="include/ServerSocket.h">
+<area shape="rect" id="node2" href="$TCPServerSocket_8h.html" title="include/TCPServerSocket.h" alt="" coords="71,80,263,107"/>
+<area shape="rect" id="node6" href="$UNIXServerSocket_8h.html" title="include/UNIXServerSocket.h" alt="" coords="287,80,487,107"/>
+<area shape="rect" id="node8" href="$ServerSocket_8cpp.html" title="src/ServerSocket.cpp" alt="" coords="511,80,670,107"/>
+<area shape="rect" id="node3" href="$Socket_8h.html" title="include/Socket.h" alt="" coords="211,155,338,181"/>
+<area shape="rect" id="node5" href="$TCPServerSocket_8cpp.html" title="src/TCPServerSocket.cpp" alt="" coords="5,155,187,181"/>
+<area shape="rect" id="node4" href="$Example_8cpp.html" title="src/Example.cpp" alt="" coords="211,229,338,256"/>
+<area shape="rect" id="node7" href="$UNIXServerSocket_8cpp.html" title="src/UNIXServerSocket.cpp" alt="" coords="363,155,552,181"/>
+</map>

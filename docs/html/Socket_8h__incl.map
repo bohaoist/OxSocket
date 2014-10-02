@@ -1,0 +1,14 @@
+<map id="include/Socket.h" name="include/Socket.h">
+<area shape="rect" id="node2" href="$TCPServerSocket_8h.html" title="TCPServerSocket.h" alt="" coords="1427,80,1569,107"/>
+<area shape="rect" id="node23" href="$TCPClientSocket_8h.html" title="TCPClientSocket.h" alt="" coords="1199,80,1336,107"/>
+<area shape="rect" id="node24" href="$UNIXServerSocket_8h.html" title="UNIXServerSocket.h" alt="" coords="445,80,596,107"/>
+<area shape="rect" id="node30" href="$UNIXClientSocket_8h.html" title="UNIXClientSocket.h" alt="" coords="1594,80,1738,107"/>
+<area shape="rect" id="node31" href="$UDPServerSocket_8h.html" title="UDPServerSocket.h" alt="" coords="1763,80,1911,107"/>
+<area shape="rect" id="node33" href="$UDPClientSocket_8h.html" title="UDPClientSocket.h" alt="" coords="1935,80,2077,107"/>
+<area shape="rect" id="node10" href="$Connection_8h.html" title="Connection.h" alt="" coords="670,229,777,256"/>
+<area shape="rect" id="node20" href="$TCPSocket_8h.html" title="TCPSocket.h" alt="" coords="1371,155,1473,181"/>
+<area shape="rect" id="node22" href="$ServerSocket_8h.html" title="ServerSocket.h" alt="" coords="761,155,881,181"/>
+<area shape="rect" id="node15" href="$Transceiver_8h.html" title="Transceiver.h" alt="" coords="875,304,979,331"/>
+<area shape="rect" id="node16" href="$SocketFd_8h.html" title="SocketFd.h" alt="" coords="707,304,801,331"/>
+<area shape="rect" id="node32" href="$UDPSocket_8h.html" title="UDPSocket.h" alt="" coords="2070,155,2177,181"/>
+</map>

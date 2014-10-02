@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="SocketFd_8cpp" kind="file">
+    <compoundname>SocketFd.cpp</compoundname>
+    <includes refid="SocketFd_8h" local="no">SocketFd.h</includes>
+    <incdepgraph>
+      <node id="862">
+        <label>netinet/in.h</label>
+      </node>
+      <node id="867">
+        <label>poll.h</label>
+      </node>
+      <node id="864">
+        <label>fcntl.h</label>
+      </node>
+      <node id="860">
+        <label>src/SocketFd.cpp</label>
+        <link refid="SocketFd.cpp"/>
+        <childnode refid="861" relation="include">
+        </childnode>
+      </node>
+      <node id="861">
+        <label>SocketFd.h</label>
+        <link refid="SocketFd_8h"/>
+        <childnode refid="862" relation="include">
+        </childnode>
+        <childnode refid="863" relation="include">
+        </childnode>
+        <childnode refid="864" relation="include">
+        </childnode>
+        <childnode refid="865" relation="include">
+        </childnode>
+        <childnode refid="866" relation="include">
+        </childnode>
+        <childnode refid="867" relation="include">
+        </childnode>
+      </node>
+      <node id="866">
+        <label>unistd.h</label>
+      </node>
+      <node id="863">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="865">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;<ref refid="SocketFd_8h" kindref="compound">SocketFd.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="classSocketFd_1a77eecdf99e10283d7bb3e0a7a0466a11" refkind="member"><highlight class="normal"><ref refid="classSocketFd_1a77eecdf99e10283d7bb3e0a7a0466a11" kindref="member">SocketFd::SocketFd</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classSocketFd_1a0636825d276c3525e0d8af969ce2d3b6" kindref="member">ufds</ref>.fd<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="classSocketFd_1add3bcd5016a045da6ecccdfd4c97ee3f" refkind="member"><highlight class="normal"><ref refid="classSocketFd_1add3bcd5016a045da6ecccdfd4c97ee3f" kindref="member">SocketFd::~SocketFd</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classSocketFd_1a0636825d276c3525e0d8af969ce2d3b6" kindref="member">ufds</ref>.fd<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>close(<ref refid="classSocketFd_1a0636825d276c3525e0d8af969ce2d3b6" kindref="member">ufds</ref>.fd);</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="classSocketFd_1a38ae432100f8df6e99e0145a793d4693" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classSocketFd_1a38ae432100f8df6e99e0145a793d4693" kindref="member">SocketFd::setNonBlocking</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classSocketFd_1a0636825d276c3525e0d8af969ce2d3b6" kindref="member">ufds</ref>.fd<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(1);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>flags<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flags<sp/>=<sp/>::fcntl(<ref refid="classSocketFd_1a0636825d276c3525e0d8af969ce2d3b6" kindref="member">ufds</ref>.fd,<sp/>F_GETFL,<sp/>0);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(0<sp/>!=<sp/>::fcntl(<ref refid="classSocketFd_1a0636825d276c3525e0d8af969ce2d3b6" kindref="member">ufds</ref>.fd,<sp/>F_SETFL,<sp/>flags<sp/>|<sp/>O_NONBLOCK))<sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::perror(</highlight><highlight class="stringliteral">&quot;SocketFd::mkNonBlocking::fcntl()<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(1);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="classSocketFd_1af0d8323eedd465a6a499df1129e19f7d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="classSocketFd_1af0d8323eedd465a6a499df1129e19f7d" kindref="member">SocketFd::get_in_addr</ref>(sockaddr<sp/>*sa)<sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sa-&gt;sa_family<sp/>==<sp/>AF_INET)<sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>&amp;(((sockaddr_in*)<sp/>sa)-&gt;sin_addr);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>&amp;(((sockaddr_in6*)<sp/>sa)-&gt;sin6_addr);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="classSocketFd_1a0ebb54cefc45ab8e06472fb14e92c9e0" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classSocketFd_1a0ebb54cefc45ab8e06472fb14e92c9e0" kindref="member">SocketFd::setBlocking</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classSocketFd_1a0636825d276c3525e0d8af969ce2d3b6" kindref="member">ufds</ref>.fd<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(1);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>flags<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flags<sp/>=<sp/>::fcntl(<ref refid="classSocketFd_1a0636825d276c3525e0d8af969ce2d3b6" kindref="member">ufds</ref>.fd,<sp/>F_GETFL,<sp/>0);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(0<sp/>!=<sp/>::fcntl(<ref refid="classSocketFd_1a0636825d276c3525e0d8af969ce2d3b6" kindref="member">ufds</ref>.fd,<sp/>F_SETFL,<sp/>flags<sp/>&amp;<sp/>~O_NONBLOCK))<sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::perror(</highlight><highlight class="stringliteral">&quot;SocketFd::mkBlocking::fcntl()<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(1);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="classSocketFd_1a9b3ed5d1b4e34195fd53ae8a627187aa" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classSocketFd_1a9b3ed5d1b4e34195fd53ae8a627187aa" kindref="member">SocketFd::setTimeout</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>sec,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>usec)<sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classSocketFd_1a0636825d276c3525e0d8af969ce2d3b6" kindref="member">ufds</ref>.fd<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(1);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>timeval<sp/>tv;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tv.tv_sec<sp/>=<sp/>sec;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tv.tv_usec<sp/>=<sp/>usec;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(-1</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>==<sp/>::setsockopt(<ref refid="classSocketFd_1a0636825d276c3525e0d8af969ce2d3b6" kindref="member">ufds</ref>.fd,<sp/>SOL_SOCKET,<sp/>SO_RCVTIMEO,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)<sp/>&amp;tv,</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>tv))<sp/>{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::perror(</highlight><highlight class="stringliteral">&quot;SocketFd::setsockopt()<sp/>failed<sp/>to<sp/>set<sp/>recv<sp/>timeout&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(1);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(-1</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>==<sp/>::setsockopt(<ref refid="classSocketFd_1a0636825d276c3525e0d8af969ce2d3b6" kindref="member">ufds</ref>.fd,<sp/>SOL_SOCKET,<sp/>SO_SNDTIMEO,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)<sp/>&amp;tv,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>tv))<sp/>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::perror(</highlight><highlight class="stringliteral">&quot;SocketFd::setsockopt()<sp/>failed<sp/>to<sp/>set<sp/>send<sp/>timeout&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(1);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/src/SocketFd.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,197 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="TCPClientSocket_8h" kind="file">
+    <compoundname>TCPClientSocket.h</compoundname>
+    <includes local="no">sys/socket.h</includes>
+    <includes local="no">netdb.h</includes>
+    <includes local="no">bits/socket.h</includes>
+    <includes local="no">sys/unistd.h</includes>
+    <includes local="no">arpa/inet.h</includes>
+    <includes local="no">cstring</includes>
+    <includes local="no">cmath</includes>
+    <includes local="no">cstdio</includes>
+    <includes local="no">stdexcept</includes>
+    <includes refid="Connection_8h" local="no">Connection.h</includes>
+    <includes refid="TCPSocket_8h" local="no">TCPSocket.h</includes>
+    <includedby refid="Socket_8h" local="no">include/Socket.h</includedby>
+    <includedby refid="TCPClientSocket_8cpp" local="no">src/TCPClientSocket.cpp</includedby>
+    <incdepgraph>
+      <node id="629">
+        <label>netinet/in.h</label>
+      </node>
+      <node id="618">
+        <label>arpa/inet.h</label>
+      </node>
+      <node id="613">
+        <label>include/TCPClientSocket.h</label>
+        <link refid="TCPClientSocket.h"/>
+        <childnode refid="614" relation="include">
+        </childnode>
+        <childnode refid="615" relation="include">
+        </childnode>
+        <childnode refid="616" relation="include">
+        </childnode>
+        <childnode refid="617" relation="include">
+        </childnode>
+        <childnode refid="618" relation="include">
+        </childnode>
+        <childnode refid="619" relation="include">
+        </childnode>
+        <childnode refid="620" relation="include">
+        </childnode>
+        <childnode refid="621" relation="include">
+        </childnode>
+        <childnode refid="622" relation="include">
+        </childnode>
+        <childnode refid="623" relation="include">
+        </childnode>
+        <childnode refid="632" relation="include">
+        </childnode>
+      </node>
+      <node id="620">
+        <label>cmath</label>
+      </node>
+      <node id="622">
+        <label>stdexcept</label>
+      </node>
+      <node id="625">
+        <label>poll.h</label>
+      </node>
+      <node id="630">
+        <label>fcntl.h</label>
+      </node>
+      <node id="626">
+        <label>string</label>
+      </node>
+      <node id="617">
+        <label>sys/unistd.h</label>
+      </node>
+      <node id="615">
+        <label>netdb.h</label>
+      </node>
+      <node id="628">
+        <label>SocketFd.h</label>
+        <link refid="SocketFd_8h"/>
+        <childnode refid="629" relation="include">
+        </childnode>
+        <childnode refid="614" relation="include">
+        </childnode>
+        <childnode refid="630" relation="include">
+        </childnode>
+        <childnode refid="624" relation="include">
+        </childnode>
+        <childnode refid="631" relation="include">
+        </childnode>
+        <childnode refid="625" relation="include">
+        </childnode>
+      </node>
+      <node id="623">
+        <label>Connection.h</label>
+        <link refid="Connection_8h"/>
+        <childnode refid="624" relation="include">
+        </childnode>
+        <childnode refid="617" relation="include">
+        </childnode>
+        <childnode refid="625" relation="include">
+        </childnode>
+        <childnode refid="626" relation="include">
+        </childnode>
+        <childnode refid="627" relation="include">
+        </childnode>
+        <childnode refid="628" relation="include">
+        </childnode>
+      </node>
+      <node id="621">
+        <label>cstdio</label>
+      </node>
+      <node id="631">
+        <label>unistd.h</label>
+      </node>
+      <node id="632">
+        <label>TCPSocket.h</label>
+        <link refid="TCPSocket_8h"/>
+        <childnode refid="615" relation="include">
+        </childnode>
+        <childnode refid="616" relation="include">
+        </childnode>
+        <childnode refid="614" relation="include">
+        </childnode>
+      </node>
+      <node id="627">
+        <label>Transceiver.h</label>
+        <link refid="Transceiver_8h"/>
+      </node>
+      <node id="616">
+        <label>bits/socket.h</label>
+      </node>
+      <node id="614">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="624">
+        <label>stdio.h</label>
+      </node>
+      <node id="619">
+        <label>cstring</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="636">
+        <label>src/TCPClientSocket.cpp</label>
+        <link refid="TCPClientSocket_8cpp"/>
+      </node>
+      <node id="633">
+        <label>include/TCPClientSocket.h</label>
+        <link refid="TCPClientSocket.h"/>
+        <childnode refid="634" relation="include">
+        </childnode>
+        <childnode refid="636" relation="include">
+        </childnode>
+      </node>
+      <node id="635">
+        <label>src/Example.cpp</label>
+        <link refid="Example_8cpp"/>
+      </node>
+      <node id="634">
+        <label>include/Socket.h</label>
+        <link refid="Socket_8h"/>
+        <childnode refid="635" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classTCPClientSocket" prot="public">TCPClientSocket</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>TCPCLIENTSOCKET_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TCPCLIENTSOCKET_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/socket.h&gt;</highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>connect,<sp/>socket<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;netdb.h&gt;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>addrinfo,<sp/>getaddrinfo<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;bits/socket.h&gt;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">/*<sp/>sockaddr_storage<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/unistd.h&gt;</highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>close<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;arpa/inet.h&gt;</highlight><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="10"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstring&gt;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>memset<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cmath&gt;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>log10<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdio&gt;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>sprintf,<sp/>fprintf,<sp/>perror<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdexcept&gt;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>runtime_error<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="Connection_8h" kindref="compound">Connection.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="TCPSocket_8h" kindref="compound">TCPSocket.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="classTCPClientSocket" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classTCPClientSocket" kindref="compound">TCPClientSocket</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classConnection" kindref="compound">Connection</ref>,<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classTCPSocket" kindref="compound">TCPSocket</ref><sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classTCPClientSocket_1a3cdffa36ad33265b280c136ad597f9fd" kindref="member">TCPClientSocket</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classTCPClientSocket_1a9607474fe452def202cd23a6d7fecaae" kindref="member">~TCPClientSocket</ref>();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/TCPClientSocket.h"/>
+  </compounddef>
+</doxygen>

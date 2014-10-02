@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="UDPSocket_8cpp" kind="file">
+    <compoundname>UDPSocket.cpp</compoundname>
+    <includes refid="UDPSocket_8h" local="no">UDPSocket.h</includes>
+    <incdepgraph>
+      <node id="964">
+        <label>netinet/in.h</label>
+      </node>
+      <node id="967">
+        <label>poll.h</label>
+      </node>
+      <node id="965">
+        <label>fcntl.h</label>
+      </node>
+      <node id="957">
+        <label>src/UDPSocket.cpp</label>
+        <link refid="UDPSocket.cpp"/>
+        <childnode refid="958" relation="include">
+        </childnode>
+      </node>
+      <node id="960">
+        <label>netdb.h</label>
+      </node>
+      <node id="963">
+        <label>SocketFd.h</label>
+        <link refid="SocketFd_8h"/>
+        <childnode refid="964" relation="include">
+        </childnode>
+        <childnode refid="961" relation="include">
+        </childnode>
+        <childnode refid="965" relation="include">
+        </childnode>
+        <childnode refid="966" relation="include">
+        </childnode>
+        <childnode refid="959" relation="include">
+        </childnode>
+        <childnode refid="967" relation="include">
+        </childnode>
+      </node>
+      <node id="959">
+        <label>unistd.h</label>
+      </node>
+      <node id="958">
+        <label>UDPSocket.h</label>
+        <link refid="UDPSocket_8h"/>
+        <childnode refid="959" relation="include">
+        </childnode>
+        <childnode refid="960" relation="include">
+        </childnode>
+        <childnode refid="961" relation="include">
+        </childnode>
+        <childnode refid="962" relation="include">
+        </childnode>
+        <childnode refid="963" relation="include">
+        </childnode>
+      </node>
+      <node id="962">
+        <label>Transceiver.h</label>
+        <link refid="Transceiver_8h"/>
+      </node>
+      <node id="961">
+        <label>sys/socket.h</label>
+      </node>
+      <node id="966">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;<ref refid="UDPSocket_8h" kindref="compound">UDPSocket.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="classUDPSocket_1a4f86f3023f5a08f6355802599a10e100" refkind="member"><highlight class="normal"><ref refid="classUDPSocket_1a4f86f3023f5a08f6355802599a10e100" kindref="member">UDPSocket::UDPSocket</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classUDPSocket_1a9889d73171c2d143797dce81506d24eb" kindref="member">p</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classUDPSocket_1ae0c699a5dbc10580cd2844f282e61f4d" kindref="member">servinfo</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classUDPSocket_1a8b28284b39fbfbd8bca4c1289f7dda32" kindref="member">rv</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="classUDPSocket_1adb1a5254938e5acf5d44ff7a347e9f0a" refkind="member"><highlight class="normal"><ref refid="classUDPSocket_1adb1a5254938e5acf5d44ff7a347e9f0a" kindref="member">UDPSocket::~UDPSocket</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>freeaddrinfo(<ref refid="classUDPSocket_1ae0c699a5dbc10580cd2844f282e61f4d" kindref="member">servinfo</ref>);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>close(<ref refid="classSocketFd_1a0636825d276c3525e0d8af969ce2d3b6" kindref="member">ufds</ref>.fd);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="classUDPSocket_1a1c6cf2ad03b21ad00029d5f51fde43f5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classUDPSocket_1a1c6cf2ad03b21ad00029d5f51fde43f5" kindref="member">UDPSocket::send</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>buf,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>size,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(sendto(<ref refid="classSocketFd_1a0636825d276c3525e0d8af969ce2d3b6" kindref="member">ufds</ref>.fd,<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)<sp/>buf,<sp/>size,<sp/>0,<sp/><ref refid="classUDPSocket_1a9889d73171c2d143797dce81506d24eb" kindref="member">p</ref>-&gt;ai_addr,<sp/><ref refid="classUDPSocket_1a9889d73171c2d143797dce81506d24eb" kindref="member">p</ref>-&gt;ai_addrlen));</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="classUDPSocket_1a712f913657579110edb1f6befbc4a279" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classUDPSocket_1a712f913657579110edb1f6befbc4a279" kindref="member">UDPSocket::recv</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>buf,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>size,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(recvfrom(<ref refid="classSocketFd_1a0636825d276c3525e0d8af969ce2d3b6" kindref="member">ufds</ref>.fd,<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)<sp/>buf,<sp/>size,<sp/>0,<sp/><ref refid="classUDPSocket_1a9889d73171c2d143797dce81506d24eb" kindref="member">p</ref>-&gt;ai_addr,<sp/>&amp;<ref refid="classUDPSocket_1a9889d73171c2d143797dce81506d24eb" kindref="member">p</ref>-&gt;ai_addrlen));</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/src/UDPSocket.cpp"/>
+  </compounddef>
+</doxygen>

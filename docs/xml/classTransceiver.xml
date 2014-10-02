@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="classTransceiver" kind="class" prot="public" abstract="yes">
+    <compoundname>Transceiver</compoundname>
+    <derivedcompoundref refid="classConnection" prot="public" virt="non-virtual">Connection</derivedcompoundref>
+    <derivedcompoundref refid="classUDPSocket" prot="public" virt="non-virtual">UDPSocket</derivedcompoundref>
+    <includes refid="Transceiver_8h" local="no">Transceiver.h</includes>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classTransceiver_1a8a846d40a2108ebe79003e231d9968e3" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Transceiver::Transceiver</definition>
+        <argsstring>()</argsstring>
+        <name>Transceiver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/Transceiver.h" line="9" column="1" bodyfile="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/src/Transceiver.cpp" bodystart="3" bodyend="4"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classTransceiver_1a09118fef519a75434a3f42ab7d506c74" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>Transceiver::~Transceiver</definition>
+        <argsstring>()</argsstring>
+        <name>~Transceiver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/Transceiver.h" line="11" column="1" bodyfile="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/src/Transceiver.cpp" bodystart="6" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="classTransceiver_1aa54935e0032d9ab6c531024e001ae19d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>int</type>
+        <definition>virtual int Transceiver::send</definition>
+        <argsstring>(const char *, const unsigned, const int=0)=0</argsstring>
+        <name>send</name>
+        <reimplementedby refid="classConnection_1a5466a66e569e81d891559686f2c7594b">send</reimplementedby>
+        <reimplementedby refid="classUDPSocket_1a1c6cf2ad03b21ad00029d5f51fde43f5">send</reimplementedby>
+        <param>
+          <type>const char *</type>
+        </param>
+        <param>
+          <type>const unsigned</type>
+        </param>
+        <param>
+          <type>const int</type>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/Transceiver.h" line="12" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classTransceiver_1aef7153a423766522f4f82c1300157048" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>int</type>
+        <definition>virtual int Transceiver::recv</definition>
+        <argsstring>(char *, const unsigned, const int=0)=0</argsstring>
+        <name>recv</name>
+        <reimplementedby refid="classConnection_1ab16b8a780c69303beec9b1f67fb596f3">recv</reimplementedby>
+        <reimplementedby refid="classUDPSocket_1a712f913657579110edb1f6befbc4a279">recv</reimplementedby>
+        <param>
+          <type>char *</type>
+        </param>
+        <param>
+          <type>const unsigned</type>
+        </param>
+        <param>
+          <type>const int</type>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/Transceiver.h" line="13" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>virtual BaseClass for Classes that should provide a <ref refid="classTransceiver_1aa54935e0032d9ab6c531024e001ae19d" kindref="member">send()</ref> and <ref refid="classTransceiver_1aef7153a423766522f4f82c1300157048" kindref="member">recv()</ref> method </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="147">
+        <label>UNIXClientSocket</label>
+        <link refid="classUNIXClientSocket"/>
+        <childnode refid="145" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="144">
+        <label>Transceiver</label>
+        <link refid="classTransceiver"/>
+      </node>
+      <node id="150">
+        <label>UDPServerSocket</label>
+        <link refid="classUDPServerSocket"/>
+        <childnode refid="148" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="146">
+        <label>TCPClientSocket</label>
+        <link refid="classTCPClientSocket"/>
+        <childnode refid="145" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="145">
+        <label>Connection</label>
+        <link refid="classConnection"/>
+        <childnode refid="144" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="149">
+        <label>UDPClientSocket</label>
+        <link refid="classUDPClientSocket"/>
+        <childnode refid="148" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="148">
+        <label>UDPSocket</label>
+        <link refid="classUDPSocket"/>
+        <childnode refid="144" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/Transceiver.h" line="7" column="1" bodyfile="/home/inbre001/downloads/tmp/NewComponents/trunk/0xSocket/include/Transceiver.h" bodystart="7" bodyend="14"/>
+    <listofallmembers>
+      <member refid="classTransceiver_1aef7153a423766522f4f82c1300157048" prot="public" virt="pure-virtual"><scope>Transceiver</scope><name>recv</name></member>
+      <member refid="classTransceiver_1aa54935e0032d9ab6c531024e001ae19d" prot="public" virt="pure-virtual"><scope>Transceiver</scope><name>send</name></member>
+      <member refid="classTransceiver_1a8a846d40a2108ebe79003e231d9968e3" prot="protected" virt="non-virtual"><scope>Transceiver</scope><name>Transceiver</name></member>
+      <member refid="classTransceiver_1a09118fef519a75434a3f42ab7d506c74" prot="public" virt="virtual"><scope>Transceiver</scope><name>~Transceiver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

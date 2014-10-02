@@ -1,0 +1,15 @@
+<map id="main" name="main">
+<area shape="rect" id="node2" href="$Example_8cpp.html#a52cfa7921b503785d36d8fc027f0f9c3" title="prints usage info " alt="" coords="129,5,220,32"/>
+<area shape="rect" id="node3" href="$classUDPSocket.html#a712f913657579110edb1f6befbc4a279" title="Recv Data. " alt="" coords="110,56,239,83"/>
+<area shape="rect" id="node4" href="$classConnection.html#a5466a66e569e81d891559686f2c7594b" title="Connection::send" alt="" coords="303,107,437,133"/>
+<area shape="rect" id="node6" href="$classUDPSocket.html#a1c6cf2ad03b21ad00029d5f51fde43f5" title="Sends Data. " alt="" coords="108,259,241,285"/>
+<area shape="rect" id="node7" href="$Example_8cpp.html#ac5de2785666f2fc48e9f23fc7da9e895" title="stream_client" alt="" coords="120,157,229,184"/>
+<area shape="rect" id="node9" href="$Example_8cpp.html#ae0f14589015e103d1db9167bb89e4f4e" title="stream_server" alt="" coords="117,208,232,235"/>
+<area shape="rect" id="node12" href="$Example_8cpp.html#a96815f680b2b4c13e5702d35bb956a2e" title="Removes leading and trailing Spaces and Tabs. " alt="" coords="151,309,199,336"/>
+<area shape="rect" id="node5" href="$classConnection.html#a4e186a7e69d56c0bb84ef56032b89427" title="Connection::_poll" alt="" coords="499,132,629,159"/>
+<area shape="rect" id="node8" href="$classConnection.html#ab16b8a780c69303beec9b1f67fb596f3" title="Connection::recv" alt="" coords="305,157,435,184"/>
+<area shape="rect" id="node10" href="$classServerSocket.html#a1d7054bc388f2d789d2124dd96939d90" title="ServerSocket::accept" alt="" coords="291,208,449,235"/>
+<area shape="rect" id="node11" href="$classSocketFd.html#a9b3ed5d1b4e34195fd53ae8a627187aa" title="set Tiemout on SocketFileDescriptor " alt="" coords="289,259,451,285"/>
+<area shape="rect" id="node13" href="$Example_8cpp.html#a46d443837f44dcac80a4f1954ca18af8" title="Removes trailing Spaces and Tabs. " alt="" coords="343,309,397,336"/>
+<area shape="rect" id="node14" href="$Example_8cpp.html#a3894a70718f272b0b2dc91f3b1a3080b" title="Removes leading Spaces and Tabs. " alt="" coords="345,360,395,387"/>
+</map>
