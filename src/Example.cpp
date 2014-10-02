@@ -44,7 +44,7 @@ void printusage(char* name) {
 }
 
 /**
- *
+ *  This is the End ... no wait ... the opposite
  */
 int main(int argc, char* argv[]) {
 
@@ -217,7 +217,7 @@ int main(int argc, char* argv[]) {
 		}
 	} else {
 		printusage(argv[0]);
-		cout << "unknown 1st argument use 's' or 'c'" << endl;
+		cout << "unknown 1st argument use 's', 'c' or 'h'" << endl;
 		return 1;
 	}
 
