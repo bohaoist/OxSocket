@@ -9,7 +9,13 @@ using namespace std;
 void stream_server(ServerSocket&);
 void stream_client(Connection&);
 
-const static char EOM = '\n';
+/**/
+string ltrim(const string);
+string rtrim(const string);
+string trim(const string);
+template<class T> T str2(const string str);
+
+const static char END_OF_MESSAGE = '\n';
 
 #define DEFAULTPORT 1234
 #define DEFAULTMSGC "Hello here Client"
@@ -18,56 +24,10 @@ const static char EOM = '\n';
 #define DEFAULTSERV "127.0.0.1"
 
 /**
- * \brief Convert a String to a T Object
- * \details This Function tries to convert any string into any Type
- *         the Template Function was called with.
- * \param[in]
- * \return
- **/
-template<class T> T str2(const string str) {
-	T tmp;
-	stringstream ss(str, stringstream::in);
-	ss >> tmp;
-	return (tmp);
-}
-/**
- * \brief     Removes trailing Spaces and Tabs
- * \details   Removes trailing Spaces and Tabs
- * \param[in] str String to
- * \return    trimmed String
- * */
-string rtrim(const string str) {
-	size_t pos = str.find_last_not_of(" \t\n\r");
-	if (string::npos == pos) {
-		return ("");
-	}
-	return (str.substr(0, pos + 1));
-}
-
-/**
- * \brief     Removes leading Spaces and Tabs
- * \details   Removes leading Spaces and Tabs
- * \param[in] str String to
- * \return    trimmed String
- **/
-string ltrim(const string str) {
-	size_t pos = str.find_first_not_of(" \t\n\r");
-	if (string::npos == pos) {
-		return ("");
-	}
-	return (str.substr(pos));
-}
-
-/**
- * \brief     Removes leading and trailing Spaces and Tabs
- * \details   Removes leading and trailing Spaces and Tabs
- * \param[in] str String to
- * \return    trimmed String
- * */
-string trim(const string str) {
-	return (rtrim(ltrim(str)));
-}
-
+ * \brief prints usage info
+ * \details prints usage info
+ * \param[in] name of the executable
+ */
 void printusage(char* name) {
 	cout << "usage: " << name << " [sc] [utx]" << endl;
 	cout << endl;
@@ -83,11 +43,14 @@ void printusage(char* name) {
 	cout << endl;
 }
 
+/**
+ *
+ */
 int main(int argc, char* argv[]) {
 
 	char re1 = '\0';
 	char re2 = '\0';
-	if (argc != 3) {
+	if (argc < 3) {
 		printusage(argv[0]);
 		return 1;
 	}
@@ -100,50 +63,58 @@ int main(int argc, char* argv[]) {
 		 * HTTP Client
 		 */
 		///--------------------------------------------------
-		string server = argv[2];
-		TCPClientSocket sock(server.c_str(), 80);
+		int n = 0;
+		int port = 80;
+
+		string host = argv[2];
+		TCPClientSocket sock(host.c_str(), port);
 
 		string msg = "GET / HTTP/1.1\n"
-				"Host: " + server + "\n"
+				"Host: " + host + "\n"
 				"\n\r";
-		sock.send(msg.data(), msg.size());
+		n = sock.send(msg.data(), msg.size());
+		if (n > 0) {
+			string line = "";
+			char buf = '\0';
+			char pbuf = '\0';
+			int content_length = 0;
 
-		string line = "";
-		char buf = '\0';
-		char pbuf = '\0';
-		int n = 0;
-		int content_length = 0;
+			sock.setTimeout(5, 0); // we'll wait 5 seconds on a recv not any longer
+			while (0 < (n = sock.recv(&buf, sizeof(buf)))) {
 
-		sock.setTimeout(5, 0);
-		while (0 < (n = sock.recv(&buf, sizeof(buf)))) {
+				line += buf;
 
-			line += buf;
+				// RECV BODY
+				if (buf == '\r' and pbuf == '\n') {
+					char buf2[content_length];
+					n = sock.recv(buf2, content_length);
+					if (n > 0) {
+						msg += string(buf2, n);
 
-			// RECV BODY
-			if (buf == '\r' and pbuf == '\n') {
-				char buf2[content_length];
-				n = sock.recv(buf2, content_length);
-				if (n > 0) {
-					msg += string(buf2, n);
+					}
+					break;
+
+				} else // RECV LINE
+				if (buf == '\n') {
+					if (string::npos != line.find("Content-Length")) {
+						content_length = str2<int>(
+								trim(line.substr(line.find(":") + 1)));
+					}
+					msg += line;
+					line = "";
 
 				}
-				break;
-			} else if (buf == '\n') {
-				if (string::npos != line.find("Content-Length")) {
-					content_length = str2<int>(
-							trim(line.substr(line.find(":") + 1)));
-				}
-				msg += line;
-				line = "";
+				// remember previous character
+				pbuf = buf;
 
 			}
-			pbuf = buf;
-
+			// print the entire RESPONSE
+			cout << msg << endl;
+			cout << endl;
+		} else {
+			cout << "send() failed" << endl;
 		}
-		// print the entire RESPONSE
-		cout << msg << endl;
-		cout << endl;
-		cout << "HTTP Client finished successfully" << endl;
+		cout << "HTTP Client finished" << endl;
 		///--------------------------------------------------
 	} else if (re1 == 's') {
 		switch (re2) {
@@ -210,6 +181,7 @@ int main(int argc, char* argv[]) {
 			n = udpsock.recv(buf, sizeof(buf));
 			msg = string(buf, n);
 			cout << "Got Message: '" << msg << "'" << endl;
+			cout << "UDP Client finished" << endl;
 			///--------------------------------------------------
 		}
 			break;
@@ -221,6 +193,7 @@ int main(int argc, char* argv[]) {
 			 **/
 			TCPClientSocket sock(DEFAULTSERV, DEFAULTPORT);
 			stream_client(sock);
+			cout << "TCP Client finished" << endl;
 			///--------------------------------------------------
 		}
 			break;
@@ -231,6 +204,7 @@ int main(int argc, char* argv[]) {
 			 **/
 			UNIXClientSocket sock(DEFAULTUNIX);
 			stream_client(sock);
+			cout << "UNIX Client finished" << endl;
 			///--------------------------------------------------
 		}
 			break;
@@ -284,7 +258,7 @@ void stream_server(ServerSocket &sock) {
 			 *
 			 **/
 			while (0 < (n = con->recv(&buf, sizeof(buf)))) {
-				if (buf == EOM) {
+				if (buf == END_OF_MESSAGE) {
 					ok = true; // Everything ok
 					break;
 				}
@@ -300,7 +274,7 @@ void stream_server(ServerSocket &sock) {
 
 				// dont forget the append the EOM Sign ...
 				cout << "Sending: '" << msg << "'" << endl;
-				msg += EOM;
+				msg += END_OF_MESSAGE;
 				n = con->send(msg.data(), msg.size());
 
 				// Some Error Checking
@@ -331,7 +305,7 @@ void stream_client(Connection &con) {
 	cout << "Sending: '" << msg << "'" << endl;
 
 // Append the End of Message Character to the Message
-	msg += EOM;
+	msg += END_OF_MESSAGE;
 
 //  Send the Message to the Server
 	if (0 < (n = con.send(msg.data(), msg.size()))) {
@@ -352,7 +326,7 @@ void stream_client(Connection &con) {
 		 *
 		 **/
 		while (0 < (n = con.recv(&buf, sizeof(buf)))) {
-			if (buf == EOM) {
+			if (buf == END_OF_MESSAGE) {
 				ok = true;
 				break;
 			}
@@ -370,6 +344,57 @@ void stream_client(Connection &con) {
 	} else {
 		cout << "send() failed " << endl;
 	}
+}
+
+/**
+ * \brief Convert a String to a T Object
+ * \details This Function tries to convert any string into any Type
+ *         the Template Function was called with.
+ * \param[in]
+ * \return
+ **/
+template<class T> T str2(const string str) {
+	T tmp;
+	stringstream ss(str, stringstream::in);
+	ss >> tmp;
+	return (tmp);
+}
+/**
+ * \brief     Removes trailing Spaces and Tabs
+ * \details   Removes trailing Spaces and Tabs
+ * \param[in] str String to
+ * \return    trimmed String
+ * */
+string rtrim(const string str) {
+	size_t pos = str.find_last_not_of(" \t\n\r");
+	if (string::npos == pos) {
+		return ("");
+	}
+	return (str.substr(0, pos + 1));
+}
+
+/**
+ * \brief     Removes leading Spaces and Tabs
+ * \details   Removes leading Spaces and Tabs
+ * \param[in] str String to
+ * \return    trimmed String
+ **/
+string ltrim(const string str) {
+	size_t pos = str.find_first_not_of(" \t\n\r");
+	if (string::npos == pos) {
+		return ("");
+	}
+	return (str.substr(pos));
+}
+
+/**
+ * \brief     Removes leading and trailing Spaces and Tabs
+ * \details   Removes leading and trailing Spaces and Tabs
+ * \param[in] str String to
+ * \return    trimmed String
+ * */
+string trim(const string str) {
+	return (rtrim(ltrim(str)));
 }
 
 // EOF 
