@@ -6,6 +6,7 @@ extern "C" {
 #include <netdb.h>       /* addrinfo, getaddrinfo */
 #include <bits/socket.h> /* sockaddr_storage */
 #include <sys/unistd.h>  /* close */
+#include <arpa/inet.h>   /**/
 }
 
 #include <cstring>	     /* memset */

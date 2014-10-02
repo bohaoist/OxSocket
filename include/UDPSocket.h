@@ -5,7 +5,6 @@ extern "C" {
 #include <unistd.h>      /* close */
 #include <netdb.h>       /* addrinfo, freeaddrinfo */
 #include <sys/socket.h>  /* sockaddr_storage, sendto, recvfrom, */
-
 }
 
 #include <Transceiver.h>

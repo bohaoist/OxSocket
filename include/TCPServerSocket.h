@@ -5,7 +5,7 @@ extern "C" {
 
 #include <sys/socket.h> /* accept , listen, setsockopt, bind. sockaddr_storage */
 #include <netdb.h>      /* addrinfo, getaddrinfo, gai_strerror */
-
+#include <arpa/inet.h>  /* inet_ntop */
 }
 
 #include <cstdio>      /* perror, sprintf, fprintf */

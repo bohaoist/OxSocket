@@ -6,18 +6,22 @@ extern "C" {
 #include <sys/unistd.h> /* read(),write() */
 #include <poll.h>       /* poll, POLLIN, POLLOUT, POLLPRI */
 }
-
+#include <string>
 #include <Transceiver.h>
 #include <SocketFd.h>
 
 class Connection: public Transceiver, public SocketFd {
+protected:
+
 private:
 	int n;
 	unsigned int sum;
 	int _poll(const int = -1);
 
 public:
-	Connection(const int = 0);
+	std::string targetaddr;
+
+	Connection(const int = 0, const std::string taddr = "");
 	virtual ~Connection();
 
 	int recv(char*, const unsigned, const int = -1);

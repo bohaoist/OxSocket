@@ -39,6 +39,7 @@ UDPServerSocket::UDPServerSocket(const unsigned port) {
 	if (p == NULL) {
 		throw std::runtime_error("UDPServerSocket::bind() failed");
 	}
+
 }
 
 UDPServerSocket::~UDPServerSocket() {

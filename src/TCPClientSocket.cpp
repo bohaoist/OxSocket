@@ -21,10 +21,6 @@ TCPClientSocket::TCPClientSocket(const char* host, const unsigned iport) {
 		throw std::runtime_error("TCPClientSocket::getaddrinfo failed");
 	}
 
-//	inet_ntop(p->ai_family, get_in_addr((struct sockaddr *) p->ai_addr), s,
-//			sizeof s);
-//	printf("client: connecting to %s\n", s);
-
 	// loop through all the results and connect to the first we can
 	for (p = servinfo; p != NULL; p = p->ai_next) {
 		if ((ufds.fd = socket(p->ai_family, p->ai_socktype, p->ai_protocol))
@@ -46,6 +42,11 @@ TCPClientSocket::TCPClientSocket(const char* host, const unsigned iport) {
 		fprintf(stderr, "client: failed to connect\n");
 		throw std::runtime_error("TCPClientSocket::connect failed");
 	}
+
+	char s[INET6_ADDRSTRLEN];
+	inet_ntop(p->ai_family, get_in_addr((struct sockaddr *) p->ai_addr), s,
+			sizeof s);
+	targetaddr = s;
 
 	freeaddrinfo(servinfo); // all done with this structure
 }

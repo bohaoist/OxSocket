@@ -1,6 +1,7 @@
 #include <Connection.h>
 
-Connection::Connection(const int fd) {
+Connection::Connection(const int fd,const std::string taddr) {
+	targetaddr = taddr;
 	sum = n = 0;
 	ufds.fd = fd;
 	ufds.events = POLLIN | POLLOUT | POLLPRI;
