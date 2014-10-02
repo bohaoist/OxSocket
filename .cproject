@@ -105,7 +105,7 @@
 							<tool id="cdt.managedbuild.tool.gnu.archiver.base.371554259" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.base.1109374916" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.base">
 								<option id="gnu.cpp.compiler.option.optimization.level.787269916" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
-								<option id="gnu.cpp.compiler.option.debugging.level.790301749" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" value="gnu.cpp.compiler.debugging.level.default" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.debugging.level.790301749" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.966204345" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="../include"/>
 								</option>
@@ -113,12 +113,14 @@
 								<option id="gnu.cpp.compiler.option.other.pic.320172372" name="Position Independent Code (-fPIC)" superClass="gnu.cpp.compiler.option.other.pic" value="true" valueType="boolean"/>
 								<option id="gnu.cpp.compiler.option.dialect.std.1960128772" name="Language standard" superClass="gnu.cpp.compiler.option.dialect.std" value="gnu.cpp.compiler.dialect.default" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.warnings.extrawarn.1204965194" name="Extra warnings (-Wextra)" superClass="gnu.cpp.compiler.option.warnings.extrawarn" value="true" valueType="boolean"/>
-								<option id="gnu.cpp.compiler.option.preprocessor.def.757141624" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" valueType="definedSymbols"/>
+								<option id="gnu.cpp.compiler.option.preprocessor.def.757141624" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="DEBUG"/>
+								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.283794710" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.compiler.base.29924579" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.base">
 								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.1413877703" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" value="gnu.c.optimization.level.more" valueType="enumerated"/>
-								<option id="gnu.c.compiler.option.debugging.level.571417548" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" value="gnu.c.debugging.level.default" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.debugging.level.571417548" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.misc.pic.1289134596" name="Position Independent Code (-fPIC)" superClass="gnu.c.compiler.option.misc.pic" value="true" valueType="boolean"/>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.849106986" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>

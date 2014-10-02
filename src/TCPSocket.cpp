@@ -1,6 +1,7 @@
 #include <TCPSocket.h>
 
 TCPSocket::~TCPSocket() {
+	freeaddrinfo(servinfo);
 }
 
 TCPSocket::TCPSocket() {

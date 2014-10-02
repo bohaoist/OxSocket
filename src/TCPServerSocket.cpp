@@ -57,7 +57,7 @@ TCPServerSocket::TCPServerSocket(const unsigned iport) {
 		break;
 	}
 
-	freeaddrinfo(servinfo); // all done with this structure
+//	freeaddrinfo(servinfo); // all done with this structure
 	if (p == NULL) {
 		throw std::runtime_error("TCPServerSocket() failed");
 	}

@@ -14,16 +14,16 @@ TCPClientSocket::TCPClientSocket(const char* host, const unsigned iport) {
 		throw std::runtime_error(msg);
 	}
 
-	memset(&hints, 0, sizeof hints);
+	memset(&hints, 0, sizeof(hints));
 	hints.ai_family = AF_UNSPEC;
 	hints.ai_socktype = SOCK_STREAM;
 
 	if ((rv = getaddrinfo(host, port, &hints, &servinfo)) != 0) {
-		freeaddrinfo(servinfo); // all done with this structure
+//		freeaddrinfo(servinfo); // all done with this structure
 #ifdef DEBUG
 		fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(rv));
 #endif
-		throw std::runtime_error("TCPClientSocket::getaddrinfo failed");
+		throw std::runtime_error("TCPClientSocket::getaddrinfo() failed");
 	}
 
 	// loop through all the results and connect to the first we can
@@ -48,16 +48,15 @@ TCPClientSocket::TCPClientSocket(const char* host, const unsigned iport) {
 	}
 
 	if (p == NULL) {
-		freeaddrinfo(servinfo); // all done with this structure
+//		freeaddrinfo(servinfo); // all done with this structure
 		throw std::runtime_error("TCPClientSocket() failed");
 	}
 
 	char s[INET6_ADDRSTRLEN];
-	inet_ntop(p->ai_family, get_in_addr((sockaddr *) p->ai_addr), s,
-			sizeof s);
+	inet_ntop(p->ai_family, get_in_addr((sockaddr *) p->ai_addr), s, sizeof s);
 	targetaddr = s;
 
-	freeaddrinfo(servinfo); // all done with this structure
+//	freeaddrinfo(servinfo); // all done with this structure
 }
 
 TCPClientSocket::~TCPClientSocket() {

@@ -1,6 +1,6 @@
 #include <Connection.h>
 
-Connection::Connection(const int fd,const std::string taddr) {
+Connection::Connection(const int fd, const std::string taddr) {
 	targetaddr = taddr;
 	sum = n = 0;
 	ufds.fd = fd;
@@ -27,20 +27,22 @@ do { \
 return (sum); \
 
 
-int Connection::send(const char *buf, const unsigned size, const int msec) {
-	_poll(msec);
+int Connection::send(const char *buf, const unsigned size, const int) {
+//	_poll(msec);
 	WEADMACRO(write)
 }
 
-int Connection::recv(char *buf, const unsigned size, const int msec) {
-	_poll(msec);
+int Connection::recv(char *buf, const unsigned size, const int) {
+//	_poll(msec);
 	WEADMACRO(read)
 }
 
 #undef WEADMACRO
 
 int Connection::_poll(const int msec) {
+	std::cout << "poll > " << std::endl;
 	int rv = ::poll(&ufds, 1, msec);
+	std::cout << "< poll  " << std::endl;
 #ifdef DEBUG
 	if (0 > rv) {
 		::perror("poll error");

@@ -17,7 +17,7 @@ template<class T> T str2(const string str);
 
 const static char END_OF_MESSAGE = '\n';
 
-#define DEFAULTPORT 17
+#define DEFAULTPORT  1234
 #define DEFAULTMSGC "Hello here Client"
 #define DEFAULTMSGS "Hello here Server"
 #define DEFAULTUNIX "echo_socket"
@@ -68,6 +68,7 @@ int main(int argc, char* argv[]) {
 		string host = argv[2];
 		try {
 			TCPClientSocket sock(host.c_str(), port);
+			sock.setTimeout(5, 0);
 
 			string msg = "GET / HTTP/1.1\n"
 					"Host: " + host + "\n"
@@ -79,7 +80,6 @@ int main(int argc, char* argv[]) {
 				char pbuf = '\0';
 				int content_length = 0;
 
-				sock.setTimeout(5, 0); // we'll wait 5 seconds on a recv not any longer
 				while (0 < (n = sock.recv(&buf, sizeof(buf)))) {
 
 					line += buf;
@@ -90,7 +90,6 @@ int main(int argc, char* argv[]) {
 						n = sock.recv(buf2, content_length);
 						if (n > 0) {
 							msg += string(buf2, n);
-
 						}
 						break;
 
@@ -109,8 +108,10 @@ int main(int argc, char* argv[]) {
 
 				}
 				// print the entire RESPONSE
-				cout << msg << endl;
-				cout << endl;
+				if (n > 0) {
+					cout << msg << endl;
+					cout << endl;
+				}
 			} else {
 				cout << "send() failed" << endl;
 			}
@@ -127,19 +128,24 @@ int main(int argc, char* argv[]) {
 			 *  UDP Server
 			 **/
 			try {
-				UDPServerSocket udpsock(DEFAULTPORT);
+				UDPServerSocket sock(DEFAULTPORT);
+				sock.setTimeout(3, 0);
 				char buf[255];
 				int n = 0;
 				string msg = "";
 				while (true) {
 					cout << endl;
 					cout << "Waiting for incoming Data" << endl;
-					n = udpsock.recv(buf, sizeof(buf));
-					msg = string(buf, n);
-					cout << "Got Message: '" << msg << "'" << endl;
-					msg = DEFAULTMSGS;
-					cout << "Sending: '" << msg << "'" << endl;
-					udpsock.send(msg.data(), msg.size());
+					n = sock.recv(buf, sizeof(buf));
+					if (n > 0) {
+						msg = string(buf, n);
+						cout << "Got Message: '" << msg << "'" << endl;
+						msg = DEFAULTMSGS;
+						cout << "Sending: '" << msg << "'" << endl;
+						sock.send(msg.data(), msg.size());
+					} else {
+						cout << "Got no Message timeout" << endl;
+					}
 				}
 			} catch (const runtime_error& error) {
 				cout << error.what() << endl;
@@ -190,15 +196,18 @@ int main(int argc, char* argv[]) {
 			char buf[255];
 			string msg = DEFAULTMSGC;
 			int n = 0;
-
-			UDPClientSocket udpsock(DEFAULTSERV, DEFAULTPORT);
+			UDPClientSocket sock(DEFAULTSERV, DEFAULTPORT);
+			sock.setTimeout(5, 0);
 			cout << "Sending: '" << msg << "'" << endl;
-			udpsock.send(msg.c_str(), msg.size());
-			n = udpsock.recv(buf, sizeof(buf));
-			msg = string(buf, n);
-			cout << "Got Message: '" << msg << "'" << endl;
+			n = sock.send(msg.c_str(), msg.size());
+			if (n > 0) {
+				n = sock.recv(buf, sizeof(buf));
+				if (n > 0) {
+					msg = string(buf, n);
+					cout << "Got Message: '" << msg << "'" << endl;
+				}
+			}
 			cout << "UDP Client finished" << endl;
-
 			///--------------------------------------------------
 		}
 			break;
@@ -226,6 +235,7 @@ int main(int argc, char* argv[]) {
 			 **/
 			try {
 				UNIXClientSocket sock(DEFAULTUNIX);
+				sock.setTimeout(5, 0);
 				stream_client(sock);
 			} catch (const runtime_error& error) {
 				cout << error.what() << endl;
@@ -325,6 +335,8 @@ void stream_server(ServerSocket &sock) {
  * sends ans recv some data over a Connection
  **/
 void stream_client(Connection &con) {
+
+	con.setTimeout(5, 0);
 
 	int n = 0;
 	string msg = DEFAULTMSGC;

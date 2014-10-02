@@ -8,6 +8,8 @@ extern "C" {
 #include <stdio.h>      /* perror */
 #include <unistd.h>     /* close */
 #include <poll.h>       /* poll */
+#include <stropts.h>
+#include <asm-generic/ioctls.h>
 }
 
 /**

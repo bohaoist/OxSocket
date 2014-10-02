@@ -11,14 +11,19 @@ SocketFd::~SocketFd() {
 }
 
 int SocketFd::setNonBlocking() {
-	if (ufds.fd < 0) {
-		return (1);
-	}
-	int flags = 0;
-	flags = ::fcntl(ufds.fd, F_GETFL, 0);
-	if (0 != ::fcntl(ufds.fd, F_SETFL, flags | O_NONBLOCK)) {
-		::perror("SocketFd::mkNonBlocking::fcntl() failed");
-		return (1);
+//	if (ufds.fd < 0) {
+//		return (1);
+//	}
+//	int flags = 0;
+//	flags = ::fcntl(ufds.fd, F_GETFL, 0);
+//	if (0 != ::fcntl(ufds.fd, F_SETFL, flags | O_NONBLOCK)) {
+//		::perror("SocketFd::mkNonBlocking::fcntl() failed");
+//		return (1);
+//	}
+
+	long on = 1L;
+	if (ioctl(ufds.fd, (int) FIONBIO, (char *) &on)) {
+		printf("ioctl FIONBIO call failed\n");
 	}
 	return (0);
 }
@@ -45,9 +50,7 @@ int SocketFd::setBlocking() {
 }
 
 int SocketFd::setTimeout(const unsigned sec, const unsigned usec) {
-	if (ufds.fd < 0) {
-		return (1);
-	}
+
 	timeval tv;
 	tv.tv_sec = sec;
 	tv.tv_usec = usec;
