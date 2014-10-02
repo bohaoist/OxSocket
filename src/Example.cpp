@@ -17,7 +17,7 @@ template<class T> T str2(const string str);
 
 const static char END_OF_MESSAGE = '\n';
 
-#define DEFAULTPORT 1234
+#define DEFAULTPORT 17
 #define DEFAULTMSGC "Hello here Client"
 #define DEFAULTMSGS "Hello here Server"
 #define DEFAULTUNIX "echo_socket"
@@ -65,54 +65,57 @@ int main(int argc, char* argv[]) {
 		///--------------------------------------------------
 		int n = 0;
 		int port = 80;
-
 		string host = argv[2];
-		TCPClientSocket sock(host.c_str(), port);
+		try {
+			TCPClientSocket sock(host.c_str(), port);
 
-		string msg = "GET / HTTP/1.1\n"
-				"Host: " + host + "\n"
-				"\n\r";
-		n = sock.send(msg.data(), msg.size());
-		if (n > 0) {
-			string line = "";
-			char buf = '\0';
-			char pbuf = '\0';
-			int content_length = 0;
+			string msg = "GET / HTTP/1.1\n"
+					"Host: " + host + "\n"
+					"\n\r";
+			n = sock.send(msg.data(), msg.size());
+			if (n > 0) {
+				string line = "";
+				char buf = '\0';
+				char pbuf = '\0';
+				int content_length = 0;
 
-			sock.setTimeout(5, 0); // we'll wait 5 seconds on a recv not any longer
-			while (0 < (n = sock.recv(&buf, sizeof(buf)))) {
+				sock.setTimeout(5, 0); // we'll wait 5 seconds on a recv not any longer
+				while (0 < (n = sock.recv(&buf, sizeof(buf)))) {
 
-				line += buf;
+					line += buf;
 
-				// RECV BODY
-				if (buf == '\r' and pbuf == '\n') {
-					char buf2[content_length];
-					n = sock.recv(buf2, content_length);
-					if (n > 0) {
-						msg += string(buf2, n);
+					// RECV BODY
+					if (buf == '\r' and pbuf == '\n') {
+						char buf2[content_length];
+						n = sock.recv(buf2, content_length);
+						if (n > 0) {
+							msg += string(buf2, n);
+
+						}
+						break;
+
+					} else // RECV LINE
+					if (buf == '\n') {
+						if (string::npos != line.find("Content-Length")) {
+							content_length = str2<int>(
+									trim(line.substr(line.find(":") + 1)));
+						}
+						msg += line;
+						line = "";
 
 					}
-					break;
-
-				} else // RECV LINE
-				if (buf == '\n') {
-					if (string::npos != line.find("Content-Length")) {
-						content_length = str2<int>(
-								trim(line.substr(line.find(":") + 1)));
-					}
-					msg += line;
-					line = "";
+					// remember previous character
+					pbuf = buf;
 
 				}
-				// remember previous character
-				pbuf = buf;
-
+				// print the entire RESPONSE
+				cout << msg << endl;
+				cout << endl;
+			} else {
+				cout << "send() failed" << endl;
 			}
-			// print the entire RESPONSE
-			cout << msg << endl;
-			cout << endl;
-		} else {
-			cout << "send() failed" << endl;
+		} catch (const runtime_error& error) {
+			cout << error.what() << endl;
 		}
 		cout << "HTTP Client finished" << endl;
 		///--------------------------------------------------
@@ -123,19 +126,23 @@ int main(int argc, char* argv[]) {
 			/**
 			 *  UDP Server
 			 **/
-			UDPServerSocket udpsock(DEFAULTPORT);
-			char buf[255];
-			int n = 0;
-			string msg = "";
-			while (true) {
-				cout << endl;
-				cout << "Waiting for incoming Data" << endl;
-				n = udpsock.recv(buf, sizeof(buf));
-				msg = string(buf, n);
-				cout << "Got Message: '" << msg << "'" << endl;
-				msg = DEFAULTMSGS;
-				cout << "Sending: '" << msg << "'" << endl;
-				udpsock.send(msg.data(), msg.size());
+			try {
+				UDPServerSocket udpsock(DEFAULTPORT);
+				char buf[255];
+				int n = 0;
+				string msg = "";
+				while (true) {
+					cout << endl;
+					cout << "Waiting for incoming Data" << endl;
+					n = udpsock.recv(buf, sizeof(buf));
+					msg = string(buf, n);
+					cout << "Got Message: '" << msg << "'" << endl;
+					msg = DEFAULTMSGS;
+					cout << "Sending: '" << msg << "'" << endl;
+					udpsock.send(msg.data(), msg.size());
+				}
+			} catch (const runtime_error& error) {
+				cout << error.what() << endl;
 			}
 			///--------------------------------------------------
 		}
@@ -145,8 +152,12 @@ int main(int argc, char* argv[]) {
 			/**
 			 *  TCP Server
 			 **/
-			TCPServerSocket sock(DEFAULTPORT);
-			stream_server(sock);
+			try {
+				TCPServerSocket sock(DEFAULTPORT);
+				stream_server(sock);
+			} catch (const runtime_error& error) {
+				cout << error.what() << endl;
+			}
 			///--------------------------------------------------
 		}
 			break;
@@ -155,8 +166,12 @@ int main(int argc, char* argv[]) {
 			/**
 			 * UNIX Server
 			 **/
-			UNIXServerSocket sock(DEFAULTUNIX);
-			stream_server(sock);
+			try {
+				UNIXServerSocket sock(DEFAULTUNIX);
+				stream_server(sock);
+			} catch (const runtime_error& error) {
+				cout << error.what() << endl;
+			}
 			///--------------------------------------------------
 		}
 			break;
@@ -175,6 +190,7 @@ int main(int argc, char* argv[]) {
 			char buf[255];
 			string msg = DEFAULTMSGC;
 			int n = 0;
+
 			UDPClientSocket udpsock(DEFAULTSERV, DEFAULTPORT);
 			cout << "Sending: '" << msg << "'" << endl;
 			udpsock.send(msg.c_str(), msg.size());
@@ -182,6 +198,7 @@ int main(int argc, char* argv[]) {
 			msg = string(buf, n);
 			cout << "Got Message: '" << msg << "'" << endl;
 			cout << "UDP Client finished" << endl;
+
 			///--------------------------------------------------
 		}
 			break;
@@ -191,8 +208,13 @@ int main(int argc, char* argv[]) {
 			/**
 			 * TCP Client
 			 **/
-			TCPClientSocket sock(DEFAULTSERV, DEFAULTPORT);
-			stream_client(sock);
+			try {
+				TCPClientSocket sock(DEFAULTSERV, DEFAULTPORT);
+				stream_client(sock);
+			} catch (const runtime_error& error) {
+				cout << error.what() << endl;
+			}
+
 			cout << "TCP Client finished" << endl;
 			///--------------------------------------------------
 		}
@@ -202,8 +224,12 @@ int main(int argc, char* argv[]) {
 			/**
 			 * UNIX Client
 			 **/
-			UNIXClientSocket sock(DEFAULTUNIX);
-			stream_client(sock);
+			try {
+				UNIXClientSocket sock(DEFAULTUNIX);
+				stream_client(sock);
+			} catch (const runtime_error& error) {
+				cout << error.what() << endl;
+			}
 			cout << "UNIX Client finished" << endl;
 			///--------------------------------------------------
 		}

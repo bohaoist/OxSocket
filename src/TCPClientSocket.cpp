@@ -8,7 +8,9 @@ TCPClientSocket::TCPClientSocket(const char* host, const unsigned iport) {
 	int n = (sprintf(port, "%d", iport));
 	if (0 > n) {
 		const char *msg = "TCPClientSocket::sprintf() failed";
+#ifdef DEBUG
 		perror(msg);
+#endif
 		throw std::runtime_error(msg);
 	}
 
@@ -18,7 +20,9 @@ TCPClientSocket::TCPClientSocket(const char* host, const unsigned iport) {
 
 	if ((rv = getaddrinfo(host, port, &hints, &servinfo)) != 0) {
 		freeaddrinfo(servinfo); // all done with this structure
+#ifdef DEBUG
 		fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(rv));
+#endif
 		throw std::runtime_error("TCPClientSocket::getaddrinfo failed");
 	}
 
@@ -26,13 +30,17 @@ TCPClientSocket::TCPClientSocket(const char* host, const unsigned iport) {
 	for (p = servinfo; p != NULL; p = p->ai_next) {
 		if ((ufds.fd = socket(p->ai_family, p->ai_socktype, p->ai_protocol))
 				== -1) {
+#ifdef DEBUG
 			perror("TCPClientSocket::socket() failed");
+#endif
 			continue;
 		}
 
 		if (::connect(ufds.fd, p->ai_addr, p->ai_addrlen) == -1) {
-			close(ufds.fd);
+#ifdef DEBUG
 			perror("TCPClientSocket::connect() failed");
+#endif
+			close(ufds.fd);
 			continue;
 		}
 
@@ -41,12 +49,11 @@ TCPClientSocket::TCPClientSocket(const char* host, const unsigned iport) {
 
 	if (p == NULL) {
 		freeaddrinfo(servinfo); // all done with this structure
-		fprintf(stderr, "client: failed to connect\n");
-		throw std::runtime_error("TCPClientSocket::connect failed");
+		throw std::runtime_error("TCPClientSocket() failed");
 	}
 
 	char s[INET6_ADDRSTRLEN];
-	inet_ntop(p->ai_family, get_in_addr((struct sockaddr *) p->ai_addr), s,
+	inet_ntop(p->ai_family, get_in_addr((sockaddr *) p->ai_addr), s,
 			sizeof s);
 	targetaddr = s;
 

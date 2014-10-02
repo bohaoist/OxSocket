@@ -13,12 +13,16 @@ TCPServerSocket::TCPServerSocket(const unsigned iport) {
 	int n = (::sprintf(port, "%d", iport));
 	if (0 > n) {
 		const char* msg = "TCPServerSocket::sprintf() failed";
+#ifdef DEBUG
 		::perror(msg);
+#endif
 		throw std::runtime_error(msg);
 	}
 
 	if ((rv = ::getaddrinfo(NULL, port, &hints, &servinfo)) != 0) {
-		fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(rv));
+#ifdef DEBUG
+		fprintf(stderr, "TCPServerSocket::getaddrinfo: %s\n", gai_strerror(rv));
+#endif
 		throw std::runtime_error("TCPServerSocket::getaddrinfo() failed");
 	}
 
@@ -26,7 +30,9 @@ TCPServerSocket::TCPServerSocket(const unsigned iport) {
 	for (p = servinfo; p != NULL; p = p->ai_next) {
 		if ((ufds.fd = socket(p->ai_family, p->ai_socktype, p->ai_protocol))
 				== -1) {
+#ifdef DEBUG
 			perror("TCPServerSocket::socket() failed");
+#endif
 			continue;
 		}
 
@@ -34,28 +40,33 @@ TCPServerSocket::TCPServerSocket(const unsigned iport) {
 		if (setsockopt(ufds.fd, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(int))
 				== -1) {
 			const char* msg = "TCPServerSocket::setsockopt() failed";
+#ifdef DEBUG
 			perror(msg);
+#endif
 			throw std::runtime_error(msg);
 		}
 
 		if (bind(ufds.fd, p->ai_addr, p->ai_addrlen) == -1) {
-			close(ufds.fd);
+#ifdef DEBUG
 			perror("TCPServerSocket::bind() failed");
+#endif
+			close(ufds.fd);
 			continue;
 		}
 
 		break;
 	}
 
-	if (p == NULL) {
-		throw std::runtime_error("TCPServerSocket::bind() failed");
-	}
-
 	freeaddrinfo(servinfo); // all done with this structure
+	if (p == NULL) {
+		throw std::runtime_error("TCPServerSocket() failed");
+	}
 
 	if (::listen(ufds.fd, 10) == -1) {
 		const char *msg = "TCPServerSocket::listen() failed";
+#ifdef DEBUG
 		perror(msg);
+#endif
 		throw std::runtime_error(msg);
 	}
 

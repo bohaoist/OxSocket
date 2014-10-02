@@ -14,7 +14,9 @@ UDPClientSocket::UDPClientSocket(const char* addr, const unsigned int port) {
 	}
 
 	if ((rv = getaddrinfo(addr, cport, &hints, &servinfo)) != 0) {
+#ifdef DEBUG
 		fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(rv));
+#endif
 		throw std::runtime_error("UDPClientSocket::getaddrinfo() failed");
 	}
 
@@ -22,7 +24,9 @@ UDPClientSocket::UDPClientSocket(const char* addr, const unsigned int port) {
 	for (p = servinfo; p != NULL; p = p->ai_next) {
 		if ((ufds.fd = socket(p->ai_family, p->ai_socktype, p->ai_protocol))
 				== -1) {
+#ifdef DEBUG
 			perror("UDPClientSocket::socket() failed");
+#endif
 			continue;
 		}
 		break;

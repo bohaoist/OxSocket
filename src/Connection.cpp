@@ -41,11 +41,13 @@ int Connection::recv(char *buf, const unsigned size, const int msec) {
 
 int Connection::_poll(const int msec) {
 	int rv = ::poll(&ufds, 1, msec);
+#ifdef DEBUG
 	if (0 > rv) {
 		::perror("poll error");
 	} else if (0 == rv) {
 		::perror("poll timeout");
 	} //else 0 < rv
+#endif
 	return (rv);
 }
 

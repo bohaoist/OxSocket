@@ -6,7 +6,9 @@ UNIXServerSocket::UNIXServerSocket(const char* path) {
 
 	if ((ufds.fd = socket(AF_UNIX, SOCK_STREAM, 0)) == -1) {
 		const char *msg = "UNIXServerSocket::socket() failed";
+#ifdef DEBUG
 		perror(msg);
+#endif
 		throw std::runtime_error(msg);
 	}
 
@@ -18,13 +20,17 @@ UNIXServerSocket::UNIXServerSocket(const char* path) {
 
 	if (::bind(ufds.fd, (sockaddr *) &local, len) == -1) {
 		const char *msg = "UNIXServerSocket::bind() failed";
+#ifdef DEBUG
 		perror(msg);
+#endif
 		throw std::runtime_error(msg);
 	}
 
 	if (listen(ufds.fd, 5) == -1) {
 		const char *msg = "UNIXServerSocket::listen() failed";
+#ifdef DEBUG
 		perror(msg);
+#endif
 		throw std::runtime_error(msg);
 	}
 }
