@@ -17,9 +17,25 @@ extern "C" {
 #include <Connection.h>
 #include <TCPSocket.h>
 
+/**
+ * A TCPClientSocket establishes a connection on init
+ * Afterwards it can be used like a Connection Object.
+ * It directly provides send() and recv() functions
+ * on init/connection error the Constructor throws a std::runtime_error
+ */
 class TCPClientSocket: public Connection, public TCPSocket {
 public:
+	/**
+	 * \brief Construct a TCP connection
+	 * \details Construct a TCP connection
+	 *          on error throws std::runtime_error
+	 */
 	TCPClientSocket(const char*, const unsigned);
+
+	/**
+	 * \brief does nothing
+	 * \details does nothing
+	 */
 	virtual ~TCPClientSocket();
 };
 

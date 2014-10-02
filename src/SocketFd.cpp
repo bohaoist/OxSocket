@@ -23,6 +23,14 @@ int SocketFd::setNonBlocking() {
 	return (0);
 }
 
+void* SocketFd::get_in_addr(sockaddr *sa) {
+	if (sa->sa_family == AF_INET) {
+		return &(((sockaddr_in*) sa)->sin_addr);
+	}
+
+	return &(((sockaddr_in6*) sa)->sin6_addr);
+}
+
 int SocketFd::setBlocking() {
 	if (ufds.fd < 0) {
 		return (1);

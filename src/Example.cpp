@@ -5,11 +5,11 @@
 
 using namespace std;
 
-/* helper for stream based Sockets */
+/* helper functions for stream based Sockets */
 void stream_server(ServerSocket&);
 void stream_client(Connection&);
 
-/**/
+/* some string helper functions */
 string ltrim(const string);
 string rtrim(const string);
 string trim(const string);

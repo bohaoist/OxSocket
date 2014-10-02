@@ -3,6 +3,11 @@
 
 #include <Connection.h>
 
+/**
+ * \brief Not instanziable BaseClass for all ServerSocket Classes
+ * \details Not instanziable BaseClass for all ServerSocket Classes.
+ *          Must provides an accept() function that will return a Connection Object
+ */
 class ServerSocket {
 protected:
 	ServerSocket();

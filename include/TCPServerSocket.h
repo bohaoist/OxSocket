@@ -17,11 +17,33 @@ extern "C" {
 #include <TCPSocket.h>
 #include <ServerSocket.h>
 
+/**
+ * A TCPServerSocket provides a means for TCP Clients to be Accepted
+ * with the accept() methode it provides
+ * if the construction failes and the Listen Port can not be accessed
+ * the constructor will throw a runtime_error
+ */
 class TCPServerSocket: public SocketFd, public ServerSocket, public TCPSocket {
 
 public:
+
+	/**
+	 * \brief  construct a listening Socket
+	 * \details constructs a listening Socket
+	 *          will throw runtime_error if something goes wrong
+	 */
 	TCPServerSocket(const unsigned);
+
+	/**
+	 * \brief  does nothing
+	 * \details does nothing
+	 */
 	virtual ~TCPServerSocket();
+
+	/**
+	 * \brief  accept incoming tcp connections
+	 * \details accept incoming tcp connections
+	 */
 	Connection* accept();
 };
 

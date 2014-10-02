@@ -7,9 +7,14 @@ extern "C" {
 #include <sys/socket.h>   /* sockaddr_storage */
 }
 
+/**
+ *  Non constructable BaseClass for TCP Sockets
+ *  just because they share some structs
+ *  This is purely for internal use
+ */
 class TCPSocket {
 protected:
-	int rv;
+	int rv; // return value
 	socklen_t slen;
 	addrinfo hints, *servinfo, *p;
 	sockaddr_storage their_addr;

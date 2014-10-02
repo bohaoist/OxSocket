@@ -10,15 +10,41 @@ extern "C" {
 #include <Transceiver.h>
 #include <SocketFd.h>
 
+/**
+ * virtual baseclass for UDP Sockets
+ * implements send() and recv() for Client and Server Sockets
+ * and holds some structs used by both
+ */
 class UDPSocket: public SocketFd, public Transceiver {
 protected:
 	int rv;
-	struct addrinfo hints, *servinfo, *p;
-	struct sockaddr_storage their_addr;
+	addrinfo hints, *servinfo, *p;
+	sockaddr_storage their_addr;
 	UDPSocket();
 public:
+
+	/**
+	 * \brief  Sends Data
+	 * \details Sends Data
+	 * \param[in]  buf send buffer
+	 * \param[in]  size nb of bytes to send
+	 * \param[in]  ???
+	 */
 	int send(const char* buf, const unsigned size, int = 0);
+
+	/**
+	 * \brief  Recv Data
+	 * \details Recv Data
+	 * \param[in]  buf recv buffer
+	 * \param[in]  size nb of bytes to recv
+	 * \param[in]  ???
+	 */
 	int recv(char* buf, const unsigned size, int = 0);
+
+	/**
+	 * \brief  frees some structs
+	 * \details frees some structs
+	 */
 	virtual ~UDPSocket();
 };
 

@@ -13,9 +13,25 @@ extern "C" {
 
 #include <UDPSocket.h>
 
+/**
+ * A UDPClientSocket is read to send() and recv() data after construction
+ * if construction failes a runtime_error is thrown
+ * BaseCöass is Connection
+ */
 class UDPClientSocket: public UDPSocket {
 public:
-	UDPClientSocket(const char*, const unsigned int);
+	/**
+	 * \brief  construct UDPClientSocket
+	 * \details construct UDPClientSocket
+	 * \param[in] addr The Address of the host
+	 * \param[in] port The Port the host is listening on
+	 */
+	UDPClientSocket(const char* addr, const unsigned int port);
+
+	/**
+	 * \brief  does nothing
+	 * \details does nothing
+	 */
 	virtual ~UDPClientSocket();
 };
 

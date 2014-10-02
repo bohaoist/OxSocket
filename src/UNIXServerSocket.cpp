@@ -16,7 +16,7 @@ UNIXServerSocket::UNIXServerSocket(const char* path) {
 
 	int len = strlen(local.sun_path) + sizeof(local.sun_family);
 
-	if (::bind(ufds.fd, (struct sockaddr *) &local, len) == -1) {
+	if (::bind(ufds.fd, (sockaddr *) &local, len) == -1) {
 		const char *msg = "UNIXServerSocket::bind() failed";
 		perror(msg);
 		throw std::runtime_error(msg);

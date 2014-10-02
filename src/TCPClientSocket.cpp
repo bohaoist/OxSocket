@@ -17,6 +17,7 @@ TCPClientSocket::TCPClientSocket(const char* host, const unsigned iport) {
 	hints.ai_socktype = SOCK_STREAM;
 
 	if ((rv = getaddrinfo(host, port, &hints, &servinfo)) != 0) {
+		freeaddrinfo(servinfo); // all done with this structure
 		fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(rv));
 		throw std::runtime_error("TCPClientSocket::getaddrinfo failed");
 	}
@@ -39,6 +40,7 @@ TCPClientSocket::TCPClientSocket(const char* host, const unsigned iport) {
 	}
 
 	if (p == NULL) {
+		freeaddrinfo(servinfo); // all done with this structure
 		fprintf(stderr, "client: failed to connect\n");
 		throw std::runtime_error("TCPClientSocket::connect failed");
 	}

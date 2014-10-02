@@ -19,12 +19,27 @@ extern "C" {
 #include <Connection.h>
 #include <ServerSocket.h>
 
+/**
+ * A UNIXServerSocket provides a means for UNIX Clients to be Accepted
+ * with the accept() methode it provides
+ * if the construction failes and the socketfile can not be accessed
+ * the constructor will throw a runtime_error
+ */
 class UNIXServerSocket: public SocketFd, public ServerSocket {
 private:
+	// fd of last accepted Connection
 	int last_new_sock;
-	struct sockaddr_un local, remote;
+	/**
+	 * sockfile structs
+	 */
+	sockaddr_un local, remote;
 public:
-	UNIXServerSocket(const char*);
+	/**
+	 * \brief construct a unix server socket
+	 * \details construct a unix server socket
+	 * \param[in] path Path to UNIX Socket File
+	 */
+	UNIXServerSocket(const char* path);
 	virtual ~UNIXServerSocket();
 	Connection* accept();
 };

@@ -67,7 +67,7 @@
 					</folderInfo>
 					<sourceEntries>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="include"/>
-						<entry excluding="Example.cpp|Examples.cpp|EchoServer_UDP.cpp|EchoServer_TCP_UNIX.cpp|EchoClient_TCP_UNIX.cpp|EchoClient_UDP.cpp|EchoUDPClient.cpp|EchoUDPServer.cpp|EchoUNIXServer.cpp|EchoUNIXClient.cpp|EchoTCPServer.cpp|EchoTCPClient.cpp|UNIXEchoClient.cpp|UNIXEchoServer.cpp|TCPEchoServer.cpp" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="src"/>
+						<entry excluding="EchoTCPClient.cpp|EchoServer_TCP_UNIX.cpp|EchoClient_TCP_UNIX.cpp|EchoUNIXClient.cpp|EchoUDPServer.cpp|Example.cpp|UNIXEchoClient.cpp|Examples.cpp|EchoUNIXServer.cpp|TCPEchoServer.cpp|UNIXEchoServer.cpp|EchoClient_UDP.cpp|EchoUDPClient.cpp|EchoTCPServer.cpp|EchoServer_UDP.cpp" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="src"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -139,7 +139,7 @@
 					</folderInfo>
 					<sourceEntries>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="include"/>
-						<entry excluding="Examples.cpp|EchoServer_UDP.cpp|EchoServer_TCP_UNIX.cpp|EchoClient_UDP.cpp|EchoUDPClient.cpp|EchoUDPServer.cpp|EchoUNIXServer.cpp|EchoUNIXClient.cpp|EchoTCPServer.cpp|UNIXEchoServer.cpp|UNIXEchoClient.cpp|TCPEchoServer.cpp" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="src"/>
+						<entry excluding="EchoUDPServer.cpp|UNIXEchoClient.cpp|Examples.cpp|EchoUNIXServer.cpp|TCPEchoServer.cpp|EchoServer_TCP_UNIX.cpp|UNIXEchoServer.cpp|EchoClient_UDP.cpp|EchoUDPClient.cpp|EchoTCPServer.cpp|EchoServer_UDP.cpp|EchoUNIXClient.cpp" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="src"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

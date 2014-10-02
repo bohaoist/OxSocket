@@ -16,7 +16,9 @@ char buf[255];
 int bsize = sock.recv(buf,sizeof(buf));
 std::cout << std::string(buf,bsize) << std::endl;
 ```
+
 ## Build the Library and Examples?
+
 ```Bash
     git clone https://github.com/inbre001/0xSocket.git;
     cd Socket/Debug;
@@ -26,6 +28,7 @@ std::cout << std::string(buf,bsize) << std::endl;
 ```
 
 ## How do i use it? 
+
 * Add \<Socket.h\> to your sourcefile
 * Add the include path -I/path/to/0xSocket/include to your compiler options (cflags)
 * Add lastly add the linker flag -l0xSocket (ldflags)
@@ -41,5 +44,5 @@ Have a look at Examples.cpp to get started quickly.
 Try writing your own IRC Client or a DNS or even NTP Client, with the help of lib0xSocket.
 
 
-### Happy hacking.
+#### Happy hacking.
 

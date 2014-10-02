@@ -16,6 +16,7 @@ UDPServerSocket::UDPServerSocket(const unsigned port) {
 
 	if ((rv = getaddrinfo(NULL, cport, &hints, &servinfo)) != 0) {
 		fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(rv));
+		freeaddrinfo(servinfo);
 		throw std::runtime_error("UDPServerSocket::getaddrinfo() failed");
 	}
 
@@ -37,6 +38,7 @@ UDPServerSocket::UDPServerSocket(const unsigned port) {
 	}
 
 	if (p == NULL) {
+		freeaddrinfo(servinfo);
 		throw std::runtime_error("UDPServerSocket::bind() failed");
 	}
 

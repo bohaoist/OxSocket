@@ -1,6 +1,9 @@
 #ifndef TRANSCEIVER_H_
 #define TRANSCEIVER_H_
 
+/**
+ * virtual BaseClass for Classes that should provide a send() and recv() method
+ */
 class Transceiver {
 protected:
 	Transceiver();
