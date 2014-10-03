@@ -55,7 +55,7 @@ c++ -I0xSocket/include -l0xSocket -L0xSocket/lib mini_udp_server.cpp -o mini_udp
 save as [mini_udp_client.cpp](examples/mini_udp_client.cpp) and build with:
 
 ```Bash
-c++ -I0xSocket/include -l0xSocket -L0xSocket/lib udp_echo_client.cpp -o mini_udp_client.exe	
+c++ -I0xSocket/include -l0xSocket -L0xSocket/lib mini_udp_client.cpp -o mini_udp_client.exe	
 ```
 
 
