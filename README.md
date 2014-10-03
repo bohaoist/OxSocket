@@ -16,7 +16,7 @@ It makes Socket Communication as easy as this:
 
 		UDPServerSocket sock(1234);
 		char buf[255];
-		string msg = "";
+		int n = 0;
 		
 		while (true) {
 			n = sock.recv(buf, sizeof(buf));
