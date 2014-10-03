@@ -39,7 +39,7 @@ public:
 	 * \details construct a unix server socket
 	 * \param[in] path Path to UNIX Socket File
 	 */
-	UNIXServerSocket(const char* path);
+	UNIXServerSocket(std::string path);
 	virtual ~UNIXServerSocket();
 	Connection* accept();
 };

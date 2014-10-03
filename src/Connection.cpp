@@ -8,7 +8,6 @@ Connection::Connection(const int fd, const std::string taddr) {
 }
 
 Connection::~Connection() {
-
 }
 
 #define WEADMACRO(function) \
@@ -24,8 +23,7 @@ do { \
 		sum += n; \
 	} \
 } while (sum < size); \
-return (sum); \
-
+return (sum);
 
 int Connection::send(const char *buf, const unsigned size, const int) {
 //	_poll(msec);
@@ -45,7 +43,7 @@ int Connection::recv(std::string& out, int size) {
 	char buf[size];
 	int n = this->recv(buf, size);
 	if (n > 0) {
-		out = std::string(buf,n);
+		out = std::string(buf, n);
 	}
 	return n;
 }
@@ -53,9 +51,7 @@ int Connection::recv(std::string& out, int size) {
 #undef WEADMACRO
 
 //int Connection::_poll(const int msec) {
-//	std::cout << "poll > " << std::endl;
 //	int rv = ::poll(&ufds, 1, msec);
-//	std::cout << "< poll  " << std::endl;
 //#ifdef DEBUG
 //	if (0 > rv) {
 //		::perror("poll error");

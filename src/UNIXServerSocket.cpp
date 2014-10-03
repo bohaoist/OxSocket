@@ -1,6 +1,6 @@
 #include <UNIXServerSocket.h>
 
-UNIXServerSocket::UNIXServerSocket(const char* path) {
+UNIXServerSocket::UNIXServerSocket(std::string path) {
 
 	last_new_sock = -1;
 
@@ -13,7 +13,7 @@ UNIXServerSocket::UNIXServerSocket(const char* path) {
 	}
 
 	local.sun_family = AF_UNIX;
-	strcpy(local.sun_path, path);
+	strcpy(local.sun_path, path.c_str());
 	unlink(local.sun_path);
 
 	int len = strlen(local.sun_path) + sizeof(local.sun_family);

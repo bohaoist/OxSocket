@@ -11,20 +11,15 @@ SocketFd::~SocketFd() {
 }
 
 int SocketFd::setNonBlocking() {
-//	if (ufds.fd < 0) {
-//		return (1);
-//	}
 	int flags = 0;
 	flags = ::fcntl(ufds.fd, F_GETFL, 0);
 	if (0 != ::fcntl(ufds.fd, F_SETFL, flags | O_NONBLOCK)) {
+#ifdef DEBUG
 		::perror("SocketFd::mkNonBlocking::fcntl() failed");
+#endif
 		return (1);
 	}
 
-//	long on = 1L;
-//	if (ioctl(ufds.fd, (int) FIONBIO, (char *) &on)) {
-//		printf("ioctl FIONBIO call failed\n");
-//	}
 	return (0);
 }
 
@@ -43,7 +38,9 @@ int SocketFd::setBlocking() {
 	int flags = 0;
 	flags = ::fcntl(ufds.fd, F_GETFL, 0);
 	if (0 != ::fcntl(ufds.fd, F_SETFL, flags & ~O_NONBLOCK)) {
+#ifdef DEBUG
 		::perror("SocketFd::mkBlocking::fcntl() failed");
+#endif
 		return (1);
 	}
 	return (0);
@@ -57,13 +54,17 @@ int SocketFd::setTimeout(const unsigned sec, const unsigned usec) {
 	if (-1
 			== ::setsockopt(ufds.fd, SOL_SOCKET, SO_RCVTIMEO, (char *) &tv,
 					sizeof tv)) {
+#ifdef DEBUG
 		::perror("SocketFd::setsockopt() failed to set recv timeout");
+#endif
 		return (1);
 	}
 	if (-1
 			== ::setsockopt(ufds.fd, SOL_SOCKET, SO_SNDTIMEO, (char *) &tv,
 					sizeof tv)) {
+#ifdef DEBUG
 		::perror("SocketFd::setsockopt() failed to set send timeout");
+#endif
 		return (1);
 	}
 
