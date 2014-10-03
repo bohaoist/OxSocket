@@ -16,11 +16,11 @@ It makes Socket Communication as easy as this:
 
 		UDPServerSocket sock(1234);
 		char buf[255];
-		int n = 0;
+		int bsize = 0;
 		
 		while (true) {
-			n = sock.recv(buf, sizeof(buf));
-			cout << string(buf,n) << endl;
+			bsize = sock.recv(buf, sizeof(buf));
+			cout << string(buf,bsize) << endl;
 			sock.send(buf, n);
 		}
 		return 1;
@@ -47,11 +47,12 @@ c++ -I0xSocket/include -l0xSocket -L0xSocket/lib udp\_echo\_server.cpp -o udp\_e
 
 		char buf[255];
 		string msg = "Hello World";
+		int bsize = 0;
 		
 		UDPClientSocket sock("127.0.0.1", 1234);
 		sock.send(msg.data(), msg.size());		
-		sock.recv(buf, sizeof(buf));
-		cout << string(recvbuf, nbytes) << endl;
+		bsize = sock.recv(buf, sizeof(buf));
+		cout << string(recvbuf, bsize) << endl;
 		
 		return 0;
 	}
