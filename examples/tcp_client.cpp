@@ -15,8 +15,8 @@ int main(int argc, char* argv[]) {
 		return 1;
 	}
 
-	char recvbuf = '\0';
-	bool recvok = false;
+	char buf = '\0';
+	bool ok = false;
 	int nbytes = 0;
 	//
 	std::string server = argv[1];
@@ -41,14 +41,14 @@ int main(int argc, char* argv[]) {
 				//
 				msg = "";
 				cout << "Recving Message ... " << flush;
-				while ((nbytes = con.recv(&recvbuf, sizeof(recvbuf))) > 0) {
-					if (recvbuf == END_OF_MESSAGE) {
-						recvok = true;
+				while ((nbytes = con.recv(&buf, sizeof(buf))) > 0) {
+					if (buf == END_OF_MESSAGE) {
+						ok = true;
 						break;
 					}
-					msg += recvbuf;
+					msg += buf;
 				}
-				if (nbytes > 0 and recvok) {
+				if (nbytes > 0 and ok) {
 					cout << "ok" << endl;
 					cout << "> " << msg << "" << endl;
 				} else {

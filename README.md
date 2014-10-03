@@ -1,6 +1,6 @@
 
 ## What is lib0xSocket ?
-A object abstraction layer for networking communications calls in C++
+A C++ object abstraction layer for TCP, UDP and UNIX Socket communications
 
 It makes Socket Communication as easy as this:
 
@@ -21,22 +21,18 @@ It makes Socket Communication as easy as this:
 		while (true) {
 			bsize = sock.recv(buf, sizeof(buf));
 			cout << string(buf,bsize) << endl;
-			sock.send(buf, n);
+			sock.send(buf, bsize);
 		}
 		return 1;
 	}
 ```
 save as udp\_echo\_server.cpp and build with:
 
-c++ -I0xSocket/include -l0xSocket -L0xSocket/lib udp\_echo\_server.cpp -o udp\_ecoh\_server.exe
+c++ -I0xSocket/include -l0xSocket -L0xSocket/lib udp\_echo\_server.cpp -o udp\_echo\_server.exe
 
 
 ```C++
 
-	/**
-	 *  UDP Client that Send and Recv a Message
-	 *  (with no error handling)
-	 */
 	#include <iostream>  /* cout, endl */
 	#include <string>    /* string */
 	#include <Socket.h>  
@@ -47,12 +43,11 @@ c++ -I0xSocket/include -l0xSocket -L0xSocket/lib udp\_echo\_server.cpp -o udp\_e
 
 		char buf[255];
 		string msg = "Hello World";
-		int bsize = 0;
 		
 		UDPClientSocket sock("127.0.0.1", 1234);
 		sock.send(msg.data(), msg.size());		
-		bsize = sock.recv(buf, sizeof(buf));
-		cout << string(recvbuf, bsize) << endl;
+		int bsize = sock.recv(buf, sizeof(buf));
+		cout << string(buf, bsize) << endl;
 		
 		return 0;
 	}
@@ -66,9 +61,11 @@ c++ -I0xSocket/include -l0xSocket -L0xSocket/lib udp\_echo\_client.cpp -o udp\_e
 ## Build the Library?
 
 ```Bash
+
     git clone https://github.com/inbre001/0xSocket.git;
     cd Socket/lib;
     make;
+    
 ```
 
 ## How do i use it? 

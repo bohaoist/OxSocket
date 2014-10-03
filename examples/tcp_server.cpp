@@ -41,6 +41,7 @@ int main(int argc, char* argv[]) {
 					//
 					cout << "Recving Message... " << flush;
 					ok = false;
+					msg = "";
 					while (0 < (n = con->recv(&buf, sizeof(buf)))) {
 						if (buf == END_OF_MESSAGE) {
 							ok = true;

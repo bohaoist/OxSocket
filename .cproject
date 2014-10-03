@@ -9,6 +9,7 @@
 						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/0xSocket"/>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/SocketIO/Debug"/>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/0xSocket/Debug"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/0xSocket/lib"/>
 						<entry flags="RESOLVED" kind="libraryFile" name="SocketIO" srcPrefixMapping="" srcRootPath=""/>
 						<entry flags="RESOLVED" kind="libraryFile" name="0xSocket" srcPrefixMapping="" srcRootPath=""/>
 					</externalSetting>
@@ -69,7 +70,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="unix_server.cpp|unix_client.cpp|http_client.cpp|udp_server.cpp|udp_client.cpp|tcp_server.cpp|tcp_client.cpp|http_server.cpp|Example.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="examples"/>
+						<entry excluding="mini_http_client.cpp|mini_tcp_server.cpp|mini_tcp_client.cpp|mini_udp_server.cpp|mini_udp_client.cpp|unix_server.cpp|unix_client.cpp|http_client.cpp|udp_server.cpp|udp_client.cpp|tcp_server.cpp|tcp_client.cpp|http_server.cpp|Example.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="examples"/>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="include"/>
 						<entry excluding="EchoTCPClient.cpp|EchoServer_TCP_UNIX.cpp|EchoClient_TCP_UNIX.cpp|EchoUNIXClient.cpp|EchoUDPServer.cpp|Example.cpp|UNIXEchoClient.cpp|Examples.cpp|EchoUNIXServer.cpp|TCPEchoServer.cpp|UNIXEchoServer.cpp|EchoClient_UDP.cpp|EchoUDPClient.cpp|EchoTCPServer.cpp|EchoServer_UDP.cpp" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="src"/>
 					</sourceEntries>
@@ -145,7 +146,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="unix_server.cpp|unix_client.cpp|udp_server.cpp|udp_client.cpp|tcp_server.cpp|tcp_client.cpp|http_server.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="examples"/>
+						<entry excluding="mini_http_client.cpp|mini_tcp_server.cpp|mini_tcp_client.cpp|mini_udp_server.cpp|mini_udp_client.cpp|unix_server.cpp|unix_client.cpp|udp_server.cpp|udp_client.cpp|tcp_server.cpp|tcp_client.cpp|http_server.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="examples"/>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="include"/>
 						<entry excluding="EchoUDPServer.cpp|UNIXEchoClient.cpp|Examples.cpp|EchoUNIXServer.cpp|TCPEchoServer.cpp|EchoServer_TCP_UNIX.cpp|UNIXEchoServer.cpp|EchoClient_UDP.cpp|EchoUDPClient.cpp|EchoTCPServer.cpp|EchoServer_UDP.cpp|EchoUNIXClient.cpp" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="src"/>
 					</sourceEntries>
@@ -221,7 +222,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="unix_server.cpp|unix_client.cpp|http_client.cpp|udp_server.cpp|tcp_server.cpp|tcp_client.cpp|http_server.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="examples"/>
+						<entry excluding="mini_http_client.cpp|mini_tcp_server.cpp|mini_tcp_client.cpp|mini_udp_server.cpp|mini_udp_client.cpp|unix_server.cpp|unix_client.cpp|http_client.cpp|udp_server.cpp|tcp_server.cpp|tcp_client.cpp|http_server.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="examples"/>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="include"/>
 						<entry excluding="EchoUDPServer.cpp|UNIXEchoClient.cpp|Examples.cpp|EchoUNIXServer.cpp|TCPEchoServer.cpp|EchoServer_TCP_UNIX.cpp|UNIXEchoServer.cpp|EchoClient_UDP.cpp|EchoUDPClient.cpp|EchoTCPServer.cpp|EchoServer_UDP.cpp|EchoUNIXClient.cpp" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="src"/>
 					</sourceEntries>
@@ -297,7 +298,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="unix_server.cpp|unix_client.cpp|udp_client.cpp|http_client.cpp|tcp_server.cpp|tcp_client.cpp|http_server.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="examples"/>
+						<entry excluding="mini_http_client.cpp|mini_tcp_server.cpp|mini_tcp_client.cpp|mini_udp_server.cpp|mini_udp_client.cpp|unix_server.cpp|unix_client.cpp|udp_client.cpp|http_client.cpp|tcp_server.cpp|tcp_client.cpp|http_server.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="examples"/>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="include"/>
 						<entry excluding="EchoUDPServer.cpp|UNIXEchoClient.cpp|Examples.cpp|EchoUNIXServer.cpp|TCPEchoServer.cpp|EchoServer_TCP_UNIX.cpp|UNIXEchoServer.cpp|EchoClient_UDP.cpp|EchoUDPClient.cpp|EchoTCPServer.cpp|EchoServer_UDP.cpp|EchoUNIXClient.cpp" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="src"/>
 					</sourceEntries>
@@ -373,7 +374,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="udp_client.cpp|unix_server.cpp|unix_client.cpp|http_client.cpp|udp_server.cpp|tcp_server.cpp|http_server.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="examples"/>
+						<entry excluding="mini_http_client.cpp|mini_tcp_server.cpp|mini_tcp_client.cpp|mini_udp_server.cpp|mini_udp_client.cpp|udp_client.cpp|unix_server.cpp|unix_client.cpp|http_client.cpp|udp_server.cpp|tcp_server.cpp|http_server.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="examples"/>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="include"/>
 						<entry excluding="EchoUDPServer.cpp|UNIXEchoClient.cpp|Examples.cpp|EchoUNIXServer.cpp|TCPEchoServer.cpp|EchoServer_TCP_UNIX.cpp|UNIXEchoServer.cpp|EchoClient_UDP.cpp|EchoUDPClient.cpp|EchoTCPServer.cpp|EchoServer_UDP.cpp|EchoUNIXClient.cpp" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="src"/>
 					</sourceEntries>
@@ -449,7 +450,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="udp_server.cpp|unix_server.cpp|unix_client.cpp|udp_client.cpp|http_client.cpp|tcp_client.cpp|http_server.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="examples"/>
+						<entry excluding="mini_http_client.cpp|mini_tcp_server.cpp|mini_tcp_client.cpp|mini_udp_server.cpp|mini_udp_client.cpp|udp_server.cpp|unix_server.cpp|unix_client.cpp|udp_client.cpp|http_client.cpp|tcp_client.cpp|http_server.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="examples"/>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="include"/>
 						<entry excluding="EchoUDPServer.cpp|UNIXEchoClient.cpp|Examples.cpp|EchoUNIXServer.cpp|TCPEchoServer.cpp|EchoServer_TCP_UNIX.cpp|UNIXEchoServer.cpp|EchoClient_UDP.cpp|EchoUDPClient.cpp|EchoTCPServer.cpp|EchoServer_UDP.cpp|EchoUNIXClient.cpp" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="src"/>
 					</sourceEntries>
@@ -525,7 +526,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="tcp_server.cpp|udp_server.cpp|unix_client.cpp|udp_client.cpp|http_client.cpp|tcp_client.cpp|http_server.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="examples"/>
+						<entry excluding="mini_http_client.cpp|mini_tcp_server.cpp|mini_tcp_client.cpp|mini_udp_server.cpp|mini_udp_client.cpp|tcp_server.cpp|udp_server.cpp|unix_client.cpp|udp_client.cpp|http_client.cpp|tcp_client.cpp|http_server.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="examples"/>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="include"/>
 						<entry excluding="EchoUDPServer.cpp|UNIXEchoClient.cpp|Examples.cpp|EchoUNIXServer.cpp|TCPEchoServer.cpp|EchoServer_TCP_UNIX.cpp|UNIXEchoServer.cpp|EchoClient_UDP.cpp|EchoUDPClient.cpp|EchoTCPServer.cpp|EchoServer_UDP.cpp|EchoUNIXClient.cpp" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="src"/>
 					</sourceEntries>
@@ -601,7 +602,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="tcp_client.cpp|udp_client.cpp|unix_server.cpp|http_client.cpp|udp_server.cpp|tcp_server.cpp|http_server.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="examples"/>
+						<entry excluding="mini_http_client.cpp|mini_tcp_server.cpp|mini_tcp_client.cpp|mini_udp_server.cpp|mini_udp_client.cpp|tcp_client.cpp|udp_client.cpp|unix_server.cpp|http_client.cpp|udp_server.cpp|tcp_server.cpp|http_server.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="examples"/>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="include"/>
 						<entry excluding="EchoUDPServer.cpp|UNIXEchoClient.cpp|Examples.cpp|EchoUNIXServer.cpp|TCPEchoServer.cpp|EchoServer_TCP_UNIX.cpp|UNIXEchoServer.cpp|EchoClient_UDP.cpp|EchoUDPClient.cpp|EchoTCPServer.cpp|EchoServer_UDP.cpp|EchoUNIXClient.cpp" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="src"/>
 					</sourceEntries>
