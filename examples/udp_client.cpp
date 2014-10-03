@@ -1,8 +1,7 @@
-#include <iostream>  /* cout, endl */
-#include <string>    /* string */
-#include <cstdlib>   /* atoi */
-//
-#include <Socket.h>  /* Magic */
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include <0xSocket.h>
 
 using namespace std;
 

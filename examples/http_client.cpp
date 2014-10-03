@@ -1,7 +1,7 @@
-#include <iostream> /* cout */
-#include <Socket.h> /* TCP/UNIXClientSocket, Connection */
-#include <string>   /* string */
+#include <iostream>
+#include <string>
 #include <cstdlib>
+#include <0xSocket.h>
 
 using namespace std;
 

@@ -1,12 +1,9 @@
-#include <iostream> /* cout */
-#include <string>   /* string */
-#include <cstdlib>   /* atoi */
-
-#include <Socket.h>
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include <0xSocket.h>
 
 using namespace std;
-
-const static char END_OF_MESSAGE = '\n';
 
 int main(int argc, char* argv[]) {
 
@@ -15,9 +12,9 @@ int main(int argc, char* argv[]) {
 		return 1;
 	}
 
-	char recvbuf = '\0';
-	bool recvok = false;
-	int nbytes = 0;
+	const static char EOM = '\n';
+	char buf = '\0';
+	int n = 0;
 	//
 	std::string sockfile = argv[1];
 	string msg = argv[2];
@@ -33,21 +30,17 @@ int main(int argc, char* argv[]) {
 			cout << "ok" << endl;
 			//
 			cout << "Sending Message ... " << flush;
-			msg += END_OF_MESSAGE;
-			nbytes = con.send(msg.data(), msg.size());
-			if (nbytes > 0) {
+			msg += EOM;
+			n = con.send(msg.data(), msg.size());
+			if (n > 0) {
 				cout << "ok" << endl;
 				//
 				msg = "";
 				cout << "Recving Message ... " << flush;
-				while ((nbytes = con.recv(&recvbuf, sizeof(recvbuf))) > 0) {
-					if (recvbuf == END_OF_MESSAGE) {
-						recvok = true;
-						break;
-					}
-					msg += recvbuf;
+				while (0 < (n = con.recv(&buf, sizeof(buf))) and EOM != buf) {
+					msg += buf;
 				}
-				if (nbytes > 0 and recvok) {
+				if (n > 0) {
 					cout << "ok" << endl;
 					cout << "> " << msg << "" << endl;
 				} else {

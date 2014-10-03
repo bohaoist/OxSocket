@@ -1,6 +1,6 @@
-#include <iostream>  /* cout, endl */
-#include <string>    /* string */
-#include <Socket.h>
+#include <iostream>
+#include <string>
+#include <0xSocket.h>
 
 using namespace std;
 
@@ -11,8 +11,8 @@ int main() {
 
 	UDPClientSocket sock("127.0.0.1", 1234);
 	sock.send(msg.data(), msg.size());
-	int bsize = sock.recv(buf, sizeof(buf));
-	cout << string(buf, bsize) << endl;
+	int n = sock.recv(buf, sizeof(buf));
+	cout << string(buf, n) << endl;
 
 	return 0;
 }

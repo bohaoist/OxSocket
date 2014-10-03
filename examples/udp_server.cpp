@@ -1,8 +1,7 @@
-#include <iostream> /* cout */
-#include <string>   /* string */
-#include <cstdlib>  /* atoi */
-
-#include <Socket.h>
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include <0xSocket.h>
 
 using namespace std;
 
@@ -37,7 +36,6 @@ int main(int argc, char* argv[]) {
 				msg = string(buf, n);
 				cout << "> " << msg << endl;
 				//
-				// change the reply
 				// msg = "Understood! Thanks Bye.";
 				//
 				cout << "Sending Message ... " << flush;

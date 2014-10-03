@@ -8,7 +8,7 @@ It makes Socket Communication as easy as this:
 
 	#include <iostream> /* cout */
 	#include <string>   /* string */
-	#include <Socket.h>
+	#include <0xSocket.h>
 
 	using namespace std;
 
@@ -35,7 +35,7 @@ c++ -I0xSocket/include -l0xSocket -L0xSocket/lib mini_udp_server.cpp -o mini_udp
 
 	#include <iostream>
 	#include <string>  
-	#include <Socket.h>  
+	#include <0xSocket.h>  
 
 	using namespace std;
 
@@ -71,7 +71,7 @@ c++ -I0xSocket/include -l0xSocket -L0xSocket/lib mini_udp_client.cpp -o mini_udp
 
 ## How do i use it? 
 
-* include \<Socket.h\> to your code
+* include \<0xSocket.h\> to your code
 * add the include path -I/path/to/0xSocket/include to your compiler options (cflags)
 * add lastly add the linker flag -l0xSocket (ldflags)
 

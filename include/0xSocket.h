@@ -1,5 +1,5 @@
-#ifndef SOCKET_H_
-#define SOCKET_H_
+#ifndef OXSOCKET_H_
+#define OXSOCKET_H_
 
 #include <TCPServerSocket.h>
 #include <TCPClientSocket.h>

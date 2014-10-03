@@ -1,11 +1,9 @@
-#include <iostream> /* cout */
-#include <Socket.h> /* TCP/UNIXClientSocket, Connection */
-#include <string>   /* string */
-#include <cstdlib>  /* atoi */
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include <0xSocket.h>
 
 using namespace std;
-
-const static char END_OF_MESSAGE = '\n';
 
 int main(int argc, char* argv[]) {
 
@@ -13,10 +11,10 @@ int main(int argc, char* argv[]) {
 		cout << "usage: " << argv[0] << " [port]" << endl;
 		return 1;
 	}
+	const char EOM = '\n';
 	char buf = '\0';
 	int n = 0;
 	string msg = "";
-	bool ok = false;
 	Connection *con = NULL;
 	//
 	unsigned port = atoi(argv[1]);
@@ -40,22 +38,17 @@ int main(int argc, char* argv[]) {
 					cout << "ok" << endl;
 					//
 					cout << "Recving Message... " << flush;
-					ok = false;
 					msg = "";
-					while (0 < (n = con->recv(&buf, sizeof(buf)))) {
-						if (buf == END_OF_MESSAGE) {
-							ok = true;
-							break;
-						}
+					while (0 < (n = con->recv(&buf, sizeof(buf))) and EOM != buf) {
 						msg += buf;
 					}
 
-					if (n > 0 and ok) {
+					if (n > 0) {
 						cout << "ok" << endl;
 						cout << "> " << msg << "" << endl;
 						//
 						cout << "Sending Message ... " << flush;
-						msg += END_OF_MESSAGE;
+						msg += EOM;
 						n = con->send(msg.data(), msg.size());
 						if (n > 0) {
 							cout << "ok" << endl;
