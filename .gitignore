@@ -3,3 +3,4 @@
 *.d
 *.so
 *.a
+/http_client/
