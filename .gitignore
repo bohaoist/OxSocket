@@ -3,8 +3,8 @@
 *.d
 *.so
 *.a
-/http_client/
 /lib/
+/http_client/
 /tcp_server/
 /tpc_client/
 /udp_client/
