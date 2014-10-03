@@ -24,10 +24,6 @@ int main(int argc, char* argv[]) {
 //		cout << "Setting Timeout ...";
 //		if (0 == sock.setTimeout(5, 0)) {
 //			cout << "ok" << endl;
-//		} else {
-//			cout << "failed" << endl;
-//			return 1;
-//		}
 
 		char buf[255];
 		string msg = "";
@@ -39,9 +35,10 @@ int main(int argc, char* argv[]) {
 				cout << "ok" << endl;
 				//
 				msg = string(buf, n);
-				cout << "> " << msg  << endl;
+				cout << "> " << msg << endl;
 				//
-				//msg = "Understood! Thanks Bye.";
+				// change the reply
+				// msg = "Understood! Thanks Bye.";
 				//
 				cout << "Sending Message ... " << flush;
 				n = sock.send(msg.c_str(), msg.size());
@@ -53,11 +50,14 @@ int main(int argc, char* argv[]) {
 			} else {
 				cout << "failed" << endl;
 			}
-		}
+		} // end while
+
+//		} else {
+//			cout << "failed" << endl;
+//		}
 	} catch (const runtime_error& error) {
 		cout << "failed: " << error.what() << endl;
 	}
-	cout << "UDP Server finished unsuccessfully" << endl;
-	return 0;
+	return 1;
 }
 // EOF 
