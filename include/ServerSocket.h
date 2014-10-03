@@ -1,18 +1,17 @@
-#ifndef SERVERSOCKET_H_
-#define SERVERSOCKET_H_
+#ifndef ACCEPTSOCKET_H_
+#define ACCEPTSOCKET_H_
 
 #include <Connection.h>
+#include <SocketFd.h>
 
 /**
- * \brief Not instanziable BaseClass for all ServerSocket Classes
- * \details Not instanziable BaseClass for all ServerSocket Classes.
- *          Must provides an accept() function that will return a Connection Object
+ * \brief Virtual Base
  */
-class ServerSocket {
+class AcceptSocket: public SocketFd {
 protected:
-	ServerSocket();
+	AcceptSocket();
 public:
-	virtual ~ServerSocket();
+	virtual ~AcceptSocket();
 	virtual Connection* accept() = 0;
 };
 

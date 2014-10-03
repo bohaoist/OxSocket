@@ -46,7 +46,7 @@ int SocketFd::setBlocking() {
 	return (0);
 }
 
-int SocketFd::setTimeout(const unsigned sec, const unsigned usec) {
+int SocketFd::setTimeout(const unsigned int sec, const unsigned int usec) {
 
 	timeval tv;
 	tv.tv_sec = sec;

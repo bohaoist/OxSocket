@@ -1,8 +1,0 @@
-<map id="src/TCPServerSocket.cpp" name="src/TCPServerSocket.cpp">
-<area shape="rect" id="node2" href="$TCPServerSocket_8h.html" title="TCPServerSocket.h" alt="" coords="445,80,587,107"/>
-<area shape="rect" id="node10" href="$Connection_8h.html" title="Connection.h" alt="" coords="103,229,209,256"/>
-<area shape="rect" id="node21" href="$TCPSocket_8h.html" title="TCPSocket.h" alt="" coords="855,155,956,181"/>
-<area shape="rect" id="node23" href="$ServerSocket_8h.html" title="ServerSocket.h" alt="" coords="96,155,216,181"/>
-<area shape="rect" id="node15" href="$Transceiver_8h.html" title="Transceiver.h" alt="" coords="209,304,313,331"/>
-<area shape="rect" id="node16" href="$SocketFd_8h.html" title="SocketFd.h" alt="" coords="337,304,431,331"/>
-</map>

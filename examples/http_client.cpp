@@ -17,7 +17,7 @@ int main(int argc, char* argv[]) {
 		int content_length = 0;
 		//
 		string host = argv[1];
-		unsigned int port = 80;
+		unsigned port = 80;
 		//
 		try {
 
@@ -28,7 +28,7 @@ int main(int argc, char* argv[]) {
 					"Host: " + host + "\n"
 					"\n\r";
 
-			n = sock.send(msg);
+			n = sock.send(msg.data(), msg.size());
 			if (n > 0) {
 
 				msg = "";
@@ -39,7 +39,7 @@ int main(int argc, char* argv[]) {
 					if (buf == '\n') { // END OF LINE
 						if (string::npos != line.find("Content-Length:")) {
 							string val = line.substr(line.find(":") + 1);
-							content_length = atoi(val.c_str());
+							content_length = atoi(val.data());
 						}
 						msg += line; // SAVE LINE
 						line = "";

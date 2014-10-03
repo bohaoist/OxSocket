@@ -1,13 +1,13 @@
 #include <TCPServerSocket.h>
 
-TCPServerSocket::TCPServerSocket(const unsigned int port) {
+TCPServerSocket::TCPServerSocket(const unsigned port) {
 
 	memset(&hints, 0, sizeof hints);
 	hints.ai_family = AF_UNSPEC;
 	hints.ai_socktype = SOCK_STREAM;
 	hints.ai_flags = AI_PASSIVE; // use my IP
 
-	const unsigned int nb_digits = (
+	const unsigned nb_digits = (
 			0 < port ? (int) log10((double) port) + 1 : 1);
 	char cport[nb_digits + 1]; // add one
 	int n = (::sprintf(cport, "%d", port));

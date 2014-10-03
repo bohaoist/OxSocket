@@ -8,9 +8,8 @@ extern "C" {
 }
 
 /**
- *  Non constructable BaseClass for TCP Sockets
- *  just because they share some structs
- *  This is purely for internal use
+ *  \brief Virtual Base
+ *  \details Virtual Base
  */
 class TCPSocket {
 protected:

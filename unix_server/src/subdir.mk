@@ -10,7 +10,6 @@ CPP_SRCS += \
 ../src/TCPClientSocket.cpp \
 ../src/TCPServerSocket.cpp \
 ../src/TCPSocket.cpp \
-../src/Transceiver.cpp \
 ../src/UDPClientSocket.cpp \
 ../src/UDPServerSocket.cpp \
 ../src/UDPSocket.cpp \
@@ -24,7 +23,6 @@ OBJS += \
 ./src/TCPClientSocket.o \
 ./src/TCPServerSocket.o \
 ./src/TCPSocket.o \
-./src/Transceiver.o \
 ./src/UDPClientSocket.o \
 ./src/UDPServerSocket.o \
 ./src/UDPSocket.o \
@@ -38,7 +36,6 @@ CPP_DEPS += \
 ./src/TCPClientSocket.d \
 ./src/TCPServerSocket.d \
 ./src/TCPSocket.d \
-./src/Transceiver.d \
 ./src/UDPClientSocket.d \
 ./src/UDPServerSocket.d \
 ./src/UDPSocket.d \

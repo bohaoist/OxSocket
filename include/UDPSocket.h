@@ -7,15 +7,14 @@ extern "C" {
 #include <sys/socket.h>  /* sockaddr_storage, sendto, recvfrom, */
 }
 
-#include <Transceiver.h>
-#include <SocketFd.h>
+#include <Connection.h>
 
 /**
- * virtual baseclass for UDP Sockets
+ * virtual base for UDP Sockets
  * implements send() and recv() for Client and Server Sockets
  * and holds some structs used by both
  */
-class UDPSocket: public SocketFd, public Transceiver {
+class UDPSocket: public Connection {
 protected:
 	int rv;
 	addrinfo hints, *servinfo, *p;
@@ -30,7 +29,7 @@ public:
 	 * \param[in]  size nb of bytes to send
 	 * \param[in]  ???
 	 */
-	int send(const char* buf, const unsigned size, int = 0);
+	int send(const char* buf, const unsigned int size);
 
 	/**
 	 * \brief  Recv Data
@@ -39,7 +38,7 @@ public:
 	 * \param[in]  size nb of bytes to recv
 	 * \param[in]  ???
 	 */
-	int recv(char* buf, const unsigned size, int = 0);
+	int recv(char* buf, const unsigned int size);
 
 	/**
 	 * \brief  frees some structs

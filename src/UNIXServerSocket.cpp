@@ -40,7 +40,7 @@ UNIXServerSocket::~UNIXServerSocket() {
 }
 
 Connection* UNIXServerSocket::accept() {
-	unsigned int t = sizeof(remote);
+	unsigned t = sizeof(remote);
 	last_new_sock = ::accept(ufds.fd, (sockaddr *) &remote, &t);
 
 	if (0 > last_new_sock) {

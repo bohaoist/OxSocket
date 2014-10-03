@@ -2,7 +2,7 @@
 
 TCPClientSocket::TCPClientSocket(const std::string host, const unsigned iport) {
 
-	const unsigned int nb_digits = (
+	const unsigned nb_digits = (
 			0 < iport ? (int) log10((double) iport) + 1 : 1);
 	char port[nb_digits + 1]; // add one
 	int n = (sprintf(port, "%d", iport));

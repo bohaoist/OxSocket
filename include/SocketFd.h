@@ -11,8 +11,8 @@ extern "C" {
 }
 
 /**
- * \brief  Not initalizable BaseClass for SocketFileDescriptor
- * \details Not initalizable BaseClass for SocketFileDescriptor.
+ * \brief  Virtual Base for SocketFileDescriptor
+ * \details Virtual Base for SocketFileDescriptor.
  * 			Provides means to setting timeout, non/blocking
  * 			and getting addr of remote connection
  */
@@ -56,13 +56,14 @@ public:
 	 * \details  make SockFd blocking
 	 */
 	int setBlocking();
+
 	/**
 	 * \brief set Tiemout on SocketFileDescriptor
 	 * \details  set Tiemout on SocketFileDescriptor
 	 * \param[in] sec   Seconds to timeout
 	 * \param[in] msec  Milliseconds to timeout
 	 */
-	int setTimeout(const unsigned sec, const unsigned msec = 0);
+	int setTimeout(const unsigned int sec, const unsigned int msec = 0);
 
 };
 #endif

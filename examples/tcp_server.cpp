@@ -19,7 +19,7 @@ int main(int argc, char* argv[]) {
 	bool ok = false;
 	Connection *con = NULL;
 	//
-	unsigned int port = atoi(argv[1]);
+	unsigned port = atoi(argv[1]);
 
 	try {
 

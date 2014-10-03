@@ -23,7 +23,7 @@ extern "C" {
  * if the construction failes and the Listen Port can not be accessed
  * the constructor will throw a runtime_error
  */
-class TCPServerSocket: public SocketFd, public ServerSocket, public TCPSocket {
+class TCPServerSocket: public AcceptSocket, public TCPSocket {
 
 public:
 
@@ -32,7 +32,7 @@ public:
 	 * \details constructs a listening Socket
 	 *          will throw runtime_error if something goes wrong
 	 */
-	TCPServerSocket(const unsigned int);
+	TCPServerSocket(const unsigned);
 
 	/**
 	 * \brief  does nothing

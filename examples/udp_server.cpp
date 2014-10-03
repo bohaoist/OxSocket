@@ -14,7 +14,7 @@ int main(int argc, char* argv[]) {
 		return 1;
 	}
 
-	unsigned int port = atoi(argv[1]);
+	unsigned port = atoi(argv[1]);
 
 	try {
 		cout << "Creating UDP Server Socket ..." << flush;
@@ -41,7 +41,7 @@ int main(int argc, char* argv[]) {
 				// msg = "Understood! Thanks Bye.";
 				//
 				cout << "Sending Message ... " << flush;
-				n = sock.send(msg.c_str(), msg.size());
+				n = sock.send(msg.data(), msg.size());
 				if (n > 0) {
 					cout << "ok" << endl;
 				} else {

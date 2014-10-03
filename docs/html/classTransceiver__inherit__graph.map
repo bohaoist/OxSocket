@@ -1,8 +1,0 @@
-<map id="Transceiver" name="Transceiver">
-<area shape="rect" id="node2" href="$classConnection.html" title="Connection" alt="" coords="174,80,269,107"/>
-<area shape="rect" id="node5" href="$classUDPSocket.html" title="UDPSocket" alt="" coords="330,80,425,107"/>
-<area shape="rect" id="node3" href="$classTCPClientSocket.html" title="TCPClientSocket" alt="" coords="5,155,131,181"/>
-<area shape="rect" id="node4" href="$classUNIXClientSocket.html" title="UNIXClientSocket" alt="" coords="155,155,287,181"/>
-<area shape="rect" id="node6" href="$classUDPClientSocket.html" title="UDPClientSocket" alt="" coords="312,155,443,181"/>
-<area shape="rect" id="node7" href="$classUDPServerSocket.html" title="UDPServerSocket" alt="" coords="467,155,603,181"/>
-</map>

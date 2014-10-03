@@ -1,7 +1,0 @@
-<map id="Connection::_poll" name="Connection::_poll">
-<area shape="rect" id="node2" href="$classConnection.html#ab16b8a780c69303beec9b1f67fb596f3" title="Connection::recv" alt="" coords="186,5,315,32"/>
-<area shape="rect" id="node6" href="$classConnection.html#a5466a66e569e81d891559686f2c7594b" title="Connection::send" alt="" coords="184,56,317,83"/>
-<area shape="rect" id="node3" href="$Example_8cpp.html#ae0f14589015e103d1db9167bb89e4f4e" title="stream_server" alt="" coords="365,56,480,83"/>
-<area shape="rect" id="node5" href="$Example_8cpp.html#ac5de2785666f2fc48e9f23fc7da9e895" title="stream_client" alt="" coords="368,5,477,32"/>
-<area shape="rect" id="node4" href="$Example_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="528,56,583,83"/>
-</map>

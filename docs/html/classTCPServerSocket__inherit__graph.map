@@ -1,5 +1,0 @@
-<map id="TCPServerSocket" name="TCPServerSocket">
-<area shape="rect" id="node2" href="$classSocketFd.html" title="Not initalizable BaseClass for SocketFileDescriptor. " alt="" coords="5,5,87,32"/>
-<area shape="rect" id="node3" href="$classServerSocket.html" title="Not instanziable BaseClass for all ServerSocket Classes. " alt="" coords="111,5,219,32"/>
-<area shape="rect" id="node4" href="$classTCPSocket.html" title="TCPSocket" alt="" coords="243,5,332,32"/>
-</map>

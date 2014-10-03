@@ -4,3 +4,10 @@
 *.so
 *.a
 /http_client/
+/lib/
+/tcp_server/
+/tpc_client/
+/udp_client/
+/udp_server/
+/unix_client/
+/unix_server/

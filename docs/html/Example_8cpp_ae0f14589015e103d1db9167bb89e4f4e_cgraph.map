@@ -1,7 +1,0 @@
-<map id="stream_server" name="stream_server">
-<area shape="rect" id="node2" href="$classServerSocket.html#a1d7054bc388f2d789d2124dd96939d90" title="ServerSocket::accept" alt="" coords="169,5,328,32"/>
-<area shape="rect" id="node3" href="$classConnection.html#ab16b8a780c69303beec9b1f67fb596f3" title="Connection::recv" alt="" coords="184,56,313,83"/>
-<area shape="rect" id="node5" href="$classConnection.html#a5466a66e569e81d891559686f2c7594b" title="Connection::send" alt="" coords="182,107,315,133"/>
-<area shape="rect" id="node6" href="$classSocketFd.html#a9b3ed5d1b4e34195fd53ae8a627187aa" title="set Tiemout on SocketFileDescriptor " alt="" coords="168,157,329,184"/>
-<area shape="rect" id="node4" href="$classConnection.html#a4e186a7e69d56c0bb84ef56032b89427" title="Connection::_poll" alt="" coords="377,81,508,108"/>
-</map>

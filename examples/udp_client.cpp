@@ -18,7 +18,7 @@ int main(int argc, char* argv[]) {
 	int nbytes = 0;
 	//
 	string server = argv[1];
-	unsigned int port = atoi(argv[2]);
+	unsigned port = atoi(argv[2]);
 	string msg = argv[3];
 	//
 	try {
@@ -32,7 +32,7 @@ int main(int argc, char* argv[]) {
 			cout << "ok" << endl;
 			//
 			cout << "Sending Message ... " << flush;
-			nbytes = sock.send(msg.c_str(), msg.size());
+			nbytes = sock.send(msg.data(), msg.size());
 			if (nbytes > 0) {
 				cout << "ok" << endl;
 				cout << "< " << msg << endl;

@@ -8,28 +8,24 @@ extern "C" {
 }
 #include <iostream>
 #include <string>
-#include <Transceiver.h>
 #include <SocketFd.h>
 
-class Connection: public Transceiver, public SocketFd {
-protected:
-
+/**
+ *
+ */
+class Connection: public SocketFd {
 private:
-	int n;
-	unsigned int sum;
+	int nbytes;
+	uint sum;
 //	int _poll(const int = -1);
-
 public:
 	std::string targetaddr;
 
 	Connection(const int = 0, const std::string taddr = "");
 	virtual ~Connection();
 
-	int send(const std::string);
-	int recv(std::string&, int);
-
-	int recv(char*, const unsigned, const int = -1);
-	int send(const char*, const unsigned, const int = -1);
+	int recv(char*, const unsigned int);
+	int send(const char*, const unsigned int);
 
 };
 

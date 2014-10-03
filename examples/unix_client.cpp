@@ -34,7 +34,7 @@ int main(int argc, char* argv[]) {
 			//
 			cout << "Sending Message ... " << flush;
 			msg += END_OF_MESSAGE;
-			nbytes = con.send(msg.c_str(), msg.size());
+			nbytes = con.send(msg.data(), msg.size());
 			if (nbytes > 0) {
 				cout << "ok" << endl;
 				//

@@ -15,7 +15,6 @@ extern "C" {
 
 #include <stdexcept>     /* runtime_error */
 
-#include <SocketFd.h>
 #include <Connection.h>
 #include <ServerSocket.h>
 
@@ -25,7 +24,7 @@ extern "C" {
  * if the construction failes and the socketfile can not be accessed
  * the constructor will throw a runtime_error
  */
-class UNIXServerSocket: public SocketFd, public ServerSocket {
+class UNIXServerSocket: public AcceptSocket {
 private:
 	// fd of last accepted Connection
 	int last_new_sock;

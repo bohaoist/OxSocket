@@ -10,10 +10,10 @@ UDPSocket::~UDPSocket() {
 	freeaddrinfo(servinfo);
 }
 
-int UDPSocket::send(const char* buf, const unsigned size, int) {
+int UDPSocket::send(const char* buf, const unsigned int size) {
 	return (sendto(ufds.fd, (void*) buf, size, 0, p->ai_addr, p->ai_addrlen));
 }
 
-int UDPSocket::recv(char* buf, const unsigned size, int) {
+int UDPSocket::recv(char* buf, const unsigned int size) {
 	return (recvfrom(ufds.fd, (void*) buf, size, 0, p->ai_addr, &p->ai_addrlen));
 }

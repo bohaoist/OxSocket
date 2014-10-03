@@ -1,7 +1,6 @@
 #ifndef UDPSERVERSOCKET_H_
 #define UDPSERVERSOCKET_H_
 
-
 extern "C" {
 #include <netdb.h>      /* getaddrinfo, gai_strerror, */
 #include <sys/socket.h> /* bind, socket */

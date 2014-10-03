@@ -1,7 +1,7 @@
 #include <ServerSocket.h>
 
-ServerSocket::ServerSocket() {
+AcceptSocket::AcceptSocket() {
 }
 
-ServerSocket::~ServerSocket() {
+AcceptSocket::~AcceptSocket() {
 }

@@ -1,6 +1,0 @@
-<map id="UDPSocket" name="UDPSocket">
-<area shape="rect" id="node4" href="$classUDPClientSocket.html" title="UDPClientSocket" alt="" coords="5,155,136,181"/>
-<area shape="rect" id="node5" href="$classUDPServerSocket.html" title="UDPServerSocket" alt="" coords="160,155,296,181"/>
-<area shape="rect" id="node2" href="$classSocketFd.html" title="Not initalizable BaseClass for SocketFileDescriptor. " alt="" coords="53,5,134,32"/>
-<area shape="rect" id="node3" href="$classTransceiver.html" title="Transceiver" alt="" coords="159,5,252,32"/>
-</map>

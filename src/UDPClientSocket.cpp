@@ -1,12 +1,12 @@
 #include <UDPClientSocket.h>
 
-UDPClientSocket::UDPClientSocket(const std::string addr, const unsigned int port) {
+UDPClientSocket::UDPClientSocket(const std::string addr, const unsigned port) {
 
 	memset(&hints, 0, sizeof hints);
 	hints.ai_family = AF_UNSPEC;
 	hints.ai_socktype = SOCK_DGRAM;
 
-	const unsigned int digits = (0 < port ? (int) log10((double) port) + 1 : 1);
+	const unsigned digits = (0 < port ? (int) log10((double) port) + 1 : 1);
 	char cport[digits + 1]; // add one
 	int n = (::sprintf(cport, "%d", port));
 	if (0 > n) {

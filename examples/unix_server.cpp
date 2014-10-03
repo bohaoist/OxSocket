@@ -5,9 +5,8 @@
 
 using namespace std;
 
-const static char END_OF_MESSAGE = '\n';
-
 int main(int argc, char* argv[]) {
+
 
 	if (argc != 2) {
 		cout << "usage: " << argv[0] << " [socketfile]" << endl;
@@ -18,6 +17,8 @@ int main(int argc, char* argv[]) {
 	string msg = "";
 	bool ok = false;
 	Connection *con = NULL;
+	const char END_OF_MESSAGE = '\n';
+
 	//
 	std::string sockfile = argv[1];
 

@@ -1,6 +1,0 @@
-<map id="main" name="main">
-<area shape="rect" id="node2" href="$classUNIXServerSocket.html#a1bd19b56a910dc3811d4d54c30fbf3f5" title="UNIXServerSocket::accept" alt="" coords="108,5,299,32"/>
-<area shape="rect" id="node3" href="$classConnection.html#a79578c3ac2bdb68a006faa394f4656fd" title="Connection::recv" alt="" coords="139,56,268,83"/>
-<area shape="rect" id="node4" href="$classConnection.html#a9b6289d7ad3c45a67e765b9c35160c6d" title="Connection::send" alt="" coords="137,107,270,133"/>
-<area shape="rect" id="node5" href="$classSocketFd.html#a9b3ed5d1b4e34195fd53ae8a627187aa" title="set Tiemout on SocketFileDescriptor " alt="" coords="123,157,284,184"/>
-</map>

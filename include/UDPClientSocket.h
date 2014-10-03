@@ -27,7 +27,7 @@ public:
 	 * \param[in] addr The Address of the host
 	 * \param[in] port The Port the host is listening on
 	 */
-	UDPClientSocket(const std::string addr, const unsigned int port);
+	UDPClientSocket(const std::string addr, const unsigned port);
 
 	/**
 	 * \brief  does nothing

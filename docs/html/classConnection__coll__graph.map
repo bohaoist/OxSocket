@@ -1,6 +1,0 @@
-<map id="Connection" name="Connection">
-<area shape="rect" id="node2" href="$classTransceiver.html" title="Transceiver" alt="" coords="5,96,99,123"/>
-<area shape="rect" id="node3" href="$classSocketFd.html" title="Not initalizable BaseClass for SocketFileDescriptor. " alt="" coords="123,96,205,123"/>
-<area shape="rect" id="node4" title="STL class. " alt="" coords="229,96,315,123"/>
-<area shape="rect" id="node5" title="STL class. " alt="" coords="203,5,341,47"/>
-</map>
