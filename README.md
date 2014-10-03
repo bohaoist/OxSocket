@@ -3,19 +3,64 @@
 A object abstraction layer for networking communications calls in C++
 
 It makes Socket Communication as easy as this:
+
 ```C++
-// Sender 
-std::string msg = "Hello World";
-UDPClientSocket sock(  "www.example.org" , 1234 );
-sock.send(msg.data(),msg.size());
+
+	#include <iostream> /* cout */
+	#include <string>   /* string */
+	#include <Socket.h>
+
+	using namespace std;
+
+	int main() {
+
+		UDPServerSocket sock(1234);
+		char buf[255];
+		string msg = "";
+		
+		while (true) {
+			n = sock.recv(buf, sizeof(buf));
+			cout << string(buf,n) << endl;
+			sock.send(buf, n);
+		}
+		return 1;
+	}
 ```
+save as udp\_echo\_server.cpp and build with:
+
+c++ -I0xSocket/include -l0xSocket -L0xSocket/lib udp\_echo\_server.cpp -o udp\_ecoh\_server.exe
+
+
 ```C++
-// Receiver
-UDPServerSocket sock( 1234 );
-char buf[255];
-int bsize = sock.recv(buf,sizeof(buf));
-std::cout << std::string(buf,bsize) << std::endl;
+
+	/**
+	 *  UDP Client that Send and Recv a Message
+	 *  (with no error handling)
+	 */
+	#include <iostream>  /* cout, endl */
+	#include <string>    /* string */
+	#include <Socket.h>  
+
+	using namespace std;
+
+	int main() {
+
+		char buf[255];
+		string msg = "Hello World";
+		
+		UDPClientSocket sock("127.0.0.1", 1234);
+		sock.send(msg.data(), msg.size());		
+		sock.recv(buf, sizeof(buf));
+		cout << string(recvbuf, nbytes) << endl;
+		
+		return 0;
+	}
 ```
+save as udp\_echo\_client.cpp and build with:
+
+c++ -I0xSocket/include -l0xSocket -L0xSocket/lib udp\_echo\_client.cpp -o udp\_echo\_client.exe
+
+
 
 ## Build the Library?
 
@@ -32,20 +77,15 @@ std::cout << std::string(buf,bsize) << std::endl;
 * add lastly add the linker flag -l0xSocket (ldflags)
 
 ## Examples
-
 Have a look at Examples in the examples folder to get started quickly.
 
-|  Clients                                 | Server                                   |
-| ---------------------------------------- |:----------------------------------------:|
-|  [ UDP Client ](examples/udp_client.cpp)  | [ UDP Server ](examples/udp_server.cpp)   |
-|  [ TCP Client ](examples/tcp_client.cpp)  | [ TCP Server ](examples/tcp_server.cpp)   |
-|  [ UNIX Client ](examples/unix_client.cpp)| [ UNIX Server ](examples/unix_server.cpp) |
-|  [ HTTP Client ](examples/http_client.cpp)| [ HTTP Client ](examples/http_server.cpp) |
+*  UDP [Client](examples/udp_client.cpp) and [Server](examples/udp_server.cpp)  
+*  TCP [Client](examples/tcp_client.cpp) and [Server](examples/tcp_server.cpp)   
+* UNIX [Client](examples/unix_client.cpp) and [Server](examples/unix_server.cpp) 
+* HTTP [Client](examples/http_client.cpp) 
 
 ## What next?
-
-Try writing your own IRC Client or a DNS or even NTP Client, with the help of lib0xSocket.
-
+Try writing your own IRC Client or a DNS or even NTP Client.
 
 #### Happy hacking.
 
