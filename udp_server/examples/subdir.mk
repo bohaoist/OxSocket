@@ -4,23 +4,20 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../include/UDPClientSocket.cpp \
-../include/UDPServerSocket.cpp 
+../examples/udp_server.cpp 
 
 OBJS += \
-./include/UDPClientSocket.o \
-./include/UDPServerSocket.o 
+./examples/udp_server.o 
 
 CPP_DEPS += \
-./include/UDPClientSocket.d \
-./include/UDPServerSocket.d 
+./examples/udp_server.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
-include/%.o: ../include/%.cpp
+examples/%.o: ../examples/%.cpp
 	@echo 'Building file: $<'
 	@echo 'Invoking: GCC C++ Compiler'
-	g++ -I../include -O0 -g -Wall -Wextra -c -fmessage-length=0 -fPIC -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	g++ -DDEBUG -I../include -O0 -g3 -Wall -Wextra -c -fmessage-length=0 -fPIC -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

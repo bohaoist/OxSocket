@@ -2,7 +2,7 @@
 <?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
 	<storageModule moduleId="org.eclipse.cdt.core.settings">
 		<cconfiguration id="cdt.managedbuild.config.gnu.cygwin.exe.debug.825911936">
-			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cygwin.exe.debug.825911936" moduleId="org.eclipse.cdt.core.settings" name="Debug">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cygwin.exe.debug.825911936" moduleId="org.eclipse.cdt.core.settings" name="lib">
 				<externalSettings>
 					<externalSetting>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/SocketIO"/>
@@ -23,11 +23,11 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactExtension="so" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.sharedLib" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.sharedLib,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.cygwin.exe.debug.825911936" name="Debug" parent="cdt.managedbuild.config.gnu.cygwin.exe.debug" postbuildStep="">
+				<configuration artifactExtension="so" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.sharedLib" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.sharedLib,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.cygwin.exe.debug.825911936" name="lib" parent="cdt.managedbuild.config.gnu.cygwin.exe.debug" postbuildStep="">
 					<folderInfo id="cdt.managedbuild.config.gnu.cygwin.exe.debug.825911936." name="/" resourcePath="">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.base.905756506" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.base">
 							<targetPlatform archList="all" id="cdt.managedbuild.target.gnu.platform.base.881792270" name="Debug Platform" osList="linux,hpux,aix,qnx" superClass="cdt.managedbuild.target.gnu.platform.base"/>
-							<builder buildPath="${workspace_loc:/SocketIO/Debug}" id="cdt.managedbuild.target.gnu.builder.base.1124343196" keepEnvironmentInBuildfile="false" name="Gnu Make Builder" superClass="cdt.managedbuild.target.gnu.builder.base"/>
+							<builder buildPath="${workspace_loc:/SocketIO/Debug}" id="cdt.managedbuild.target.gnu.builder.base.1124343196" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="cdt.managedbuild.target.gnu.builder.base"/>
 							<tool id="cdt.managedbuild.tool.gnu.archiver.base.249410043" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.base.175423712" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.base">
 								<option id="gnu.cpp.compiler.option.optimization.level.921840110" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
@@ -1363,16 +1363,36 @@
 		</scannerConfigBuildInfo>
 	</storageModule>
 	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="udp_server">
+			<resource resourceType="PROJECT" workspacePath="/0xSocket"/>
+		</configuration>
+		<configuration configurationName="lib">
+			<resource resourceType="PROJECT" workspacePath="/0xSocket"/>
+		</configuration>
+		<configuration configurationName="tpc_client">
+			<resource resourceType="PROJECT" workspacePath="/0xSocket"/>
+		</configuration>
+		<configuration configurationName="EchoUNIXClient"/>
 		<configuration configurationName="EchoUDPClient"/>
+		<configuration configurationName="tcp_server">
+			<resource resourceType="PROJECT" workspacePath="/0xSocket"/>
+		</configuration>
 		<configuration configurationName="EchoUNIXServer"/>
 		<configuration configurationName="EchoTCPClient"/>
+		<configuration configurationName="unix_client">
+			<resource resourceType="PROJECT" workspacePath="/0xSocket"/>
+		</configuration>
 		<configuration configurationName="EchoUDPServer"/>
-		<configuration configurationName="EchoUNIXClient"/>
+		<configuration configurationName="http_client"/>
+		<configuration configurationName="udp_client"/>
 		<configuration configurationName="Debug">
 			<resource resourceType="PROJECT" workspacePath="/0xSocket"/>
 		</configuration>
 		<configuration configurationName="Examples"/>
 		<configuration configurationName="EchoTCPServer"/>
+		<configuration configurationName="unix_server">
+			<resource resourceType="PROJECT" workspacePath="/0xSocket"/>
+		</configuration>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 </cproject>
