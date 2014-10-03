@@ -66,7 +66,7 @@ c++ -I0xSocket/include -l0xSocket -L0xSocket/lib mini_udp_client.cpp -o mini_udp
 ```Bash
 
     git clone https://github.com/inbre001/0xSocket.git;
-    cd Socket/lib;
+    cd 0xSocket/lib;
     make;
     
 ```
