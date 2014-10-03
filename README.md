@@ -26,15 +26,15 @@ It makes Socket Communication as easy as this:
 		return 1;
 	}
 ```
-save as udp\_echo\_server.cpp and build with:
+save as [mini_udp_server.cpp](examples/mini_udp_server.cpp) and build with:
 
-c++ -I0xSocket/include -l0xSocket -L0xSocket/lib udp\_echo\_server.cpp -o udp\_echo\_server.exe
+```Bash
 
-
+	c++ -I0xSocket/include -l0xSocket -L0xSocket/lib mini\_udp\_server.cpp -o mini\_udp\_server.exe
 ```C++
 
-	#include <iostream>  /* cout, endl */
-	#include <string>    /* string */
+	#include <iostream>
+	#include <string>  
 	#include <Socket.h>  
 
 	using namespace std;
@@ -52,10 +52,12 @@ c++ -I0xSocket/include -l0xSocket -L0xSocket/lib udp\_echo\_server.cpp -o udp\_e
 		return 0;
 	}
 ```
-save as udp\_echo\_client.cpp and build with:
+save as [mini_udp_client.cpp](examples/mini_udp_client.cpp) and build with:
 
-c++ -I0xSocket/include -l0xSocket -L0xSocket/lib udp\_echo\_client.cpp -o udp\_echo\_client.exe
+```Bash
 
+	c++ -I0xSocket/include -l0xSocket -L0xSocket/lib udp\_echo\_client.cpp -o mini\_udp\_client.exe	
+```
 
 
 ## Build the Library?
