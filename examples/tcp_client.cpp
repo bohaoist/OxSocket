@@ -27,6 +27,7 @@ int main(int argc, char* argv[]) {
 
 		cout << "Creating TCP Client Socket ... " << flush;
 		TCPClientSocket con(server, port);
+
 		cout << " ok" << endl;
 		//
 		cout << "Setting Timeout on Socket ... " << flush;
