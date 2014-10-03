@@ -1,4 +1,4 @@
-.TH "Connection" 3 "Thu Oct 2 2014" "Version 0.2" "0xSocket" \" -*- nroff -*-
+.TH "Connection" 3 "Fri Oct 3 2014" "Version 0.3" "0xSocket" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -22,6 +22,12 @@ Inherited by \fBTCPClientSocket\fP, and \fBUNIXClientSocket\fP\&.
 .RI "virtual \fB~Connection\fP ()"
 .br
 .ti -1c
+.RI "int \fBsend\fP (const std::string)"
+.br
+.ti -1c
+.RI "int \fBrecv\fP (std::string &, int)"
+.br
+.ti -1c
 .RI "int \fBrecv\fP (char *, const unsigned, const int=-1)"
 .br
 .ti -1c
@@ -33,13 +39,6 @@ Inherited by \fBTCPClientSocket\fP, and \fBUNIXClientSocket\fP\&.
 .in +1c
 .ti -1c
 .RI "std::string \fBtargetaddr\fP"
-.br
-.in -1c
-.SS "Private Member Functions"
-
-.in +1c
-.ti -1c
-.RI "int \fB_poll\fP (const int=-1)"
 .br
 .in -1c
 .SS "Private Attributes"
@@ -55,7 +54,7 @@ Inherited by \fBTCPClientSocket\fP, and \fBUNIXClientSocket\fP\&.
 .SS "Additional Inherited Members"
 .SH "Detailed Description"
 .PP 
-Definition at line 13 of file Connection\&.h\&.
+Definition at line 14 of file Connection\&.h\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "Connection::Connection (const intfd = \fC0\fP, const std::stringtaddr = \fC''\fP)"
@@ -70,52 +69,54 @@ References n, sum, targetaddr, and SocketFd::ufds\&.
 Definition at line 10 of file Connection\&.cpp\&.
 .SH "Member Function Documentation"
 .PP 
-.SS "int Connection::_poll (const intmsec = \fC-1\fP)\fC [private]\fP"
+.SS "int Connection::recv (std::string &out, intsize)"
 
 .PP
 Definition at line 42 of file Connection\&.cpp\&.
 .PP
-References SocketFd::ufds\&.
+References n\&.
 .PP
-Referenced by recv(), and send()\&.
-.SS "int Connection::recv (char *buf, const unsignedsize, const intmsec = \fC-1\fP)\fC [virtual]\fP"
+Referenced by main()\&.
+.SS "int Connection::recv (char *buf, const unsignedsize, const int = \fC-1\fP)\fC [virtual]\fP"
 
 .PP
 Implements \fBTransceiver\fP\&.
 .PP
-Definition at line 35 of file Connection\&.cpp\&.
+Definition at line 33 of file Connection\&.cpp\&.
 .PP
-References _poll(), and WEADMACRO\&.
+References WEADMACRO\&.
+.SS "int Connection::send (const std::stringin)"
+
 .PP
-Referenced by stream_client(), and stream_server()\&.
-.SS "int Connection::send (const char *buf, const unsignedsize, const intmsec = \fC-1\fP)\fC [virtual]\fP"
+Definition at line 38 of file Connection\&.cpp\&.
+.PP
+Referenced by main()\&.
+.SS "int Connection::send (const char *buf, const unsignedsize, const int = \fC-1\fP)\fC [virtual]\fP"
 
 .PP
 Implements \fBTransceiver\fP\&.
 .PP
-Definition at line 30 of file Connection\&.cpp\&.
+Definition at line 28 of file Connection\&.cpp\&.
 .PP
-References _poll(), and WEADMACRO\&.
-.PP
-Referenced by main(), stream_client(), and stream_server()\&.
+References WEADMACRO\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "int Connection::n\fC [private]\fP"
 
 .PP
-Definition at line 17 of file Connection\&.h\&.
+Definition at line 18 of file Connection\&.h\&.
 .PP
-Referenced by Connection(), and TCPClientSocket::TCPClientSocket()\&.
+Referenced by Connection(), recv(), and TCPClientSocket::TCPClientSocket()\&.
 .SS "unsigned int Connection::sum\fC [private]\fP"
 
 .PP
-Definition at line 18 of file Connection\&.h\&.
+Definition at line 19 of file Connection\&.h\&.
 .PP
 Referenced by Connection()\&.
 .SS "std::string Connection::targetaddr"
 
 .PP
-Definition at line 22 of file Connection\&.h\&.
+Definition at line 23 of file Connection\&.h\&.
 .PP
 Referenced by Connection(), and TCPClientSocket::TCPClientSocket()\&.
 

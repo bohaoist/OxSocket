@@ -1,3 +1,9 @@
 <map id="include/Socket.h" name="include/Socket.h">
-<area shape="rect" id="node2" href="$Example_8cpp.html" title="src/Example.cpp" alt="" coords="5,80,132,107"/>
+<area shape="rect" id="node2" href="$http__client_8cpp.html" title="examples/http_client.cpp" alt="" coords="5,80,188,107"/>
+<area shape="rect" id="node3" href="$tcp__client_8cpp.html" title="examples/tcp_client.cpp" alt="" coords="213,80,389,107"/>
+<area shape="rect" id="node4" href="$tcp__server_8cpp.html" title="examples/tcp_server.cpp" alt="" coords="413,80,594,107"/>
+<area shape="rect" id="node5" href="$udp__client_8cpp.html" title="examples/udp_client.cpp" alt="" coords="619,80,799,107"/>
+<area shape="rect" id="node6" href="$udp__server_8cpp.html" title="examples/udp_server.cpp" alt="" coords="823,80,1008,107"/>
+<area shape="rect" id="node7" href="$unix__client_8cpp.html" title="examples/unix_client.cpp" alt="" coords="1032,80,1215,107"/>
+<area shape="rect" id="node8" href="$unix__server_8cpp.html" title="examples/unix_server.cpp" alt="" coords="1239,80,1426,107"/>
 </map>

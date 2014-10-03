@@ -25,7 +25,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">0xSocket
-   &#160;<span id="projectnumber">0.2</span>
+   &#160;<span id="projectnumber">0.3</span>
    </div>
   </td>
  </tr>
@@ -69,7 +69,7 @@ $(document).ready(function(){initNavTree('UDPClientSocket_8cpp_source.html','');
 <div class="contents">
 <a href="UDPClientSocket_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="UDPClientSocket_8h.html">UDPClientSocket.h</a>&gt;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
-<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="classUDPClientSocket.html#a948d4d68b8cfb63efbed66556b934101">    3</a></span>&#160;<a class="code" href="classUDPClientSocket.html#a948d4d68b8cfb63efbed66556b934101">UDPClientSocket::UDPClientSocket</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* addr, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> port) {</div>
+<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="classUDPClientSocket.html#afa62dc8159b7310762f6fcb586cda332">    3</a></span>&#160;<a class="code" href="classUDPClientSocket.html#afa62dc8159b7310762f6fcb586cda332">UDPClientSocket::UDPClientSocket</a>(<span class="keyword">const</span> std::string addr, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> port) {</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;        memset(&amp;<a class="code" href="classUDPSocket.html#ab0ca283a6135c7073b7a1168014ae088">hints</a>, 0, <span class="keyword">sizeof</span> <a class="code" href="classUDPSocket.html#ab0ca283a6135c7073b7a1168014ae088">hints</a>);</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;        <a class="code" href="classUDPSocket.html#ab0ca283a6135c7073b7a1168014ae088">hints</a>.ai_family = AF_UNSPEC;</div>
@@ -82,34 +82,38 @@ $(document).ready(function(){initNavTree('UDPClientSocket_8cpp_source.html','');
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;UDPClientSocket::sprintf() failed&quot;</span>);</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        }</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordflow">if</span> ((<a class="code" href="classUDPSocket.html#a8b28284b39fbfbd8bca4c1289f7dda32">rv</a> = getaddrinfo(addr, cport, &amp;<a class="code" href="classUDPSocket.html#ab0ca283a6135c7073b7a1168014ae088">hints</a>, &amp;<a class="code" href="classUDPSocket.html#ae0c699a5dbc10580cd2844f282e61f4d">servinfo</a>)) != 0) {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                fprintf(stderr, <span class="stringliteral">&quot;getaddrinfo: %s\n&quot;</span>, gai_strerror(<a class="code" href="classUDPSocket.html#a8b28284b39fbfbd8bca4c1289f7dda32">rv</a>));</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;UDPClientSocket::getaddrinfo() failed&quot;</span>);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        }</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="comment">// loop through all the results and make a socket</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classUDPSocket.html#a9889d73171c2d143797dce81506d24eb">p</a> = <a class="code" href="classUDPSocket.html#ae0c699a5dbc10580cd2844f282e61f4d">servinfo</a>; <a class="code" href="classUDPSocket.html#a9889d73171c2d143797dce81506d24eb">p</a> != NULL; <a class="code" href="classUDPSocket.html#a9889d73171c2d143797dce81506d24eb">p</a> = <a class="code" href="classUDPSocket.html#a9889d73171c2d143797dce81506d24eb">p</a>-&gt;ai_next) {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                <span class="keywordflow">if</span> ((<a class="code" href="classSocketFd.html#a0636825d276c3525e0d8af969ce2d3b6">ufds</a>.fd = socket(<a class="code" href="classUDPSocket.html#a9889d73171c2d143797dce81506d24eb">p</a>-&gt;ai_family, <a class="code" href="classUDPSocket.html#a9889d73171c2d143797dce81506d24eb">p</a>-&gt;ai_socktype, <a class="code" href="classUDPSocket.html#a9889d73171c2d143797dce81506d24eb">p</a>-&gt;ai_protocol))</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                                == -1) {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                        perror(<span class="stringliteral">&quot;UDPClientSocket::socket() failed&quot;</span>);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                        <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                }</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        }</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classUDPSocket.html#a9889d73171c2d143797dce81506d24eb">p</a> == NULL) {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;UDPClientSocket::bind() failed&quot;</span>);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordflow">if</span> ((<a class="code" href="classUDPSocket.html#a8b28284b39fbfbd8bca4c1289f7dda32">rv</a> = getaddrinfo(addr.c_str(), cport, &amp;<a class="code" href="classUDPSocket.html#ab0ca283a6135c7073b7a1168014ae088">hints</a>, &amp;<a class="code" href="classUDPSocket.html#ae0c699a5dbc10580cd2844f282e61f4d">servinfo</a>)) != 0) {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#ifdef DEBUG</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                fprintf(stderr, <span class="stringliteral">&quot;getaddrinfo: %s\n&quot;</span>, gai_strerror(<a class="code" href="classUDPSocket.html#a8b28284b39fbfbd8bca4c1289f7dda32">rv</a>));</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;UDPClientSocket::getaddrinfo() failed&quot;</span>);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="comment">// loop through all the results and make a socket</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classUDPSocket.html#a9889d73171c2d143797dce81506d24eb">p</a> = <a class="code" href="classUDPSocket.html#ae0c699a5dbc10580cd2844f282e61f4d">servinfo</a>; <a class="code" href="classUDPSocket.html#a9889d73171c2d143797dce81506d24eb">p</a> != NULL; <a class="code" href="classUDPSocket.html#a9889d73171c2d143797dce81506d24eb">p</a> = <a class="code" href="classUDPSocket.html#a9889d73171c2d143797dce81506d24eb">p</a>-&gt;ai_next) {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                <span class="keywordflow">if</span> ((<a class="code" href="classSocketFd.html#a0636825d276c3525e0d8af969ce2d3b6">ufds</a>.fd = socket(<a class="code" href="classUDPSocket.html#a9889d73171c2d143797dce81506d24eb">p</a>-&gt;ai_family, <a class="code" href="classUDPSocket.html#a9889d73171c2d143797dce81506d24eb">p</a>-&gt;ai_socktype, <a class="code" href="classUDPSocket.html#a9889d73171c2d143797dce81506d24eb">p</a>-&gt;ai_protocol))</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                                == -1) {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#ifdef DEBUG</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                        perror(<span class="stringliteral">&quot;UDPClientSocket::socket() failed&quot;</span>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                        <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classUDPClientSocket.html#a055f430e2111d669cef3af07cec07b56">   37</a></span>&#160;<a class="code" href="classUDPClientSocket.html#a055f430e2111d669cef3af07cec07b56">UDPClientSocket::~UDPClientSocket</a>() {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classUDPSocket.html#a9889d73171c2d143797dce81506d24eb">p</a> == NULL) {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;UDPClientSocket::bind() failed&quot;</span>);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classUDPClientSocket.html#a055f430e2111d669cef3af07cec07b56">   41</a></span>&#160;<a class="code" href="classUDPClientSocket.html#a055f430e2111d669cef3af07cec07b56">UDPClientSocket::~UDPClientSocket</a>() {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="ttc" id="classUDPClientSocket_html_afa62dc8159b7310762f6fcb586cda332"><div class="ttname"><a href="classUDPClientSocket.html#afa62dc8159b7310762f6fcb586cda332">UDPClientSocket::UDPClientSocket</a></div><div class="ttdeci">UDPClientSocket(const std::string addr, const unsigned int port)</div><div class="ttdoc">construct UDPClientSocket </div><div class="ttdef"><b>Definition:</b> <a href="UDPClientSocket_8cpp_source.html#l00003">UDPClientSocket.cpp:3</a></div></div>
 <div class="ttc" id="classUDPSocket_html_a9889d73171c2d143797dce81506d24eb"><div class="ttname"><a href="classUDPSocket.html#a9889d73171c2d143797dce81506d24eb">UDPSocket::p</a></div><div class="ttdeci">addrinfo * p</div><div class="ttdef"><b>Definition:</b> <a href="UDPSocket_8h_source.html#l00021">UDPSocket.h:21</a></div></div>
-<div class="ttc" id="classUDPClientSocket_html_a055f430e2111d669cef3af07cec07b56"><div class="ttname"><a href="classUDPClientSocket.html#a055f430e2111d669cef3af07cec07b56">UDPClientSocket::~UDPClientSocket</a></div><div class="ttdeci">virtual ~UDPClientSocket()</div><div class="ttdoc">does nothing </div><div class="ttdef"><b>Definition:</b> <a href="UDPClientSocket_8cpp_source.html#l00037">UDPClientSocket.cpp:37</a></div></div>
+<div class="ttc" id="classUDPClientSocket_html_a055f430e2111d669cef3af07cec07b56"><div class="ttname"><a href="classUDPClientSocket.html#a055f430e2111d669cef3af07cec07b56">UDPClientSocket::~UDPClientSocket</a></div><div class="ttdeci">virtual ~UDPClientSocket()</div><div class="ttdoc">does nothing </div><div class="ttdef"><b>Definition:</b> <a href="UDPClientSocket_8cpp_source.html#l00041">UDPClientSocket.cpp:41</a></div></div>
 <div class="ttc" id="UDPClientSocket_8h_html"><div class="ttname"><a href="UDPClientSocket_8h.html">UDPClientSocket.h</a></div></div>
-<div class="ttc" id="classUDPClientSocket_html_a948d4d68b8cfb63efbed66556b934101"><div class="ttname"><a href="classUDPClientSocket.html#a948d4d68b8cfb63efbed66556b934101">UDPClientSocket::UDPClientSocket</a></div><div class="ttdeci">UDPClientSocket(const char *addr, const unsigned int port)</div><div class="ttdoc">construct UDPClientSocket </div><div class="ttdef"><b>Definition:</b> <a href="UDPClientSocket_8cpp_source.html#l00003">UDPClientSocket.cpp:3</a></div></div>
 <div class="ttc" id="classUDPSocket_html_a8b28284b39fbfbd8bca4c1289f7dda32"><div class="ttname"><a href="classUDPSocket.html#a8b28284b39fbfbd8bca4c1289f7dda32">UDPSocket::rv</a></div><div class="ttdeci">int rv</div><div class="ttdef"><b>Definition:</b> <a href="UDPSocket_8h_source.html#l00020">UDPSocket.h:20</a></div></div>
 <div class="ttc" id="classUDPSocket_html_ae0c699a5dbc10580cd2844f282e61f4d"><div class="ttname"><a href="classUDPSocket.html#ae0c699a5dbc10580cd2844f282e61f4d">UDPSocket::servinfo</a></div><div class="ttdeci">addrinfo * servinfo</div><div class="ttdef"><b>Definition:</b> <a href="UDPSocket_8h_source.html#l00021">UDPSocket.h:21</a></div></div>
 <div class="ttc" id="classSocketFd_html_a0636825d276c3525e0d8af969ce2d3b6"><div class="ttname"><a href="classSocketFd.html#a0636825d276c3525e0d8af969ce2d3b6">SocketFd::ufds</a></div><div class="ttdeci">pollfd ufds</div><div class="ttdef"><b>Definition:</b> <a href="SocketFd_8h_source.html#l00026">SocketFd.h:26</a></div></div>
@@ -120,7 +124,7 @@ $(document).ready(function(){initNavTree('UDPClientSocket_8cpp_source.html','');
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="UDPClientSocket_8cpp.html">UDPClientSocket.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 2 2014 14:57:29 for 0xSocket by
+    <li class="footer">Generated on Fri Oct 3 2014 17:59:04 for 0xSocket by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

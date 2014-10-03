@@ -25,7 +25,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">0xSocket
-   &#160;<span id="projectnumber">0.2</span>
+   &#160;<span id="projectnumber">0.3</span>
    </div>
   </td>
  </tr>
@@ -80,15 +80,15 @@ $(document).ready(function(){initNavTree('SocketFd_8cpp_source.html','');});
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;}</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
 <div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classSocketFd.html#a38ae432100f8df6e99e0145a793d4693">   13</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classSocketFd.html#a38ae432100f8df6e99e0145a793d4693">SocketFd::setNonBlocking</a>() {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classSocketFd.html#a0636825d276c3525e0d8af969ce2d3b6">ufds</a>.fd &lt; 0) {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                <span class="keywordflow">return</span> (1);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        }</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordtype">int</span> flags = 0;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        flags = ::fcntl(<a class="code" href="classSocketFd.html#a0636825d276c3525e0d8af969ce2d3b6">ufds</a>.fd, F_GETFL, 0);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">if</span> (0 != ::fcntl(<a class="code" href="classSocketFd.html#a0636825d276c3525e0d8af969ce2d3b6">ufds</a>.fd, F_SETFL, flags | O_NONBLOCK)) {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                ::perror(<span class="stringliteral">&quot;SocketFd::mkNonBlocking::fcntl() failed&quot;</span>);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                <span class="keywordflow">return</span> (1);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        }</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordtype">int</span> flags = 0;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        flags = ::fcntl(<a class="code" href="classSocketFd.html#a0636825d276c3525e0d8af969ce2d3b6">ufds</a>.fd, F_GETFL, 0);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordflow">if</span> (0 != ::fcntl(<a class="code" href="classSocketFd.html#a0636825d276c3525e0d8af969ce2d3b6">ufds</a>.fd, F_SETFL, flags | O_NONBLOCK)) {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#ifdef DEBUG</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                ::perror(<span class="stringliteral">&quot;SocketFd::mkNonBlocking::fcntl() failed&quot;</span>);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                <span class="keywordflow">return</span> (1);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">return</span> (0);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
@@ -107,38 +107,42 @@ $(document).ready(function(){initNavTree('SocketFd_8cpp_source.html','');});
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">int</span> flags = 0;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        flags = ::fcntl(<a class="code" href="classSocketFd.html#a0636825d276c3525e0d8af969ce2d3b6">ufds</a>.fd, F_GETFL, 0);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">if</span> (0 != ::fcntl(<a class="code" href="classSocketFd.html#a0636825d276c3525e0d8af969ce2d3b6">ufds</a>.fd, F_SETFL, flags &amp; ~O_NONBLOCK)) {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                ::perror(<span class="stringliteral">&quot;SocketFd::mkBlocking::fcntl() failed&quot;</span>);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="keywordflow">return</span> (1);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">return</span> (0);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classSocketFd.html#a9b3ed5d1b4e34195fd53ae8a627187aa">   47</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classSocketFd.html#a9b3ed5d1b4e34195fd53ae8a627187aa">SocketFd::setTimeout</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> sec, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> usec) {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classSocketFd.html#a0636825d276c3525e0d8af969ce2d3b6">ufds</a>.fd &lt; 0) {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                <span class="keywordflow">return</span> (1);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#ifdef DEBUG</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                ::perror(<span class="stringliteral">&quot;SocketFd::mkBlocking::fcntl() failed&quot;</span>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="keywordflow">return</span> (1);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> (0);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classSocketFd.html#a9b3ed5d1b4e34195fd53ae8a627187aa">   49</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classSocketFd.html#a9b3ed5d1b4e34195fd53ae8a627187aa">SocketFd::setTimeout</a>(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> sec, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> usec) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        timeval tv;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        tv.tv_sec = sec;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        tv.tv_usec = usec;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">if</span> (-1</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                        == ::setsockopt(<a class="code" href="classSocketFd.html#a0636825d276c3525e0d8af969ce2d3b6">ufds</a>.fd, SOL_SOCKET, SO_RCVTIMEO, (<span class="keywordtype">char</span> *) &amp;tv,</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                        <span class="keyword">sizeof</span> tv)) {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                ::perror(<span class="stringliteral">&quot;SocketFd::setsockopt() failed to set recv timeout&quot;</span>);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="keywordflow">return</span> (1);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">if</span> (-1</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                        == ::setsockopt(<a class="code" href="classSocketFd.html#a0636825d276c3525e0d8af969ce2d3b6">ufds</a>.fd, SOL_SOCKET, SO_SNDTIMEO, (<span class="keywordtype">char</span> *) &amp;tv,</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                        <span class="keyword">sizeof</span> tv)) {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                ::perror(<span class="stringliteral">&quot;SocketFd::setsockopt() failed to set send timeout&quot;</span>);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="keywordflow">return</span> (1);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">return</span> (0);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#ifdef DEBUG</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                ::perror(<span class="stringliteral">&quot;SocketFd::setsockopt() failed to set recv timeout&quot;</span>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keywordflow">return</span> (1);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">if</span> (-1</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                        == ::setsockopt(<a class="code" href="classSocketFd.html#a0636825d276c3525e0d8af969ce2d3b6">ufds</a>.fd, SOL_SOCKET, SO_SNDTIMEO, (<span class="keywordtype">char</span> *) &amp;tv,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                        <span class="keyword">sizeof</span> tv)) {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#ifdef DEBUG</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                ::perror(<span class="stringliteral">&quot;SocketFd::setsockopt() failed to set send timeout&quot;</span>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="keywordflow">return</span> (1);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">return</span> (0);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
 <div class="ttc" id="SocketFd_8h_html"><div class="ttname"><a href="SocketFd_8h.html">SocketFd.h</a></div></div>
-<div class="ttc" id="classSocketFd_html_a9b3ed5d1b4e34195fd53ae8a627187aa"><div class="ttname"><a href="classSocketFd.html#a9b3ed5d1b4e34195fd53ae8a627187aa">SocketFd::setTimeout</a></div><div class="ttdeci">int setTimeout(const unsigned sec, const unsigned msec=0)</div><div class="ttdoc">set Tiemout on SocketFileDescriptor </div><div class="ttdef"><b>Definition:</b> <a href="SocketFd_8cpp_source.html#l00047">SocketFd.cpp:47</a></div></div>
+<div class="ttc" id="classSocketFd_html_a9b3ed5d1b4e34195fd53ae8a627187aa"><div class="ttname"><a href="classSocketFd.html#a9b3ed5d1b4e34195fd53ae8a627187aa">SocketFd::setTimeout</a></div><div class="ttdeci">int setTimeout(const unsigned sec, const unsigned msec=0)</div><div class="ttdoc">set Tiemout on SocketFileDescriptor </div><div class="ttdef"><b>Definition:</b> <a href="SocketFd_8cpp_source.html#l00049">SocketFd.cpp:49</a></div></div>
 <div class="ttc" id="classSocketFd_html_a38ae432100f8df6e99e0145a793d4693"><div class="ttname"><a href="classSocketFd.html#a38ae432100f8df6e99e0145a793d4693">SocketFd::setNonBlocking</a></div><div class="ttdeci">int setNonBlocking()</div><div class="ttdoc">make SockFd nonblocking </div><div class="ttdef"><b>Definition:</b> <a href="SocketFd_8cpp_source.html#l00013">SocketFd.cpp:13</a></div></div>
 <div class="ttc" id="classSocketFd_html_af0d8323eedd465a6a499df1129e19f7d"><div class="ttname"><a href="classSocketFd.html#af0d8323eedd465a6a499df1129e19f7d">SocketFd::get_in_addr</a></div><div class="ttdeci">void * get_in_addr(sockaddr *)</div><div class="ttdef"><b>Definition:</b> <a href="SocketFd_8cpp_source.html#l00026">SocketFd.cpp:26</a></div></div>
 <div class="ttc" id="classSocketFd_html_add3bcd5016a045da6ecccdfd4c97ee3f"><div class="ttname"><a href="classSocketFd.html#add3bcd5016a045da6ecccdfd4c97ee3f">SocketFd::~SocketFd</a></div><div class="ttdeci">virtual ~SocketFd()</div><div class="ttdoc">does nothing </div><div class="ttdef"><b>Definition:</b> <a href="SocketFd_8cpp_source.html#l00007">SocketFd.cpp:7</a></div></div>
@@ -151,7 +155,7 @@ $(document).ready(function(){initNavTree('SocketFd_8cpp_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="SocketFd_8cpp.html">SocketFd.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 2 2014 14:57:29 for 0xSocket by
+    <li class="footer">Generated on Fri Oct 3 2014 17:59:04 for 0xSocket by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

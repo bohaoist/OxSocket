@@ -1,5 +1,11 @@
 <map id="include/TCPClientSocket.h" name="include/TCPClientSocket.h">
-<area shape="rect" id="node2" href="$Socket_8h.html" title="include/Socket.h" alt="" coords="5,80,132,107"/>
-<area shape="rect" id="node4" href="$TCPClientSocket_8cpp.html" title="src/TCPClientSocket.cpp" alt="" coords="156,80,331,107"/>
-<area shape="rect" id="node3" href="$Example_8cpp.html" title="src/Example.cpp" alt="" coords="5,155,132,181"/>
+<area shape="rect" id="node2" href="$Socket_8h.html" title="include/Socket.h" alt="" coords="645,80,772,107"/>
+<area shape="rect" id="node10" href="$TCPClientSocket_8cpp.html" title="src/TCPClientSocket.cpp" alt="" coords="796,80,971,107"/>
+<area shape="rect" id="node3" href="$http__client_8cpp.html" title="examples/http_client.cpp" alt="" coords="5,155,188,181"/>
+<area shape="rect" id="node4" href="$tcp__client_8cpp.html" title="examples/tcp_client.cpp" alt="" coords="213,155,389,181"/>
+<area shape="rect" id="node5" href="$tcp__server_8cpp.html" title="examples/tcp_server.cpp" alt="" coords="413,155,594,181"/>
+<area shape="rect" id="node6" href="$udp__client_8cpp.html" title="examples/udp_client.cpp" alt="" coords="619,155,799,181"/>
+<area shape="rect" id="node7" href="$udp__server_8cpp.html" title="examples/udp_server.cpp" alt="" coords="823,155,1008,181"/>
+<area shape="rect" id="node8" href="$unix__client_8cpp.html" title="examples/unix_client.cpp" alt="" coords="1032,155,1215,181"/>
+<area shape="rect" id="node9" href="$unix__server_8cpp.html" title="examples/unix_server.cpp" alt="" coords="1239,155,1426,181"/>
 </map>

@@ -25,7 +25,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">0xSocket
-   &#160;<span id="projectnumber">0.2</span>
+   &#160;<span id="projectnumber">0.3</span>
    </div>
   </td>
  </tr>
@@ -68,7 +68,6 @@ $(document).ready(function(){initNavTree('classConnection.html','');});
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classConnection-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -98,6 +97,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a3bc70a7fdfcabe58f6ca003f450e7b34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e4352edf667bea83001569e9da8a24d"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConnection.html#a2e4352edf667bea83001569e9da8a24d">~Connection</a> ()</td></tr>
 <tr class="separator:a2e4352edf667bea83001569e9da8a24d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b6289d7ad3c45a67e765b9c35160c6d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConnection.html#a9b6289d7ad3c45a67e765b9c35160c6d">send</a> (const std::string)</td></tr>
+<tr class="separator:a9b6289d7ad3c45a67e765b9c35160c6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79578c3ac2bdb68a006faa394f4656fd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConnection.html#a79578c3ac2bdb68a006faa394f4656fd">recv</a> (std::string &amp;, int)</td></tr>
+<tr class="separator:a79578c3ac2bdb68a006faa394f4656fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab16b8a780c69303beec9b1f67fb596f3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConnection.html#ab16b8a780c69303beec9b1f67fb596f3">recv</a> (char *, const unsigned, const int=-1)</td></tr>
 <tr class="separator:ab16b8a780c69303beec9b1f67fb596f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5466a66e569e81d891559686f2c7594b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConnection.html#a5466a66e569e81d891559686f2c7594b">send</a> (const char *, const unsigned, const int=-1)</td></tr>
@@ -124,11 +127,6 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a04bb846a50a9357bab86238956940d65"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConnection.html#a04bb846a50a9357bab86238956940d65">targetaddr</a></td></tr>
 <tr class="separator:a04bb846a50a9357bab86238956940d65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:a4e186a7e69d56c0bb84ef56032b89427"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConnection.html#a4e186a7e69d56c0bb84ef56032b89427">_poll</a> (const int=-1)</td></tr>
-<tr class="separator:a4e186a7e69d56c0bb84ef56032b89427"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:af54be737cc02308299c2e80a893a3e46"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConnection.html#af54be737cc02308299c2e80a893a3e46">n</a></td></tr>
@@ -153,7 +151,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="Connection_8h_source.html#l00013">13</a> of file <a class="el" href="Connection_8h_source.html">Connection.h</a>.</p>
+<p>Definition at line <a class="el" href="Connection_8h_source.html#l00014">14</a> of file <a class="el" href="Connection_8h_source.html">Connection.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a3bc70a7fdfcabe58f6ca003f450e7b34"></a>
 <div class="memitem">
@@ -181,7 +179,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00003">3</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
 
-<p>References <a class="el" href="Connection_8h_source.html#l00017">n</a>, <a class="el" href="Connection_8h_source.html#l00018">sum</a>, <a class="el" href="Connection_8h_source.html#l00022">targetaddr</a>, and <a class="el" href="SocketFd_8h_source.html#l00026">SocketFd::ufds</a>.</p>
+<p>References <a class="el" href="Connection_8h_source.html#l00018">n</a>, <a class="el" href="Connection_8h_source.html#l00019">sum</a>, <a class="el" href="Connection_8h_source.html#l00023">targetaddr</a>, and <a class="el" href="SocketFd_8h_source.html#l00026">SocketFd::ufds</a>.</p>
 
 </div>
 </div>
@@ -211,40 +209,42 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a4e186a7e69d56c0bb84ef56032b89427"></a>
+<a class="anchor" id="a79578c3ac2bdb68a006faa394f4656fd"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int Connection::_poll </td>
+          <td class="memname">int Connection::recv </td>
           <td>(</td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>msec</em> = <code>-1</code></td><td>)</td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00042">42</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
 
-<p>References <a class="el" href="SocketFd_8h_source.html#l00026">SocketFd::ufds</a>.</p>
+<p>References <a class="el" href="Connection_8h_source.html#l00018">n</a>.</p>
 
-<p>Referenced by <a class="el" href="Connection_8cpp_source.html#l00035">recv()</a>, and <a class="el" href="Connection_8cpp_source.html#l00030">send()</a>.</p>
+<p>Referenced by <a class="el" href="http__client_8cpp_source.html#l00008">main()</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classConnection_a4e186a7e69d56c0bb84ef56032b89427_icgraph.png" border="0" usemap="#classConnection_a4e186a7e69d56c0bb84ef56032b89427_icgraph" alt=""/></div>
-<map name="classConnection_a4e186a7e69d56c0bb84ef56032b89427_icgraph" id="classConnection_a4e186a7e69d56c0bb84ef56032b89427_icgraph">
-<area shape="rect" id="node2" href="classConnection.html#ab16b8a780c69303beec9b1f67fb596f3" title="Connection::recv" alt="" coords="186,5,315,32"/><area shape="rect" id="node6" href="classConnection.html#a5466a66e569e81d891559686f2c7594b" title="Connection::send" alt="" coords="184,56,317,83"/><area shape="rect" id="node3" href="Example_8cpp.html#ae0f14589015e103d1db9167bb89e4f4e" title="stream_server" alt="" coords="365,56,480,83"/><area shape="rect" id="node5" href="Example_8cpp.html#ac5de2785666f2fc48e9f23fc7da9e895" title="stream_client" alt="" coords="368,5,477,32"/><area shape="rect" id="node4" href="Example_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="528,56,583,83"/></map>
+<div class="center"><img src="classConnection_a79578c3ac2bdb68a006faa394f4656fd_icgraph.png" border="0" usemap="#classConnection_a79578c3ac2bdb68a006faa394f4656fd_icgraph" alt=""/></div>
+<map name="classConnection_a79578c3ac2bdb68a006faa394f4656fd_icgraph" id="classConnection_a79578c3ac2bdb68a006faa394f4656fd_icgraph">
+<area shape="rect" id="node2" href="http__client_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="183,5,237,32"/></map>
 </div>
 </p>
 
@@ -273,7 +273,7 @@ Here is the caller graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>msec</em> = <code>-1</code>&#160;</td>
+          <td class="paramname"> = <code>-1</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -290,27 +290,36 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="classTransceiver.html#aef7153a423766522f4f82c1300157048">Transceiver</a>.</p>
 
-<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00035">35</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00033">33</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
 
-<p>References <a class="el" href="Connection_8cpp_source.html#l00042">_poll()</a>, and <a class="el" href="Connection_8cpp_source.html#l00014">WEADMACRO</a>.</p>
+<p>References <a class="el" href="Connection_8cpp_source.html#l00013">WEADMACRO</a>.</p>
 
-<p>Referenced by <a class="el" href="Example_8cpp_source.html#l00301">stream_client()</a>, and <a class="el" href="Example_8cpp_source.html#l00231">stream_server()</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classConnection_ab16b8a780c69303beec9b1f67fb596f3_cgraph.png" border="0" usemap="#classConnection_ab16b8a780c69303beec9b1f67fb596f3_cgraph" alt=""/></div>
-<map name="classConnection_ab16b8a780c69303beec9b1f67fb596f3_cgraph" id="classConnection_ab16b8a780c69303beec9b1f67fb596f3_cgraph">
-<area shape="rect" id="node2" href="classConnection.html#a4e186a7e69d56c0bb84ef56032b89427" title="Connection::_poll" alt="" coords="183,5,313,32"/></map>
 </div>
-</p>
+</div>
+<a class="anchor" id="a9b6289d7ad3c45a67e765b9c35160c6d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Connection::send </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>in</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00038">38</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="http__client_8cpp_source.html#l00008">main()</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classConnection_ab16b8a780c69303beec9b1f67fb596f3_icgraph.png" border="0" usemap="#classConnection_ab16b8a780c69303beec9b1f67fb596f3_icgraph" alt=""/></div>
-<map name="classConnection_ab16b8a780c69303beec9b1f67fb596f3_icgraph" id="classConnection_ab16b8a780c69303beec9b1f67fb596f3_icgraph">
-<area shape="rect" id="node2" href="Example_8cpp.html#ac5de2785666f2fc48e9f23fc7da9e895" title="stream_client" alt="" coords="185,5,295,32"/><area shape="rect" id="node4" href="Example_8cpp.html#ae0f14589015e103d1db9167bb89e4f4e" title="stream_server" alt="" coords="183,56,297,83"/><area shape="rect" id="node3" href="Example_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="345,31,400,57"/></map>
+<div class="center"><img src="classConnection_a9b6289d7ad3c45a67e765b9c35160c6d_icgraph.png" border="0" usemap="#classConnection_a9b6289d7ad3c45a67e765b9c35160c6d_icgraph" alt=""/></div>
+<map name="classConnection_a9b6289d7ad3c45a67e765b9c35160c6d_icgraph" id="classConnection_a9b6289d7ad3c45a67e765b9c35160c6d_icgraph">
+<area shape="rect" id="node2" href="http__client_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="187,5,241,32"/></map>
 </div>
 </p>
 
@@ -339,7 +348,7 @@ Here is the caller graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>msec</em> = <code>-1</code>&#160;</td>
+          <td class="paramname"> = <code>-1</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -356,29 +365,9 @@ Here is the caller graph for this function:</div>
 
 <p>Implements <a class="el" href="classTransceiver.html#aa54935e0032d9ab6c531024e001ae19d">Transceiver</a>.</p>
 
-<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00030">30</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Connection_8cpp_source.html#l00028">28</a> of file <a class="el" href="Connection_8cpp_source.html">Connection.cpp</a>.</p>
 
-<p>References <a class="el" href="Connection_8cpp_source.html#l00042">_poll()</a>, and <a class="el" href="Connection_8cpp_source.html#l00014">WEADMACRO</a>.</p>
-
-<p>Referenced by <a class="el" href="Example_8cpp_source.html#l00049">main()</a>, <a class="el" href="Example_8cpp_source.html#l00301">stream_client()</a>, and <a class="el" href="Example_8cpp_source.html#l00231">stream_server()</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classConnection_a5466a66e569e81d891559686f2c7594b_cgraph.png" border="0" usemap="#classConnection_a5466a66e569e81d891559686f2c7594b_cgraph" alt=""/></div>
-<map name="classConnection_a5466a66e569e81d891559686f2c7594b_cgraph" id="classConnection_a5466a66e569e81d891559686f2c7594b_cgraph">
-<area shape="rect" id="node2" href="classConnection.html#a4e186a7e69d56c0bb84ef56032b89427" title="Connection::_poll" alt="" coords="187,5,317,32"/></map>
-</div>
-</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classConnection_a5466a66e569e81d891559686f2c7594b_icgraph.png" border="0" usemap="#classConnection_a5466a66e569e81d891559686f2c7594b_icgraph" alt=""/></div>
-<map name="classConnection_a5466a66e569e81d891559686f2c7594b_icgraph" id="classConnection_a5466a66e569e81d891559686f2c7594b_icgraph">
-<area shape="rect" id="node2" href="Example_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="349,23,404,50"/><area shape="rect" id="node3" href="Example_8cpp.html#ac5de2785666f2fc48e9f23fc7da9e895" title="stream_client" alt="" coords="189,23,299,50"/><area shape="rect" id="node4" href="Example_8cpp.html#ae0f14589015e103d1db9167bb89e4f4e" title="stream_server" alt="" coords="187,74,301,100"/></map>
-</div>
-</p>
+<p>References <a class="el" href="Connection_8cpp_source.html#l00013">WEADMACRO</a>.</p>
 
 </div>
 </div>
@@ -401,9 +390,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Connection_8h_source.html#l00017">17</a> of file <a class="el" href="Connection_8h_source.html">Connection.h</a>.</p>
+<p>Definition at line <a class="el" href="Connection_8h_source.html#l00018">18</a> of file <a class="el" href="Connection_8h_source.html">Connection.h</a>.</p>
 
-<p>Referenced by <a class="el" href="Connection_8cpp_source.html#l00003">Connection()</a>, and <a class="el" href="TCPClientSocket_8cpp_source.html#l00003">TCPClientSocket::TCPClientSocket()</a>.</p>
+<p>Referenced by <a class="el" href="Connection_8cpp_source.html#l00003">Connection()</a>, <a class="el" href="Connection_8cpp_source.html#l00042">recv()</a>, and <a class="el" href="TCPClientSocket_8cpp_source.html#l00003">TCPClientSocket::TCPClientSocket()</a>.</p>
 
 </div>
 </div>
@@ -425,7 +414,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Connection_8h_source.html#l00018">18</a> of file <a class="el" href="Connection_8h_source.html">Connection.h</a>.</p>
+<p>Definition at line <a class="el" href="Connection_8h_source.html#l00019">19</a> of file <a class="el" href="Connection_8h_source.html">Connection.h</a>.</p>
 
 <p>Referenced by <a class="el" href="Connection_8cpp_source.html#l00003">Connection()</a>.</p>
 
@@ -441,7 +430,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Connection_8h_source.html#l00022">22</a> of file <a class="el" href="Connection_8h_source.html">Connection.h</a>.</p>
+<p>Definition at line <a class="el" href="Connection_8h_source.html#l00023">23</a> of file <a class="el" href="Connection_8h_source.html">Connection.h</a>.</p>
 
 <p>Referenced by <a class="el" href="Connection_8cpp_source.html#l00003">Connection()</a>, and <a class="el" href="TCPClientSocket_8cpp_source.html#l00003">TCPClientSocket::TCPClientSocket()</a>.</p>
 
@@ -457,7 +446,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classConnection.html">Connection</a></li>
-    <li class="footer">Generated on Thu Oct 2 2014 14:57:29 for 0xSocket by
+    <li class="footer">Generated on Fri Oct 3 2014 17:59:04 for 0xSocket by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

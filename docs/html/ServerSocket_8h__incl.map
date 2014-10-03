@@ -1,5 +1,5 @@
 <map id="include/ServerSocket.h" name="include/ServerSocket.h">
-<area shape="rect" id="node2" href="$Connection_8h.html" title="Connection.h" alt="" coords="211,80,318,107"/>
-<area shape="rect" id="node7" href="$Transceiver_8h.html" title="Transceiver.h" alt="" coords="481,155,585,181"/>
-<area shape="rect" id="node8" href="$SocketFd_8h.html" title="SocketFd.h" alt="" coords="158,155,251,181"/>
+<area shape="rect" id="node2" href="$Connection_8h.html" title="Connection.h" alt="" coords="179,80,286,107"/>
+<area shape="rect" id="node7" href="$Transceiver_8h.html" title="Transceiver.h" alt="" coords="333,155,437,181"/>
+<area shape="rect" id="node8" href="$SocketFd_8h.html" title="SocketFd.h" alt="" coords="461,155,554,181"/>
 </map>

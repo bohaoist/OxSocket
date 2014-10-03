@@ -25,7 +25,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">0xSocket
-   &#160;<span id="projectnumber">0.2</span>
+   &#160;<span id="projectnumber">0.3</span>
    </div>
   </td>
  </tr>
@@ -77,21 +77,20 @@ $(document).ready(function(){initNavTree('UDPSocket_8cpp_source.html','');});
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
 <div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classUDPSocket.html#adb1a5254938e5acf5d44ff7a347e9f0a">    9</a></span>&#160;<a class="code" href="classUDPSocket.html#adb1a5254938e5acf5d44ff7a347e9f0a">UDPSocket::~UDPSocket</a>() {</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        freeaddrinfo(<a class="code" href="classUDPSocket.html#ae0c699a5dbc10580cd2844f282e61f4d">servinfo</a>);</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        close(<a class="code" href="classSocketFd.html#a0636825d276c3525e0d8af969ce2d3b6">ufds</a>.fd);</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classUDPSocket.html#a1c6cf2ad03b21ad00029d5f51fde43f5">   14</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classUDPSocket.html#a1c6cf2ad03b21ad00029d5f51fde43f5">UDPSocket::send</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* buf, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> size, <span class="keywordtype">int</span>) {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keywordflow">return</span> (sendto(<a class="code" href="classSocketFd.html#a0636825d276c3525e0d8af969ce2d3b6">ufds</a>.fd, (<span class="keywordtype">void</span>*) buf, size, 0, <a class="code" href="classUDPSocket.html#a9889d73171c2d143797dce81506d24eb">p</a>-&gt;ai_addr, <a class="code" href="classUDPSocket.html#a9889d73171c2d143797dce81506d24eb">p</a>-&gt;ai_addrlen));</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classUDPSocket.html#a712f913657579110edb1f6befbc4a279">   18</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classUDPSocket.html#a712f913657579110edb1f6befbc4a279">UDPSocket::recv</a>(<span class="keywordtype">char</span>* buf, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> size, <span class="keywordtype">int</span>) {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">return</span> (recvfrom(<a class="code" href="classSocketFd.html#a0636825d276c3525e0d8af969ce2d3b6">ufds</a>.fd, (<span class="keywordtype">void</span>*) buf, size, 0, <a class="code" href="classUDPSocket.html#a9889d73171c2d143797dce81506d24eb">p</a>-&gt;ai_addr, &amp;<a class="code" href="classUDPSocket.html#a9889d73171c2d143797dce81506d24eb">p</a>-&gt;ai_addrlen));</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;}</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classUDPSocket.html#a1c6cf2ad03b21ad00029d5f51fde43f5">   13</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classUDPSocket.html#a1c6cf2ad03b21ad00029d5f51fde43f5">UDPSocket::send</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* buf, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> size, <span class="keywordtype">int</span>) {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordflow">return</span> (sendto(<a class="code" href="classSocketFd.html#a0636825d276c3525e0d8af969ce2d3b6">ufds</a>.fd, (<span class="keywordtype">void</span>*) buf, size, 0, <a class="code" href="classUDPSocket.html#a9889d73171c2d143797dce81506d24eb">p</a>-&gt;ai_addr, <a class="code" href="classUDPSocket.html#a9889d73171c2d143797dce81506d24eb">p</a>-&gt;ai_addrlen));</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classUDPSocket.html#a712f913657579110edb1f6befbc4a279">   17</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classUDPSocket.html#a712f913657579110edb1f6befbc4a279">UDPSocket::recv</a>(<span class="keywordtype">char</span>* buf, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> size, <span class="keywordtype">int</span>) {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordflow">return</span> (recvfrom(<a class="code" href="classSocketFd.html#a0636825d276c3525e0d8af969ce2d3b6">ufds</a>.fd, (<span class="keywordtype">void</span>*) buf, size, 0, <a class="code" href="classUDPSocket.html#a9889d73171c2d143797dce81506d24eb">p</a>-&gt;ai_addr, &amp;<a class="code" href="classUDPSocket.html#a9889d73171c2d143797dce81506d24eb">p</a>-&gt;ai_addrlen));</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
 <div class="ttc" id="classUDPSocket_html_a9889d73171c2d143797dce81506d24eb"><div class="ttname"><a href="classUDPSocket.html#a9889d73171c2d143797dce81506d24eb">UDPSocket::p</a></div><div class="ttdeci">addrinfo * p</div><div class="ttdef"><b>Definition:</b> <a href="UDPSocket_8h_source.html#l00021">UDPSocket.h:21</a></div></div>
 <div class="ttc" id="UDPSocket_8h_html"><div class="ttname"><a href="UDPSocket_8h.html">UDPSocket.h</a></div></div>
-<div class="ttc" id="classUDPSocket_html_a1c6cf2ad03b21ad00029d5f51fde43f5"><div class="ttname"><a href="classUDPSocket.html#a1c6cf2ad03b21ad00029d5f51fde43f5">UDPSocket::send</a></div><div class="ttdeci">int send(const char *buf, const unsigned size, int=0)</div><div class="ttdoc">Sends Data. </div><div class="ttdef"><b>Definition:</b> <a href="UDPSocket_8cpp_source.html#l00014">UDPSocket.cpp:14</a></div></div>
+<div class="ttc" id="classUDPSocket_html_a1c6cf2ad03b21ad00029d5f51fde43f5"><div class="ttname"><a href="classUDPSocket.html#a1c6cf2ad03b21ad00029d5f51fde43f5">UDPSocket::send</a></div><div class="ttdeci">int send(const char *buf, const unsigned size, int=0)</div><div class="ttdoc">Sends Data. </div><div class="ttdef"><b>Definition:</b> <a href="UDPSocket_8cpp_source.html#l00013">UDPSocket.cpp:13</a></div></div>
 <div class="ttc" id="classUDPSocket_html_a4f86f3023f5a08f6355802599a10e100"><div class="ttname"><a href="classUDPSocket.html#a4f86f3023f5a08f6355802599a10e100">UDPSocket::UDPSocket</a></div><div class="ttdeci">UDPSocket()</div><div class="ttdef"><b>Definition:</b> <a href="UDPSocket_8cpp_source.html#l00003">UDPSocket.cpp:3</a></div></div>
-<div class="ttc" id="classUDPSocket_html_a712f913657579110edb1f6befbc4a279"><div class="ttname"><a href="classUDPSocket.html#a712f913657579110edb1f6befbc4a279">UDPSocket::recv</a></div><div class="ttdeci">int recv(char *buf, const unsigned size, int=0)</div><div class="ttdoc">Recv Data. </div><div class="ttdef"><b>Definition:</b> <a href="UDPSocket_8cpp_source.html#l00018">UDPSocket.cpp:18</a></div></div>
+<div class="ttc" id="classUDPSocket_html_a712f913657579110edb1f6befbc4a279"><div class="ttname"><a href="classUDPSocket.html#a712f913657579110edb1f6befbc4a279">UDPSocket::recv</a></div><div class="ttdeci">int recv(char *buf, const unsigned size, int=0)</div><div class="ttdoc">Recv Data. </div><div class="ttdef"><b>Definition:</b> <a href="UDPSocket_8cpp_source.html#l00017">UDPSocket.cpp:17</a></div></div>
 <div class="ttc" id="classUDPSocket_html_a8b28284b39fbfbd8bca4c1289f7dda32"><div class="ttname"><a href="classUDPSocket.html#a8b28284b39fbfbd8bca4c1289f7dda32">UDPSocket::rv</a></div><div class="ttdeci">int rv</div><div class="ttdef"><b>Definition:</b> <a href="UDPSocket_8h_source.html#l00020">UDPSocket.h:20</a></div></div>
 <div class="ttc" id="classUDPSocket_html_adb1a5254938e5acf5d44ff7a347e9f0a"><div class="ttname"><a href="classUDPSocket.html#adb1a5254938e5acf5d44ff7a347e9f0a">UDPSocket::~UDPSocket</a></div><div class="ttdeci">virtual ~UDPSocket()</div><div class="ttdoc">frees some structs </div><div class="ttdef"><b>Definition:</b> <a href="UDPSocket_8cpp_source.html#l00009">UDPSocket.cpp:9</a></div></div>
 <div class="ttc" id="classUDPSocket_html_ae0c699a5dbc10580cd2844f282e61f4d"><div class="ttname"><a href="classUDPSocket.html#ae0c699a5dbc10580cd2844f282e61f4d">UDPSocket::servinfo</a></div><div class="ttdeci">addrinfo * servinfo</div><div class="ttdef"><b>Definition:</b> <a href="UDPSocket_8h_source.html#l00021">UDPSocket.h:21</a></div></div>
@@ -102,7 +101,7 @@ $(document).ready(function(){initNavTree('UDPSocket_8cpp_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="UDPSocket_8cpp.html">UDPSocket.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 2 2014 14:57:29 for 0xSocket by
+    <li class="footer">Generated on Fri Oct 3 2014 17:59:04 for 0xSocket by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

@@ -1,4 +1,4 @@
-.TH "TCPServerSocket" 3 "Thu Oct 2 2014" "Version 0.2" "0xSocket" \" -*- nroff -*-
+.TH "TCPServerSocket" 3 "Fri Oct 3 2014" "Version 0.3" "0xSocket" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -14,7 +14,7 @@ Inherits \fBSocketFd\fP, \fBServerSocket\fP, and \fBTCPSocket\fP\&.
 
 .in +1c
 .ti -1c
-.RI "\fBTCPServerSocket\fP (const unsigned)"
+.RI "\fBTCPServerSocket\fP (const unsigned int)"
 .br
 .RI "\fIconstruct a listening Socket \fP"
 .ti -1c
@@ -34,7 +34,7 @@ A \fBTCPServerSocket\fP provides a means for TCP Clients to be Accepted with the
 Definition at line 26 of file TCPServerSocket\&.h\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "TCPServerSocket::TCPServerSocket (const unsignediport)"
+.SS "TCPServerSocket::TCPServerSocket (const unsigned intport)"
 
 .PP
 construct a listening Socket constructs a listening Socket will throw runtime_error if something goes wrong 
@@ -47,7 +47,7 @@ References TCPSocket::hints, TCPSocket::p, TCPSocket::rv, TCPSocket::servinfo, a
 .PP
 does nothing does nothing 
 .PP
-Definition at line 64 of file TCPServerSocket\&.cpp\&.
+Definition at line 75 of file TCPServerSocket\&.cpp\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "\fBConnection\fP * TCPServerSocket::accept ()\fC [virtual]\fP"
@@ -57,9 +57,11 @@ accept incoming tcp connections accept incoming tcp connections
 .PP
 Implements \fBServerSocket\fP\&.
 .PP
-Definition at line 67 of file TCPServerSocket\&.cpp\&.
+Definition at line 78 of file TCPServerSocket\&.cpp\&.
 .PP
 References SocketFd::get_in_addr(), TCPSocket::slen, TCPSocket::their_addr, and SocketFd::ufds\&.
+.PP
+Referenced by main()\&.
 
 .SH "Author"
 .PP 

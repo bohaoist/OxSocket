@@ -1,4 +1,4 @@
-.TH "UNIXServerSocket" 3 "Thu Oct 2 2014" "Version 0.2" "0xSocket" \" -*- nroff -*-
+.TH "UNIXServerSocket" 3 "Fri Oct 3 2014" "Version 0.3" "0xSocket" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -14,7 +14,7 @@ Inherits \fBSocketFd\fP, and \fBServerSocket\fP\&.
 
 .in +1c
 .ti -1c
-.RI "\fBUNIXServerSocket\fP (const char *path)"
+.RI "\fBUNIXServerSocket\fP (std::string path)"
 .br
 .RI "\fIconstruct a unix server socket \fP"
 .ti -1c
@@ -45,7 +45,7 @@ A \fBUNIXServerSocket\fP provides a means for UNIX Clients to be Accepted with t
 Definition at line 28 of file UNIXServerSocket\&.h\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "UNIXServerSocket::UNIXServerSocket (const char *path)"
+.SS "UNIXServerSocket::UNIXServerSocket (std::stringpath)"
 
 .PP
 construct a unix server socket construct a unix server socket 
@@ -63,7 +63,7 @@ References last_new_sock, local, and SocketFd::ufds\&.
 .SS "UNIXServerSocket::~UNIXServerSocket ()\fC [virtual]\fP"
 
 .PP
-Definition at line 32 of file UNIXServerSocket\&.cpp\&.
+Definition at line 38 of file UNIXServerSocket\&.cpp\&.
 .PP
 References local\&.
 .SH "Member Function Documentation"
@@ -73,9 +73,11 @@ References local\&.
 .PP
 Implements \fBServerSocket\fP\&.
 .PP
-Definition at line 36 of file UNIXServerSocket\&.cpp\&.
+Definition at line 42 of file UNIXServerSocket\&.cpp\&.
 .PP
 References last_new_sock, remote, and SocketFd::ufds\&.
+.PP
+Referenced by main()\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "int UNIXServerSocket::last_new_sock\fC [private]\fP"

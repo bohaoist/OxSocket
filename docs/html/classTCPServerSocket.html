@@ -25,7 +25,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">0xSocket
-   &#160;<span id="projectnumber">0.2</span>
+   &#160;<span id="projectnumber">0.3</span>
    </div>
   </td>
  </tr>
@@ -91,9 +91,9 @@ Collaboration diagram for TCPServerSocket:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2a54360b0df69bbbbd088bb60ba1c93a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTCPServerSocket.html#a2a54360b0df69bbbbd088bb60ba1c93a">TCPServerSocket</a> (const unsigned)</td></tr>
-<tr class="memdesc:a2a54360b0df69bbbbd088bb60ba1c93a"><td class="mdescLeft">&#160;</td><td class="mdescRight">construct a listening Socket  <a href="#a2a54360b0df69bbbbd088bb60ba1c93a">More...</a><br /></td></tr>
-<tr class="separator:a2a54360b0df69bbbbd088bb60ba1c93a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a02148580ef80a1a610fe29522ca033"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTCPServerSocket.html#a6a02148580ef80a1a610fe29522ca033">TCPServerSocket</a> (const unsigned int)</td></tr>
+<tr class="memdesc:a6a02148580ef80a1a610fe29522ca033"><td class="mdescLeft">&#160;</td><td class="mdescRight">construct a listening Socket  <a href="#a6a02148580ef80a1a610fe29522ca033">More...</a><br /></td></tr>
+<tr class="separator:a6a02148580ef80a1a610fe29522ca033"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac585f0ee1919733ec028dadf9c204ddf"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTCPServerSocket.html#ac585f0ee1919733ec028dadf9c204ddf">~TCPServerSocket</a> ()</td></tr>
 <tr class="memdesc:ac585f0ee1919733ec028dadf9c204ddf"><td class="mdescLeft">&#160;</td><td class="mdescRight">does nothing  <a href="#ac585f0ee1919733ec028dadf9c204ddf">More...</a><br /></td></tr>
 <tr class="separator:ac585f0ee1919733ec028dadf9c204ddf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -156,15 +156,15 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="TCPServerSocket_8h_source.html#l00026">26</a> of file <a class="el" href="TCPServerSocket_8h_source.html">TCPServerSocket.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a2a54360b0df69bbbbd088bb60ba1c93a"></a>
+<a class="anchor" id="a6a02148580ef80a1a610fe29522ca033"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">TCPServerSocket::TCPServerSocket </td>
           <td>(</td>
-          <td class="paramtype">const unsigned&#160;</td>
-          <td class="paramname"><em>iport</em></td><td>)</td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>port</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -203,7 +203,7 @@ Additional Inherited Members</h2></td></tr>
 <p>does nothing </p>
 <p>does nothing </p>
 
-<p>Definition at line <a class="el" href="TCPServerSocket_8cpp_source.html#l00064">64</a> of file <a class="el" href="TCPServerSocket_8cpp_source.html">TCPServerSocket.cpp</a>.</p>
+<p>Definition at line <a class="el" href="TCPServerSocket_8cpp_source.html#l00075">75</a> of file <a class="el" href="TCPServerSocket_8cpp_source.html">TCPServerSocket.cpp</a>.</p>
 
 </div>
 </div>
@@ -234,9 +234,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classServerSocket.html#a1d7054bc388f2d789d2124dd96939d90">ServerSocket</a>.</p>
 
-<p>Definition at line <a class="el" href="TCPServerSocket_8cpp_source.html#l00067">67</a> of file <a class="el" href="TCPServerSocket_8cpp_source.html">TCPServerSocket.cpp</a>.</p>
+<p>Definition at line <a class="el" href="TCPServerSocket_8cpp_source.html#l00078">78</a> of file <a class="el" href="TCPServerSocket_8cpp_source.html">TCPServerSocket.cpp</a>.</p>
 
 <p>References <a class="el" href="SocketFd_8cpp_source.html#l00026">SocketFd::get_in_addr()</a>, <a class="el" href="TCPSocket_8h_source.html#l00018">TCPSocket::slen</a>, <a class="el" href="TCPSocket_8h_source.html#l00020">TCPSocket::their_addr</a>, and <a class="el" href="SocketFd_8h_source.html#l00026">SocketFd::ufds</a>.</p>
+
+<p>Referenced by <a class="el" href="tcp__server_8cpp_source.html#l00010">main()</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -244,6 +246,15 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classTCPServerSocket_a0c169a85290095c3c58b9fae38a1a1d0_cgraph.png" border="0" usemap="#classTCPServerSocket_a0c169a85290095c3c58b9fae38a1a1d0_cgraph" alt=""/></div>
 <map name="classTCPServerSocket_a0c169a85290095c3c58b9fae38a1a1d0_cgraph" id="classTCPServerSocket_a0c169a85290095c3c58b9fae38a1a1d0_cgraph">
 <area shape="rect" id="node2" href="classSocketFd.html#af0d8323eedd465a6a499df1129e19f7d" title="SocketFd::get_in_addr" alt="" coords="236,5,400,32"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classTCPServerSocket_a0c169a85290095c3c58b9fae38a1a1d0_icgraph.png" border="0" usemap="#classTCPServerSocket_a0c169a85290095c3c58b9fae38a1a1d0_icgraph" alt=""/></div>
+<map name="classTCPServerSocket_a0c169a85290095c3c58b9fae38a1a1d0_icgraph" id="classTCPServerSocket_a0c169a85290095c3c58b9fae38a1a1d0_icgraph">
+<area shape="rect" id="node2" href="tcp__server_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="236,5,291,32"/></map>
 </div>
 </p>
 
@@ -259,7 +270,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classTCPServerSocket.html">TCPServerSocket</a></li>
-    <li class="footer">Generated on Thu Oct 2 2014 14:57:29 for 0xSocket by
+    <li class="footer">Generated on Fri Oct 3 2014 17:59:04 for 0xSocket by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

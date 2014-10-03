@@ -1,4 +1,4 @@
-.TH "UDPClientSocket" 3 "Thu Oct 2 2014" "Version 0.2" "0xSocket" \" -*- nroff -*-
+.TH "UDPClientSocket" 3 "Fri Oct 3 2014" "Version 0.3" "0xSocket" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -14,7 +14,7 @@ Inherits \fBUDPSocket\fP\&.
 
 .in +1c
 .ti -1c
-.RI "\fBUDPClientSocket\fP (const char *addr, const unsigned int port)"
+.RI "\fBUDPClientSocket\fP (const std::string addr, const unsigned int port)"
 .br
 .RI "\fIconstruct \fBUDPClientSocket\fP \fP"
 .ti -1c
@@ -27,10 +27,10 @@ Inherits \fBUDPSocket\fP\&.
 .PP 
 A \fBUDPClientSocket\fP is read to \fBsend()\fP and \fBrecv()\fP data after construction if construction failes a runtime_error is thrown BaseCöass is \fBConnection\fP 
 .PP
-Definition at line 21 of file UDPClientSocket\&.h\&.
+Definition at line 22 of file UDPClientSocket\&.h\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "UDPClientSocket::UDPClientSocket (const char *addr, const unsigned intport)"
+.SS "UDPClientSocket::UDPClientSocket (const std::stringaddr, const unsigned intport)"
 
 .PP
 construct \fBUDPClientSocket\fP construct \fBUDPClientSocket\fP 
@@ -52,7 +52,7 @@ References UDPSocket::hints, UDPSocket::p, UDPSocket::rv, UDPSocket::servinfo, a
 .PP
 does nothing does nothing 
 .PP
-Definition at line 37 of file UDPClientSocket\&.cpp\&.
+Definition at line 41 of file UDPClientSocket\&.cpp\&.
 
 .SH "Author"
 .PP 

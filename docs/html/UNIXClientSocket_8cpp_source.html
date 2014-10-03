@@ -25,7 +25,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">0xSocket
-   &#160;<span id="projectnumber">0.2</span>
+   &#160;<span id="projectnumber">0.3</span>
    </div>
   </td>
  </tr>
@@ -69,40 +69,44 @@ $(document).ready(function(){initNavTree('UNIXClientSocket_8cpp_source.html','')
 <div class="contents">
 <a href="UNIXClientSocket_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="UNIXClientSocket_8h.html">UNIXClientSocket.h</a>&gt;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
-<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="classUNIXClientSocket.html#a1c1fd48cd60ea3ee5478ae6b238ab376">    3</a></span>&#160;<a class="code" href="classUNIXClientSocket.html#a1c1fd48cd60ea3ee5478ae6b238ab376">UNIXClientSocket::UNIXClientSocket</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* path) {</div>
+<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="classUNIXClientSocket.html#ae8b2d49770a9f897cf46c18327279cf9">    3</a></span>&#160;<a class="code" href="classUNIXClientSocket.html#ae8b2d49770a9f897cf46c18327279cf9">UNIXClientSocket::UNIXClientSocket</a>(<span class="keyword">const</span> std::string path) {</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;        <span class="keywordflow">if</span> ((<a class="code" href="classSocketFd.html#a0636825d276c3525e0d8af969ce2d3b6">ufds</a>.fd = socket(AF_UNIX, SOCK_STREAM, 0)) == -1) {</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">char</span> *msg = <span class="stringliteral">&quot;UNIXClientSocket::socket() failed&quot;</span>;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                perror(msg);</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;                <span class="keywordflow">throw</span> std::runtime_error(msg);</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        }</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <a class="code" href="classUNIXClientSocket.html#a78c19c12f8befc559e916b41262d5f6e">remote</a>.sun_family = AF_UNIX;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        strcpy(<a class="code" href="classUNIXClientSocket.html#a78c19c12f8befc559e916b41262d5f6e">remote</a>.sun_path, path);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keywordtype">int</span> len = strlen(<a class="code" href="classUNIXClientSocket.html#a78c19c12f8befc559e916b41262d5f6e">remote</a>.sun_path) + <span class="keyword">sizeof</span>(<a class="code" href="classUNIXClientSocket.html#a78c19c12f8befc559e916b41262d5f6e">remote</a>.sun_family);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordflow">if</span> (connect(<a class="code" href="classSocketFd.html#a0636825d276c3525e0d8af969ce2d3b6">ufds</a>.fd, (sockaddr *) &amp;<a class="code" href="classUNIXClientSocket.html#a78c19c12f8befc559e916b41262d5f6e">remote</a>, len) == -1) {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">char</span> *msg = <span class="stringliteral">&quot;UNIXClientSocket::connect() failed&quot;</span>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                perror(msg);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                <span class="keywordflow">throw</span> std::runtime_error(msg);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        }</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classUNIXClientSocket.html#ade64c842f5dba7948419ebdcbec291d6">   22</a></span>&#160;<a class="code" href="classUNIXClientSocket.html#ade64c842f5dba7948419ebdcbec291d6">UNIXClientSocket::~UNIXClientSocket</a>() {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="ttc" id="classUNIXClientSocket_html_a78c19c12f8befc559e916b41262d5f6e"><div class="ttname"><a href="classUNIXClientSocket.html#a78c19c12f8befc559e916b41262d5f6e">UNIXClientSocket::remote</a></div><div class="ttdeci">sockaddr_un remote</div><div class="ttdef"><b>Definition:</b> <a href="UNIXClientSocket_8h_source.html#l00026">UNIXClientSocket.h:26</a></div></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifdef DEBUG</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;                perror(msg);</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                <span class="keywordflow">throw</span> std::runtime_error(msg);</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        }</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <a class="code" href="classUNIXClientSocket.html#a78c19c12f8befc559e916b41262d5f6e">remote</a>.sun_family = AF_UNIX;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        strcpy(<a class="code" href="classUNIXClientSocket.html#a78c19c12f8befc559e916b41262d5f6e">remote</a>.sun_path, path.c_str());</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keywordtype">int</span> len = strlen(<a class="code" href="classUNIXClientSocket.html#a78c19c12f8befc559e916b41262d5f6e">remote</a>.sun_path) + <span class="keyword">sizeof</span>(<a class="code" href="classUNIXClientSocket.html#a78c19c12f8befc559e916b41262d5f6e">remote</a>.sun_family);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordflow">if</span> (connect(<a class="code" href="classSocketFd.html#a0636825d276c3525e0d8af969ce2d3b6">ufds</a>.fd, (sockaddr *) &amp;<a class="code" href="classUNIXClientSocket.html#a78c19c12f8befc559e916b41262d5f6e">remote</a>, len) == -1) {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">char</span> *msg = <span class="stringliteral">&quot;UNIXClientSocket::connect() failed&quot;</span>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifdef DEBUG</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                perror(msg);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                <span class="keywordflow">throw</span> std::runtime_error(msg);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        }</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classUNIXClientSocket.html#ade64c842f5dba7948419ebdcbec291d6">   26</a></span>&#160;<a class="code" href="classUNIXClientSocket.html#ade64c842f5dba7948419ebdcbec291d6">UNIXClientSocket::~UNIXClientSocket</a>() {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="ttc" id="classUNIXClientSocket_html_a78c19c12f8befc559e916b41262d5f6e"><div class="ttname"><a href="classUNIXClientSocket.html#a78c19c12f8befc559e916b41262d5f6e">UNIXClientSocket::remote</a></div><div class="ttdeci">sockaddr_un remote</div><div class="ttdef"><b>Definition:</b> <a href="UNIXClientSocket_8h_source.html#l00027">UNIXClientSocket.h:27</a></div></div>
+<div class="ttc" id="classUNIXClientSocket_html_ae8b2d49770a9f897cf46c18327279cf9"><div class="ttname"><a href="classUNIXClientSocket.html#ae8b2d49770a9f897cf46c18327279cf9">UNIXClientSocket::UNIXClientSocket</a></div><div class="ttdeci">UNIXClientSocket(const std::string path)</div><div class="ttdoc">construct UNIXClientSocket throws runtime_error on failure </div><div class="ttdef"><b>Definition:</b> <a href="UNIXClientSocket_8cpp_source.html#l00003">UNIXClientSocket.cpp:3</a></div></div>
 <div class="ttc" id="UNIXClientSocket_8h_html"><div class="ttname"><a href="UNIXClientSocket_8h.html">UNIXClientSocket.h</a></div></div>
 <div class="ttc" id="classSocketFd_html_a0636825d276c3525e0d8af969ce2d3b6"><div class="ttname"><a href="classSocketFd.html#a0636825d276c3525e0d8af969ce2d3b6">SocketFd::ufds</a></div><div class="ttdeci">pollfd ufds</div><div class="ttdef"><b>Definition:</b> <a href="SocketFd_8h_source.html#l00026">SocketFd.h:26</a></div></div>
-<div class="ttc" id="classUNIXClientSocket_html_a1c1fd48cd60ea3ee5478ae6b238ab376"><div class="ttname"><a href="classUNIXClientSocket.html#a1c1fd48cd60ea3ee5478ae6b238ab376">UNIXClientSocket::UNIXClientSocket</a></div><div class="ttdeci">UNIXClientSocket(const char *path)</div><div class="ttdoc">construct UNIXClientSocket throws runtime_error on failure </div><div class="ttdef"><b>Definition:</b> <a href="UNIXClientSocket_8cpp_source.html#l00003">UNIXClientSocket.cpp:3</a></div></div>
-<div class="ttc" id="classUNIXClientSocket_html_ade64c842f5dba7948419ebdcbec291d6"><div class="ttname"><a href="classUNIXClientSocket.html#ade64c842f5dba7948419ebdcbec291d6">UNIXClientSocket::~UNIXClientSocket</a></div><div class="ttdeci">virtual ~UNIXClientSocket()</div><div class="ttdef"><b>Definition:</b> <a href="UNIXClientSocket_8cpp_source.html#l00022">UNIXClientSocket.cpp:22</a></div></div>
+<div class="ttc" id="classUNIXClientSocket_html_ade64c842f5dba7948419ebdcbec291d6"><div class="ttname"><a href="classUNIXClientSocket.html#ade64c842f5dba7948419ebdcbec291d6">UNIXClientSocket::~UNIXClientSocket</a></div><div class="ttdeci">virtual ~UNIXClientSocket()</div><div class="ttdef"><b>Definition:</b> <a href="UNIXClientSocket_8cpp_source.html#l00026">UNIXClientSocket.cpp:26</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="UNIXClientSocket_8cpp.html">UNIXClientSocket.cpp</a></li>
-    <li class="footer">Generated on Thu Oct 2 2014 14:57:29 for 0xSocket by
+    <li class="footer">Generated on Fri Oct 3 2014 17:59:04 for 0xSocket by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

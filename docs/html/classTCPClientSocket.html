@@ -25,7 +25,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">0xSocket
-   &#160;<span id="projectnumber">0.2</span>
+   &#160;<span id="projectnumber">0.3</span>
    </div>
   </td>
  </tr>
@@ -91,9 +91,9 @@ Collaboration diagram for TCPClientSocket:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3cdffa36ad33265b280c136ad597f9fd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTCPClientSocket.html#a3cdffa36ad33265b280c136ad597f9fd">TCPClientSocket</a> (const char *, const unsigned)</td></tr>
-<tr class="memdesc:a3cdffa36ad33265b280c136ad597f9fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a TCP connection.  <a href="#a3cdffa36ad33265b280c136ad597f9fd">More...</a><br /></td></tr>
-<tr class="separator:a3cdffa36ad33265b280c136ad597f9fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a307cb29bb2f5a476253e73120c8146f1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTCPClientSocket.html#a307cb29bb2f5a476253e73120c8146f1">TCPClientSocket</a> (const std::string, const unsigned)</td></tr>
+<tr class="memdesc:a307cb29bb2f5a476253e73120c8146f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a TCP connection.  <a href="#a307cb29bb2f5a476253e73120c8146f1">More...</a><br /></td></tr>
+<tr class="separator:a307cb29bb2f5a476253e73120c8146f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9607474fe452def202cd23a6d7fecaae"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTCPClientSocket.html#a9607474fe452def202cd23a6d7fecaae">~TCPClientSocket</a> ()</td></tr>
 <tr class="memdesc:a9607474fe452def202cd23a6d7fecaae"><td class="mdescLeft">&#160;</td><td class="mdescRight">does nothing  <a href="#a9607474fe452def202cd23a6d7fecaae">More...</a><br /></td></tr>
 <tr class="separator:a9607474fe452def202cd23a6d7fecaae"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -102,6 +102,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a3bc70a7fdfcabe58f6ca003f450e7b34 inherit pub_methods_classConnection"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e4352edf667bea83001569e9da8a24d inherit pub_methods_classConnection"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConnection.html#a2e4352edf667bea83001569e9da8a24d">~Connection</a> ()</td></tr>
 <tr class="separator:a2e4352edf667bea83001569e9da8a24d inherit pub_methods_classConnection"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b6289d7ad3c45a67e765b9c35160c6d inherit pub_methods_classConnection"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConnection.html#a9b6289d7ad3c45a67e765b9c35160c6d">send</a> (const std::string)</td></tr>
+<tr class="separator:a9b6289d7ad3c45a67e765b9c35160c6d inherit pub_methods_classConnection"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79578c3ac2bdb68a006faa394f4656fd inherit pub_methods_classConnection"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConnection.html#a79578c3ac2bdb68a006faa394f4656fd">recv</a> (std::string &amp;, int)</td></tr>
+<tr class="separator:a79578c3ac2bdb68a006faa394f4656fd inherit pub_methods_classConnection"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab16b8a780c69303beec9b1f67fb596f3 inherit pub_methods_classConnection"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConnection.html#ab16b8a780c69303beec9b1f67fb596f3">recv</a> (char *, const unsigned, const int=-1)</td></tr>
 <tr class="separator:ab16b8a780c69303beec9b1f67fb596f3 inherit pub_methods_classConnection"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5466a66e569e81d891559686f2c7594b inherit pub_methods_classConnection"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConnection.html#a5466a66e569e81d891559686f2c7594b">send</a> (const char *, const unsigned, const int=-1)</td></tr>
@@ -161,18 +165,18 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a54b0073827ac57bbb4ee6c371791db0f inherit pro_attribs_classTCPSocket"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A <a class="el" href="classTCPClientSocket.html">TCPClientSocket</a> establishes a connection on init Afterwards it can be used like a <a class="el" href="classConnection.html">Connection</a> Object. It directly provides <a class="el" href="classConnection.html#a5466a66e569e81d891559686f2c7594b">send()</a> and <a class="el" href="classConnection.html#ab16b8a780c69303beec9b1f67fb596f3">recv()</a> functions on init/connection error the Constructor throws a std::runtime_error </p>
+<div class="textblock"><p>A <a class="el" href="classTCPClientSocket.html">TCPClientSocket</a> establishes a connection on init Afterwards it can be used like a <a class="el" href="classConnection.html">Connection</a> Object. It directly provides <a class="el" href="classConnection.html#a9b6289d7ad3c45a67e765b9c35160c6d">send()</a> and <a class="el" href="classConnection.html#a79578c3ac2bdb68a006faa394f4656fd">recv()</a> functions on init/connection error the Constructor throws a std::runtime_error </p>
 
-<p>Definition at line <a class="el" href="TCPClientSocket_8h_source.html#l00026">26</a> of file <a class="el" href="TCPClientSocket_8h_source.html">TCPClientSocket.h</a>.</p>
+<p>Definition at line <a class="el" href="TCPClientSocket_8h_source.html#l00027">27</a> of file <a class="el" href="TCPClientSocket_8h_source.html">TCPClientSocket.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a3cdffa36ad33265b280c136ad597f9fd"></a>
+<a class="anchor" id="a307cb29bb2f5a476253e73120c8146f1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">TCPClientSocket::TCPClientSocket </td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
+          <td class="paramtype">const std::string&#160;</td>
           <td class="paramname"><em>host</em>, </td>
         </tr>
         <tr>
@@ -194,13 +198,13 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="TCPClientSocket_8cpp_source.html#l00003">3</a> of file <a class="el" href="TCPClientSocket_8cpp_source.html">TCPClientSocket.cpp</a>.</p>
 
-<p>References <a class="el" href="SocketFd_8cpp_source.html#l00026">SocketFd::get_in_addr()</a>, <a class="el" href="TCPSocket_8h_source.html#l00019">TCPSocket::hints</a>, <a class="el" href="Connection_8h_source.html#l00017">Connection::n</a>, <a class="el" href="TCPSocket_8h_source.html#l00019">TCPSocket::p</a>, <a class="el" href="TCPSocket_8h_source.html#l00017">TCPSocket::rv</a>, <a class="el" href="TCPSocket_8h_source.html#l00019">TCPSocket::servinfo</a>, <a class="el" href="Connection_8h_source.html#l00022">Connection::targetaddr</a>, and <a class="el" href="SocketFd_8h_source.html#l00026">SocketFd::ufds</a>.</p>
+<p>References <a class="el" href="SocketFd_8cpp_source.html#l00026">SocketFd::get_in_addr()</a>, <a class="el" href="TCPSocket_8h_source.html#l00019">TCPSocket::hints</a>, <a class="el" href="Connection_8h_source.html#l00018">Connection::n</a>, <a class="el" href="TCPSocket_8h_source.html#l00019">TCPSocket::p</a>, <a class="el" href="TCPSocket_8h_source.html#l00017">TCPSocket::rv</a>, <a class="el" href="TCPSocket_8h_source.html#l00019">TCPSocket::servinfo</a>, <a class="el" href="Connection_8h_source.html#l00023">Connection::targetaddr</a>, and <a class="el" href="SocketFd_8h_source.html#l00026">SocketFd::ufds</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classTCPClientSocket_a3cdffa36ad33265b280c136ad597f9fd_cgraph.png" border="0" usemap="#classTCPClientSocket_a3cdffa36ad33265b280c136ad597f9fd_cgraph" alt=""/></div>
-<map name="classTCPClientSocket_a3cdffa36ad33265b280c136ad597f9fd_cgraph" id="classTCPClientSocket_a3cdffa36ad33265b280c136ad597f9fd_cgraph">
+<div class="center"><img src="classTCPClientSocket_a307cb29bb2f5a476253e73120c8146f1_cgraph.png" border="0" usemap="#classTCPClientSocket_a307cb29bb2f5a476253e73120c8146f1_cgraph" alt=""/></div>
+<map name="classTCPClientSocket_a307cb29bb2f5a476253e73120c8146f1_cgraph" id="classTCPClientSocket_a307cb29bb2f5a476253e73120c8146f1_cgraph">
 <area shape="rect" id="node2" href="classSocketFd.html#af0d8323eedd465a6a499df1129e19f7d" title="SocketFd::get_in_addr" alt="" coords="245,13,409,39"/></map>
 </div>
 </p>
@@ -231,7 +235,7 @@ Here is the call graph for this function:</div>
 <p>does nothing </p>
 <p>does nothing </p>
 
-<p>Definition at line <a class="el" href="TCPClientSocket_8cpp_source.html#l00056">56</a> of file <a class="el" href="TCPClientSocket_8cpp_source.html">TCPClientSocket.cpp</a>.</p>
+<p>Definition at line <a class="el" href="TCPClientSocket_8cpp_source.html#l00062">62</a> of file <a class="el" href="TCPClientSocket_8cpp_source.html">TCPClientSocket.cpp</a>.</p>
 
 </div>
 </div>
@@ -245,7 +249,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classTCPClientSocket.html">TCPClientSocket</a></li>
-    <li class="footer">Generated on Thu Oct 2 2014 14:57:29 for 0xSocket by
+    <li class="footer">Generated on Fri Oct 3 2014 17:59:04 for 0xSocket by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

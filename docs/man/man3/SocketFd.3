@@ -1,4 +1,4 @@
-.TH "SocketFd" 3 "Thu Oct 2 2014" "Version 0.2" "0xSocket" \" -*- nroff -*-
+.TH "SocketFd" 3 "Fri Oct 3 2014" "Version 0.3" "0xSocket" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -114,11 +114,11 @@ set Tiemout on SocketFileDescriptor set Tiemout on SocketFileDescriptor
 .PP
 
 .PP
-Definition at line 47 of file SocketFd\&.cpp\&.
+Definition at line 49 of file SocketFd\&.cpp\&.
 .PP
 References ufds\&.
 .PP
-Referenced by stream_server()\&.
+Referenced by main()\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "pollfd SocketFd::ufds\fC [protected]\fP"
@@ -126,7 +126,7 @@ The Socket File Descriptor as a poll struct for Event Management
 .PP
 Definition at line 26 of file SocketFd\&.h\&.
 .PP
-Referenced by Connection::_poll(), UNIXServerSocket::accept(), TCPServerSocket::accept(), Connection::Connection(), UDPSocket::recv(), UDPSocket::send(), setBlocking(), setNonBlocking(), setTimeout(), SocketFd(), TCPClientSocket::TCPClientSocket(), TCPServerSocket::TCPServerSocket(), UDPClientSocket::UDPClientSocket(), UDPServerSocket::UDPServerSocket(), UNIXClientSocket::UNIXClientSocket(), UNIXServerSocket::UNIXServerSocket(), ~SocketFd(), and UDPSocket::~UDPSocket()\&.
+Referenced by UNIXServerSocket::accept(), TCPServerSocket::accept(), Connection::Connection(), UDPSocket::recv(), UDPSocket::send(), setBlocking(), setNonBlocking(), setTimeout(), SocketFd(), TCPClientSocket::TCPClientSocket(), TCPServerSocket::TCPServerSocket(), UDPClientSocket::UDPClientSocket(), UDPServerSocket::UDPServerSocket(), UNIXClientSocket::UNIXClientSocket(), UNIXServerSocket::UNIXServerSocket(), and ~SocketFd()\&.
 
 .SH "Author"
 .PP 

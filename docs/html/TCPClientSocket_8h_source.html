@@ -25,7 +25,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">0xSocket
-   &#160;<span id="projectnumber">0.2</span>
+   &#160;<span id="projectnumber">0.3</span>
    </div>
   </td>
  </tr>
@@ -82,32 +82,33 @@ $(document).ready(function(){initNavTree('TCPClientSocket_8h_source.html','');})
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span>         <span class="comment">/* log10   */</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;cstdio&gt;</span>        <span class="comment">/* sprintf, fprintf, perror */</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;stdexcept&gt;</span>     <span class="comment">/* runtime_error */</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="Connection_8h.html">Connection.h</a>&gt;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="TCPSocket_8h.html">TCPSocket.h</a>&gt;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classTCPClientSocket.html">   26</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTCPClientSocket.html">TCPClientSocket</a>: <span class="keyword">public</span> <a class="code" href="classConnection.html">Connection</a>, <span class="keyword">public</span> <a class="code" href="classTCPSocket.html">TCPSocket</a> {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="classTCPClientSocket.html#a3cdffa36ad33265b280c136ad597f9fd">TCPClientSocket</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>*, <span class="keyword">const</span> <span class="keywordtype">unsigned</span>);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classTCPClientSocket.html#a9607474fe452def202cd23a6d7fecaae">~TCPClientSocket</a>();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="Connection_8h.html">Connection.h</a>&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="TCPSocket_8h.html">TCPSocket.h</a>&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classTCPClientSocket.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTCPClientSocket.html">TCPClientSocket</a>: <span class="keyword">public</span> <a class="code" href="classConnection.html">Connection</a>, <span class="keyword">public</span> <a class="code" href="classTCPSocket.html">TCPSocket</a> {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="classTCPClientSocket.html#a307cb29bb2f5a476253e73120c8146f1">TCPClientSocket</a>(<span class="keyword">const</span> std::string, <span class="keyword">const</span> <span class="keywordtype">unsigned</span>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classTCPClientSocket.html#a9607474fe452def202cd23a6d7fecaae">~TCPClientSocket</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;};</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="Connection_8h_html"><div class="ttname"><a href="Connection_8h.html">Connection.h</a></div></div>
-<div class="ttc" id="classTCPClientSocket_html_a3cdffa36ad33265b280c136ad597f9fd"><div class="ttname"><a href="classTCPClientSocket.html#a3cdffa36ad33265b280c136ad597f9fd">TCPClientSocket::TCPClientSocket</a></div><div class="ttdeci">TCPClientSocket(const char *, const unsigned)</div><div class="ttdoc">Construct a TCP connection. </div><div class="ttdef"><b>Definition:</b> <a href="TCPClientSocket_8cpp_source.html#l00003">TCPClientSocket.cpp:3</a></div></div>
 <div class="ttc" id="TCPSocket_8h_html"><div class="ttname"><a href="TCPSocket_8h.html">TCPSocket.h</a></div></div>
-<div class="ttc" id="classTCPClientSocket_html_a9607474fe452def202cd23a6d7fecaae"><div class="ttname"><a href="classTCPClientSocket.html#a9607474fe452def202cd23a6d7fecaae">TCPClientSocket::~TCPClientSocket</a></div><div class="ttdeci">virtual ~TCPClientSocket()</div><div class="ttdoc">does nothing </div><div class="ttdef"><b>Definition:</b> <a href="TCPClientSocket_8cpp_source.html#l00056">TCPClientSocket.cpp:56</a></div></div>
-<div class="ttc" id="classTCPClientSocket_html"><div class="ttname"><a href="classTCPClientSocket.html">TCPClientSocket</a></div><div class="ttdef"><b>Definition:</b> <a href="TCPClientSocket_8h_source.html#l00026">TCPClientSocket.h:26</a></div></div>
+<div class="ttc" id="classTCPClientSocket_html_a9607474fe452def202cd23a6d7fecaae"><div class="ttname"><a href="classTCPClientSocket.html#a9607474fe452def202cd23a6d7fecaae">TCPClientSocket::~TCPClientSocket</a></div><div class="ttdeci">virtual ~TCPClientSocket()</div><div class="ttdoc">does nothing </div><div class="ttdef"><b>Definition:</b> <a href="TCPClientSocket_8cpp_source.html#l00062">TCPClientSocket.cpp:62</a></div></div>
+<div class="ttc" id="classTCPClientSocket_html"><div class="ttname"><a href="classTCPClientSocket.html">TCPClientSocket</a></div><div class="ttdef"><b>Definition:</b> <a href="TCPClientSocket_8h_source.html#l00027">TCPClientSocket.h:27</a></div></div>
 <div class="ttc" id="classTCPSocket_html"><div class="ttname"><a href="classTCPSocket.html">TCPSocket</a></div><div class="ttdef"><b>Definition:</b> <a href="TCPSocket_8h_source.html#l00015">TCPSocket.h:15</a></div></div>
-<div class="ttc" id="classConnection_html"><div class="ttname"><a href="classConnection.html">Connection</a></div><div class="ttdef"><b>Definition:</b> <a href="Connection_8h_source.html#l00013">Connection.h:13</a></div></div>
+<div class="ttc" id="classTCPClientSocket_html_a307cb29bb2f5a476253e73120c8146f1"><div class="ttname"><a href="classTCPClientSocket.html#a307cb29bb2f5a476253e73120c8146f1">TCPClientSocket::TCPClientSocket</a></div><div class="ttdeci">TCPClientSocket(const std::string, const unsigned)</div><div class="ttdoc">Construct a TCP connection. </div><div class="ttdef"><b>Definition:</b> <a href="TCPClientSocket_8cpp_source.html#l00003">TCPClientSocket.cpp:3</a></div></div>
+<div class="ttc" id="classConnection_html"><div class="ttname"><a href="classConnection.html">Connection</a></div><div class="ttdef"><b>Definition:</b> <a href="Connection_8h_source.html#l00014">Connection.h:14</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="TCPClientSocket_8h.html">TCPClientSocket.h</a></li>
-    <li class="footer">Generated on Thu Oct 2 2014 14:57:29 for 0xSocket by
+    <li class="footer">Generated on Fri Oct 3 2014 17:59:04 for 0xSocket by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

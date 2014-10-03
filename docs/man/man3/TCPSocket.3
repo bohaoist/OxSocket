@@ -1,4 +1,4 @@
-.TH "TCPSocket" 3 "Thu Oct 2 2014" "Version 0.2" "0xSocket" \" -*- nroff -*-
+.TH "TCPSocket" 3 "Fri Oct 3 2014" "Version 0.3" "0xSocket" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -56,13 +56,15 @@ Definition at line 15 of file TCPSocket\&.h\&.
 .SS "TCPSocket::TCPSocket ()\fC [protected]\fP"
 
 .PP
-Definition at line 6 of file TCPSocket\&.cpp\&.
+Definition at line 7 of file TCPSocket\&.cpp\&.
 .PP
 References p, rv, servinfo, and slen\&.
 .SS "TCPSocket::~TCPSocket ()\fC [virtual]\fP"
 
 .PP
 Definition at line 3 of file TCPSocket\&.cpp\&.
+.PP
+References servinfo\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "addrinfo TCPSocket::hints\fC [protected]\fP"
@@ -88,7 +90,7 @@ Referenced by TCPClientSocket::TCPClientSocket(), TCPServerSocket::TCPServerSock
 .PP
 Definition at line 19 of file TCPSocket\&.h\&.
 .PP
-Referenced by TCPClientSocket::TCPClientSocket(), TCPServerSocket::TCPServerSocket(), and TCPSocket()\&.
+Referenced by TCPClientSocket::TCPClientSocket(), TCPServerSocket::TCPServerSocket(), TCPSocket(), and ~TCPSocket()\&.
 .SS "socklen_t TCPSocket::slen\fC [protected]\fP"
 
 .PP

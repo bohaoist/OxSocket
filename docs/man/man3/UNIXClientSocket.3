@@ -1,4 +1,4 @@
-.TH "UNIXClientSocket" 3 "Thu Oct 2 2014" "Version 0.2" "0xSocket" \" -*- nroff -*-
+.TH "UNIXClientSocket" 3 "Fri Oct 3 2014" "Version 0.3" "0xSocket" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -14,7 +14,7 @@ Inherits \fBConnection\fP\&.
 
 .in +1c
 .ti -1c
-.RI "\fBUNIXClientSocket\fP (const char *path)"
+.RI "\fBUNIXClientSocket\fP (const std::string path)"
 .br
 .RI "\fIconstruct \fBUNIXClientSocket\fP throws runtime_error on failure \fP"
 .ti -1c
@@ -33,10 +33,10 @@ Inherits \fBConnection\fP\&.
 .PP 
 A \fBUNIXClientSocket\fP establishes a connection on construct Afterwards it can be used like a \fBConnection\fP Object\&. It directly provides \fBsend()\fP and \fBrecv()\fP functions on init/connection error the Constructor throws a std::runtime_error 
 .PP
-Definition at line 21 of file UNIXClientSocket\&.h\&.
+Definition at line 22 of file UNIXClientSocket\&.h\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "UNIXClientSocket::UNIXClientSocket (const char *path)"
+.SS "UNIXClientSocket::UNIXClientSocket (const std::stringpath)"
 
 .PP
 construct \fBUNIXClientSocket\fP throws runtime_error on failure construct \fBUNIXClientSocket\fP throws runtime_error on failure 
@@ -54,13 +54,13 @@ References remote, and SocketFd::ufds\&.
 .SS "UNIXClientSocket::~UNIXClientSocket ()\fC [virtual]\fP"
 
 .PP
-Definition at line 22 of file UNIXClientSocket\&.cpp\&.
+Definition at line 26 of file UNIXClientSocket\&.cpp\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "sockaddr_un UNIXClientSocket::remote\fC [private]\fP"
 
 .PP
-Definition at line 26 of file UNIXClientSocket\&.h\&.
+Definition at line 27 of file UNIXClientSocket\&.h\&.
 .PP
 Referenced by UNIXClientSocket()\&.
 
