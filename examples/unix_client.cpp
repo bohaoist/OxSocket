@@ -55,7 +55,7 @@ int main(int argc, char* argv[]) {
 	} catch (const runtime_error& error) {
 		cout << error.what() << endl;
 	}
-	cout << "TCP Client finished" << endl;
+	cout << "UNIX Client finished" << endl;
 	return 0;
 }
 

@@ -16,7 +16,7 @@ namespace OxSocket {
  */
 class Connection: public SocketFd {
 private:
-	int nbytes;
+	int n;
 	unsigned int sum;
 //	int _poll(const int = -1);
 public:

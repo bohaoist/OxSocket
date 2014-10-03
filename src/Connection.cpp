@@ -4,7 +4,7 @@ namespace OxSocket {
 
 Connection::Connection(const int fd, const std::string taddr) {
 	targetaddr = taddr;
-	sum = nbytes = 0;
+	sum = n = 0;
 	this->ufds.fd = fd;
 	ufds.events = POLLIN | POLLOUT | POLLPRI;
 }
@@ -13,16 +13,16 @@ Connection::~Connection() {
 }
 
 #define WEADMACRO(function) \
-nbytes = sum = 0; \
+n = sum = 0; \
 do { \
-	nbytes = function(ufds.fd, buf + sum, size - sum); \
-	if (nbytes == 0) { \
+	n = function(ufds.fd, buf + sum, size - sum); \
+	if (n == 0) { \
 		return (sum); /* End of File/Stream */\
-	} else if (nbytes < 0) { \
+	} else if (n < 0) { \
 		/*::perror(#function);*/ \
 		return (-1); /* Error */\
 	} else { \
-		sum += nbytes; \
+		sum += n; \
 	} \
 } while (sum < size); \
 return (sum);

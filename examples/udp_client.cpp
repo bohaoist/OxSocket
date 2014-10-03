@@ -13,8 +13,8 @@ int main(int argc, char* argv[]) {
 		return 1;
 	}
 	//
-	char recvbuf[255];
-	int nbytes = 0;
+	char buf[255];
+	int n = 0;
 	//
 	string server = argv[1];
 	unsigned port = atoi(argv[2]);
@@ -31,15 +31,15 @@ int main(int argc, char* argv[]) {
 			cout << "ok" << endl;
 			//
 			cout << "Sending Data ... " << flush;
-			nbytes = sock.send(msg.data(), msg.size());
-			if (nbytes > 0) {
+			n = sock.send(msg.data(), msg.size());
+			if (n > 0) {
 				cout << "ok" << endl;
 				cout << "< " << msg << endl;
 				//
 				cout << "Recving Data ... " << flush;
-				nbytes = sock.recv(recvbuf, sizeof(recvbuf));
-				if (nbytes > 0) {
-					msg = string(recvbuf, nbytes);
+				n = sock.recv(buf, sizeof(buf));
+				if (n > 0) {
+					msg = string(buf, n);
 					cout << "ok" << endl;
 					cout << "> " << msg << endl;
 				} else {
