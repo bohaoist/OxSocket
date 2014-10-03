@@ -30,13 +30,13 @@ int main(int argc, char* argv[]) {
 		if (0 == sock.setTimeout(5, 0)) {
 			cout << "ok" << endl;
 			//
-			cout << "Sending Message ... " << flush;
+			cout << "Sending Data ... " << flush;
 			nbytes = sock.send(msg.data(), msg.size());
 			if (nbytes > 0) {
 				cout << "ok" << endl;
 				cout << "< " << msg << endl;
 				//
-				cout << "Recving Message ... " << flush;
+				cout << "Recving Data ... " << flush;
 				nbytes = sock.recv(recvbuf, sizeof(recvbuf));
 				if (nbytes > 0) {
 					msg = string(recvbuf, nbytes);

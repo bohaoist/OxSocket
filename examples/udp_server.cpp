@@ -28,7 +28,7 @@ int main(int argc, char* argv[]) {
 		string msg = "";
 		while (true) {
 			//
-			cout << "Recving Message ... " << flush;
+			cout << "Recving Data ... " << flush;
 			int n = sock.recv(buf, sizeof(buf));
 			if (n > 0) {
 				cout << "ok" << endl;
@@ -38,7 +38,7 @@ int main(int argc, char* argv[]) {
 				//
 				// msg = "Understood! Thanks Bye.";
 				//
-				cout << "Sending Message ... " << flush;
+				cout << "Sending Data ... " << flush;
 				n = sock.send(msg.data(), msg.size());
 				if (n > 0) {
 					cout << "ok" << endl;

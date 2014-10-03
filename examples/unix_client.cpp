@@ -29,14 +29,14 @@ int main(int argc, char* argv[]) {
 		if (0 == con.setTimeout(5, 0)) {
 			cout << "ok" << endl;
 			//
-			cout << "Sending Message ... " << flush;
+			cout << "Sending Data ... " << flush;
 			msg += EOM;
 			n = con.send(msg.data(), msg.size());
 			if (n > 0) {
 				cout << "ok" << endl;
 				//
 				msg = "";
-				cout << "Recving Message ... " << flush;
+				cout << "Recving Data ... " << flush;
 				while (0 < (n = con.recv(&buf, sizeof(buf))) and EOM != buf) {
 					msg += buf;
 				}
