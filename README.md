@@ -30,7 +30,7 @@ save as [mini_udp_server.cpp](examples/mini_udp_server.cpp) and build with:
 
 ```Bash
 
-	c++ -I0xSocket/include -l0xSocket -L0xSocket/lib mini\_udp\_server.cpp -o mini\_udp\_server.exe
+	c++ -I0xSocket/include -l0xSocket -L0xSocket/lib mini_udp_server.cpp -o mini_udp_server.exe
 ```
 ```C++
 
@@ -57,7 +57,7 @@ save as [mini_udp_client.cpp](examples/mini_udp_client.cpp) and build with:
 
 ```Bash
 
-	c++ -I0xSocket/include -l0xSocket -L0xSocket/lib udp\_echo\_client.cpp -o mini\_udp\_client.exe	
+	c++ -I0xSocket/include -l0xSocket -L0xSocket/lib udp_echo_client.cpp -o mini_udp_client.exe	
 ```
 
 
