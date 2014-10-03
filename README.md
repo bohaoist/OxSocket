@@ -17,27 +17,33 @@ int bsize = sock.recv(buf,sizeof(buf));
 std::cout << std::string(buf,bsize) << std::endl;
 ```
 
-## Build the Library and Examples?
+## Build the Library?
 
 ```Bash
     git clone https://github.com/inbre001/0xSocket.git;
-    cd Socket/Debug;
-    make;
-    cd ../Example;
+    cd Socket/lib;
     make;
 ```
 
 ## How do i use it? 
 
-* Add \<Socket.h\> to your sourcefile
-* Add the include path -I/path/to/0xSocket/include to your compiler options (cflags)
-* Add lastly add the linker flag -l0xSocket (ldflags)
+* include \<Socket.h\> to your code
+* add the include path -I/path/to/0xSocket/include to your compiler options (cflags)
+* add lastly add the linker flag -l0xSocket (ldflags)
 
 ## Examples
 
-Have a look at Examples.cpp to get started quickly.
+Have a look at Examples in the examples folder to get started quickly.
 
-*  [Server and Client Examples for TCP,UDP and UNIX ](src/Example.cpp)
+*  [ UDP Client ](example/udp_client.cpp)
+*  [ UDP Server ](example/udp_server.cpp)
+*  [ TCP Client ](example/tcp_client.cpp)
+*  [ TCP Server ](example/tcp_server.cpp)
+
+*  [ UNIX Client ](example/unix_client.cpp)
+*  [ UNIX Server ](example/unix_server.cpp)
+
+*  [ HTTP Client ](example/http_client.cpp)
 
 ## What next?
 
