@@ -37,10 +37,10 @@ Have a look at Examples in the examples folder to get started quickly.
 
 |  Clients                                 | Server                                   |
 | ---------------------------------------- |:----------------------------------------:|
-|  [ UDP Client ](example/udp_client.cpp)  | [ UDP Server ](example/udp_server.cpp)   |
-|  [ TCP Client ](example/tcp_client.cpp)  | [ TCP Server ](example/tcp_server.cpp)   |
-|  [ UNIX Client ](example/unix_client.cpp)| [ UNIX Server ](example/unix_server.cpp) |
-|  [ HTTP Client ](example/http_client.cpp)| [ HTTP Client ](example/http_server.cpp) |
+|  [ UDP Client ](examples/udp_client.cpp)  | [ UDP Server ](examples/udp_server.cpp)   |
+|  [ TCP Client ](examples/tcp_client.cpp)  | [ TCP Server ](examples/tcp_server.cpp)   |
+|  [ UNIX Client ](examples/unix_client.cpp)| [ UNIX Server ](examples/unix_server.cpp) |
+|  [ HTTP Client ](examples/http_client.cpp)| [ HTTP Client ](examples/http_server.cpp) |
 
 ## What next?
 
