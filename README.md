@@ -35,11 +35,12 @@ std::cout << std::string(buf,bsize) << std::endl;
 
 Have a look at Examples in the examples folder to get started quickly.
 
-| ---------------------------------------- |:---------------------------------------:|
-|  [ UDP Client ](example/udp_client.cpp)  | [ UDP Server ](example/udp_server.cpp)  |
-|  [ TCP Client ](example/tcp_client.cpp)  |[ TCP Server ](example/tcp_server.cpp)   |
-|  [ UNIX Client ](example/unix_client.cpp)| [ UNIX Server ](example/unix_server.cpp)|
-|  [ HTTP Client ](example/http_client.cpp)| [ HTTP Client ](example/http_server.cpp)|
+|  Clients                                 | Server                                   |
+| ---------------------------------------- |:----------------------------------------:|
+|  [ UDP Client ](example/udp_client.cpp)  | [ UDP Server ](example/udp_server.cpp)   |
+|  [ TCP Client ](example/tcp_client.cpp)  | [ TCP Server ](example/tcp_server.cpp)   |
+|  [ UNIX Client ](example/unix_client.cpp)| [ UNIX Server ](example/unix_server.cpp) |
+|  [ HTTP Client ](example/http_client.cpp)| [ HTTP Client ](example/http_server.cpp) |
 
 ## What next?
 
