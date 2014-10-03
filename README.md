@@ -6,8 +6,8 @@ It makes Socket Communication as easy as this:
 
 ```C++
 
-	#include <iostream> /* cout */
-	#include <string>   /* string */
+	#include <iostream>
+	#include <string>
 	#include <0xSocket.h>
 
 	using namespace std;
