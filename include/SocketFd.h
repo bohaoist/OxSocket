@@ -10,6 +10,8 @@ extern "C" {
 #include <poll.h>       /* poll */
 }
 
+namespace OxSocket {
+
 /**
  * \brief  Virtual Base for SocketFileDescriptor
  * \details Virtual Base for SocketFileDescriptor.
@@ -66,4 +68,6 @@ public:
 	int setTimeout(const unsigned int sec, const unsigned int msec = 0);
 
 };
+}
 #endif
+

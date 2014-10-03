@@ -18,6 +18,8 @@ extern "C" {
 #include <Connection.h>
 #include <TCPSocket.h>
 
+namespace OxSocket {
+
 /**
  * A TCPClientSocket establishes a connection on init
  * Afterwards it can be used like a Connection Object.
@@ -39,5 +41,6 @@ public:
 	 */
 	virtual ~TCPClientSocket();
 };
+}
 
 #endif

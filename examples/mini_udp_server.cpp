@@ -6,7 +6,7 @@ using namespace std;
 
 int main() {
 
-	UDPServerSocket sock(1234);
+	OxSocket::UDPServerSocket sock(1234);
 	char buf[255];
 	int n = 0;
 

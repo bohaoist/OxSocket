@@ -14,3 +14,5 @@
 /udp_server/
 /unix_client/
 /unix_server/
+/tcp_chat_server/
+/tcp_client/

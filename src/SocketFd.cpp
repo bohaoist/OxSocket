@@ -1,5 +1,5 @@
 #include <SocketFd.h>
-
+namespace OxSocket {
 SocketFd::SocketFd() {
 	this->ufds.fd = -1;
 }
@@ -70,5 +70,6 @@ int SocketFd::setTimeout(const unsigned int sec, const unsigned int usec) {
 
 	return (0);
 
+}
 }
 

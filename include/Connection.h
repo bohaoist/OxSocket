@@ -4,19 +4,20 @@
 extern "C" {
 #include <stdio.h>      /* perror */
 #include <sys/unistd.h> /* read(),write() */
-//#include <poll.h>       /* poll, POLLIN, POLLOUT, POLLPRI */
+#include <poll.h>       /* poll, POLLIN, POLLOUT, POLLPRI */
 }
 #include <iostream>
 #include <string>
 #include <SocketFd.h>
 
+namespace OxSocket {
 /**
  *
  */
 class Connection: public SocketFd {
 private:
 	int nbytes;
-	uint sum;
+	unsigned int sum;
 //	int _poll(const int = -1);
 public:
 	std::string targetaddr;
@@ -28,5 +29,5 @@ public:
 	int send(const char*, const unsigned int);
 
 };
-
+}
 #endif

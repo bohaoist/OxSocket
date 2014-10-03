@@ -4,6 +4,7 @@
 #include <0xSocket.h>
 
 using namespace std;
+using OxSocket::TCPClientSocket;
 
 int main(int argc, char* argv[]) {
 

@@ -9,6 +9,7 @@ extern "C" {
 
 #include <Connection.h>
 
+namespace OxSocket {
 /**
  * virtual base for UDP Sockets
  * implements send() and recv() for Client and Server Sockets
@@ -46,5 +47,5 @@ public:
 	 */
 	virtual ~UDPSocket();
 };
-
+}
 #endif

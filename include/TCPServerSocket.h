@@ -17,6 +17,8 @@ extern "C" {
 #include <TCPSocket.h>
 #include <ServerSocket.h>
 
+namespace OxSocket {
+
 /**
  * A TCPServerSocket provides a means for TCP Clients to be Accepted
  * with the accept() methode it provides
@@ -46,5 +48,6 @@ public:
 	 */
 	Connection* accept();
 };
+}
 
 #endif

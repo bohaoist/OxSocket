@@ -23,7 +23,7 @@ int main(int argc, char* argv[]) {
 	try {
 
 		cout << "Creating TCP Client Socket ... " << flush;
-		TCPClientSocket con(server, port);
+		OxSocket::TCPClientSocket con(server, port);
 
 		cout << " ok" << endl;
 		//

@@ -1,5 +1,5 @@
 #include <UDPServerSocket.h>
-
+namespace OxSocket {
 UDPServerSocket::UDPServerSocket(const unsigned port) {
 
 	memset(&hints, 0, sizeof hints);
@@ -52,3 +52,4 @@ UDPServerSocket::UDPServerSocket(const unsigned port) {
 UDPServerSocket::~UDPServerSocket() {
 }
 
+}

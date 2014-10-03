@@ -23,7 +23,7 @@ int main(int argc, char* argv[]) {
 	try {
 		//
 		cout << "Creating UDP Client Socket ... " << flush;
-		UDPClientSocket sock(server, port);
+		OxSocket::UDPClientSocket sock(server, port);
 		cout << " ok" << endl;
 		//
 		cout << "Setting Timeout on Socket ... " << flush;

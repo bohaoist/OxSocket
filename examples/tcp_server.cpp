@@ -15,14 +15,14 @@ int main(int argc, char* argv[]) {
 	char buf = '\0';
 	int n = 0;
 	string msg = "";
-	Connection *con = NULL;
+	OxSocket::Connection *con = NULL;
 	//
 	unsigned port = atoi(argv[1]);
 
 	try {
 
 		cout << "Creating TCP Server Socket ... " << flush;
-		TCPServerSocket sock(port);
+		OxSocket::TCPServerSocket sock(port);
 		cout << "ok" << endl;
 
 		//

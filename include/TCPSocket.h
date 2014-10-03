@@ -7,6 +7,7 @@ extern "C" {
 #include <sys/socket.h>   /* sockaddr_storage */
 }
 
+namespace OxSocket {
 /**
  *  \brief Virtual Base
  *  \details Virtual Base
@@ -21,4 +22,5 @@ protected:
 public:
 	virtual ~TCPSocket();
 };
+}
 #endif

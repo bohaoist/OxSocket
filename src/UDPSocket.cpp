@@ -1,5 +1,5 @@
 #include <UDPSocket.h>
-
+namespace OxSocket {
 UDPSocket::UDPSocket() {
 	p = 0;
 	servinfo = 0;
@@ -16,4 +16,5 @@ int UDPSocket::send(const char* buf, const unsigned int size) {
 
 int UDPSocket::recv(char* buf, const unsigned int size) {
 	return (recvfrom(ufds.fd, (void*) buf, size, 0, p->ai_addr, &p->ai_addrlen));
+}
 }

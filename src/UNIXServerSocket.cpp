@@ -1,5 +1,5 @@
 #include <UNIXServerSocket.h>
-
+namespace OxSocket {
 UNIXServerSocket::UNIXServerSocket(std::string path) {
 
 	last_new_sock = -1;
@@ -36,7 +36,7 @@ UNIXServerSocket::UNIXServerSocket(std::string path) {
 }
 
 UNIXServerSocket::~UNIXServerSocket() {
-	unlink(local.sun_path);
+	::unlink(local.sun_path);
 }
 
 Connection* UNIXServerSocket::accept() {
@@ -51,3 +51,4 @@ Connection* UNIXServerSocket::accept() {
 	return (new Connection(last_new_sock));
 }
 
+}

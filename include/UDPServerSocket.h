@@ -12,7 +12,7 @@ extern "C" {
 #include <stdexcept>    /* runtime_error */
 
 #include <UDPSocket.h>
-
+namespace OxSocket {
 /**
  * A UDPServerSocket is a UDP listening Socket
  * provides send() and recv() methods after construction
@@ -34,5 +34,6 @@ public:
 	 */
 	virtual ~UDPServerSocket();
 };
+}
 
 #endif

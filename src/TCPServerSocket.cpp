@@ -1,5 +1,5 @@
 #include <TCPServerSocket.h>
-
+namespace OxSocket {
 TCPServerSocket::TCPServerSocket(const unsigned port) {
 
 	memset(&hints, 0, sizeof hints);
@@ -82,7 +82,9 @@ Connection* TCPServerSocket::accept() {
 	const int tmp = ::accept(ufds.fd, (sockaddr*) &their_addr, &slen);
 
 	if (-1 == tmp) {
+#ifdef DEBUG
 		::perror("TCPServerSocket::accept() failed");
+#endif
 		return (NULL);
 	}
 
@@ -91,4 +93,5 @@ Connection* TCPServerSocket::accept() {
 			sizeof(s));
 
 	return (new Connection(tmp, s));
+}
 }

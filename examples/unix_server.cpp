@@ -16,7 +16,7 @@ int main(int argc, char* argv[]) {
 	char buf = '\0';
 	int n = 0;
 	string msg = "";
-	Connection *con = NULL;
+	OxSocket::Connection *con = NULL;
 
 	//
 	std::string sockfile = argv[1];
@@ -24,7 +24,7 @@ int main(int argc, char* argv[]) {
 	try {
 
 		cout << "Creating UNIX Server Socket ... " << flush;
-		UNIXServerSocket sock(sockfile);
+		OxSocket::UNIXServerSocket sock(sockfile);
 		cout << "ok" << endl;
 
 		//

@@ -4,6 +4,7 @@
 #include <Connection.h>
 #include <SocketFd.h>
 
+namespace OxSocket {
 /**
  * \brief Virtual Base
  */
@@ -14,5 +15,6 @@ public:
 	virtual ~AcceptSocket();
 	virtual Connection* accept() = 0;
 };
+}
 
 #endif

@@ -18,6 +18,7 @@ extern "C" {
 #include <Connection.h>
 #include <ServerSocket.h>
 
+namespace OxSocket {
 /**
  * A UNIXServerSocket provides a means for UNIX Clients to be Accepted
  * with the accept() methode it provides
@@ -42,5 +43,5 @@ public:
 	virtual ~UNIXServerSocket();
 	Connection* accept();
 };
-
+}
 #endif

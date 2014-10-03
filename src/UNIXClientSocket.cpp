@@ -1,5 +1,5 @@
 #include <UNIXClientSocket.h>
-
+namespace OxSocket {
 UNIXClientSocket::UNIXClientSocket(const std::string path) {
 
 	if ((ufds.fd = socket(AF_UNIX, SOCK_STREAM, 0)) == -1) {
@@ -26,3 +26,4 @@ UNIXClientSocket::UNIXClientSocket(const std::string path) {
 UNIXClientSocket::~UNIXClientSocket() {
 }
 
+}

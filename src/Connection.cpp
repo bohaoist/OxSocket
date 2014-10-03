@@ -1,9 +1,11 @@
 #include <Connection.h>
 
+namespace OxSocket {
+
 Connection::Connection(const int fd, const std::string taddr) {
 	targetaddr = taddr;
 	sum = nbytes = 0;
-	ufds.fd = fd;
+	this->ufds.fd = fd;
 	ufds.events = POLLIN | POLLOUT | POLLPRI;
 }
 
@@ -13,11 +15,11 @@ Connection::~Connection() {
 #define WEADMACRO(function) \
 nbytes = sum = 0; \
 do { \
-	nbytes = ::function(ufds.fd, buf + sum, size - sum); \
+	nbytes = function(ufds.fd, buf + sum, size - sum); \
 	if (nbytes == 0) { \
 		return (sum); /* End of File/Stream */\
 	} else if (nbytes < 0) { \
-		::perror(#function); \
+		/*::perror(#function);*/ \
 		return (-1); /* Error */\
 	} else { \
 		sum += nbytes; \
@@ -48,4 +50,5 @@ int Connection::recv(char *buf, const unsigned int size) {
 //#endif
 //	return (rv);
 //}
+}
 

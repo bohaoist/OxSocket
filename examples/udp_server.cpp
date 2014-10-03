@@ -17,7 +17,7 @@ int main(int argc, char* argv[]) {
 
 	try {
 		cout << "Creating UDP Server Socket ..." << flush;
-		UDPServerSocket sock(port);
+		OxSocket::UDPServerSocket sock(port);
 		cout << "ok" << endl;
 
 //		cout << "Setting Timeout ...";

@@ -13,6 +13,7 @@ extern "C" {
 
 #include <Connection.h>
 
+namespace OxSocket {
 /**
  * A UNIXClientSocket establishes a connection on construct
  * Afterwards it can be used like a Connection Object.
@@ -34,5 +35,5 @@ public:
 	UNIXClientSocket(const std::string path);
 	virtual ~UNIXClientSocket();
 };
-
+}
 #endif

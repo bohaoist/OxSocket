@@ -5,7 +5,8 @@ A C++ object abstraction layer for TCP, UDP and UNIX Socket communications
 It makes Socket Communication as easy as this:
 
 ```C++
-
+	
+	// Mini UDP Server 
 	#include <iostream>
 	#include <string>
 	#include <0xSocket.h>
@@ -14,7 +15,7 @@ It makes Socket Communication as easy as this:
 
 	int main() {
 
-		UDPServerSocket sock(1234);
+		OxSocket::UDPServerSocket sock(1234);
 		char buf[255];
 		int bsize = 0;
 		
@@ -33,6 +34,7 @@ c++ -I0xSocket/include -l0xSocket -L0xSocket/lib mini_udp_server.cpp -o mini_udp
 ```
 ```C++
 
+	// Mini UDP Client
 	#include <iostream>
 	#include <string>  
 	#include <0xSocket.h>  
@@ -44,7 +46,7 @@ c++ -I0xSocket/include -l0xSocket -L0xSocket/lib mini_udp_server.cpp -o mini_udp
 		char buf[255];
 		string msg = "Hello World";
 		
-		UDPClientSocket sock("127.0.0.1", 1234);
+		OxSocket::UDPClientSocket sock("127.0.0.1", 1234);
 		sock.send(msg.data(), msg.size());		
 		int bsize = sock.recv(buf, sizeof(buf));
 		cout << string(buf, bsize) << endl;
@@ -71,8 +73,8 @@ c++ -I0xSocket/include -l0xSocket -L0xSocket/lib mini_udp_client.cpp -o mini_udp
 
 ## How do i use it? 
 
-* include \<0xSocket.h\> to your code
-* add the include path -I/path/to/0xSocket/include to your compiler options (cflags)
+* include \<0xSocket.h\> in your code
+* add include path -I/path/to/0xSocket/include to your compiler options (cflags)
 * add lastly add the linker flag -l0xSocket (ldflags)
 
 # Examples
@@ -87,8 +89,6 @@ Have a look at Examples in the examples folder to get started quickly.
 Try writing your own IRC Client or a DNS or even NTP Client.
 
 ## Happy hacking.
-
-## TODO 
 
 ## Not so Important Stuff
 

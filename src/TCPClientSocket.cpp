@@ -1,5 +1,7 @@
 #include <TCPClientSocket.h>
 
+namespace OxSocket {
+
 TCPClientSocket::TCPClientSocket(const std::string host, const unsigned iport) {
 
 	const unsigned nb_digits = (
@@ -61,4 +63,5 @@ TCPClientSocket::TCPClientSocket(const std::string host, const unsigned iport) {
 
 TCPClientSocket::~TCPClientSocket() {
 
+}
 }

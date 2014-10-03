@@ -1,5 +1,5 @@
 #include <UDPClientSocket.h>
-
+namespace OxSocket {
 UDPClientSocket::UDPClientSocket(const std::string addr, const unsigned port) {
 
 	memset(&hints, 0, sizeof hints);
@@ -39,5 +39,6 @@ UDPClientSocket::UDPClientSocket(const std::string addr, const unsigned port) {
 }
 
 UDPClientSocket::~UDPClientSocket() {
+}
 }
 

@@ -22,7 +22,7 @@ int main(int argc, char* argv[]) {
 	try {
 
 		cout << "Creating UNIX Client Socket ... " << flush;
-		UNIXClientSocket con(sockfile);
+		OxSocket::UNIXClientSocket con(sockfile);
 		cout << " ok" << endl;
 		//
 		cout << "Setting Timeout on Socket ... " << flush;

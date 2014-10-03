@@ -14,6 +14,7 @@ extern "C" {
 
 #include <UDPSocket.h>
 
+namespace OxSocket {
 /**
  * A UDPClientSocket is read to send() and recv() data after construction
  * if construction failes a runtime_error is thrown
@@ -35,5 +36,6 @@ public:
 	 */
 	virtual ~UDPClientSocket();
 };
+}
 
 #endif

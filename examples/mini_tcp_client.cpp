@@ -11,7 +11,7 @@ int main(int argc, char* argv[]) {
 	//
 	string msg = "Hello World";
 
-	TCPClientSocket con("127.0.0.1", 1234);
+	OxSocket::TCPClientSocket con("127.0.0.1", 1234);
 	con.setTimeout(5, 0);
 
 	msg += EOM;
