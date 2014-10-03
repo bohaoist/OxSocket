@@ -37,19 +37,32 @@ int Connection::recv(char *buf, const unsigned size, const int) {
 	WEADMACRO(read)
 }
 
+int Connection::send(const std::string in) {
+	return this->send(in.c_str(), in.size());
+}
+
+int Connection::recv(std::string& out, int size) {
+	char buf[size];
+	int n = this->recv(buf, size);
+	if (n > 0) {
+		out = std::string(buf,n);
+	}
+	return n;
+}
+
 #undef WEADMACRO
 
-int Connection::_poll(const int msec) {
-	std::cout << "poll > " << std::endl;
-	int rv = ::poll(&ufds, 1, msec);
-	std::cout << "< poll  " << std::endl;
-#ifdef DEBUG
-	if (0 > rv) {
-		::perror("poll error");
-	} else if (0 == rv) {
-		::perror("poll timeout");
-	} //else 0 < rv
-#endif
-	return (rv);
-}
+//int Connection::_poll(const int msec) {
+//	std::cout << "poll > " << std::endl;
+//	int rv = ::poll(&ufds, 1, msec);
+//	std::cout << "< poll  " << std::endl;
+//#ifdef DEBUG
+//	if (0 > rv) {
+//		::perror("poll error");
+//	} else if (0 == rv) {
+//		::perror("poll timeout");
+//	} //else 0 < rv
+//#endif
+//	return (rv);
+//}
 

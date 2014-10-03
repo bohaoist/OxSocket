@@ -32,7 +32,7 @@ public:
 	 * \details constructs a listening Socket
 	 *          will throw runtime_error if something goes wrong
 	 */
-	TCPServerSocket(const unsigned);
+	TCPServerSocket(const unsigned int);
 
 	/**
 	 * \brief  does nothing

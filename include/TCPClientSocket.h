@@ -13,6 +13,7 @@ extern "C" {
 #include <cmath>         /* log10   */
 #include <cstdio>        /* sprintf, fprintf, perror */
 #include <stdexcept>     /* runtime_error */
+#include <string>
 
 #include <Connection.h>
 #include <TCPSocket.h>
@@ -30,7 +31,7 @@ public:
 	 * \details Construct a TCP connection
 	 *          on error throws std::runtime_error
 	 */
-	TCPClientSocket(const char*, const unsigned);
+	TCPClientSocket(const std::string, const unsigned);
 
 	/**
 	 * \brief does nothing

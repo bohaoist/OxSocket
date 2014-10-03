@@ -1,6 +1,6 @@
 #include <TCPServerSocket.h>
 
-TCPServerSocket::TCPServerSocket(const unsigned iport) {
+TCPServerSocket::TCPServerSocket(const unsigned int port) {
 
 	memset(&hints, 0, sizeof hints);
 	hints.ai_family = AF_UNSPEC;
@@ -8,9 +8,9 @@ TCPServerSocket::TCPServerSocket(const unsigned iport) {
 	hints.ai_flags = AI_PASSIVE; // use my IP
 
 	const unsigned int nb_digits = (
-			0 < iport ? (int) log10((double) iport) + 1 : 1);
-	char port[nb_digits + 1]; // add one
-	int n = (::sprintf(port, "%d", iport));
+			0 < port ? (int) log10((double) port) + 1 : 1);
+	char cport[nb_digits + 1]; // add one
+	int n = (::sprintf(cport, "%d", port));
 	if (0 > n) {
 		const char* msg = "TCPServerSocket::sprintf() failed";
 #ifdef DEBUG
@@ -19,7 +19,7 @@ TCPServerSocket::TCPServerSocket(const unsigned iport) {
 		throw std::runtime_error(msg);
 	}
 
-	if ((rv = ::getaddrinfo(NULL, port, &hints, &servinfo)) != 0) {
+	if ((rv = ::getaddrinfo(NULL, cport, &hints, &servinfo)) != 0) {
 #ifdef DEBUG
 		fprintf(stderr, "TCPServerSocket::getaddrinfo: %s\n", gai_strerror(rv));
 #endif

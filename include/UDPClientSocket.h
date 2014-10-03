@@ -10,6 +10,7 @@ extern "C" {
 #include <cstring>      /* memset */
 #include <cstdio>		/* perror, sprintf,fprintf */
 #include <stdexcept>    /* runtime_error */
+#include <string>
 
 #include <UDPSocket.h>
 
@@ -26,7 +27,7 @@ public:
 	 * \param[in] addr The Address of the host
 	 * \param[in] port The Port the host is listening on
 	 */
-	UDPClientSocket(const char* addr, const unsigned int port);
+	UDPClientSocket(const std::string addr, const unsigned int port);
 
 	/**
 	 * \brief  does nothing

@@ -1,6 +1,6 @@
 #include <UDPClientSocket.h>
 
-UDPClientSocket::UDPClientSocket(const char* addr, const unsigned int port) {
+UDPClientSocket::UDPClientSocket(const std::string addr, const unsigned int port) {
 
 	memset(&hints, 0, sizeof hints);
 	hints.ai_family = AF_UNSPEC;
@@ -13,7 +13,7 @@ UDPClientSocket::UDPClientSocket(const char* addr, const unsigned int port) {
 		throw std::runtime_error("UDPClientSocket::sprintf() failed");
 	}
 
-	if ((rv = getaddrinfo(addr, cport, &hints, &servinfo)) != 0) {
+	if ((rv = getaddrinfo(addr.c_str(), cport, &hints, &servinfo)) != 0) {
 #ifdef DEBUG
 		fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(rv));
 #endif

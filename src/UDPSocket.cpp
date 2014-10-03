@@ -8,7 +8,6 @@ UDPSocket::UDPSocket() {
 
 UDPSocket::~UDPSocket() {
 	freeaddrinfo(servinfo);
-	close(ufds.fd);
 }
 
 int UDPSocket::send(const char* buf, const unsigned size, int) {

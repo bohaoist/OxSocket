@@ -9,6 +9,7 @@ extern "C" {
 #include <cstdio>      /* perror */
 #include <cstring>     /* strcpy, strlen */
 #include <stdexcept>   /* runtime_error */
+#include <string>
 
 #include <Connection.h>
 
@@ -30,7 +31,7 @@ public:
 	 * \details construct UNIXClientSocket throws runtime_error on failure
 	 * \param[in] path Path to socket file
 	 */
-	UNIXClientSocket(const char* path);
+	UNIXClientSocket(const std::string path);
 	virtual ~UNIXClientSocket();
 };
 

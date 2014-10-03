@@ -69,6 +69,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
+						<entry excluding="udp_server.cpp|udp_client.cpp|tcp_server.cpp|tcp_client.cpp|http_server.cpp|Example.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="examples"/>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="include"/>
 						<entry excluding="EchoTCPClient.cpp|EchoServer_TCP_UNIX.cpp|EchoClient_TCP_UNIX.cpp|EchoUNIXClient.cpp|EchoUDPServer.cpp|Example.cpp|UNIXEchoClient.cpp|Examples.cpp|EchoUNIXServer.cpp|TCPEchoServer.cpp|UNIXEchoServer.cpp|EchoClient_UDP.cpp|EchoUDPClient.cpp|EchoTCPServer.cpp|EchoServer_UDP.cpp" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="src"/>
 					</sourceEntries>
@@ -79,7 +80,7 @@
 			<storageModule moduleId="org.eclipse.cdt.core.language.mapping"/>
 		</cconfiguration>
 		<cconfiguration id="cdt.managedbuild.config.gnu.cygwin.exe.debug.825911936.1530097232.1444629826">
-			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cygwin.exe.debug.825911936.1530097232.1444629826" moduleId="org.eclipse.cdt.core.settings" name="Example">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.cygwin.exe.debug.825911936.1530097232.1444629826" moduleId="org.eclipse.cdt.core.settings" name="http_client">
 				<externalSettings>
 					<externalSetting>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/0xSocket"/>
@@ -97,7 +98,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="Example" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.cygwin.exe.debug.825911936.1530097232.1444629826" name="Example" parent="cdt.managedbuild.config.gnu.cygwin.exe.debug" postbuildStep="">
+				<configuration artifactName="Example" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.cygwin.exe.debug.825911936.1530097232.1444629826" name="http_client" parent="cdt.managedbuild.config.gnu.cygwin.exe.debug" postbuildStep="">
 					<folderInfo id="cdt.managedbuild.config.gnu.cygwin.exe.debug.825911936.1530097232.1444629826." name="/" resourcePath="">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.base.52665892" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.base">
 							<targetPlatform archList="all" id="cdt.managedbuild.target.gnu.platform.base.1109907804" name="Debug Platform" osList="linux,hpux,aix,qnx" superClass="cdt.managedbuild.target.gnu.platform.base"/>
@@ -144,6 +145,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
+						<entry excluding="udp_server.cpp|udp_client.cpp|tcp_server.cpp|tcp_client.cpp|http_server.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="examples"/>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="include"/>
 						<entry excluding="EchoUDPServer.cpp|UNIXEchoClient.cpp|Examples.cpp|EchoUNIXServer.cpp|TCPEchoServer.cpp|EchoServer_TCP_UNIX.cpp|UNIXEchoServer.cpp|EchoClient_UDP.cpp|EchoUDPClient.cpp|EchoTCPServer.cpp|EchoServer_UDP.cpp|EchoUNIXClient.cpp" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="src"/>
 					</sourceEntries>

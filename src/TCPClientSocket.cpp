@@ -1,6 +1,6 @@
 #include <TCPClientSocket.h>
 
-TCPClientSocket::TCPClientSocket(const char* host, const unsigned iport) {
+TCPClientSocket::TCPClientSocket(const std::string host, const unsigned iport) {
 
 	const unsigned int nb_digits = (
 			0 < iport ? (int) log10((double) iport) + 1 : 1);
@@ -18,7 +18,7 @@ TCPClientSocket::TCPClientSocket(const char* host, const unsigned iport) {
 	hints.ai_family = AF_UNSPEC;
 	hints.ai_socktype = SOCK_STREAM;
 
-	if ((rv = getaddrinfo(host, port, &hints, &servinfo)) != 0) {
+	if ((rv = getaddrinfo(host.c_str(), port, &hints, &servinfo)) != 0) {
 //		freeaddrinfo(servinfo); // all done with this structure
 #ifdef DEBUG
 		fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(rv));
