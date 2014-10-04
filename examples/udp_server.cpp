@@ -4,6 +4,7 @@
 #include <0xSocket.h>
 
 using namespace std;
+using namespace OxSocket;
 
 int main(int argc, char* argv[]) {
 
@@ -17,7 +18,7 @@ int main(int argc, char* argv[]) {
 
 	try {
 		cout << "Creating UDP Server Socket ..." << flush;
-		OxSocket::UDPServerSocket sock(port);
+		UDPServerSocket sock(port);
 		cout << "ok" << endl;
 
 //		cout << "Setting Timeout ...";

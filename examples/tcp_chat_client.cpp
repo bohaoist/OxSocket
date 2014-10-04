@@ -4,6 +4,7 @@
 #include <0xSocket.h>
 
 using namespace std;
+using namespace OxSocket;
 
 int main(int argc, char* argv[]) {
 
@@ -23,7 +24,7 @@ int main(int argc, char* argv[]) {
 	try {
 
 		cout << "Creating TCP Client Socket ... " << flush;
-		OxSocket::TCPClientSocket con(server, port);
+		TCPClientSocket con(server, port);
 
 		cout << " ok" << endl;
 		//

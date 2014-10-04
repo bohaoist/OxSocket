@@ -6,9 +6,10 @@ extern "C" {
 #include <netdb.h>       /* addrinfo, freeaddrinfo */
 #include <sys/socket.h>  /* sockaddr_storage, sendto, recvfrom, */
 #include <arpa/inet.h>
+#include <string.h>
 }
-
-//#include <Connection.h>
+#include <cstdio>
+#include <cmath>
 
 namespace OxSocket {
 /**
@@ -25,24 +26,9 @@ protected:
 	socklen_t addr_len;
 	char s[INET6_ADDRSTRLEN];
 	UDPSocket();
+	char* iport_2_cport(const unsigned int port);
 public:
 
-	/**
-	 * \brief  Sends Data
-	 * \details Sends Data
-	 * \param[in]  buf send buffer
-	 * \param[in]  size nb of bytes to send
-	 * \param[in]  ???
-	 */
-//	int send(const char* buf, const unsigned int size);
-	/**
-	 * \brief  Recv Data
-	 * \details Recv Data
-	 * \param[in]  buf recv buffer
-	 * \param[in]  size nb of bytes to recv
-	 * \param[in]  ???
-	 */
-//	int recv(char* buf, const unsigned int size);
 	/**
 	 * \brief  frees some structs
 	 * \details frees some structs

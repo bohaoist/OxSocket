@@ -4,12 +4,7 @@ namespace OxSocket {
 
 UDPServerSocket::UDPServerSocket(const unsigned port) {
 
-	const unsigned digits = (0 < port ? (int) ::log10((double) port) + 1 : 1);
-	char cport[digits + 1]; // add one
-	int n = (::sprintf(cport, "%d", port));
-	if (0 > n) {
-		throw std::runtime_error("UDPServerSocket::sprintf() failed");
-	}
+	char* cport = iport_2_cport(port);
 
 	memset(&hints, 0, sizeof hints);
 	hints.ai_family = AF_UNSPEC; // set to AF_INET to force IPv4

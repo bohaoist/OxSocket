@@ -21,7 +21,7 @@ namespace OxSocket {
  * BaseClass is a Connection Object
  * throws runtime_error on construction failure
  */
-class UDPServerSocket: public UDPSocket , public Connection{
+class UDPServerSocket: public UDPSocket, public Connection {
 private:
 public:
 	/**

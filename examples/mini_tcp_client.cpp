@@ -3,6 +3,7 @@
 #include <0xSocket.h>
 
 using namespace std;
+using namespace OxSocket;
 
 int main(int argc, char* argv[]) {
 
@@ -11,7 +12,7 @@ int main(int argc, char* argv[]) {
 	//
 	string msg = "Hello World";
 
-	OxSocket::TCPClientSocket con("127.0.0.1", 1234);
+	TCPClientSocket con("127.0.0.1", 1234);
 	con.setTimeout(5, 0);
 
 	msg += EOM;

@@ -4,6 +4,7 @@
 #include <0xSocket.h>
 
 using namespace std;
+using namespace OxSocket;
 
 int main(int argc, char* argv[]) {
 
@@ -22,7 +23,7 @@ int main(int argc, char* argv[]) {
 	try {
 
 		cout << "Creating UNIX Client Socket ... " << flush;
-		OxSocket::UNIXClientSocket con(sockfile);
+		UNIXClientSocket con(sockfile);
 		cout << " ok" << endl;
 		//
 		cout << "Setting Timeout on Socket ... " << flush;

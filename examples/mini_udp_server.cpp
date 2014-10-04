@@ -3,10 +3,11 @@
 #include <0xSocket.h>
 
 using namespace std;
+using namespace OxSocket;
 
 int main() {
 
-	OxSocket::UDPServerSocket sock(1234);
+	UDPServerSocket sock(1234);
 	char buf[255];
 	int n = 0;
 

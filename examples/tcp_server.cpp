@@ -4,6 +4,7 @@
 #include <0xSocket.h>
 
 using namespace std;
+using namespace OxSocket;
 
 int main(int argc, char* argv[]) {
 
@@ -15,14 +16,14 @@ int main(int argc, char* argv[]) {
 	char buf = '\0';
 	int n = 0;
 	string msg = "";
-	OxSocket::Connection *con = NULL;
+	Connection *con = NULL;
 	//
 	unsigned port = atoi(argv[1]);
 
 	try {
 
 		cout << "Creating TCP Server Socket ... " << flush;
-		OxSocket::TCPServerSocket sock(port);
+		TCPServerSocket sock(port);
 		cout << "ok" << endl;
 
 		//
