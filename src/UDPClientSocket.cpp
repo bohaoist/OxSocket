@@ -2,6 +2,8 @@
 namespace OxSocket {
 UDPClientSocket::UDPClientSocket(const std::string addr, const unsigned port) {
 
+	targetaddr = addr;
+
 	memset(&hints, 0, sizeof hints);
 	hints.ai_family = AF_UNSPEC;
 	hints.ai_socktype = SOCK_DGRAM;
@@ -22,7 +24,7 @@ UDPClientSocket::UDPClientSocket(const std::string addr, const unsigned port) {
 
 	// loop through all the results and make a socket
 	for (p = servinfo; p != NULL; p = p->ai_next) {
-		if ((ufds.fd = socket(p->ai_family, p->ai_socktype, p->ai_protocol))
+		if ((sfd = socket(p->ai_family, p->ai_socktype, p->ai_protocol))
 				== -1) {
 #ifdef DEBUG
 			perror("UDPClientSocket::socket() failed");

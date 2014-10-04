@@ -1,19 +1,23 @@
 #include <SocketFd.h>
 namespace OxSocket {
 SocketFd::SocketFd() {
-	this->ufds.fd = -1;
+	sfd = -1;
+}
+
+void SocketFd::close() {
+	if (sfd > 0) {
+		::close(sfd);
+	}
 }
 
 SocketFd::~SocketFd() {
-	if (ufds.fd > 0) {
-		close(ufds.fd);
-	}
+	close();
 }
 
 int SocketFd::setNonBlocking() {
 	int flags = 0;
-	flags = ::fcntl(ufds.fd, F_GETFL, 0);
-	if (0 != ::fcntl(ufds.fd, F_SETFL, flags | O_NONBLOCK)) {
+	flags = ::fcntl(sfd, F_GETFL, 0);
+	if (0 != ::fcntl(sfd, F_SETFL, flags | O_NONBLOCK)) {
 #ifdef DEBUG
 		::perror("SocketFd::mkNonBlocking::fcntl() failed");
 #endif
@@ -32,12 +36,12 @@ void* SocketFd::get_in_addr(sockaddr *sa) {
 }
 
 int SocketFd::setBlocking() {
-	if (ufds.fd < 0) {
+	if (sfd < 0) {
 		return (1);
 	}
 	int flags = 0;
-	flags = ::fcntl(ufds.fd, F_GETFL, 0);
-	if (0 != ::fcntl(ufds.fd, F_SETFL, flags & ~O_NONBLOCK)) {
+	flags = ::fcntl(sfd, F_GETFL, 0);
+	if (0 != ::fcntl(sfd, F_SETFL, flags & ~O_NONBLOCK)) {
 #ifdef DEBUG
 		::perror("SocketFd::mkBlocking::fcntl() failed");
 #endif
@@ -52,7 +56,7 @@ int SocketFd::setTimeout(const unsigned int sec, const unsigned int usec) {
 	tv.tv_sec = sec;
 	tv.tv_usec = usec;
 	if (-1
-			== ::setsockopt(ufds.fd, SOL_SOCKET, SO_RCVTIMEO, (char *) &tv,
+			== ::setsockopt(sfd, SOL_SOCKET, SO_RCVTIMEO, (char *) &tv,
 					sizeof tv)) {
 #ifdef DEBUG
 		::perror("SocketFd::setsockopt() failed to set recv timeout");
@@ -60,7 +64,7 @@ int SocketFd::setTimeout(const unsigned int sec, const unsigned int usec) {
 		return (1);
 	}
 	if (-1
-			== ::setsockopt(ufds.fd, SOL_SOCKET, SO_SNDTIMEO, (char *) &tv,
+			== ::setsockopt(sfd, SOL_SOCKET, SO_SNDTIMEO, (char *) &tv,
 					sizeof tv)) {
 #ifdef DEBUG
 		::perror("SocketFd::setsockopt() failed to set send timeout");

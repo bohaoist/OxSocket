@@ -34,6 +34,7 @@ int main(int argc, char* argv[]) {
 			n = sock.send(msg.data(), msg.size());
 			if (n > 0) {
 				cout << "ok" << endl;
+				cout << " send Data to " << sock.targetaddr << endl;
 				cout << "< " << msg << endl;
 				//
 				cout << "Recving Data ... " << flush;
@@ -41,6 +42,7 @@ int main(int argc, char* argv[]) {
 				if (n > 0) {
 					msg = string(buf, n);
 					cout << "ok" << endl;
+					cout << " recved Data from " << sock.targetaddr << endl;
 					cout << "> " << msg << endl;
 				} else {
 					cout << "failed" << endl;

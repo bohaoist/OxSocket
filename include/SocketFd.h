@@ -21,11 +21,6 @@ namespace OxSocket {
 class SocketFd {
 protected:
 
-	/**
-	 * The Socket File Descriptor as a poll struct
-	 * for Event Management
-	 */
-	pollfd ufds;
 
 	/**
 	 * \brief  set SockFd to -1
@@ -41,6 +36,16 @@ protected:
 	void *get_in_addr(sockaddr*);
 public:
 
+	/**
+	 * The Socket File Descriptor as a poll struct
+	 * for Event Management
+	 */
+	int sfd;
+
+	/**
+	 *
+	 */
+	void close();
 	/**
 	 * \brief does nothing
 	 * \details does nothing

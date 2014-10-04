@@ -5,6 +5,7 @@ extern "C" {
 #include <unistd.h>      /* close */
 #include <netdb.h>       /* addrinfo, freeaddrinfo */
 #include <sys/socket.h>  /* sockaddr_storage, sendto, recvfrom, */
+#include <arpa/inet.h>
 }
 
 #include <Connection.h>
@@ -18,8 +19,8 @@ namespace OxSocket {
 class UDPSocket: public Connection {
 protected:
 	int rv;
-	addrinfo hints, *servinfo, *p;
-	sockaddr_storage their_addr;
+	struct addrinfo hints, *servinfo, *p;
+	struct sockaddr_storage their_addr;
 	UDPSocket();
 public:
 

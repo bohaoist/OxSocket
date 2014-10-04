@@ -15,10 +15,9 @@ namespace OxSocket {
  *
  */
 class Connection: public SocketFd {
-private:
+protected:
 	int n;
 	unsigned int sum;
-//	int _poll(const int = -1);
 public:
 	std::string targetaddr;
 
