@@ -24,9 +24,9 @@ interprocess or thread communication a bit more fun.
 
 ```C++
 	// Mini UDP Server 
-	#include <iostream>
-	#include <string>
-	#include <0xSocket.h>
+	#include <iostream>   /* cout, endl      */
+	#include <string>     /* string          */
+	#include <0xSocket.h> /* UDPServerSocket */
 
 	int main() {
 
@@ -49,9 +49,9 @@ c++ -I0xSocket/include -l0xSocket -L0xSocket/lib mini_udp_server.cpp -o mini_udp
 ```
 ```C++
 	// Mini UDP Client
-	#include <iostream>
-	#include <string>  
-	#include <0xSocket.h>  
+	#include <iostream>   /* cout, endl      */
+	#include <string>     /* string          */
+	#include <0xSocket.h> /* UDPClientSocket */
 
 	int main() {
 
