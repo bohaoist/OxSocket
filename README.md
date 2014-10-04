@@ -40,11 +40,12 @@ c++ -I0xSocket/include -l0xSocket -L0xSocket/lib mini_udp_server.cpp -o mini_udp
 	int main() {
 
 		char buf[255];
+		int bsize = 0;
 		std::string msg = "Hello World";
 		
 		OxSocket::UDPClientSocket sock("127.0.0.1", 1234);
 		sock.send(msg.data(), msg.size());		
-		int bsize = sock.recv(buf, sizeof(buf));
+		bsize = sock.recv(buf, sizeof(buf));
 		std::cout << std::string(buf, bsize) << std::endl;
 		
 		return 0;
