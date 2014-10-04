@@ -70,9 +70,9 @@ c++ -I0xSocket/include -l0xSocket -L0xSocket/lib mini_udp_client.cpp -o mini_udp
 
 ## How do i use it? 
 
-* include \<0xSocket.h\> in your code
-* add include path -I/path/to/0xSocket/include to your compiler options (cflags)
-* add lastly add the linker flag -l0xSocket (ldflags)
+* include **\<0xSocket.h\>** in your code
+* add include path **-I/path/to/0xSocket/include** to your compiler options (cflags)
+* add lastly add the linker flag **-l0xSocket** (ldflags)
 
 # Examples
 Have a look at Examples in the examples folder to get started quickly.
