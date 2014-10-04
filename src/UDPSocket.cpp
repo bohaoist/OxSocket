@@ -24,15 +24,20 @@ int UDPSocket::recv(char* buf, const unsigned int size) {
 
 	socklen_t fromlen = sizeof(their_addr);
 
-	sum = (recvfrom(sfd, (void*) buf, size, 0, p->ai_addr, &p->ai_addrlen));
+//	sum = (recvfrom(sfd, (void*) buf, size, 0, p->ai_addr, &p->ai_addrlen));
 
-//	byte_count = recvfrom(sockfd, buf, sizeof buf, 0, &addr, &fromlen);
+	sum = recvfrom(sfd, (void*) buf, size, 0, (sockaddr*) &their_addr,
+			&fromlen);
 
 //	printf("recv()'d %d bytes of data in buf\n", byte_count);
 	char s[INET6_ADDRSTRLEN];
 	inet_ntop(p->ai_family, get_in_addr((sockaddr *) &their_addr), s,
 			sizeof(s));
 	targetaddr = s;
+
+	printf("from IP address %s\n",
+			inet_ntop(their_addr.ss_family,
+					get_in_addr((sockaddr *) &their_addr), s, sizeof s));
 	return sum;
 }
 
