@@ -20,7 +20,7 @@ interprocess or thread communication a bit more fun.
 * add include path **-I/path/to/0xSocket/include** to your compiler options (cflags)
 * add lastly add the linker flag **-l0xSocket** (ldflags)
 
-Here a 2 minimal examples with file download link and full compile command below to get you started.
+Here are 2 minimal examples with file download link and build command below to get you started.
 
 ```C++
 	// Mini UDP Server 
