@@ -8,7 +8,7 @@ extern "C" {
 #include <arpa/inet.h>
 }
 
-#include <Connection.h>
+//#include <Connection.h>
 
 namespace OxSocket {
 /**
@@ -16,11 +16,14 @@ namespace OxSocket {
  * implements send() and recv() for Client and Server Sockets
  * and holds some structs used by both
  */
-class UDPSocket: public Connection {
+class UDPSocket {
 protected:
-	int rv;
 	struct addrinfo hints, *servinfo, *p;
+	int rv;
+	int numbytes;
 	struct sockaddr_storage their_addr;
+	socklen_t addr_len;
+	char s[INET6_ADDRSTRLEN];
 	UDPSocket();
 public:
 
@@ -31,8 +34,7 @@ public:
 	 * \param[in]  size nb of bytes to send
 	 * \param[in]  ???
 	 */
-	int send(const char* buf, const unsigned int size);
-
+//	int send(const char* buf, const unsigned int size);
 	/**
 	 * \brief  Recv Data
 	 * \details Recv Data
@@ -40,8 +42,7 @@ public:
 	 * \param[in]  size nb of bytes to recv
 	 * \param[in]  ???
 	 */
-	int recv(char* buf, const unsigned int size);
-
+//	int recv(char* buf, const unsigned int size);
 	/**
 	 * \brief  frees some structs
 	 * \details frees some structs

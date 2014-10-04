@@ -13,6 +13,7 @@ extern "C" {
 #include <string>
 
 #include <UDPSocket.h>
+#include <Connection.h>
 
 namespace OxSocket {
 /**
@@ -20,7 +21,8 @@ namespace OxSocket {
  * if construction failes a runtime_error is thrown
  * BaseCöass is Connection
  */
-class UDPClientSocket: public UDPSocket {
+class UDPClientSocket: public UDPSocket, public Connection {
+private:
 public:
 	/**
 	 * \brief  construct UDPClientSocket
@@ -35,6 +37,9 @@ public:
 	 * \details does nothing
 	 */
 	virtual ~UDPClientSocket();
+
+	int send(const char* buf, const unsigned int size);
+	int recv(char* buf, const unsigned int size);
 };
 }
 

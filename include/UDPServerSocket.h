@@ -12,6 +12,8 @@ extern "C" {
 #include <stdexcept>    /* runtime_error */
 
 #include <UDPSocket.h>
+#include <Connection.h>
+
 namespace OxSocket {
 /**
  * A UDPServerSocket is a UDP listening Socket
@@ -19,7 +21,8 @@ namespace OxSocket {
  * BaseClass is a Connection Object
  * throws runtime_error on construction failure
  */
-class UDPServerSocket: public UDPSocket {
+class UDPServerSocket: public UDPSocket , public Connection{
+private:
 public:
 	/**
 	 * \brief  creates UDP listening Socket
@@ -33,6 +36,9 @@ public:
 	 * \details does nothing
 	 */
 	virtual ~UDPServerSocket();
+
+	int send(const char* buf, const unsigned int size);
+	int recv(char* buf, const unsigned int size);
 };
 }
 
