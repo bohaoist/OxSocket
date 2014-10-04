@@ -11,18 +11,15 @@ It makes Socket Communication as easy as this:
 	#include <string>
 	#include <0xSocket.h>
 
-	using namespace std;
-	using namespace OxSocket;
-
 	int main() {
 
-		UDPServerSocket sock(1234);
+		OxSocket::UDPServerSocket sock(1234);
 		char buf[255];
 		int bsize = 0;
 		
 		while (true) {
 			bsize = sock.recv(buf, sizeof(buf));
-			cout << string(buf,bsize) << endl;
+			std::cout << std::string(buf,bsize) << std::endl;
 			sock.send(buf, bsize);
 		}
 		return 1;
@@ -40,18 +37,15 @@ c++ -I0xSocket/include -l0xSocket -L0xSocket/lib mini_udp_server.cpp -o mini_udp
 	#include <string>  
 	#include <0xSocket.h>  
 
-	using namespace std;
-	using namespace OxSocket;
-
 	int main() {
 
 		char buf[255];
-		string msg = "Hello World";
+		std::string msg = "Hello World";
 		
-		UDPClientSocket sock("127.0.0.1", 1234);
+		OxSocket::UDPClientSocket sock("127.0.0.1", 1234);
 		sock.send(msg.data(), msg.size());		
 		int bsize = sock.recv(buf, sizeof(buf));
-		cout << string(buf, bsize) << endl;
+		std::cout << std::string(buf, bsize) << std::endl;
 		
 		return 0;
 	}
