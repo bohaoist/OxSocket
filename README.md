@@ -1,8 +1,8 @@
 
-# What is 0xSocket ?
+## What is 0xSocket ?
 A C++ object abstraction layer for TCP, UDP and UNIX Socket communications
-
-It makes Socket Communication and file aka. data transfer or just inter process/thread communication a bit more fun.
+It makes Socket Communication and file aka. data transfer or 
+interprocess or thread communication a bit more fun.
 
 ## Build the Library?
 
@@ -11,7 +11,6 @@ It makes Socket Communication and file aka. data transfer or just inter process/
     git clone https://github.com/inbre001/0xSocket.git;
     cd 0xSocket/lib;
     make;
-    
 ```
 
 ## How do i use it?
@@ -24,7 +23,6 @@ It makes Socket Communication and file aka. data transfer or just inter process/
 Here a 2 minimal examples with file download link and full compile command below to get you started.
 
 ```C++
-	
 	// Mini UDP Server 
 	#include <iostream>
 	#include <string>
@@ -50,7 +48,6 @@ save as [mini_udp_server.cpp](examples/mini_udp_server.cpp) and build with:
 c++ -I0xSocket/include -l0xSocket -L0xSocket/lib mini_udp_server.cpp -o mini_udp_server.exe
 ```
 ```C++
-
 	// Mini UDP Client
 	#include <iostream>
 	#include <string>  
