@@ -73,13 +73,14 @@ save as [mini_udp_client.cpp](examples/mini_udp_client.cpp) and build with:
 c++ -I0xSocket/include -l0xSocket -L0xSocket/lib mini_udp_client.cpp -o mini_udp_client.exe	
 ```
 
-# Some simple  Examples
-Have a look at Examples in the examples folder to get started quickly.
+## Some more Examples
+Have a look at the source files in the examples folder to get started quickly.
 
 *  UDP [Client](examples/udp_client.cpp) and [Server](examples/udp_server.cpp)  
 *  TCP [Client](examples/tcp_client.cpp) and [Server](examples/tcp_server.cpp)   
 * UNIX [Client](examples/unix_client.cpp) and [Server](examples/unix_server.cpp) 
 * HTTP [Client](examples/http_client.cpp) 
+*  FTP TODO
 
 ## What next?
 Try writing your own IRC Client or a DNS or even NTP Client.
