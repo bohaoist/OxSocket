@@ -7,6 +7,12 @@ Connection::Connection(const int fd, const std::string taddr) {
 	sum = n = 0;
 	sfd = fd;
 //	ufds.events = POLLIN | POLLOUT | POLLPRI;
+
+//	printf("piped connection\n");
+	if (pipe(pipefd) < 0) {
+		perror("pipe");
+		throw std::runtime_error("Connection::pipe() failed");
+	}
 }
 
 Connection::~Connection() {
@@ -50,5 +56,86 @@ int Connection::recv(char *buf, const unsigned int size) {
 //#endif
 //	return (rv);
 //}
+
+#ifdef LINUXFAST
+ssize_t Connection::sendfile_fast(std::string file) {
+
+	int in_fd = open(file.c_str(), O_RDONLY);
+	if (in_fd < 0) {
+		perror("open");
+		return -1;
+	}
+
+	struct stat buf;
+	if (0 > fstat(in_fd, &buf)) {
+		perror("fstat");
+		return -1;
+	}
+
+	size_t count = buf.st_size;
+
+	ssize_t bytes_sent;
+	size_t total_bytes_sent = 0;
+	while (total_bytes_sent < count) {
+		if ((bytes_sent = ::sendfile(this->sfd, in_fd, 0,
+								count - total_bytes_sent)) <= 0) {
+			if (errno == EINTR || errno == EAGAIN) {
+				// Interrupted system call/try again
+				// Just skip to the top of the loop and try again
+				continue;
+			}
+			perror("sendfile");
+			return -1;
+		}
+		total_bytes_sent += bytes_sent;
+	}
+	return total_bytes_sent;
+}
+
+ssize_t Connection::recvfile_fast(const std::string file, size_t count) {
+
+	int out_fd = open(file.c_str(), O_CREAT | O_WRONLY);
+	if (out_fd < 0) {
+		perror("open");
+		return -1;
+	}
+
+	ssize_t bytes, bytes_sent, bytes_in_pipe;
+	size_t total_bytes_sent = 0;
+
+	// Splice the data from in_fd into the pipe
+	while (total_bytes_sent < count) {
+		if ((bytes_sent = splice(sfd, NULL, pipefd[1], NULL,
+								count - total_bytes_sent,
+								SPLICE_F_MORE | SPLICE_F_MOVE)) <= 0) {
+			if (errno == EINTR || errno == EAGAIN) {
+				// Interrupted system call/try again
+				// Just skip to the top of the loop and try again
+				continue;
+			}
+			perror("splice1");
+			return -1;
+		}
+
+		// Splice the data from the pipe into out_fd
+		bytes_in_pipe = bytes_sent;
+		while (bytes_in_pipe > 0) {
+			if ((bytes = splice(pipefd[0], NULL, out_fd, 0, bytes_in_pipe,
+									SPLICE_F_MORE | SPLICE_F_MOVE)) <= 0) {
+				if (errno == EINTR || errno == EAGAIN) {
+					// Interrupted system call/try again
+					// Just skip to the top of the loop and try again
+					continue;
+				}
+				perror("splice2");
+				return -1;
+			}
+			bytes_in_pipe -= bytes;
+		}
+		total_bytes_sent += bytes_sent;
+	}
+	return total_bytes_sent;
+}
+#endif
 }
 

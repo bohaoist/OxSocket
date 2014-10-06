@@ -6,6 +6,7 @@
 #include <sys/stat.h>
 
 using namespace std;
+using namespace OxSocket;
 
 int main(int argc, char* argv[]) {
 
@@ -20,19 +21,22 @@ int main(int argc, char* argv[]) {
 	if (fd < 0) {
 		cout << "failed to open file" << endl;
 		return 1;
+	} else {
+		cout << "opended file: " << argv[3] << endl;
 	}
 
-	struct stat sta;
-	fstat(fd, &sta);
+	struct stat buf;
+	fstat(fd, &buf);
 
-	char buf[sta.st_size];
-	read(fd, buf, sta.st_size);
+	cout << "Sending: " << buf.st_size << " Bytes" << endl;
 
-	OxSocket::TCPClientSocket sock(receiver, port);
-	sock.send((char*) &(sta.st_size), sizeof(sta.st_size));
-	sock.send(buf, sta.st_size);
+	TCPClientSocket sock(receiver, port);
 
+	sock.send((char*) &(buf.st_size), sizeof(buf.st_size));
 	close(fd);
+//	do_sendfile(sock.sfd,fd,0,buf.st_size);
+	sock.sendfile_fast(argv[3]);
+
 	return 0;
 }
 
