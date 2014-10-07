@@ -22,10 +22,8 @@ int main(int argc, char* argv[]) {
 	string msg = argv[3];
 
 	try {
-
 		cout << "Creating TCP Client Socket ... " << flush;
 		TCPClientSocket con(server, port);
-
 		cout << " ok" << endl;
 		//
 		cout << "Setting Timeout on Socket ... " << flush;
@@ -46,20 +44,15 @@ int main(int argc, char* argv[]) {
 				if (n > 0) {
 					cout << "ok" << endl;
 					cout << "> " << msg << "" << endl;
-				} else {
-					cout << "failed " << endl;
+					return 0;
 				}
-			} else {
-				cout << "failed " << endl;
 			}
-		} else {
-			cout << "failed" << endl;
 		}
 	} catch (const runtime_error& error) {
-		cout << error.what() << endl;
+		cout << error.what() << " ... " << endl;
 	}
-	cout << "TCP Client finished" << endl;
-	return 0;
+	cout << "failed" << endl;
+	return 1;
 }
 
 // EOF 

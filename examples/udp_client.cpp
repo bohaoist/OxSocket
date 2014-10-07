@@ -15,10 +15,10 @@ int main(int argc, char* argv[]) {
 	}
 	//
 	char buf[255];
-	int n = 0;
+	int nbytes = 0;
 	//
 	string server = argv[1];
-	unsigned port = atoi(argv[2]);
+	unsigned int port = atoi(argv[2]);
 	string msg = argv[3];
 	//
 	try {
@@ -32,31 +32,26 @@ int main(int argc, char* argv[]) {
 			cout << "ok" << endl;
 			//
 			cout << "Sending Data ... " << flush;
-			n = sock.send(msg.data(), msg.size());
-			if (n > 0) {
+			nbytes = sock.send(msg.data(), msg.size());
+			if (nbytes > 0) {
 				cout << "ok" << endl;
 				cout << " send Data to " << sock.targetaddr << endl;
 				cout << "< " << msg << endl;
 				//
 				cout << "Recving Data ... " << flush;
-				n = sock.recv(buf, sizeof(buf));
-				if (n > 0) {
-					msg = string(buf, n);
+				nbytes = sock.recv(buf, sizeof(buf));
+				if (nbytes > 0) {
+					msg = string(buf, nbytes);
 					cout << "ok" << endl;
 					cout << " recved Data from " << sock.targetaddr << endl;
 					cout << "> " << msg << endl;
-				} else {
-					cout << "failed" << endl;
+					return 0;
 				}
-			} else {
-				cout << "failed" << endl;
 			}
-		} else {
-			cout << "failed" << endl;
 		}
 	} catch (runtime_error& error) {
-		cout << "failed: " << error.what() << endl;
+		cout << error.what() << " ... " << endl;
 	}
-	cout << "UDP Client finished" << endl;
-	return 0;
+	cout << "failed" << endl;
+	return 1;
 }

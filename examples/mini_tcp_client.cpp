@@ -9,7 +9,7 @@ int main(int argc, char* argv[]) {
 
 	const char EOM = '\n';
 	char buf = '\0';
-	//
+
 	string msg = "Hello World";
 
 	TCPClientSocket con("127.0.0.1", 1234);

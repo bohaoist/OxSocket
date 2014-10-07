@@ -9,7 +9,7 @@ using namespace std;
 using namespace OxSocket;
 
 const static char EOM = '\n';
-map<string, Connection*> clients;
+std::map<string, Connection*> clients;
 std::map<string, Connection*>::iterator cliter;
 
 void rm_client(std::string client_id) {

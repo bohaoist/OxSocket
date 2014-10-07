@@ -59,18 +59,18 @@ int main(int argc, char* argv[]) {
 					} else {
 						cout << "failed" << endl;
 					}
-					cout << "Closing Connection ... " << flush;
-					delete con;
-					cout << "ok" << endl;
 				} else {
 					cout << "failed" << endl;
 				}
+				cout << "Closing Connection ... " << flush;
+				delete con;
+				cout << "ok" << endl;
 			} else {
 				cout << "failed" << endl;
 			}
 		} // end while
 	} catch (const runtime_error& error) {
-		cout << "failed: " << error.what() << endl;
+		cout << error.what() << " ... failed" << endl;
 	}
 	return 1;
 }

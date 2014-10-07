@@ -6,13 +6,13 @@ Connection::Connection(const int fd, const std::string taddr) {
 	targetaddr = taddr;
 	sum = n = 0;
 	sfd = fd;
-//	ufds.events = POLLIN | POLLOUT | POLLPRI;
 
-//	printf("piped connection\n");
+#ifdef LINUXFAST
 	if (pipe(pipefd) < 0) {
 		perror("pipe");
 		throw std::runtime_error("Connection::pipe() failed");
 	}
+#endif
 }
 
 Connection::~Connection() {
