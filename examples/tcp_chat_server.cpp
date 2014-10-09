@@ -9,10 +9,10 @@ using namespace std;
 using namespace OxSocket;
 
 const static char EOM = '\n';
-std::map<string, Connection*> clients;
-std::map<string, Connection*>::iterator cliter;
+map<string, Connection*> clients;
+map<string, Connection*>::iterator cliter;
 
-void rm_client(std::string client_id) {
+void rm_client(string client_id) {
 	delete clients[client_id];
 	clients.erase(client_id);
 }
