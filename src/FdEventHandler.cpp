@@ -2,41 +2,49 @@
 
 namespace OxSocket {
 
-FdEventHandler::FdEventHandler() {
-	efd = epoll_create1(0);
-	if (efd == -1) {
-		perror("epoll_create");
-		abort();
+FdEventHandler::FdEventHandler(const unsigned int _maxevents) :
+		efd(epoll_create1(0)), maxevents(_maxevents), i(0), n(0) {
+	if (-1 == efd) {
+		const char *msg = "epoll_create";
+		perror(msg);
+		throw std::runtime_error(msg);
 	}
-
-#define MAXEVENTS 64
 	/* Buffer where events are returned */
-	events = (epoll_event*) calloc(MAXEVENTS, sizeof event);
+//	events = (epoll_event*) calloc(maxevents, sizeof(event));
+	events = new epoll_event[maxevents]();
 
 }
 
+int FdEventHandler::check() {
+	n = epoll_wait(efd, events, maxevents, -1);
+	if (n == -1) {
+		perror("epoll_wait");
+	}
+	return n;
+}
+
 FdEventHandler::~FdEventHandler() {
-	free(events);
+	//free(events);
+	delete[] events;
+
 }
 
 int FdEventHandler::addFd(int infd) {
 	event.data.fd = infd;
 	event.events = EPOLLIN | EPOLLET;
 	int s = epoll_ctl(efd, EPOLL_CTL_ADD, infd, &event);
-	if (s == -1) {
-		perror("epoll_ctl");
-		abort();
+	if (-1 == s) {
+		perror("epoll_ctl ADD");
 	}
-	return 0;
+	return s;
 }
 
 int FdEventHandler::delFd(int infd) {
 	int s = epoll_ctl(efd, EPOLL_CTL_DEL, infd, &event);
-	if (s == -1) {
-		perror("epoll_ctl");
-		abort();
+	if (-1 == s) {
+		perror("epoll_ctl DEL");
 	}
-	return 0;
+	return s;
 }
 
 } /* namespace OxSocket */

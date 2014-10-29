@@ -4,19 +4,23 @@
 #include <sys/epoll.h>
 #include <cstdio>
 #include <cstdlib>
+#include <stdexcept>
 
 namespace OxSocket {
 
 class FdEventHandler {
 private:
-	int efd;
+	int i,n;
+	const unsigned int maxevents;
+	const int efd;
 	epoll_event event;
 	epoll_event *events;
 public:
-	FdEventHandler();
+	FdEventHandler(const unsigned int = 64);
 	virtual ~FdEventHandler();
 	int addFd(int);
 	int delFd(int);
+	int check();
 };
 
 }
