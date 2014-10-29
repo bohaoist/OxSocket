@@ -4,7 +4,7 @@
 extern "C" {
 #include <stdio.h>      /* perror */
 #include <sys/unistd.h> /* read(),write() */
-#include <poll.h>       /* poll, POLLIN, POLLOUT, POLLPRI */
+//#include <poll.h>       /* poll, POLLIN, POLLOUT, POLLPRI */
 }
 #include <iostream>
 #include <string>

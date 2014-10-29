@@ -16,7 +16,7 @@ extern "C" {
 #include <stdexcept>     /* runtime_error */
 
 #include <Connection.h>
-#include <ServerSocket.h>
+#include <AcceptSocket.h>
 
 namespace OxSocket {
 /**

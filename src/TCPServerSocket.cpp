@@ -2,7 +2,9 @@
 namespace OxSocket {
 TCPServerSocket::TCPServerSocket(const unsigned port) {
 
-	memset(&hints, 0, sizeof hints);
+	std::string errmsg = "";
+
+	::memset(&hints, 0, sizeof hints);
 	hints.ai_family = AF_UNSPEC;
 	hints.ai_socktype = SOCK_STREAM;
 	hints.ai_flags = AI_PASSIVE; // use my IP
@@ -11,19 +13,15 @@ TCPServerSocket::TCPServerSocket(const unsigned port) {
 	char cport[nb_digits + 1]; // add one
 	int n = (::sprintf(cport, "%d", port));
 	if (0 > n) {
-		const char* msg = "TCPServerSocket::sprintf() failed";
-#ifdef DEBUG
-		::perror(msg);
-#endif
-		throw std::runtime_error(msg);
+		errmsg = "TCPServerSocket::sprintf() failed :: ";
+		errmsg += ::strerror(errno);
+		throw std::runtime_error(errmsg);
 	}
 
 	if (0 != (rv = ::getaddrinfo(NULL, cport, &hints, &servinfo))) {
-#ifdef DEBUG
-		::fprintf(stderr, "TCPServerSocket::getaddrinfo: %s\n",
-				gai_strerror(rv));
-#endif
-		throw std::runtime_error("TCPServerSocket::getaddrinfo() failed");
+		errmsg = "TCPServerSocket::getaddrinfo() failed :: ";
+		errmsg += ::gai_strerror(rv);
+		throw std::runtime_error(errmsg);
 	}
 
 	// loop through all the results and bind to the first we can
@@ -40,14 +38,12 @@ TCPServerSocket::TCPServerSocket(const unsigned port) {
 		if (-1
 				== ::setsockopt(sfd, SOL_SOCKET, SO_REUSEADDR, &yes,
 						sizeof(int))) {
-			const char* msg = "TCPServerSocket::setsockopt() failed";
-#ifdef DEBUG
-			::perror(msg);
-#endif
-			throw std::runtime_error(msg);
+			errmsg = "TCPServerSocket::setsockopt() failed :: ";
+			errmsg += ::strerror(errno);
+			throw std::runtime_error(errmsg);
 		}
 
-		if (-1 == bind(sfd, p->ai_addr, p->ai_addrlen)) {
+		if (-1 == ::bind(sfd, p->ai_addr, p->ai_addrlen)) {
 #ifdef DEBUG
 			::perror("TCPServerSocket::bind() failed");
 #endif
@@ -58,16 +54,15 @@ TCPServerSocket::TCPServerSocket(const unsigned port) {
 		break;
 	}
 
-	if (p == NULL) {
-		throw std::runtime_error("TCPServerSocket() failed");
+	if (NULL == p) {
+		errmsg = "TCPServerSocket() failed";
+		throw std::runtime_error(errmsg);
 	}
 
 	if (-1 == ::listen(sfd, 10)) {
-		const char *msg = "TCPServerSocket::listen() failed";
-#ifdef DEBUG
-		perror(msg);
-#endif
-		throw std::runtime_error(msg);
+		errmsg = "TCPServerSocket::listen() failed :: ";
+		errmsg += ::strerror(errno);
+		throw std::runtime_error(errmsg);
 	}
 
 }
@@ -89,7 +84,7 @@ Connection* TCPServerSocket::accept() {
 	}
 
 	char s[INET6_ADDRSTRLEN];
-	inet_ntop(their_addr.ss_family, get_in_addr((sockaddr *) &their_addr), s,
+	::inet_ntop(their_addr.ss_family, get_in_addr((sockaddr *) &their_addr), s,
 			sizeof(s));
 
 	return (new Connection(tmp, s));

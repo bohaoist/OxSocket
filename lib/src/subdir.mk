@@ -4,9 +4,9 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../src/AcceptSocket.cpp \
 ../src/Connection.cpp \
 ../src/FdEventHandler.cpp \
-../src/ServerSocket.cpp \
 ../src/SocketFd.cpp \
 ../src/TCPClientSocket.cpp \
 ../src/TCPServerSocket.cpp \
@@ -18,9 +18,9 @@ CPP_SRCS += \
 ../src/UNIXServerSocket.cpp 
 
 OBJS += \
+./src/AcceptSocket.o \
 ./src/Connection.o \
 ./src/FdEventHandler.o \
-./src/ServerSocket.o \
 ./src/SocketFd.o \
 ./src/TCPClientSocket.o \
 ./src/TCPServerSocket.o \
@@ -32,9 +32,9 @@ OBJS += \
 ./src/UNIXServerSocket.o 
 
 CPP_DEPS += \
+./src/AcceptSocket.d \
 ./src/Connection.d \
 ./src/FdEventHandler.d \
-./src/ServerSocket.d \
 ./src/SocketFd.d \
 ./src/TCPClientSocket.d \
 ./src/TCPServerSocket.d \

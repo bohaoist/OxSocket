@@ -15,7 +15,7 @@ extern "C" {
 
 #include <Connection.h>
 #include <TCPSocket.h>
-#include <ServerSocket.h>
+#include <AcceptSocket.h>
 
 namespace OxSocket {
 

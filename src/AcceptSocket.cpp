@@ -1,4 +1,4 @@
-#include <ServerSocket.h>
+#include <AcceptSocket.h>
 
 namespace OxSocket {
 AcceptSocket::AcceptSocket() {

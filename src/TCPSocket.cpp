@@ -1,7 +1,9 @@
 #include <TCPSocket.h>
+
 namespace OxSocket {
+
 TCPSocket::~TCPSocket() {
-	freeaddrinfo(servinfo);
+	::freeaddrinfo(servinfo);
 }
 
 TCPSocket::TCPSocket() {
@@ -10,4 +12,5 @@ TCPSocket::TCPSocket() {
 	servinfo = 0;
 	p = 0;
 }
+
 }

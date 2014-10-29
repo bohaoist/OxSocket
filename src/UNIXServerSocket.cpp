@@ -2,36 +2,34 @@
 namespace OxSocket {
 UNIXServerSocket::UNIXServerSocket(std::string path) {
 
+	std::string errmsg = "";
+
 	last_new_sock = -1;
 
-	if ((sfd = socket(AF_UNIX, SOCK_STREAM, 0)) == -1) {
-		const char *msg = "UNIXServerSocket::socket() failed";
-#ifdef DEBUG
-		perror(msg);
-#endif
-		throw std::runtime_error(msg);
+	if (-1 == (sfd = ::socket(AF_UNIX, SOCK_STREAM, 0))) {
+		errmsg = "UNIXServerSocket::socket() failed";
+		errmsg += ::strerror(errno);
+		throw std::runtime_error(errmsg);
 	}
 
 	local.sun_family = AF_UNIX;
-	strcpy(local.sun_path, path.c_str());
-	unlink(local.sun_path);
+	::strcpy(local.sun_path, path.c_str());
+	::unlink(local.sun_path);
 
-	int len = strlen(local.sun_path) + sizeof(local.sun_family);
+	const unsigned int len = ::strlen(local.sun_path)
+			+ sizeof(local.sun_family);
 
 	if (::bind(sfd, (sockaddr *) &local, len) == -1) {
-		const char *msg = "UNIXServerSocket::bind() failed";
-#ifdef DEBUG
-		perror(msg);
-#endif
-		throw std::runtime_error(msg);
+		errmsg = "UNIXServerSocket::bind() failed";
+		errmsg += ::strerror(errno);
+		throw std::runtime_error(errmsg);
+
 	}
 
 	if (listen(sfd, 5) == -1) {
-		const char *msg = "UNIXServerSocket::listen() failed";
-#ifdef DEBUG
-		perror(msg);
-#endif
-		throw std::runtime_error(msg);
+		errmsg = "UNIXServerSocket::listen() failed";
+		errmsg += ::strerror(errno);
+		throw std::runtime_error(errmsg);
 	}
 }
 
@@ -44,7 +42,9 @@ Connection* UNIXServerSocket::accept() {
 	last_new_sock = ::accept(sfd, (sockaddr *) &remote, &t);
 
 	if (0 > last_new_sock) {
+#ifdef DEBUG
 		perror("UNIXServerSocket::accept() failed");
+#endif
 		return (NULL);
 	}
 

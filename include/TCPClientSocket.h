@@ -13,7 +13,7 @@ extern "C" {
 #include <cmath>         /* log10   */
 #include <cstdio>        /* sprintf, fprintf, perror */
 #include <stdexcept>     /* runtime_error */
-#include <string>
+#include <string>		 /* strerrno */
 
 #include <Connection.h>
 #include <TCPSocket.h>

@@ -8,6 +8,7 @@ extern "C" {
 }
 
 namespace OxSocket {
+
 /**
  *  \brief Virtual Base
  *  \details Virtual Base
@@ -22,5 +23,6 @@ protected:
 public:
 	virtual ~TCPSocket();
 };
+
 }
 #endif
