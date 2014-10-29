@@ -89,7 +89,10 @@ Try writing your own IRC Client or a DNS or even NTP Client.
 
 ##### Whats with the 'Ox' Prefix?
 No Reason, except to make it a bit more distinguishable from other libs.
-I was trying to choose a name that was unused and i stumbled over some files with hex number.
+I was trying to choose a name that was unused and i stumbled over some files with hex numbers.
 At the time i thought that the Ox should be "disgustin/unique" enought to not cause any confusion.
+Now i am older and know better, but to lazy to change it.
 
+## Work in Progress
+- Write Event Listener/Manager epoll, poll, select ... based ...  
 
