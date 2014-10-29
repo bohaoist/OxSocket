@@ -7,7 +7,6 @@ extern "C" {
 #include <fcntl.h>      /* fcntl */
 #include <stdio.h>      /* perror */
 #include <unistd.h>     /* close */
-//#include <poll.h>       /* poll */
 }
 
 namespace OxSocket {

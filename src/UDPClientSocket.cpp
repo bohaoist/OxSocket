@@ -11,7 +11,6 @@ UDPClientSocket::UDPClientSocket(const std::string addr, const unsigned port) {
 	hints.ai_socktype = SOCK_DGRAM;
 
 	if (0 != (rv = ::getaddrinfo(addr.c_str(), cport, &hints, &servinfo))) {
-//		fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(rv));
 		errmsg = "UDPClientSocket::getaddrinfo(" + addr + "," + cport
 				+ ") failed :: ";
 		errmsg += ::gai_strerror(rv);

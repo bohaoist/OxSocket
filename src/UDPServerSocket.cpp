@@ -13,9 +13,7 @@ UDPServerSocket::UDPServerSocket(const unsigned port) {
 	hints.ai_socktype = SOCK_DGRAM;
 	hints.ai_flags = AI_PASSIVE; // use my IP
 
-	if ((rv = ::getaddrinfo(NULL, cport, &hints, &servinfo)) != 0) {
-//		fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(rv));
-//		throw std::runtime_error("UDPServerSocket::getaddrinfo() failed");
+	if (0 != (rv = ::getaddrinfo(NULL, cport, &hints, &servinfo))) {
 		errmsg = "UDPServerSocket::getaddrinfo() failed :: ";
 		errmsg += ::gai_strerror(rv);
 		throw std::runtime_error(errmsg);
@@ -38,9 +36,7 @@ UDPServerSocket::UDPServerSocket(const unsigned port) {
 		break;
 	}
 
-	if (p == NULL) {
-//		fprintf(stderr, "listener: failed to bind socket\n");
-//		throw std::runtime_error("UDPServerSocket::bind() failed");
+	if (NULL == p) {
 		errmsg = "UDPServerSocket::bind() failed :: ";
 		errmsg += ::strerror(errno);
 		throw std::runtime_error(errmsg);
