@@ -4,6 +4,7 @@ A C++ object abstraction layer for TCP, UDP and UNIX Socket communications
 It makes Socket Communication and file aka. data transfer or 
 interprocess or thread communication a bit more fun.
 
+
 ## Build the Library?
 
 ```Bash
@@ -15,10 +16,10 @@ interprocess or thread communication a bit more fun.
 
 ## How do i use it?
 
-* include **\<OxSocket.h\>** in your code
-* initalize OxSocket Object of your choice.
+* #include **\<OxSocket.h\>**
+* initalize OxSocket Object (UDP/TCP/UNIX/Client/ServerSocket ) 
 * add include path **-I/path/to/OxSocket/include** to your compiler options (cflags)
-* add lastly add the linker flag **-lOxSocket** (ldflags)
+* lastly add the linker flag **-lOxSocket** (ldflags)
 
 **Here are 2 minimal examples with download links and build commands to get you started.**
 
