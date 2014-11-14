@@ -2,8 +2,12 @@
 
 namespace OxSocket {
 
-FdEventHandler::FdEventHandler(const unsigned int _maxevents) :
-		efd(epoll_create1(0)), maxevents(_maxevents), i(0), n(0) {
+FdEventHandler::FdEventHandler(const unsigned int _maxevents) {
+
+	efd = epoll_create1(0);
+	maxevents = _maxevents;
+	i = 0;
+	n = 0;
 	if (-1 == efd) {
 		const char *msg = "epoll_create";
 		perror(msg);
@@ -15,7 +19,7 @@ FdEventHandler::FdEventHandler(const unsigned int _maxevents) :
 
 }
 
-int FdEventHandler::check() {
+int FdEventHandler::wait() {
 	n = epoll_wait(efd, events, maxevents, -1);
 	if (n == -1) {
 		perror("epoll_wait");
@@ -45,6 +49,10 @@ int FdEventHandler::delFd(int infd) {
 		perror("epoll_ctl DEL");
 	}
 	return s;
+}
+
+epoll_event FdEventHandler::getEvent(int n) {
+	return events[i];
 }
 
 } /* namespace OxSocket */

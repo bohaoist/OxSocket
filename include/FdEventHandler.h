@@ -5,14 +5,20 @@
 #include <cstdio>
 #include <cstdlib>
 #include <stdexcept>
+#include <iostream>
+#include <unistd.h>
+
+
 
 namespace OxSocket {
 
+using namespace std;
+
 class FdEventHandler {
 private:
+	int efd;
 	int i,n;
-	const unsigned int maxevents;
-	const int efd;
+	unsigned int maxevents;
 	epoll_event event;
 	epoll_event *events;
 public:
@@ -20,7 +26,9 @@ public:
 	virtual ~FdEventHandler();
 	int addFd(int);
 	int delFd(int);
-	int check();
+	int wait();
+	epoll_event getEvent(int n);
+
 };
 
 }
