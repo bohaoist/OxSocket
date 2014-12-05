@@ -8,23 +8,37 @@ using namespace OxSocket;
 
 int main(int argc, char* argv[]) {
 	//
-	if (2 != argc) {
-		cout << "usage: " << argv[0] << " [url]" << endl << endl;
+	if (4 != argc) {
+		cout << "usage: " << argv[0] << "[example.net] [index.html]" << endl << endl;
+		cout << "       " << argv[0] << "[gdata.youtube.com] [feeds/base/users/Bruugar/uploads?alt=rss&v=2&orderby=published] [index.html]" << endl << endl;
 		return 1;
 	}
 	//
-	string msg = "", line = "", host = argv[1];
+	string line = "", host = argv[1], url = argv[2], msg = argv[3];
 	int nbytes = 0, content_length = 0;
 	char buf = '\0', pbuf = '\0', port = 80;
 	//
 	try {
 
 		TCPClientSocket sock(host, port);
-		sock.setTimeout(5, 0);
+		sock.setTimeout(15, 0);
 
-		msg = "GET / HTTP/1.1\n"
+        /*msg = "GET /" + url + " HTTP/1.1\n"
 				"Host: " + host + "\n"
-				"\n\r";
+				"\n\r";*/
+        msg = "";
+        msg += "POST "+ url + " HTTP/1.1\n";
+        msg += "Host: "+ host + "\n";
+        msg += "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:33.0) Gecko/20100101 Firefox/33.0\n";
+        msg += "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\n";
+        msg += "Referer: http://hsp-hh.sport.uni-hamburg.de/angebote/aktueller_zeitraum/_Gruppentraining_im_Uni-Studio.html\n";
+        msg += "Content-Type: application/x-www-form-urlencoded\n";
+        msg += "Content-Length: 28\n";
+        msg += "BS_Kursid_27375=Vormerkliste";
+        msg += "\n\r";
+
+
+		cout << msg;
 
 		nbytes = sock.send(msg.data(), msg.size());
 		if (nbytes > 0) {
@@ -40,6 +54,7 @@ int main(int argc, char* argv[]) {
 						content_length = atoi(val.data());
 					}
 					msg += line; // SAVE LINE
+                    cout << line;
 					line = "";
 				} else if ('\r' == buf and '\n' == pbuf) { // END OF HEADER
 					break;
@@ -64,7 +79,9 @@ int main(int argc, char* argv[]) {
 				cout << msg << endl;
 				return 0;
 			}
-		}
+		}else{
+            cout << "send bytes < 0 " << endl;
+        }
 	} catch (runtime_error& error) {
 		cout << error.what() << " ... " << endl;
 	}

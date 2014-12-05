@@ -2,6 +2,7 @@
 namespace OxSocket {
 SocketFd::SocketFd() {
 	sfd = -1;
+	isAcceptSocket = false;
 }
 
 void SocketFd::close() {
@@ -74,6 +75,10 @@ int SocketFd::setTimeout(const unsigned int sec, const unsigned int usec) {
 
 	return (0);
 
+}
+
+int SocketFd::get_sfd(){
+	return this->sfd;
 }
 }
 

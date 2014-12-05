@@ -7,28 +7,29 @@
 #include <stdexcept>
 #include <iostream>
 #include <unistd.h>
-
-
+#include <map>
+#include <SocketFd.h>
 
 namespace OxSocket {
 
 using namespace std;
 
 class FdEventHandler {
-private:
-	int efd;
-	int i,n;
+protected:
+	int efd; // event file descriptor
+	int rv; // return value
 	unsigned int maxevents;
 	epoll_event event;
 	epoll_event *events;
-public:
-	FdEventHandler(const unsigned int = 64);
-	virtual ~FdEventHandler();
 	int addFd(int);
 	int delFd(int);
+
+public:
+	FdEventHandler(const unsigned int maxevents = 512);
+	virtual ~FdEventHandler();
 	int wait();
 	epoll_event getEvent(int n);
-
+	bool isError(int i);
 };
 
 }

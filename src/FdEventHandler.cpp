@@ -6,52 +6,59 @@ FdEventHandler::FdEventHandler(const unsigned int _maxevents) {
 
 	efd = epoll_create1(0);
 	maxevents = _maxevents;
-	i = 0;
-	n = 0;
+	rv = 0;
 	if (-1 == efd) {
 		const char *msg = "epoll_create";
 		perror(msg);
 		throw std::runtime_error(msg);
 	}
 	/* Buffer where events are returned */
-//	events = (epoll_event*) calloc(maxevents, sizeof(event));
 	events = new epoll_event[maxevents]();
 
 }
 
+bool FdEventHandler::isError(int i) {
+	if ((this->getEvent(i).events & EPOLLERR) //
+	|| (this->getEvent(i).events & EPOLLHUP) //
+			|| (!(this->getEvent(i).events & EPOLLIN))) {
+		return true;
+	}
+	return false;
+}
+
 int FdEventHandler::wait() {
-	n = epoll_wait(efd, events, maxevents, -1);
-	if (n == -1) {
+	rv = epoll_wait(efd, events, maxevents, -1);
+	if (-1 == rv) {
 		perror("epoll_wait");
 	}
-	return n;
+	return rv;
 }
 
 FdEventHandler::~FdEventHandler() {
 	//free(events);
 	delete[] events;
-
 }
 
-int FdEventHandler::addFd(int infd) {
+int FdEventHandler::addFd(const int infd) {
+
 	event.data.fd = infd;
 	event.events = EPOLLIN | EPOLLET;
-	int s = epoll_ctl(efd, EPOLL_CTL_ADD, infd, &event);
-	if (-1 == s) {
+	rv = epoll_ctl(efd, EPOLL_CTL_ADD, infd, &event);
+	if (-1 == rv) {
 		perror("epoll_ctl ADD");
 	}
-	return s;
+	return rv;
 }
 
 int FdEventHandler::delFd(int infd) {
-	int s = epoll_ctl(efd, EPOLL_CTL_DEL, infd, &event);
-	if (-1 == s) {
+	rv = epoll_ctl(efd, EPOLL_CTL_DEL, infd, &event);
+	if (-1 == rv) {
 		perror("epoll_ctl DEL");
 	}
-	return s;
+	return rv;
 }
 
-epoll_event FdEventHandler::getEvent(int n) {
+epoll_event FdEventHandler::getEvent(int i) {
 	return events[i];
 }
 

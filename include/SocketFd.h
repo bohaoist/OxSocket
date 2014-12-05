@@ -20,7 +20,6 @@ namespace OxSocket {
 class SocketFd {
 protected:
 
-
 	/**
 	 * \brief  set SockFd to -1
 	 * \details set SockFd to -1
@@ -33,7 +32,6 @@ protected:
 	 * \details
 	 */
 	void *get_in_addr(sockaddr*);
-public:
 
 	/**
 	 * The Socket File Descriptor as a poll struct
@@ -41,6 +39,11 @@ public:
 	 */
 	int sfd;
 
+public:
+
+	bool isAcceptSocket;
+
+	int get_sfd();
 	/**
 	 *
 	 */

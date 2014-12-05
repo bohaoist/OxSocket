@@ -2,6 +2,7 @@
 
 namespace OxSocket {
 AcceptSocket::AcceptSocket() {
+	isAcceptSocket = true;
 }
 
 AcceptSocket::~AcceptSocket() {

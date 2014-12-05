@@ -8,6 +8,7 @@ CPP_SRCS += \
 ../src/Connection.cpp \
 ../src/FdEventHandler.cpp \
 ../src/SocketFd.cpp \
+../src/SocketFdEventHandler.cpp \
 ../src/TCPClientSocket.cpp \
 ../src/TCPServerSocket.cpp \
 ../src/TCPSocket.cpp \
@@ -22,6 +23,7 @@ OBJS += \
 ./src/Connection.o \
 ./src/FdEventHandler.o \
 ./src/SocketFd.o \
+./src/SocketFdEventHandler.o \
 ./src/TCPClientSocket.o \
 ./src/TCPServerSocket.o \
 ./src/TCPSocket.o \
@@ -36,6 +38,7 @@ CPP_DEPS += \
 ./src/Connection.d \
 ./src/FdEventHandler.d \
 ./src/SocketFd.d \
+./src/SocketFdEventHandler.d \
 ./src/TCPClientSocket.d \
 ./src/TCPServerSocket.d \
 ./src/TCPSocket.d \
